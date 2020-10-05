@@ -1,0 +1,180 @@
+Projet fil rouge
+
+3 connexions possibles: -Particulier:-s'inscrire/se connecter
+				     -modifier infos perso
+				     -participer à une mission
+				     -poster un commentaire
+				     -mettre une note
+				     -consulter missions,blog,Faq  
+		
+			-Professionnel (Société / Association):
+				     -s'inscrire/se connecter
+				     -modifier infos perso
+				     -ajouter une ou plusieurs mission(s)
+				     -recevoir inscriptions missions
+				     -poster un commentaire
+
+			-Admin: -se connecter
+				-ajouter blog
+			       *-consulter dashboard
+
+les formulaires : - inscription
+		  - connexion (adresse mail, mot de passe, mot de passe oublié)
+		  - modifications infos perso
+		  - ajout/suppression mission (Professionnel, *admin)
+		  - modification mission  (Professionnel, *admin)
+		  - ajout/modification/ blog (Admin)
+		  - modification blog  (Admin)
+		  - inscription à une mission
+		  - échange dans contact admin/professionnels/particuliers
+		
+////Détails des pages/////
+
+1 Page d'accueil : -navbar
+		   -header
+		   -section missions
+		   -section blog
+		   -section images/video
+		   -Footer
+
+	liste des redirections : -Connexion/inscription
+				 -Mes infos perso
+				 -comment ca marche
+				 -Liste des missions
+				 -Liste des blog
+				 -FAQ
+				 -Contact
+		
+
+1 Page de connexion/Inscription : -Formulaire de connexion 
+				  -Formulaire d'inscription
+
+	-inscription particulier : -id:hidden
+				   -date inscription:hidden
+				   -nom
+				   -prénom	
+				   -adresse mail
+				   -adresse postale
+				   -ville
+				   -Code postal
+				   -téléphone
+				   -date de naissance		
+				   -password + confirmation
+				   -capchat
+
+	-inscription professionnel : -id
+				     -date inscription
+				     -*type_société
+				     -nom
+				     -siret (voir si on fait une vérif)
+				     -mot de passe + confirmation
+	-inscription Admin ? : -id:hidden
+			       -nom
+			       -mot de passe + confirmation			
+				  
+Blog  : -1 page liste des articles
+
+	-1 page Détails : -Description
+			  -photo
+			  -Type
+			  -date
+	-1 page Ajout/supprimer article (Admin)
+		    -id:hidden
+		    -nom/titre
+		    -description
+		    -image
+		    -pays
+		    -date
+		    -type activité
+		    -capchat
+	-1 page modification article
+
+
+Missions : - 1 page liste des missions : - Type d'activités (enseignement, medecine, sport...)
+					 - pays								
+	   				 -
+
+	   - 1 page détail de chaque mission (-photo,
+					      -nom du professionnel,
+					      -description, 
+					      -type d'activité,
+					      -date,
+					      -pays d'action,	
+					      -inscription,
+					      -note
+					      -commentaires)
+
+	   - 1 page liste des missions (Professionnel) : de là il peut ajouter modifier ou supprimer une mission
+
+	   - 1 page participation à une mission : -formulaire inscription mission: -id
+										   -date_inscription_mission
+										   -Civilité
+									           -nom
+										   -prénom
+										   -date_naissance
+										   -mail
+										   -telephone
+										   -adresse
+										   -Ville
+										   -code_postale
+
+						 -infos sur les modalités (loi,hébergement,date mission,deplacement,vaccin)
+  	    
+	   - 1 page Ajout/supprimer mission(Professionnel, *Admin)
+		-id:hidden
+		-date d'ajout:hidden
+		-date de départ
+		-durée en jour
+		-nom
+		-titre de la mission
+		-photo(s)
+		-description
+		-pays
+		-type d'activité (sportif, enseignement, construction, medecine)
+		-type de mission (distance ou terrain)
+
+	    - 1 page modification mission  (Professionnel, *Admin)
+
+			Les activités des missions à distance -Enseignement: corriger des copies, donner des cours, conférence, agriculture
+							      -Soutient aux réfugiés : aide juridique, aide administrative, soutient psychologique
+							      -Comptabilité
+							      -Traduction	
+							      -Donations : -vetements, ressources
+									   -financière : participer à un projet et avoir la possibilité de le suivre, 
+							      -Developpement
+				
+							      -hebergement
+							      -déplacement
+	   
+
+
+1 page Contact: -Infos de contact
+
+		-Formulaire d'envoi
+
+1 page comment ca marche : -Infos reglementations
+			   -Images
+			   -Covid	
+			   -Avant le départ
+			   -Fonctionnement des modalités
+
+1 page FAQ
+
+1 page dashboard ?
+
+/////////Liste PAGES////////////
+
+15 pages : -accueil
+	   -connexion/inscription
+	   -Blog 4 pages
+	   -Missions 6 pages
+	   -contact
+	   -comment ca marche
+	   -FAQ
+	   -Informations perso
+	   -dashboard ?
+
+
+
+
+
