@@ -78,7 +78,8 @@ Blog  : -1 page liste des articles
 			  -photo
 			  -Type
 			  -date
-	-1 page Ajout/supprimer article (Admin)
+			  -bouton supprimer si admin
+	-1 page Ajout article (Admin)
 		    -id:hidden
 		    -nom/titre
 		    -description
@@ -104,8 +105,6 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 					      -note
 					      -commentaires)
 
-	   - 1 page liste des missions (Professionnel) : de là il peut ajouter modifier ou supprimer une mission
-
 	   - 1 page participation à une mission : -formulaire inscription mission: -id
 										   -date_inscription_mission
 										   -Civilité
@@ -120,7 +119,7 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 
 						 -infos sur les modalités (loi,hébergement,date mission,deplacement,vaccin)
   	    
-	   - 1 page Ajout/supprimer mission(Professionnel, *Admin)
+	   - 1 page Ajout mission(Professionnel, *Admin)
 		-id:hidden
 		-date d'ajout:hidden
 		-date de départ
@@ -164,15 +163,25 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 
 /////////Liste PAGES////////////
 
-15 pages : -accueil
-	   -connexion/inscription
-	   -Blog 4 pages
-	   -Missions 6 pages
-	   -contact
-	   -comment ca marche
-	   -FAQ
-	   -Informations perso
-	   -dashboard ?
+15 pages : -accueil			fait
+
+	   -connexion/inscription	en cour mohamed
+
+	   -Blog 4 pages		fait: détails_article,liste_article    
+					reste : formulaire_ajout_article, formulaire_modification_article (voir si copie du formulaire_ajout_article ou utilisation du meme avec 2 actions différentes)
+
+	   -Missions 5 pages		fait: formulaire_participation, liste_des_missions, details_des_missions, formulaire_ajout_mission  	
+					reste : modification mission (voir si copie du formulaire_ajout_mission ou utilisation du meme avec 2 actions différentes)
+
+	   -contact			fait
+
+	   -comment ca marche		fait
+
+	   -FAQ				fait
+
+	   -Informations perso		à faire
+
+	   -dashboard ?			
 
 
 
