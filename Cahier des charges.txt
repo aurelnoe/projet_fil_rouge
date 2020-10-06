@@ -168,10 +168,10 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 	   -connexion/inscription	fait
 
 	   -Blog 4 pages		fait: détails_article,liste_article    
-					reste : formulaire_ajout_article, formulaire_modification_article (voir si copie du formulaire_ajout_article ou utilisation du meme avec 2 actions différentes)
+					reste : formulaire_ajout_article, formulaire_modification_article
 
 	   -Missions 5 pages		fait: formulaire_participation, liste_des_missions, details_des_missions, formulaire_ajout_mission  	
-					reste : modification mission (voir si copie du formulaire_ajout_mission ou utilisation du meme avec 2 actions différentes)
+					reste : modification mission
 
 	   -contact			fait
 
