@@ -163,9 +163,11 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 
 /////////Liste PAGES////////////
 
-15 pages : -accueil			fait
+17 pages : -accueil			fait
 
-	   -connexion/inscription	fait
+	   -connexion			fait	
+
+	   -inscription			à faire
 
 	   -Blog 4 pages		fait: détails_article,liste_article    
 					reste : formulaire_ajout_article, formulaire_modification_article
@@ -173,13 +175,13 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 	   -Missions 5 pages		fait: formulaire_participation, liste_des_missions, details_des_missions, formulaire_ajout_mission  	
 					reste : modification mission
 
-	   -contact			fait
+	   -contact			en cour => à revoir
 
 	   -comment ca marche		fait
 
-	   -FAQ				fait
+	   -FAQ				à faire
 
-	   -Informations perso		à faire
+	   -Informations perso		à faire : liste des infos personnelles, formulaire_modification_infos_perso
 
 	   -dashboard ?			
 
