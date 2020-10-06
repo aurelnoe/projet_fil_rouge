@@ -21,10 +21,10 @@ Projet fil rouge
 les formulaires : - inscription
 		  - connexion (adresse mail, mot de passe, mot de passe oublié)
 		  - modifications infos perso
-		  - ajout/suppression mission (Professionnel, *admin)
+		  - ajout mission (Professionnel, *admin)
 		  - modification mission  (Professionnel, *admin)
-		  - ajout/modification/ blog (Admin)
-		  - modification blog  (Admin)
+		  - ajout blog (Admin)
+		  - modification blog (Admin)
 		  - inscription à une mission
 		  - échange dans contact admin/professionnels/particuliers
 		
@@ -187,5 +187,5 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 
 
 
-
+-Multilingue ou non ?
 
