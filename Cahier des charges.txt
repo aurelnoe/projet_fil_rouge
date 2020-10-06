@@ -165,7 +165,7 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 
 15 pages : -accueil			fait
 
-	   -connexion/inscription	en cour mohamed
+	   -connexion/inscription	fait
 
 	   -Blog 4 pages		fait: détails_article,liste_article    
 					reste : formulaire_ajout_article, formulaire_modification_article (voir si copie du formulaire_ajout_article ou utilisation du meme avec 2 actions différentes)
