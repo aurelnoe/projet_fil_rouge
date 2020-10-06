@@ -18,9 +18,9 @@ Projet fil rouge
 				-ajouter blog
 			       *-consulter dashboard
 
-les formulaires : - inscription
+les formulaires : - inscription (nom, prénom, mail, motdepasse, téléphone, adresse complète, date de naissance)
 		  - connexion (adresse mail, mot de passe, mot de passe oublié)
-		  - modifications infos perso
+		  - modifications infos perso (nom, prénom, mail, motdepasse, téléphone, adresse complète, date de naissance)
 		  - ajout mission (Professionnel, *admin)
 		  - modification mission  (Professionnel, *admin)
 		  - ajout blog (Admin)
@@ -51,6 +51,7 @@ les formulaires : - inscription
 
 	-inscription particulier : -id:hidden
 				   -date inscription:hidden
+				   -civilité 
 				   -nom
 				   -prénom	
 				   -adresse mail
@@ -99,6 +100,7 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 					      -nom du professionnel,
 					      -description, 
 					      -type d'activité,
+					      -Type formation,
 					      -date,
 					      -pays d'action,	
 					      -inscription,
@@ -113,7 +115,7 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 										   -date_naissance
 										   -mail
 										   -telephone
-										   -adresse
+										   -adresse (ville, libellé voix, code postal, complement adresse)
 										   -Ville
 										   -code_postale
 
