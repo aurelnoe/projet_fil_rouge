@@ -167,19 +167,18 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 
 	   -connexion			fait	
 
-	   -inscription			à faire
+	   -inscription			fait
 
-	   -Blog 4 pages		fait: détails_article,liste_article    
-					reste : formulaire_ajout_article, formulaire_modification_article
-
+	   -Blog 4 pages		fait: détails_article,liste_article, formulaire_ajout_article, formulaire_modification_article
+ 
 	   -Missions 5 pages		fait: formulaire_participation, liste_des_missions, details_des_missions, formulaire_ajout_mission  	
 					reste : modification mission
 
-	   -contact			en cour => à revoir
+	   -contact			fait
 
 	   -comment ca marche		fait
 
-	   -FAQ				à faire
+	   -FAQ				en cour
 
 	   -Informations perso		à faire : liste des infos personnelles, formulaire_modification_infos_perso
 
