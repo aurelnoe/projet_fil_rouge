@@ -1,4 +1,4 @@
-Projet fil rouge
+﻿Projet fil rouge
 
 3 connexions possibles: -Particulier:-s'inscrire/se connecter
 				     -modifier infos perso
@@ -187,6 +187,7 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 	   -dashboard ?			
 
 
-
+/////////Interrogations////////////
 -Multilingue ou non ?
+
 
