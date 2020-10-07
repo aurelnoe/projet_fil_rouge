@@ -209,5 +209,7 @@ Informations compte personnel : 1 page liste des informations personnelles : -ci
 /////////Interrogations////////////
 
 -Multilingue ou non ?
+-Blog peut devenir actualité ?
+
 
 
