@@ -18,16 +18,17 @@
 				-ajouter blog
 			       *-consulter dashboard
 
-les formulaires : - inscription (nom, prénom, mail, motdepasse, téléphone, adresse complète, date de naissance)
+les formulaires : - inscription (civilité, nom, prénom, mail, motdepasse, téléphone, adresse complète, date de naissance)
 		  - connexion (adresse mail, mot de passe, mot de passe oublié)
 		  - modifications infos perso (nom, prénom, mail, motdepasse, téléphone, adresse complète, date de naissance)
 		  - ajout mission (Professionnel, *admin)
 		  - modification mission  (Professionnel, *admin)
 		  - ajout blog (Admin)
 		  - modification blog (Admin)
-		  - inscription à une mission
+		  - inscription à une mission ( adresse mail, civilité, date_naissance, message)
 		  - échange dans contact admin/professionnels/particuliers
-		
+		  - modification mot de passe		
+
 ////Détails des pages/////
 
 1 Page d'accueil : -navbar
@@ -159,6 +160,24 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 			   -Avant le départ
 			   -Fonctionnement des modalités
 
+Informations compte personnel : 1 page liste des informations personnelles : -civilité
+									     -nom
+									     -prénom
+									     -mail
+									     -motdepasse
+									     -téléphone
+									     -adresse complète
+		 							     -date de naissance
+
+				1 page formulaire modification infos perso : -civilité
+									     -nom
+									     -prénom
+									     -mail
+									     -motdepasse
+									     -téléphone
+									     -adresse complète
+		 							     -date de naissance
+
 1 page FAQ
 
 1 page dashboard ?
@@ -188,6 +207,9 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 
 
 /////////Interrogations////////////
+
 -Multilingue ou non ?
+-Blog peut devenir actualité ?
+
 
 
