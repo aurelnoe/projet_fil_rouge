@@ -1,22 +1,30 @@
 ﻿Projet fil rouge
 
-3 connexions possibles: -Particulier:-s'inscrire/se connecter
+Les droits d'utilisateurs:	     -Particulier:-s'inscrire/se connecter
 				     -modifier infos perso
-				     -participer à une mission
+				     -s'inscrire et participer à une mission
 				     -poster un commentaire
+				     -nous contacter
 				     -mettre une note
-				     -consulter missions,blog,Faq  
+				     -s'inscrire à une newsletter
 		
 			-Professionnel (Société / Association):
 				     -s'inscrire/se connecter
 				     -modifier infos perso
+				     -mettre une note
 				     -ajouter une ou plusieurs mission(s)
-				     -recevoir inscriptions missions
+				     -modifier ou supprimer une mission
+				     -recevoir inscriptions missions	
+				     -nous contacter
 				     -poster un commentaire
+				     -s'inscrire à une newsletter
 
 			-Admin: -se connecter
 				-ajouter blog
-			       *-consulter dashboard
+				-poster ou supprimer un commentaire
+			        -modifier ou supprimer un blog
+				-modifier ou supprimer une mission	
+			       *-consulter dashboard?
 
 les formulaires : - inscription (civilité, nom, prénom, mail, motdepasse, téléphone, adresse complète, date de naissance)
 		  - connexion (adresse mail, mot de passe, mot de passe oublié)
