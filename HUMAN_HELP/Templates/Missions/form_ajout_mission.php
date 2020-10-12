@@ -16,7 +16,7 @@
 
 <div class="container w-50 pt-4">
 
-    <h2 class="p-3">Modification des informations personnelles</h2>
+    <h2 class="p-3">Formulaire d'ajout d'une mission</h2>
 
     <form class="needs-validation" novalidate>
             <div class="mb-3">
