@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
+    <link rel="stylesheet" type="text/css" href="../../style.css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla&display=swap" rel="stylesheet"> 
 
     <title>Formulaire d'ajout d'une mission</title>
 </head>
 <body>
 <?php include("../Bases/navbar.php") ?>
 
-<div class="container w-50 pt-4">
+    <div class="container w-25 pt-4 my-4 border rounded">
 
-    <h2 class="p-3">Modification des informations personnelles</h2>
+        <h2 class="pb-3">Ajouter une nouvelle mission</h2>
 
-    <form class="needs-validation" novalidate>
+        <form class="needs-validation" action="" method="POST" novalidate>
             <div class="mb-3">
                 <label for="denomination">Dénomination sociale</label>
                 <input type="text" class="form-control" name="denomination" placeholder="" value="" required>
@@ -117,12 +118,12 @@
             </div>
             <div class="mb-3">
                 <label for="imageMission">Ajouter une image</label>
-                <input type="media" class="form-control" name="imageMission" placeholder="">
+                <input type="file" class="form-control" name="imageMission" placeholder="" capture>
             </div>
 
             <hr class="mb-4 mt-4">
             <button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Ajouter une mission</button>
-          </form>
-</div>
+        </form>
+    </div>
 </body>
 </html>
