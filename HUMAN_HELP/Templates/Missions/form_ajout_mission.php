@@ -17,7 +17,11 @@
 
     <div class="container w-25 pt-4 my-4 border rounded">
 
+<<<<<<< HEAD
         <h2 class="pb-3">Ajouter une nouvelle mission</h2>
+=======
+    <h2 class="p-3">Formulaire d'ajout d'une mission</h2>
+>>>>>>> 4d39ba07769a5a16cb50f80b92d83c7b6ad115b0
 
         <form class="needs-validation" action="" method="POST" novalidate>
             <div class="mb-3">
