@@ -11,7 +11,7 @@
 <body>
 <?php include("../Bases/navbar.php") ?>
 
-<div class="container w-50 pt-4">
+<div class="container w-50 pt-4 my-4 border rounded">
 
     <h2 class="p-3">Formulaire de modification d'une mission</h2>
 
@@ -107,7 +107,7 @@
             </div>
             <div class="mb-3">
                 <label for="imageMission">Ajouter une image</label>
-                <input type="media" class="form-control" name="imageMission" placeholder="">
+                <input type="file" class="form-control" name="imageMission" placeholder="">
             </div>
 
             <hr class="mb-4 mt-4">
