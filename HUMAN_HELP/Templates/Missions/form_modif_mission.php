@@ -17,8 +17,8 @@
 
     <form class="needs-validation" novalidate>
             <div class="mb-3">
-                <label for="denomination">Dénomination sociale</label>
-                <input type="text" class="form-control" name="denomination" placeholder="" value="" required>
+                <label for="modifDenomination">Dénomination sociale</label>
+                <input type="text" class="form-control" name="modifDenomination" placeholder="" value="" required>
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
@@ -32,8 +32,8 @@
             </div>          
             <div class="row">
                 <div class="col-auto mb-3 w-50">
-                    <label for="country">Pays concerné</label>
-                    <select class="custom-select d-block w-100" name="country" required>
+                    <label for="modifCountry">Pays concerné</label>
+                    <select class="custom-select d-block w-100" name="modifCountry" required>
                     <option value="">Choisissez...</option>
                     <option>Mali</option>
                     <option>Gabon</option>
@@ -46,8 +46,8 @@
                     </div>
                 </div>
                 <div class="col-auto mb-3 w-50">
-                    <label for="activity">Type d'activité de la mission</label>
-                    <select class="custom-select d-block w-100" name="activity" required>
+                    <label for="modifActivity">Type d'activité de la mission</label>
+                    <select class="custom-select d-block w-100" name="modifActivity" required>
                         <option value="">Choisissez...</option>
                         <option>Médecine</option>
                         <option>Enseignement</option>
