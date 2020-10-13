@@ -65,8 +65,8 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label for="descriptionMission">Description de la mission</label>
-                <textarea type="textarea" class="form-control" name="descriptionMission" placeholder=""></textarea>
+                <label for="modifDescriptionMission">Description de la mission</label>
+                <textarea type="textarea" class="form-control" name="modifDescriptionMission" placeholder=""></textarea>
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
@@ -75,20 +75,20 @@
                 <label>Type de formation</label>
                 <div class="row">
                     <div class="custom-control custom-radio mx-4">
-                        <input name="TypeForm" id="distance" type="radio" class="custom-control-input" checked required>
-                        <label class="custom-control-label" for="distance">Distance</label>
+                        <input name="modifTypeForm" id="modifDistance" type="radio" class="custom-control-input" checked required>
+                        <label class="custom-control-label" for="modifDistance">Distance</label>
                     </div>
                     <div class="custom-control custom-radio mx-2">
-                        <input name="TypeForm" id="terrain" type="radio" class="custom-control-input" required>
-                        <label class="custom-control-label" for="terrain">Sur le terrain</label>
+                        <input name="modifTypeForm" id="modifTerrain" type="radio" class="custom-control-input" required>
+                        <label class="custom-control-label" for="modifTerrain">Sur le terrain</label>
                     </div>
                 </div>  
             </div>
 
             <div class="mb-3">
-                <label for="dateMission">Date de début de la mission</label>
+                <label for="modifDateMission">Date de début de la mission</label>
                 <div class="input-group date"  data-provide="datepicker">
-                    <input type="date" class="form-control" name="dateMission" placeholder="jj/mm/aaaa" required>
+                    <input type="date" class="form-control" name="modifDateMission" placeholder="jj/mm/aaaa" required>
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -99,19 +99,19 @@
             </div>
 
             <div class="mb-3">
-                <label for="dureeMission">Durée de la mission<span class="text-muted"> (en jour)</span></label>
-                <input type="number" class="form-control" name="dureeMission" placeholder="">
+                <label for="modifDureeMission">Durée de la mission<span class="text-muted"> (en jour)</span></label>
+                <input type="number" class="form-control" name="modifDureeMission" placeholder="">
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div>
             <div class="mb-3">
-                <label for="imageMission">Ajouter une image</label>
-                <input type="file" class="form-control" name="imageMission" placeholder="">
+                <label for="modifImageMission">Ajouter une image</label>
+                <input type="file" class="form-control" name="modifImageMission" placeholder="">
             </div>
 
             <hr class="mb-4 mt-4">
-            <button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Ajouter une mission</button>
+            <button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Enregistrer la modification</button>
           </form>
 </div>
 </body>
