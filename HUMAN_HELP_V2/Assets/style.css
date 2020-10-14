@@ -1,0 +1,37 @@
+/*-------------ICI  LE  CODE  CSS--------------*/
+.logo2 {
+    background-image: url("../images/logo2.png");
+    background-size: cover;
+}
+
+body{
+    font-family: 'Piazzolla', serif,'Courier New', Courier, monospace;
+}
+p{
+    color: red;
+}
+
+/*          color:#A0F371;          */
+
+/**************HEADER****************/
+
+/**************NAVBAR****************/
+
+/***Fin HEADER***/
+
+/**************FOOTER****************/
+
+/**************ACCUEIL***************/
+
+/**************MISSIONS**************/
+/****Détails missions****/
+/****liste missions******/
+
+/**************BLOG******************/
+/****Détails articles****/
+/****liste articles******/
+
+/**************FORMULAIRES***********/
+/****Formulaire connexion******/
+/****formulaire inscription****/
+
