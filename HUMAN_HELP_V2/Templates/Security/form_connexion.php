@@ -6,7 +6,8 @@
 
   <form class="form-signin m-auto text-center p-3" action="../../Sources/recuperation.php" method="POST">
 
-    <img class="logo2" src="" alt="" width="100%" height="240">
+    <img class="logo2" src="" alt="" width="200" height="200">
+    
 
     <h1 class="h3 mb-3 font-weight-normal">Connectez vous</h1>
 

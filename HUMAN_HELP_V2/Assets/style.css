@@ -1,6 +1,6 @@
 /*-------------ICI  LE  CODE  CSS--------------*/
 .logo2 {
-    background-image: url("../images/logo2.png");
+    background-image: url("../images/logo1.png");
     background-size: cover;
 }
 
@@ -8,7 +8,7 @@ body{
     font-family: 'Piazzolla', serif,'Courier New', Courier, monospace;
 }
 p{
-    color: red;
+    color: green;
 }
 
 /*          color:#A0F371;          */
