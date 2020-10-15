@@ -16,7 +16,7 @@ body{
 }
 
 .btnGreen{
-    background-color: #A0F371;   /*CLASS A UTILISER POUR LES BOUTONS VERT *******/
+    background-color: #A0F371;   /*CLASS A UTILISER POUR LES BOUTONS VERT (COULEUR NON DEFINITIVE)*******/
 }
 
 
@@ -51,8 +51,9 @@ body{
 
 .billet{
     margin: auto;
-    width: 90%;
     padding: 20px;
+    margin-bottom: 10px;
+
 }
 
 

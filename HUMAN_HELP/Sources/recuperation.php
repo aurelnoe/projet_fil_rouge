@@ -1,4 +1,0 @@
-<?php
-
-
-/*CODE PHP FORMULAIRES*/

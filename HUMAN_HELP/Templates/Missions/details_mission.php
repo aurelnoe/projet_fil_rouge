@@ -1,7 +1,7 @@
 <head>
     <title>Détails de la mission</title>
 </head>
-<div class="container">
+<div class="container justify-content p-4">
 
     <h2 class="text-center my-2 pb-3 pt-3">Détails de la mission</h2>
 
@@ -9,15 +9,15 @@
     <!-- section image details -->
     <div class="row h-25">
         <img class="col-10 col-md-5 border m-auto imageDetailsMission rounded" width="100" height="360"/>
-        <div class="col-10 col-md-5">
+        <div class="col-10 col-md-6">
             <ul class="liDetailsMission">
-                <li>Titre de la mission : Développement numérique</li>
-                <li class="pt-2">Type d'activité : Informatique</li>
-                <li>Formation : à distance</li>
-                <li>Pays : Ghana ( Afrique centrale )</li>
-                <li>Organisateur : Association Développement Numérique d'Accra</li>
-                <li>Durée de la formation : 60 jours</li>
-                <li>Date début : 26 Mai 2021</li>
+                <li><strong>Titre de la mission :</strong> Développement numérique</li>
+                <li><strong>Type d'activité :</strong> Informatique</li>
+                <li><strong>Formation :</strong> à distance</li>
+                <li><strong>Pays :</strong> Ghana (Afrique centrale)</li>
+                <li><strong>Organisateur :</strong> Association Développement Numérique d'Accra</li>
+                <li><strong>Durée de la formation :</strong> 60 jours</li>
+                <li><strong>Date début :</strong> 26 Mai 2021</li>
             </ul>
         </div>
     </div>
@@ -39,46 +39,70 @@
         Vitae labore ratione quia ab ipsam impedit sint reprehenderit fugiat dolorum at aliquid, neque illo voluptates alias ullam aliquam, quam, blanditiis cupiditate! Ullam odit magni, a natus quis nam omnis!
     </div>
         
-    <hr class="mb-4 mt-4">
+    <hr class="mb-4 mt-5">
 
     <!-- COMMENTAIRES -->
-    <div class="border mb-4 pb-4">
+    <div class="mb-4 pb-4">
+
         <h2 class="mb-4 mt-4">Commentaires :</h2>
+
         <div class="row border billet">
-            <div class="col-4">
-                <strong>@Maurice</strong>, 38 ans, Montpellier : <br>
+            <div class="col-12 col-md-4">
+                <strong>@Maurice</strong>, 38 ans, Montpellier:<br>
                 Le 27/10/2020 11:59
             </div>
-            <div class="col-8">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, temporibus doloremque? 
+            <div class="col-12 my-2 col-md-8">
+                <div class="row">
+                    <div class="col-1 p-0">
+                        "
+                    </div>
+                    <div class="col-10 p-0">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, temporibus doloremque? Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                    <div class="col-1 p-0">
+                        "
+                    </div>
+                </div>
             </div>            
         </div>
+        
         <div class="row border billet">
-            <div class="col-4">
-            <strong>@Bob</strong>, 72 ans, Toulouse : <br>
+            <div class="col-12 col-md-4">
+                <strong>@Bob</strong>, 72 ans, Toulouse:<br>
                 Le 01/11/2020 22:36
             </div>
-            <div class="col-8">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, temporibus doloremque? 
+            <div class="col-12 my-2 col-md-8">
+                <div class="row">
+                    <div class="col-1 p-0">
+                        "
+                    </div>
+                    <div class="col-10 p-0">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, temporibus doloremque? 
+                    </div>
+                    <div class="col-1 p-0">
+                        "
+                    </div>
+                </div>
             </div>            
         </div>
-    </div>
 
-    <hr class="mb-4 mt-4">
+    </div>
+<!-- BOUTONS -->
+    <hr class="mb-4">
 
     <div class="row mb-4">
-        <div class="col-7 col-md-5">
+        <div class="col-12 col-md-5 my-2">
             <button class="btn btnGreen w-100">Comment y participer ?</button>
         </div>
-        <div class="col-7 offset-md-2 col-md-5">
+        <div class="col-12 offset-md-2 col-md-5 my-2">
             <button class="btn btnGreen w-100">contactez nous</button>
         </div>
     </div>
     <div class="row mb-4">
-        <div class="col-7 col-md-3">
+        <div class="col-12 col-md-3 my-2">
             <button class="btn btn-primary w-100">Modifier</button>
         </div>
-        <div class="col-7 offset-md-6 col-md-3">
+        <div class="col-12 offset-md-6 col-md-3 my-2">
             <button class="btn btn-danger w-100">Supprimer</button>
         </div>
     </div>
