@@ -10,6 +10,8 @@
 body{
     font-family: 'Piazzolla', serif,'Courier New', Courier, monospace;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     font-size: 20px;
 }
 
@@ -31,7 +33,31 @@ body{
 /**************ACCUEIL***************/
 
 /**************MISSIONS********************/
+
 /****Détails missions****/
+
+.imageDetailsMission{
+    background-image: url("../images/informatiqueAfrique.jpg");
+    background-size: cover;
+}
+
+.liDetailsMission > * {       /*Tout les enfants de liDetailsMission*/
+    padding-bottom: 15px;
+    margin: auto;
+}
+.liDetailsMission title{
+    font-weight: bold;
+}
+
+.billet{
+    margin: auto;
+    width: 90%;
+    padding: 20px;
+}
+
+
+/***Fin Détails mission**/
+
 /****liste missions******/
 
 /**************BLOG************************/
@@ -48,5 +74,8 @@ body{
 .inputConnexion{
     width: 70%;
 }
+/****Fin formulaire connexion**/
+
+
 /****formulaire inscription****/
 

@@ -114,7 +114,7 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 					      -pays d'action,	
 					      -inscription,
 					      -note
-					      -commentaires)
+					      -commentaires (id, titre, contenu, date))
 
 	   - 1 page participation à une mission : -formulaire inscription mission: -id
 										   -date_inscription_mission
@@ -136,7 +136,7 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 		-date d'ajout:hidden
 		-date de départ
 		-durée en jour
-		-nom
+		-organisateur
 		-titre de la mission
 		-photo(s)
 		-description
