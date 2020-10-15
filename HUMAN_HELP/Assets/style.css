@@ -1,15 +1,22 @@
 /*-------------ICI  LE  CODE  CSS--------------*/
-.logo2 {
+.logo1 {
     background-image: url("../images/logo1.png");
     background-size: cover;
+    width: 240px;
+    height: 240px;
+    margin: auto;
 }
 
 body{
     font-family: 'Piazzolla', serif,'Courier New', Courier, monospace;
+    box-sizing: border-box;
+    font-size: 20px;
 }
-p{
-    color: green;
+
+.btnGreen{
+    background-color: #A0F371;   /*CLASS A UTILISER POUR LES BOUTONS VERT *******/
 }
+
 
 /*          color:#A0F371;          */
 
@@ -23,15 +30,23 @@ p{
 
 /**************ACCUEIL***************/
 
-/**************MISSIONS**************/
+/**************MISSIONS********************/
 /****Détails missions****/
 /****liste missions******/
 
-/**************BLOG******************/
+/**************BLOG************************/
 /****Détails articles****/
 /****liste articles******/
 
-/**************FORMULAIRES***********/
+/**************FORMULAIRES*****************/
+
 /****Formulaire connexion******/
+.formConnexion button,input{
+    width: 70%;
+    margin: auto;
+}
+.inputConnexion{
+    width: 70%;
+}
 /****formulaire inscription****/
 

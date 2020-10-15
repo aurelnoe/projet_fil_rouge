@@ -124,6 +124,7 @@ Missions : - 1 page liste des missions : - Type d'activités (enseignement, mede
 										   -date_naissance
 										   -mail
 										   -telephone
+										   -profession
 										   -adresse (ville, libellé voix, code postal, complement adresse)
 										   -Ville
 										   -code_postale

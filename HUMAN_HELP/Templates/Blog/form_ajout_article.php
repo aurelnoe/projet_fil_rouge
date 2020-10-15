@@ -1,9 +1,13 @@
 <body>
 
-<div class="col-12 col-md-5 container pt-4 my-4 border rounded">
-        <h2 class="pb-3">Ajouter une nouvelle actualité</h2>
+<div class="col-12 col-md-4 container pt-4 my-4 border rounded">
 
-        <form class="needs-validation" action="" method="POST" novalidate>
+        <h2 class="text-center my-2 pb-2">Ajouter une nouvelle actualité</h2>
+
+        <form class="needs-validation  p-3" action="" method="POST" novalidate>
+
+            <hr class="mb-4 mt-2">
+
             <div class="mb-3">
                 <label for="titleArticle">Titre de l'article</label>
                 <input type="text" class="form-control" name="titleArticle" placeholder="" value="" required>
@@ -11,6 +15,7 @@
                     Ce champ est requis.
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-auto mb-3">
                     <label for="countryArticle">Pays concerné</label>
@@ -27,6 +32,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="mb-3">
                 <label for="descriptionArticle">Description de l'article</label>
                 <textarea type="textarea" class="form-control" name="descriptionArticle" placeholder=""></textarea>
@@ -34,10 +40,12 @@
                     Ce champ est requis.
                 </div>
             </div>
+
             <div class="mb-3">
                 <label for="imageArticle">Ajouter une image</label>
                 <input type="file" class="form-control" name="imageArticle" placeholder="" capture>
             </div>
+
             <div class="mb-3">
                 <label for="dateArticle">Date de l'article</label>
                 <div class="input-group date"  data-provide="datepicker">
@@ -50,12 +58,12 @@
                     Ce champ est requis.
                 </div>
             </div>
+
             <hr class="mb-4 mt-4">
-            <button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Ajouter un article</button>
+
+            <button class="btn btnGreen btn-lg btn-block mb-5" type="submit">Ajouter un article</button>
+
         </form>
-    </div>
-    <div class="text-center">
-        CAPCHAT
     </div>
 </body>
 
