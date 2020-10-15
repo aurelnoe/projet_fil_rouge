@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Piazzolla&display=swap" rel="stylesheet">
     <title>Formulaire de mofification d'une mission</title>
 </head>
-<body>
-<?php include("../Bases/navbar.php") ?>
 
-<div class="container w-50 pt-4 my-4 border rounded">
+<div class="col-12 col-md-5 container pt-4 my-4 border rounded">
 
     <h2 class="p-3">Formulaire de modification d'une mission</h2>
 
@@ -112,7 +103,5 @@
 
             <hr class="mb-4 mt-4">
             <button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Enregistrer la modification</button>
-          </form>
+        </form>
 </div>
-</body>
-</html>

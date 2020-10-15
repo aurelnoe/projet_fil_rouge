@@ -1,14 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Piazzolla&display=swap" rel="stylesheet">
-    <title>Formulaire d'ajout d'un article</title>
-</head>
 <body>
-    
+
+<div class="col-12 col-md-5 container pt-4 my-4 border rounded">
+        <h2 class="pb-3">Ajouter une nouvelle actualité</h2>
+
+        <form class="needs-validation" action="" method="POST" novalidate>
+            <div class="mb-3">
+                <label for="titleArticle">Titre de l'article</label>
+                <input type="text" class="form-control" name="titleArticle" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                    Ce champ est requis.
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto mb-3">
+                    <label for="countryArticle">Pays concerné</label>
+                    <select class="custom-select d-block w-100" name="countryArticle" required>
+                    <option value="">Choisissez...</option>
+                    <option>Mali</option>
+                    <option>Gabon</option>
+                    <option>Somalie</option>
+                    <option>Egypte</option>
+                    <option>Maroc</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Choisissez un pays valide.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="descriptionArticle">Description de l'article</label>
+                <textarea type="textarea" class="form-control" name="descriptionArticle" placeholder=""></textarea>
+                <div class="invalid-feedback">
+                    Ce champ est requis.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="imageArticle">Ajouter une image</label>
+                <input type="file" class="form-control" name="imageArticle" placeholder="" capture>
+            </div>
+            <div class="mb-3">
+                <label for="dateArticle">Date de l'article</label>
+                <div class="input-group date"  data-provide="datepicker">
+                    <input type="date" class="form-control" name="dateArticle" placeholder="jj/mm/aaaa" required>
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                </div>
+                <div class="invalid-feedback">
+                    Ce champ est requis.
+                </div>
+            </div>
+            <hr class="mb-4 mt-4">
+            <button class="btn btn-primary btn-lg btn-block mb-5" type="submit">Ajouter un article</button>
+        </form>
+    </div>
+    <div class="text-center">
+        CAPCHAT
+    </div>
 </body>
-</html>
+
