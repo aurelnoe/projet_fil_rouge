@@ -70,6 +70,9 @@
             <a class="dropdown-item" href="/HUMAN_HELP/?q=Missions/form_inscription_mission">participer à une mission</a>
             <a class="dropdown-item" href="/HUMAN_HELP/?q=Missions/details_mission">détails mission</a>
             <a class="dropdown-item" href="/HUMAN_HELP/?q=Missions/form_modif_mission">Modifier une mission</a>
+            <a class="dropdown-item" href="/HUMAN_HELP/?q=Missions/liste_mission_pro">Liste mission pro</a>
+            <a class="dropdown-item" href="/HUMAN_HELP/?q=Missions/pays_mission">Missions par pays</a>
+            <a class="dropdown-item" href="/HUMAN_HELP/?q=Missions/type_activite_mission">Missions par type d'activité</a>
           </div>
         </div>   
       </li>

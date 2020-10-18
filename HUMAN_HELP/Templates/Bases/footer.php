@@ -1,5 +1,5 @@
-<!-- <footer>
-    <div class="row text-center">
+<footer>
+    <div class="row text-center border">
         <div class="col-md-4">
         <ul>
             <li>Pays d'action</li>
@@ -24,4 +24,4 @@
         <button class="btn btnGreen btn-lg btn-block mb-5" type="submit">Contact</button>
         </div>
     </div>
-</footer> -->
+</footer>
