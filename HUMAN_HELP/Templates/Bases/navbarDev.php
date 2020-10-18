@@ -24,6 +24,18 @@
       <li class="nav-item">
         <div class="dropdown">
           <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Compte perso
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/HUMAN_HELP/?q=Compte_personnel/details_compte">Liste des articles</a>
+            <a class="dropdown-item" href="/HUMAN_HELP/?q=Compte_personnel/form_modif_compte">détails article</a>
+          </div>
+        </div>   
+      </li>
+
+      <li class="nav-item">
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Blog
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

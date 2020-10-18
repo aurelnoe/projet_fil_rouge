@@ -98,7 +98,7 @@
             </div>
             <div class="mb-3 form-group">
                 <label for="modifImageMission">Ajouter une image</label>
-                <input type="file" class="form-control" name="modifImageMission" placeholder="">
+                <input type="file" class="form-control-file" name="modifImageMission" placeholder="">
             </div>
 
             <hr class="mb-4 mt-4">
