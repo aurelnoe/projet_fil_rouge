@@ -1,9 +1,8 @@
-<div class="container-fluid">
-<div class="row">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 <img class="logo"
      href="HUMAN_HELP/?q=images/logo2.png"
      alt="Logo">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -51,5 +50,4 @@
     </ul>
     </div>
   </nav>
-</div>
-</div>
+
