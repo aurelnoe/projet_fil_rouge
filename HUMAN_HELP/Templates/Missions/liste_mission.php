@@ -3,25 +3,24 @@
 </head>
 
 <div class="container">
-
-    <div class="row my-4">
-        <div class="col-12 col-md-4 my-2">
-            <button class="btn btnGreen m-auto w-100">Consulter mes missions</button>
-        </div>
-        <div class="col-12 offset-md-3 col-md-5">
-            <div class="btn-group btnTypeFormation w-100">
-                <button class="btn btn-lg w-75">
-                    Type de formation
-                </button>
-                <button type="button" class="btn btn-lg btnGreen dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <div class="dropdown-menu">          
-                    <a class="dropdown-item" href="#"><strong> à distance</strong></a>
-                    <a class="dropdown-item" href="#"><strong> sur le terrain</strong></a>
-                </div>
-            </div>     
-        </div>
+   
+    <div class="col-12 col-md-4 m-auto">
+        <button class="btn btnGreen w-100 mt-2 mb-2">Consulter mes missions</button>    
+    </div>
+    
+    <div class="col-12 col-md-5 m-auto">
+        <div class="btn-group btnTypeFormation w-100 mt-2 mb-2">
+            <button class="btn btn-lg w-75">
+                Type de formation
+            </button>
+            <button type="button" class="btn btn-lg btnGreen dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <div class="dropdown-menu">          
+                <a class="dropdown-item" href="#"><strong> à distance</strong></a>
+                <a class="dropdown-item" href="#"><strong> sur le terrain</strong></a>
+            </div>
+        </div>     
     </div>
 
     <hr class="mt-3 mb-4">
