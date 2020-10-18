@@ -27,8 +27,8 @@
             Compte perso
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="/HUMAN_HELP/?q=Compte_personnel/details_compte">Liste des articles</a>
-            <a class="dropdown-item" href="/HUMAN_HELP/?q=Compte_personnel/form_modif_compte">détails article</a>
+            <a class="dropdown-item" href="/HUMAN_HELP/?q=Compte_personnel/details_compte">Details compte</a>
+            <a class="dropdown-item" href="/HUMAN_HELP/?q=Compte_personnel/form_modif_compte">Modification infos perso</a>
           </div>
         </div>   
       </li>
