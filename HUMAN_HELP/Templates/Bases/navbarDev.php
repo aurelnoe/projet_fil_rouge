@@ -17,6 +17,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/HUMAN_HELP/?q=Autres/Comment_ca_marche">Comment ca marche?</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/HUMAN_HELP/?q=FAQ/faq">FAQ</a>
+      </li>
 
       <li class="nav-item">
         <div class="dropdown">

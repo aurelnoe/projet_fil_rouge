@@ -1,4 +1,5 @@
 /*-------------ICI  LE  CODE  CSS--------------*/
+
 .logo1 {
     background-image: url("../images/logo1.png");
     background-size: cover;
@@ -13,6 +14,7 @@ body{
     margin: 0;
     padding: 0;
     font-size: 20px;
+    height: 100vh;    /*Pour prendre 100% de la hauteur de l'ecran*/
 }
 
 .btnGreen{
@@ -53,13 +55,50 @@ body{
     margin: auto;
     padding: 20px;
     margin-bottom: 10px;
-
 }
 
 
 /***Fin Détails mission**/
 
 /****liste missions******/
+
+.btnTypeFormation{
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+#mycarousel{
+    box-sizing: border-box;
+    margin: 0 auto;
+    min-height: 700px;
+}
+
+.carousel-inner{
+    text-align: center;
+}
+.carousel-inner h3{
+    padding-top: 15px;
+}
+
+.card{
+    max-height: 560px;
+    min-height: 560px;
+    height: 100%;
+    width: 100%;
+    margin-top: 15px;
+    border: 1px solid black;
+}
+ .carousel img{
+     max-height: 320px;
+     min-height: 320px;
+     border-bottom: 1px solid grey;
+     
+ }
+
+ .carousel-indicators > li{
+    background-color:#A0F371;   /*couleur des indacateurs*/
+ }
+/********Fin liste missions*******/
 
 /**************BLOG************************/
 /****Détails articles****/
