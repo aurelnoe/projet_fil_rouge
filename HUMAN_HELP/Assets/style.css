@@ -1,25 +1,25 @@
 /*-------------ICI  LE  CODE  CSS--------------*/
 
 .logo1 {
-    background-image: url("../images/logo1.png");
-    background-size: cover;
-    width: 240px;
-    height: 240px;
-    margin: auto;
+  background-image: url("../images/logo1.png");
+  background-size: cover;
+  width: 240px;
+  height: 240px;
+  margin: auto;
 }
 
 body{
-    font-family: 'Piazzolla', serif,'Courier New', Courier, monospace;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    height: 100vh;    /*Pour prendre 100% de la hauteur de l'ecran*/
+  font-family: 'Piazzolla', serif,'Courier New', Courier, monospace;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  height: 100vh;    /*Pour prendre 100% de la hauteur de l'ecran*/
 }
 
 .btnGreen{
-    background-color: #A0F371;   /*CLASS A UTILISER POUR LES BOUTONS VERT (COULEUR NON DEFINITIVE)*******/
-    border: 1px solid black;
+  background-color: #A0F371;   /*CLASS A UTILISER POUR LES BOUTONS VERT (COULEUR NON DEFINITIVE)*******/
+  border: 1px solid black;
 }
 
 
@@ -33,7 +33,12 @@ body{
 
 /**************FOOTER****************/
 ul {
-  text-decoration: none;
+list-style-type: none;
+}
+
+a{
+text-decoration: none;
+color: black;
 }
 /**************ACCUEIL***************/
 
@@ -42,22 +47,22 @@ ul {
 /****Détails missions****/
 
 .imageDetailsMission{
-    background-image: url("../images/informatiqueAfrique.jpg");
-    background-size: cover;
+  background-image: url("../images/informatiqueAfrique.jpg");
+  background-size: cover;
 }
 
 .liDetailsMission > * {       /*Tout les enfants de liDetailsMission*/
-    padding-bottom: 15px;
-    margin: auto;
+  padding-bottom: 15px;
+  margin: auto;
 }
 .liDetailsMission title{
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .billet{
-    margin: auto;
-    padding: 20px;
-    margin-bottom: 10px;
+  margin: auto;
+  padding: 20px;
+  margin-bottom: 10px;
 }
 
 
@@ -66,41 +71,41 @@ ul {
 /****liste missions******/
 
 .btnTypeFormation{
-    border: 1px solid black;
-    border-radius: 4px;
+  border: 1px solid black;
+  border-radius: 4px;
 }
 
 #mycarousel{
-    box-sizing: border-box;
-    margin: 0 auto;
-    min-height: 700px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  min-height: 700px;
 }
 
 .carousel-inner{
-    text-align: center;
+  text-align: center;
 }
 .carousel-inner h3{
-    padding-top: 15px;
+  padding-top: 15px;
 }
 
 .card{
-    max-height: 560px;
-    min-height: 560px;
-    height: 100%;
-    width: 100%;
-    margin-top: 15px;
-    border: 1px solid black;
+  max-height: 560px;
+  min-height: 560px;
+  height: 100%;
+  width: 100%;
+  margin-top: 15px;
+  border: 1px solid black;
 }
- .carousel img{
-     max-height: 320px;
-     min-height: 320px;
-     border-bottom: 1px solid grey;
-     
- }
+.carousel img{
+   max-height: 320px;
+   min-height: 320px;
+   border-bottom: 1px solid grey;
+   
+}
 
- .carousel-indicators > li{
-    background-color:#A0F371;   /*couleur des indacateurs*/
- }
+.carousel-indicators > li{
+  background-color:#A0F371;   /*couleur des indacateurs*/
+}
 /********Fin liste missions*******/
 
 /**************BLOG************************/
@@ -111,11 +116,11 @@ ul {
 
 /****Formulaire connexion******/
 .formConnexion button,input{
-    width: 70%;
-    margin: auto;
+  width: 70%;
+  margin: auto;
 }
 .inputConnexion{
-    width: 70%;
+  width: 70%;
 }
 /****Fin formulaire connexion**/
 
@@ -126,118 +131,118 @@ ul {
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
 body {
-  color: #333;
-  background: #fcfcfc;
-  font-family: 'Raleway', sans-serif;
-  overflow-x: hidden; /* Permet de cacher lorsque le contenu dépasse des bords droit et gauche de la boîte de contenu. */
+color: #333;
+background: #fcfcfc;
+font-family: 'Raleway', sans-serif;
+overflow-x: hidden; /* Permet de cacher lorsque le contenu dépasse des bords droit et gauche de la boîte de contenu. */
 }
 
-  .faq-section {
-      background: #fdfdfd;
-      min-height: 100vh;
-      padding: 10vh 0 0;
-  }
-  .faq-title h2 {
-    position: relative;
-    margin-bottom: 45px;
-    display: inline-block;
-    font-weight: 600;
-    line-height: 1;
-  }
-  .faq-title h2::before {   /* permet de gérer le trait en dessous du titre*/
-      content: "";
-      position: absolute;
-      left: 50%;
-      width: 60px;
-      height: 2px;
-      background: #A0F371;
-      bottom: -25px;
-      margin-left: -30px;
-  }
-  
-  .faq {                               /* permet de gérer l'emsemble des card*/
-    background: #FFFFFF;
-    box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
-    border-radius: 4px;
-  }
-  
-  .faq .card {
-    border: none;
-    background: none;
-    border-bottom: 1px dashed #CEE1F8;
-  }
-  
-  .faq .card .card-header {
-    padding: 0px;
-    border: none;
-    background: none;
-    -webkit-transition: all 0.3s ease 0s;        /*Temps de transition de changement de style*/
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-  }
-  
-  .faq .card .card-header:hover {
-      background: #A0F371;
-      padding-left: 10px;
-  }
-  .faq .card .card-header .faq-title {
-    width: 100%;
-    text-align: left;
-    padding: 0px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-weight: 400;
-    font-size: 15px;
-    letter-spacing: 1px;
-    color: #3B566E;
-    text-decoration: none !important;
-    -webkit-transition: all 0.3s ease 0s;
-    -moz-transition: all 0.3s ease 0s;
-    -o-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  
-  .faq .card .card-header .faq-title .badge {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    line-height: 14px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    border-radius: 100px;
-    text-align: center;
+.faq-section {
+    background: #fdfdfd;
+    min-height: 100vh;
+    padding: 10vh 0 0;
+}
+.faq-title h2 {
+  position: relative;
+  margin-bottom: 45px;
+  display: inline-block;
+  font-weight: 600;
+  line-height: 1;
+}
+.faq-title h2::before {   /* permet de gérer le trait en dessous du titre*/
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 60px;
+    height: 2px;
     background: #A0F371;
-    color: #fff;
-    font-size: 12px;
-    margin-right: 20px;
-  }
-  
-  .faq .card .card-body {
-    padding: 30px;
-    padding-left: 35px;
-    padding-bottom: 16px;
-    font-weight: 400;
-    font-size: 16px;
-    color: #6F8BA4;
-    line-height: 28px;
-    letter-spacing: 1px;
-    border-top: 1px solid #F3F8FF;
-  }
-  
-  .faq .card .card-body p {
-    margin-bottom: 14px;
-  }
-  
-  @media (max-width: 991px) {
-    .faq {
-        margin-bottom: 30px;
-      }
-      .faq .card .card-header .faq-title {
-        line-height: 26px;
-        margin-top: 10px;
-      }
+    bottom: -25px;
+    margin-left: -30px;
+}
+
+.faq {                               /* permet de gérer l'emsemble des card*/
+  background: #FFFFFF;
+  box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+}
+
+.faq .card {
+  border: none;
+  background: none;
+  border-bottom: 1px dashed #CEE1F8;
+}
+
+.faq .card .card-header {
+  padding: 0px;
+  border: none;
+  background: none;
+  -webkit-transition: all 0.3s ease 0s;        /*Temps de transition de changement de style*/
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.faq .card .card-header:hover {
+    background: #A0F371;
+    padding-left: 10px;
+}
+.faq .card .card-header .faq-title {
+  width: 100%;
+  text-align: left;
+  padding: 0px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #3B566E;
+  text-decoration: none !important;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.faq .card .card-header .faq-title .badge {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 14px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  text-align: center;
+  background: #A0F371;
+  color: #fff;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.faq .card .card-body {
+  padding: 30px;
+  padding-left: 35px;
+  padding-bottom: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #6F8BA4;
+  line-height: 28px;
+  letter-spacing: 1px;
+  border-top: 1px solid #F3F8FF;
+}
+
+.faq .card .card-body p {
+  margin-bottom: 14px;
+}
+
+@media (max-width: 991px) {
+  .faq {
+      margin-bottom: 30px;
     }
+    .faq .card .card-header .faq-title {
+      line-height: 26px;
+      margin-top: 10px;
+    }
+  }
