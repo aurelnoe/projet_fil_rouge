@@ -2,12 +2,13 @@
     <div class="row text-center">
         <div class="col-md-4">
         <ul class="list-footer list-group list-group-flush">
-            <li class="list-group-item"><a style="text-decoration:none" href="#navbarPays">Pays d'action</a></li>
-            <li class="list-group-item"><a style="text-decoration:none" href="#navbarActivite">Types d'activités</a></li>
+            <li class="list-group-item"><a style="text-decoration:none" href="#navbarSupportedContent">Pays d'action</a></li>
+            <li class="list-group-item"><a style="text-decoration:none" href="#navbarSupportedContent">Types d'activités</a></li>
             <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/?q=Autres/comment_ca_marche">Comment ça marche</a></li>
             <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/?q=Security/form_inscription">Inscription</a></li>
             <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/?q=Security/form_connexion">Connexion</a></li>
         </ul>
+        <!-- changer les liens ancres pour les mettres sur la banière -->
         </div>
         <div class="col-md-4">
         <ul class="list-footer list-group list-group-flush">
