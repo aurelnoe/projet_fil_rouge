@@ -66,41 +66,35 @@ ul {
 /****liste missions******/
 
 .btnTypeFormation{
-    border: 1px solid black;
-    border-radius: 4px;
-}
-
-#mycarousel{
-    box-sizing: border-box;
-    margin: 0 auto;
-    min-height: 700px;
+  border: 1px solid black;
+  border-radius: 4px;
 }
 
 .carousel-inner{
-    text-align: center;
-}
-.carousel-inner h3{
-    padding-top: 15px;
+  text-align: center;
 }
 
-.card{
-    max-height: 560px;
-    min-height: 560px;
-    height: 100%;
-    width: 100%;
-    margin-top: 15px;
-    border: 1px solid black;
+.carouselListeMission .carousel-inner h3{ 
+  padding-top: 15px;
 }
- .carousel img{
-     max-height: 320px;
-     min-height: 320px;
-     border-bottom: 1px solid grey;
-     
- }
 
- .carousel-indicators > li{
-    background-color:#A0F371;   /*couleur des indacateurs*/
- }
+.cardListeMission{
+  max-height: 560px;
+  min-height: 560px;
+  height: 100%;
+  width: 100%;
+  margin-top: 15px;
+  border: 1px solid black;
+}
+.carouselListeMission img{
+  max-height: 320px;
+  min-height: 320px;
+  border-bottom: 1px solid grey;   
+}
+
+.carousel-indicators > li{
+background-color:#A0F371;   /*couleur des indacateurs*/
+}
 /********Fin liste missions*******/
 
 /**************BLOG************************/

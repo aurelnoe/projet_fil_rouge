@@ -38,7 +38,7 @@
 
     <!-- CAROUSEL --------------------------------------------------------------------------->
     <div class="col-12 border rounded">
-        <div id="carouselEnseignement" class="carousel slide" data-ride="carousel" data-interval="10000">
+        <div id="carouselEnseignement" class="carousel  carouselListeMission carouselListeMission slide" data-ride="carousel" data-interval="10000">
             <div>
                 <ol class="carousel-indicators">
                     <li data-target="#carouselEnseignement" data-slide-to="0" class="active"></li>
@@ -54,7 +54,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -95,7 +95,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -107,7 +107,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -136,7 +136,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -148,7 +148,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -180,7 +180,7 @@
     <hr class="mt-4 mb-4">
 
     <div class="col-12 border rounded">
-        <div id="carouselConstruction" class="carousel slide" data-ride="carousel" data-interval="10000">
+        <div id="carouselConstruction" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
             <div>
                 <ol class="carousel-indicators">
                     <li data-target="#carouselConstruction" data-slide-to="0" class="active"></li>
@@ -196,7 +196,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -208,7 +208,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -237,7 +237,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -249,7 +249,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -278,7 +278,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -290,7 +290,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -324,7 +324,7 @@
     <hr class="mt-4 mb-4">
 
     <div class="col-12 border rounded">
-        <div id="carouselDonations" class="carousel slide" data-ride="carousel" data-interval="10000">
+        <div id="carouselDonations" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
             <div>
                 <ol class="carousel-indicators">
                     <li data-target="#carouselDonations" data-slide-to="0" class="active"></li>
@@ -340,7 +340,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -352,7 +352,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -381,7 +381,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -393,7 +393,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -422,7 +422,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -434,7 +434,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -468,7 +468,7 @@
     <hr class="mt-4 mb-4">
 
     <div class="col-12 border rounded">
-        <div id="carouselMedecine" class="carousel slide" data-ride="carousel" data-interval="10000">
+        <div id="carouselMedecine" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
             <div>
                 <ol class="carousel-indicators">
                     <li data-target="#carouselMedecine" data-slide-to="0" class="active"></li>
@@ -484,7 +484,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -496,7 +496,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -525,7 +525,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -537,7 +537,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -566,7 +566,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -578,7 +578,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -612,7 +612,7 @@
     <hr class="mt-4 mb-4">
 
     <div class="col-12 border rounded">
-        <div id="carouselTraduction" class="carousel slide" data-ride="carousel" data-interval="10000">
+        <div id="carouselTraduction" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
             <div>
                 <ol class="carousel-indicators">
                     <li data-target="#carouselTraduction" data-slide-to="0" class="active"></li>
@@ -628,7 +628,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -640,7 +640,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -669,7 +669,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -681,7 +681,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>
@@ -710,7 +710,7 @@
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre : Développement numérique</h5>
@@ -722,7 +722,7 @@
                                 </div>
                             </div>
                             <div class="col-12 col-md-6">
-                                <div class="card">
+                                <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
                                     <div class="card-body">
                                         <h5 class="card-title">Titre de la mission</h5>

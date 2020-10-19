@@ -13,10 +13,10 @@
             <ul class="liDetailsMission">
                 <li><strong>Titre de la mission :</strong> Développement numérique</li>
                 <li><strong>Type d'activité :</strong> Informatique</li>
-                <li><strong>Formation :</strong> à distance</li>
+                <li><strong>Mission :</strong> à distance</li>
                 <li><strong>Pays :</strong> Ghana (Afrique centrale)</li>
                 <li><strong>Organisateur :</strong> Association Développement Numérique d'Accra</li>
-                <li><strong>Durée de la formation :</strong> 60 jours</li>
+                <li><strong>Durée de la mission :</strong> 60 jours</li>
                 <li><strong>Date début :</strong> 26 Mai 2021</li>
             </ul>
         </div>
