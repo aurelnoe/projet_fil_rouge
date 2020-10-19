@@ -5,18 +5,19 @@
             <li><a href="#navbarPays">Pays d'action</a></li>
             <li><a href="#navbarActivite">Types d'activités</a></li>
             <li><a href="/HUMAN_HELP/?q=Autres/comment_ca_marche">Comment ça marche</a></li>
-            <li><a href="/HUMAN_HELP/?q=FAQ/faq">FAQ</a></li>
-            <li><a href="/HUMAN_HELP/?q=Blog/liste_article">Blog</a></li>
             <li><a href="/HUMAN_HELP/?q=Security/form_inscription">Inscription</a></li>
             <li><a href="/HUMAN_HELP/?q=Security/form_connexion">Connexion</a></li>
         </ul>
         </div>
         <div class="col-md-4">
         <ul>
-            <li>Informations générales</li>
+
             <li>Politiques de confidentialités</li>
-            <li>Cookies</li>
-            <li>Conditions générales</li>
+            <li>Politique d'utilisation des cookies</li>
+            <li>Conditions générales</li> 
+            <li><a href="/HUMAN_HELP/?q=FAQ/faq">FAQ</a></li>
+            <li><a href="/HUMAN_HELP/?q=Blog/liste_article">Blog</a></li>
+
         </ul>
         </div>
         <div class="col-md-4">
