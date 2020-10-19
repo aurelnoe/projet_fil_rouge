@@ -8,7 +8,7 @@
 
             <hr class="mb-4 mt-2">
 
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="titleArticle">Titre de l'article</label>
                 <input type="text" class="form-control" name="titleArticle" placeholder="" value="" required>
                 <div class="invalid-feedback">
@@ -43,7 +43,7 @@
 
             <div class="mb-3">
                 <label for="imageArticle">Ajouter une image</label>
-                <input type="file" class="form-control" name="imageArticle" placeholder="" capture>
+                <input type="file" class="form-control-file" name="imageArticle" placeholder="" capture>
             </div>
 
             <div class="mb-3">

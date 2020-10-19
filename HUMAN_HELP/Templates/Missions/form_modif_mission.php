@@ -7,14 +7,14 @@
     <h2 class="p-3">Formulaire de modification d'une mission</h2>
 
     <form class="needs-validation" novalidate>
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="modifDenomination">Dénomination sociale</label>
                 <input type="text" class="form-control" name="modifDenomination" placeholder="" value="" required>
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="title">Titre de la mission</label>
                 <input type="text" class="form-control" name="title" placeholder="" value="" required>
                 <div class="invalid-feedback">
@@ -55,14 +55,14 @@
                     </div>
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="modifDescriptionMission">Description de la mission</label>
                 <textarea type="textarea" class="form-control" name="modifDescriptionMission" placeholder=""></textarea>
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div>
-            <div class="d-block mb-3">
+            <div class="d-block mb-3 form-group">
                 <label>Type de formation</label>
                 <div class="row">
                     <div class="custom-control custom-radio mx-4">
@@ -76,7 +76,7 @@
                 </div>  
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="modifDateMission">Date de début de la mission</label>
                 <div class="input-group date"  data-provide="datepicker">
                     <input type="date" class="form-control" name="modifDateMission" placeholder="jj/mm/aaaa" required>
@@ -89,16 +89,16 @@
                 </div>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="modifDureeMission">Durée de la mission<span class="text-muted"> (en jour)</span></label>
                 <input type="number" class="form-control" name="modifDureeMission" placeholder="">
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="modifImageMission">Ajouter une image</label>
-                <input type="file" class="form-control" name="modifImageMission" placeholder="">
+                <input type="file" class="form-control-file" name="modifImageMission" placeholder="">
             </div>
 
             <hr class="mb-4 mt-4">

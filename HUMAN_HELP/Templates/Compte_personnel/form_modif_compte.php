@@ -1,6 +1,7 @@
 <head>
-    <title>Formulaire de modification des informations personnelles</title>
+    <title>Formulaire informations personnelles</title>
 </head>
 
-<div class="col-12 col-md-5 container pt-4 my-4 border rounded">
+<div class="container">
+    <h2>Formulaire de modification des informations personnelles</h2>
 </div>

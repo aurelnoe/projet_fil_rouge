@@ -10,7 +10,7 @@
 
             <hr class="mb-4 mt-2">
 
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="denomination">Dénomination sociale</label>
                 <input type="text" class="form-control" name="denomination" placeholder="" value="" required>
                 <div class="invalid-feedback">
@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="title">Titre de la mission</label>
                 <input type="text" class="form-control" name="title" placeholder="" value="" required>
                 <div class="invalid-feedback">
@@ -26,7 +26,7 @@
                 </div>
             </div>   
 
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="email">Adresse mail</label>
                 <input type="email" class="form-control" name="email" placeholder="you@example.com">
                 <div class="invalid-feedback">
@@ -70,14 +70,14 @@
                 </div>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="descriptionMission">Description de la mission</label>
                 <textarea type="textarea" class="form-control" name="descriptionMission" placeholder=""></textarea>
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div>
-            <div class="d-block mb-3">
+            <div class="d-block mb-3 form-group">
                 <label>Type de formation</label>
                 <div class="row">
                     <div class="custom-control custom-radio mx-4">
@@ -91,7 +91,7 @@
                 </div>  
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="dateMission">Date de début de la mission</label>
                 <div class="input-group date"  data-provide="datepicker">
                     <input type="date" class="form-control" name="dateMission" placeholder="jj/mm/aaaa" required>
@@ -104,16 +104,16 @@
                 </div>
             </div>
 
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="dureeMission">Durée de la mission<span class="text-muted"> (en jour)</span></label>
                 <input type="number" class="form-control" name="dureeMission" placeholder="">
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div>
-            <div class="mb-3">
+            <div class="mb-3 form-group">
                 <label for="imageMission">Ajouter une image</label>
-                <input type="file" class="form-control" name="imageMission" placeholder="" capture>
+                <input type="file" class="form-control-file" name="imageMission" placeholder="" capture>
             </div>
 
             <hr class="mb-4 mt-4">
