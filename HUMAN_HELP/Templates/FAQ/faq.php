@@ -11,7 +11,7 @@
                         </div>
                         <div class="col-md-6 offset-md-3">
                             <div class="faq" id="all-card">
-                                <div class="card">
+                                <div class="card card-faq">
                                     <div class="card-header" id="faqHeading-1">
                                         <div class="mb-0">
                                             <h5 class="faq-title">
@@ -20,7 +20,7 @@
                                         </div>
                                     </div>   
                                 </div>
-                                <div class="card">
+                                <div class="card card-faq">
                                     <div class="card-header" id="faqHeading-2">
                                         <div class="mb-0">
                                             <h5 class="faq-title" >
@@ -29,7 +29,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
+                                <div class="card card-faq">
                                     <div class="card-header" id="faqHeading-3">
                                         <div class="mb-0">
                                             <h5 class="faq-title">
@@ -38,7 +38,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
+                                <div class="card card-faq">
                                     <div class="card-header" id="faqHeading-4">
                                         <div class="mb-0">
                                             <h5 class="faq-title">
@@ -47,7 +47,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
+                                <div class="card card-faq">
                                     <div class="card-header" id="faqHeading-5">
                                         <div class="mb-0">
                                             <h5 class="faq-title" >
