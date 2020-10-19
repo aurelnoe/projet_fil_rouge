@@ -55,7 +55,7 @@
           <form>
   <div class="form-group">
     <label for="exampleInputEmail1">email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required pattern="^\w{2,}@\w{2,}\.\w{2,}$">
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div class="form-group">

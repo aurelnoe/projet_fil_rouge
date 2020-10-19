@@ -14,7 +14,7 @@
             <div class="mb-3">
                 <label for="ContactEmail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-auto mb-3 w-50">
-                <input type="email" class="form-control" id="ContactEmail" placeholder="Email">
+                <input type="email" class="form-control" id="ContactEmail" placeholder="Email" required pattern="^\w{2,}@\w{2,}\.\w{2,}$">
                 </div>
             </div>
 
@@ -50,9 +50,7 @@
               
             <div class="col-auto mb-3 w-50">
                     <label for="NumContact">Téléphone</label>
-                    <input type="tel" id="NumContact" name="NumContact" placeholder="Tél"
-                        pattern="(\+|00)33\s?|0)[67](\s?\d{2}){4}"
-                        required>
+                    <input type="tel" id="NumContact" name="NumContact" placeholder="Tél" required pattern="^0(6|7)[0-9]{8}$">
             </div>
             
 

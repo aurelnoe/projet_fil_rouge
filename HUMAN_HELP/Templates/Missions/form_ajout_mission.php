@@ -28,7 +28,7 @@
 
             <div class="mb-3 form-group">
                 <label for="email">Adresse mail</label>
-                <input type="email" class="form-control" name="email" placeholder="you@example.com">
+                <input type="email" class="form-control" name="email" placeholder="you@example.com" required pattern="^\w{2,}@\w{2,}\.\w{2,}$">
                 <div class="invalid-feedback">
                     Please enter a valid email address for shipping updates.
                 </div>
