@@ -55,9 +55,14 @@ footer {
   }
 
 
-/**************ACCUEIL***************/
+/**************ACCUEIL****************************************/
 
-/**************MISSIONS********************/
+.accueil h1{
+  margin: 50px auto 50px;
+  padding: 0px 50px 0px 50px;
+}
+
+/**************MISSIONS**************************************/
 
 /****Détails missions****/
 
@@ -117,11 +122,11 @@ background-color:#A0F371;   /*couleur des indacateurs*/
 }
 /********Fin liste missions*******/
 
-/**************BLOG************************/
+/*************************************BLOG****************************/
 /****Détails articles****/
 /****liste articles******/
 
-/**************FORMULAIRES*****************/
+/********************FORMULAIRES*************************************/
 
 /****Formulaire connexion******/
 .formConnexion button,input{

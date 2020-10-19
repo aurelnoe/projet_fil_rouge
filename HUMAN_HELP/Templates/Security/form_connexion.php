@@ -4,7 +4,7 @@
 
 <div class="col-11 col-md-4 container pt-2 my-5 border rounded">
 
-  <form class="form-signin m-auto text-center p-3 formConnexion" action="../../Sources/recuperation.php" method="POST">
+  <form class="form-signin m-auto text-center p-3 formConnexion" action="" method="POST">
 
     <div class="logo1 mb-4"></div>
 
@@ -12,7 +12,7 @@
 
     <div class="form-label-group mb-4">
         <label for="mail" class="sr-only">Adresse mail</label>
-        <input type="text" name="mail" class="form-control inputConnexion" placeholder="email@mail.com" required pattern="^\w{2,}@\w{2,}\.\w{2,}$">
+        <input type="email" name="mail" class="form-control inputConnexion" placeholder="email@mail.com" required pattern="^\w{2,}@\w{2,}\.\w{2,}$">
     </div>
 
     <div class="form-label-group mb-4">

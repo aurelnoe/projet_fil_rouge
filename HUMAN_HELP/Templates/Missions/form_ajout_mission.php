@@ -2,7 +2,7 @@
     <title>Formulaire d'ajout d'une mission</title>
 </head>
 
-<div class="col-12 col-md-4 container pt-4 my-4 border rounded">
+<div class="col-12 col-md-6 container pt-4 my-4 border rounded">
 
         <h2 class="text-center my-2 pb-2">Ajouter une nouvelle mission</h2>
 
@@ -34,8 +34,8 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-auto mb-3 w-50">
+            <div class="row p-0">
+                <div class="col-12 col-md-6 mb-3 w-50 list-group pl-3">
                     <label for="country">Pays concerné</label>
                     <select class="custom-select d-block w-100" name="country" required>
                     <option value="">Choisissez...</option>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 
-                <div class="col-auto mb-3 w-50">
+                <div class="col-12 col-md-6 mb-3 w-50 list-group">
                     <label for="activity">Type d'activité de la mission</label>
                     <select class="custom-select d-block w-100" name="activity" required>
                         <option value="">Choisissez...</option>
