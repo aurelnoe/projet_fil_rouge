@@ -33,12 +33,14 @@ body{
 
 /**************FOOTER****************/
 footer {
-  padding: 20px;
   margin: 20px;
   }
   
-  ul {
+  footer ul {
   list-style-type: none;
+  }
+  .list-footer {
+  margin: 2%;
   }
   
    footer a{
@@ -48,10 +50,15 @@ footer {
   footer a:hover{
     color: grey;
     }
-  
   .button-footer{
-    margin-top: 80px;
-    width: 50%;
+    margin-top: 4%;
+  }
+  .button-footer1{
+    width:70%;
+  }
+  .button-footer2{
+    margin-top: 2%;
+    width:70%;
   }
 
 

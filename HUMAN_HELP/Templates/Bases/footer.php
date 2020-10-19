@@ -20,8 +20,8 @@
         </ul>
         </div>
         <div class="col-md-4 button-footer">
-        <button class="btn btnGreen btn-lg btn-block mb-5 button-footer1" type="submit">S'inscrire à la Newsletter</button>
-        <button class="btn btnGreen btn-lg btn-block mb-5 button-footer2" type="submit">Contact</button>
+        <button class="btn btnGreen btn-lg  mb-5 button-footer1 text-center" type="submit">S'inscrire à la Newsletter</button>
+        <button class="btn btnGreen btn-lg  mb-5 button-footer2 text-center" type="submit">Contact</button>
         </div>
     </div>
 </footer>
