@@ -1,4 +1,4 @@
-/*-------------ICI  LE  CODE  CSS--------------*/
+/*-------------DEBUT CODE GENERAL CSS--------------*/
 
 .logo1 {
   background-image: url("../images/logo1.png");
@@ -18,12 +18,15 @@ body{
 }
 
 .btnGreen{
-  background-color: #A0F371;   /*CLASS A UTILISER POUR LES BOUTONS VERT (COULEUR NON DEFINITIVE)*******/
-  border: 1px solid black;
+  background-color: #58b368;   /*CLASS A UTILISER POUR LES BOUTONS VERT (COULEUR NON DEFINITIVE)*******/
+  border: 2px outset #58b368;
+  color: white;
 }
 
 
-/*          color:#A0F371;          */
+/*       autre vert   color:#A0F371;          */
+
+/*---------FIN CODE GENERAL------------*/
 
 /**************HEADER****************/
 
@@ -125,7 +128,7 @@ footer {
 }
 
 .carousel-indicators > li{
-background-color:#A0F371;   /*couleur des indacateurs*/
+background-color:#58b368;   /*couleur des indacateurs*/
 }
 /********Fin liste missions*******/
 
@@ -176,7 +179,7 @@ body {
       left: 50%;
       width: 60px;
       height: 2px;
-      background: #A0F371;
+      background: #58b368;
       bottom: -25px;
       margin-left: -30px;
   }
@@ -204,7 +207,7 @@ body {
   }
   
   .faq .card .card-header:hover {
-      background: #A0F371;
+      background: #58b368;
       padding-left: 10px;
   }
   .faq .card .card-header .faq-title {
@@ -236,7 +239,7 @@ body {
     -moz-border-radius: 100px;
     border-radius: 100px;
     text-align: center;
-    background: #A0F371;
+    background: #58b368;
     color: #fff;
     font-size: 12px;
     margin-right: 20px;
