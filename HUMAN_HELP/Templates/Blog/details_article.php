@@ -1,6 +1,9 @@
 <head><title>Détails article</title></head>
+
 <div class="container">
+
     <h2 class="text-center my-5">Titre de l'article</h2>
+    
     <div class="p-2">
         <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi laboriosam totam blanditiis autem rem repellendus maiores hic ipsam dolorem quam, qui dolor similique impedit pariatur excepturi, expedita doloribus voluptatem soluta.

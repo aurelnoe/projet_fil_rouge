@@ -154,7 +154,7 @@
 			</div>
 		</div>		
 
-		<hr class="mt-4 mb-4">		
+		<hr class="my-4">		
 		
 		<div class="row mb-4 p-2">
 			<div class="col-12 col-md-4 mt-4">
@@ -213,7 +213,7 @@
 			</div>		
 		</div>
 		
-		<hr class="mt-3 mb-4">
+		<hr class="my-4">
 
 		<div class="col-12 border rounded">
         	<div id="carouselArticleAccueil" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
@@ -354,7 +354,7 @@
 			</div>
 		</div>
 
-		<hr class="mt-3 mb-4">
+		<hr class="my-4">
 
 		<div class="col-12 border rounded">
         	<div id="carouselMissionAccueil" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
