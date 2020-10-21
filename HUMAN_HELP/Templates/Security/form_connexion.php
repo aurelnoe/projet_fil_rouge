@@ -2,7 +2,7 @@
     <title>Connexion</title>
 </head>
 
-<div class="col-11 col-md-4 container pt-2 my-5 border rounded">
+<div class="container col-11 col-md-4 pt-2 my-5 border rounded">
 
   <form class="form-signin m-auto text-center p-3 formConnexion" action="" method="POST">
 

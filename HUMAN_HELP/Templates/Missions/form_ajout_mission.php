@@ -34,35 +34,35 @@
                 </div>
             </div>
 
-            <div class="row p-0">
-                <div class="col-12 col-md-6 mb-3 w-50 list-group pl-3">
-                    <label for="country">Pays concerné</label>
-                    <select class="custom-select d-block w-100" name="country" required>
-                    <option value="">Choisissez...</option>
-                    <option>Mali</option>
-                    <option>Gabon</option>
-                    <option>Somalie</option>
-                    <option>Egypte</option>
-                    <option>Maroc</option>
+            <div class="row p-0 mb-3">
+                <div class="col-12 col-md-6 form-group w-50 pl-3">
+                    <label class="h-50" for="country">Pays concerné</label>
+                    <select class="custom-select list-group d-block h-50 w-100" name="country" required>
+                    <option class="list-group-item" value="">Choisissez...</option>
+                    <option class="list-group-item">Mali</option>
+                    <option class="list-group-item">Gabon</option>
+                    <option class="list-group-item">Somalie</option>
+                    <option class="list-group-item">Egypte</option>
+                    <option class="list-group-item">Maroc</option>
                     </select>
                     <div class="invalid-feedback">
                     Choisissez un pays valide.
                     </div>
                 </div>
                 
-                <div class="col-12 col-md-6 mb-3 w-50 list-group">
-                    <label for="activity">Type d'activité de la mission</label>
-                    <select class="custom-select d-block w-100" name="activity" required>
-                        <option value="">Choisissez...</option>
-                        <option>Médecine</option>
-                        <option>Enseignement</option>
-                        <option>Donations</option>
-                        <option>Traduction</option>
-                        <option>Construction</option>
-                        <option>Sportive</option>
-                        <option>Aide juridique</option>
-                        <option>Soutient psychologique</option>
-                        <option>Aide administrative</option>
+                <div class="col-12 col-md-6 w-50 form-group pl-3">
+                    <label class=" h-50" for="activity">Type d'activité de la mission</label>
+                    <select class="custom-select list-group d-block h-50 w-100" name="activity" required>
+                        <option class="list-group-item" value="">Choisissez...</option>
+                        <option class="list-group-item">Médecine</option>
+                        <option class="list-group-item">Enseignement</option>
+                        <option class="list-group-item">Donations</option>
+                        <option class="list-group-item">Traduction</option>
+                        <option class="list-group-item">Construction</option>
+                        <option class="list-group-item">Sportive</option>
+                        <option class="list-group-item">Aide juridique</option>
+                        <option class="list-group-item">Soutient psychologique</option>
+                        <option class="list-group-item">Aide administrative</option>
                     </select>
                     <div class="invalid-feedback">
                         Ce champ est requis.
