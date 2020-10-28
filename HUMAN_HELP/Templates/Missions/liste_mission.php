@@ -5,7 +5,7 @@
 <div class="container">
    
     <div class="col-12 col-md-4 m-auto">
-        <button class="btn btnGreen w-100 mt-2 mb-2">Consulter mes missions</button>    
+        <a href="/HUMAN_HELP/?q=Missions/liste_mission_pro" class="btn btnGreen w-100 mt-2 mb-2">Consulter mes missions</a>
     </div>
     
     <div class="col-12 col-md-5 m-auto">
@@ -61,7 +61,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +114,7 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +143,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -203,7 +203,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -244,7 +244,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -285,7 +285,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -347,7 +347,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -388,7 +388,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -429,7 +429,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -491,7 +491,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -532,7 +532,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -573,7 +573,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -635,7 +635,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -676,7 +676,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -717,7 +717,7 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>

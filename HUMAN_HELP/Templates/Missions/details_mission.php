@@ -92,18 +92,18 @@
 
     <div class="row mb-4">
         <div class="col-12 col-md-5 my-2">
-            <button class="btn btnGreen w-100">Comment y participer ?</button>
+            <a href="/HUMAN_HELP/?q=Autres/Comment_ca_marche" class="btn btnGreen w-100">Comment y participer ?</a>
         </div>
         <div class="col-12 offset-md-2 col-md-5 my-2">
-            <button class="btn btnGreen w-100">contactez nous</button>
+            <a href="/HUMAN_HELP/?q=Contact/form_contact" class="btn btnGreen w-100">contactez nous</a>
         </div>
     </div>
     <div class="row mb-4">
         <div class="col-12 col-md-3 my-2">
-            <button class="btn btn-primary w-100">Modifier</button>
+            <a href="/HUMAN_HELP/?q=Missions/form_modif_mission" class="btn btn-primary w-100">Modifier</a>
         </div>
-        <div class="col-12 offset-md-6 col-md-3 my-2">
-            <button class="btn btn-danger w-100">Supprimer</button>
-        </div>
+        <form class="col-12 offset-md-6 col-md-3 my-2" action="?action=delete" method="POST">
+            <button type="submit" class="btn btn-danger w-100">Supprimer</button>
+        </form>
     </div>
 </div>

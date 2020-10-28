@@ -39,7 +39,7 @@
 											<p class="card-text">Type d'activité : informatique</p>
 											<p class="card-text">Pays : Ghana (Afrique)</p>
 											<p class="card-text">Date de début : 26 Mai 2021</p>
-											<button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</button>
+											<a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</a>
 										</div>
 									</div>
 								</div>
@@ -80,7 +80,7 @@
 											<p class="card-text">Type d'activité : informatique</p>
 											<p class="card-text">Pays : Ghana (Afrique)</p>
 											<p class="card-text">Date de début : 26 Mai 2021</p>
-											<button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</button>
+											<a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</a>
 										</div>
 									</div>
 								</div>
@@ -121,7 +121,7 @@
 											<p class="card-text">Type d'activité : informatique</p>
 											<p class="card-text">Pays : Ghana (Afrique)</p>
 											<p class="card-text">Date de début : 26 Mai 2021</p>
-											<button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</button>
+											<a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</a>
 										</div>
 									</div>
 								</div>
@@ -239,7 +239,7 @@
 											<p class="card-text">Type d'activité : informatique</p>
 											<p class="card-text">Pays : Ghana (Afrique)</p>
 											<p class="card-text">Date de début : 26 Mai 2021</p>
-											<button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</button>
+											<a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</a>
 										</div>
 									</div>
 								</div>
@@ -280,7 +280,7 @@
 											<p class="card-text">Type d'activité : informatique</p>
 											<p class="card-text">Pays : Ghana (Afrique)</p>
 											<p class="card-text">Date de début : 26 Mai 2021</p>
-											<button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</button>
+											<a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</a>
 										</div>
 									</div>
 								</div>
@@ -321,7 +321,7 @@
 											<p class="card-text">Type d'activité : informatique</p>
 											<p class="card-text">Pays : Ghana (Afrique)</p>
 											<p class="card-text">Date de début : 26 Mai 2021</p>
-											<button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</button>
+											<a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</a>
 										</div>
 									</div>
 								</div>
@@ -380,7 +380,7 @@
 											<p class="card-text">Type d'activité : informatique</p>
 											<p class="card-text">Pays : Ghana (Afrique)</p>
 											<p class="card-text">Date de début : 26 Mai 2021</p>
-											<button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+											<a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
 										</div>
 									</div>
 								</div>
@@ -421,7 +421,7 @@
 											<p class="card-text">Type d'activité : informatique</p>
 											<p class="card-text">Pays : Ghana (Afrique)</p>
 											<p class="card-text">Date de début : 26 Mai 2021</p>
-											<button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+											<a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
 										</div>
 									</div>
 								</div>
@@ -462,7 +462,7 @@
 											<p class="card-text">Type d'activité : informatique</p>
 											<p class="card-text">Pays : Ghana (Afrique)</p>
 											<p class="card-text">Date de début : 26 Mai 2021</p>
-											<button href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</button>
+											<a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
 										</div>
 									</div>
 								</div>
