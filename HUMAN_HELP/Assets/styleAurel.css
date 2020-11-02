@@ -1,4 +1,4 @@
-.cardBorder{
+.card{
     border: 2px outset #58b368;;
 }
 
@@ -9,3 +9,25 @@
 /* footer {
     background-color: #f7f7f7;
 } */
+
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 80px;
+  color: #58b368;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 80px;
+  color: #58b368;
+}
+
+.hrGreen{
+    border-top: 2px outset #58b368!important;
+}
+
+.temoignageAccueil{
+    box-sizing: border-box;
+}

@@ -6,7 +6,7 @@
 
   <form class="form-signin m-auto text-center p-3 formConnexion" action="" method="POST">
 
-    <div class="logo1 mb-4"></div>
+    <div class="logo1 mb-4 m-auto"></div>
 
     <h1 class="h3 mb-3 font-weight-normal">Connectez vous</h1>
 

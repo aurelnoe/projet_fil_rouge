@@ -15,7 +15,7 @@
 
 		<hr class="my-4">
 		
-		<div class="col-12 border rounded">
+		<div class="col-12 border rounded p-0">
         	<div id="carouselDistanceAccueil" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
 				<div>
 					<ol class="carousel-indicators">
@@ -161,15 +161,13 @@
 				<h2 class="pl-4">Ophélie, 22 ans</h2>
 				<h4 class="font-italic pl-4">10/11/2020</h4>
 				<div class="row">
-					<div class="col-1 pt-3">
+					<div class="col-1 px-0 pt-3">
 						"
 					</div>
-					<div class="col-10">
-						<p class="mt-4">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed exercitationem vitae necessitatibus consectetur quaerat,
-						</p>
+					<div class="col-10 p-0 mt-4">					
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed exercitationem vitae necessitatibus consectetur quaerat						
 					</div>
-					<div class="col-1 pt-3">
+					<div class="col-1 px-0 pt-3">
 						"
 					</div>
 				</div>
@@ -179,15 +177,15 @@
 				<h2 class="pl-4">Lucas, 36 ans</h2>
 				<h4 class="font-italic pl-4">11/11/2020</h4>
 				<div class="row">
-					<div class="col-1 pt-3">
+					<div class="col-1 px-0 pt-3">
 						"
 					</div>
-					<div class="col-10">
+					<div class="col-10 px-0 p-0">
 						<p class="mt-4">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed exercitationem vitae necessitatibus consectetur quaerat,
 						</p>
 					</div>
-					<div class="col-1 pt-3">
+					<div class="col-1 px-0 pt-3">
 						"
 					</div>
 				</div>
@@ -197,15 +195,15 @@
 				<h2 class="pl-4">Kamel, 30 ans</h2>
 				<h4 class="font-italic pl-4">12/11/2020</h4>
 				<div class="row">
-					<div class="col-1 pt-3">
+					<div class="col-1 px-0 pt-3">
 						"
 					</div>
-					<div class="col-10">
+					<div class="col-10 px-0 p-0">
 						<p class="mt-4">
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed exercitationem vitae necessitatibus consectetur quaerat,
 						</p>
 					</div>
-					<div class="col-1 pt-3">
+					<div class="col-1 px-0 pt-3">
 						"
 					</div>
 				</div>
@@ -215,7 +213,7 @@
 		
 		<hr class="my-4">
 
-		<div class="col-12 border rounded">
+		<div class="col-12 border rounded p-0">
         	<div id="carouselArticleAccueil" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
 				<div>
 					<ol class="carousel-indicators">
@@ -356,7 +354,7 @@
 
 		<hr class="my-4">
 
-		<div class="col-12 border rounded">
+		<div class="col-12 border rounded p-0">
         	<div id="carouselMissionAccueil" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
 				<div>
 					<ol class="carousel-indicators">

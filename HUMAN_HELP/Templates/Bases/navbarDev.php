@@ -3,7 +3,7 @@
   <div class="collapse navbar-collapse" id="navbarsExample03">
     <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-        <a class="nav-link" href="/HUMAN_HELP/?q=Bases/accueil">Accueil</a>
+        <a class="nav-link" href="/HUMAN_HELP/?q=Bases/Accueil">Accueil</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/HUMAN_HELP/?q=Security/form_connexion">Connexion</a>
@@ -39,7 +39,7 @@
             Blog
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="/HUMAN_HELP/?q=Blog/liste_article">Liste des articles</a>
+            <a class="dropdown-item" href="/HUMAN_HELP/?q=<?php echo urlencode("Blog/liste_article"); ?>">Liste des articles</a>
             <a class="dropdown-item" href="/HUMAN_HELP/?q=Blog/details_article">détails article</a>
             <a class="dropdown-item" href="/HUMAN_HELP/?q=Blog/form_ajout_article">Ajouter un article</a>
             <a class="dropdown-item" href="/HUMAN_HELP/?q=Blog/form_modif_article">Modifier un article</a>

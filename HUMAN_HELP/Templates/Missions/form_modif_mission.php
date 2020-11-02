@@ -2,9 +2,9 @@
     <title>Formulaire de mofification d'une mission</title>
 </head>
 
-<div class="col-12 col-md-5 container pt-4 my-4 border rounded">
+<div class="col-12 col-md-5 container p-4 my-4 border rounded">
 
-    <h2 class="p-3">Formulaire de modification d'une mission</h2>
+    <h2 class="text-center">Formulaire de modification d'une mission</h2>
 
     <form class="needs-validation" novalidate>
             <div class="mb-3 form-group">

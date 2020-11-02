@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">    
 <head>
     <?php include("head.php"); ?>
 </head>
 <body>
-    <?php    
+    <?php
     include("Templates/Bases/navbarDev.php");
 
     include("Templates/Bases/header.php");

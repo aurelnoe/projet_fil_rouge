@@ -8,7 +8,10 @@
     <hr class="mb-4 mt-2">
     <!-- section image details -->
     <div class="row h-25">
-        <img class="col-10 col-md-5 border m-auto imageDetailsMission rounded" width="100" height="360"/>
+        <div class="col-10 col-md-5 m-auto p-0">
+            <img class="imageDetailsMission rounded border" width="100" height="360"/>
+            <hr class="hrGreen">
+        </div>
         <div class="col-10 col-md-6">
             <ul class="liDetailsMission">
                 <li><strong>Titre de la mission :</strong> Développement numérique</li>

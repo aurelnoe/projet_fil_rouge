@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <section class="faq-section">
     <div class="container">
-      <div class="row">
+        
                         <!-- ***** FAQ Start ***** -->
                         <div class="col-md-6 offset-md-3">
     
@@ -58,6 +58,6 @@
                                 </div>
                             </div>
                         </div>
-                      </div>
-                    </div>
-                    </section>
+            
+        
+</section>

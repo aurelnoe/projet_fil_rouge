@@ -25,7 +25,7 @@
 
     <hr class="mt-3 mb-4">
     
-    <h2 class="my-4">Trouver ma mission humanitaire</h2>
+    <h2 class="my-4 text-center">Trouver ma mission humanitaire</h2>
 
     <div>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos id consequatur amet reprehenderit, ea velit dolorem repellat corrupti commodi? Vero molestias enim quas adipisci iusto cupiditate mollitia accusamus laboriosam velit.
@@ -37,8 +37,8 @@
     <hr class="mt-3 mb-4">
 
     <!-- CAROUSEL --------------------------------------------------------------------------->
-    <div class="col-12 border rounded">
-        <div id="carouselEnseignement" class="carousel  carouselListeMission carouselListeMission slide" data-ride="carousel" data-interval="10000">
+    <div class="col-12 border rounded p-0">
+        <div id="carouselEnseignement" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
             <div>
                 <ol class="carousel-indicators">
                     <li data-target="#carouselEnseignement" data-slide-to="0" class="active"></li>
@@ -48,11 +48,10 @@
             </div>
             <div class="carousel-inner w-100">
 
-                <h3>Enseignement :</h3>
-
                 <div class="carousel-item active">
+                    <h3>Enseignement :</h3>
                     <div class="card-group">
-                        <div class="row justify-content-between m-auto">
+                        <div class="row m-auto">
                             <div class="col-12 col-md-6">
                                 <div class="card cardListeMission">
                                     <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
@@ -79,7 +78,7 @@
                             </div>
                         </div>                     
                     </div>
-                    <div class="row my-4">
+                    <div class="row my-4 m-auto">
                         <a class="carousel-control-prev" href="#carouselEnseignement" role="button" data-slide="next">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
@@ -179,7 +178,7 @@
 
     <hr class="mt-4 mb-4">
 
-    <div class="col-12 border rounded">
+    <div class="col-12 border rounded p-0">
         <div id="carouselConstruction" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
             <div>
                 <ol class="carousel-indicators">
@@ -323,7 +322,7 @@
 
     <hr class="mt-4 mb-4">
 
-    <div class="col-12 border rounded">
+    <div class="col-12 border rounded p-0">
         <div id="carouselDonations" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
             <div>
                 <ol class="carousel-indicators">
@@ -467,7 +466,7 @@
 
     <hr class="mt-4 mb-4">
 
-    <div class="col-12 border rounded">
+    <div class="col-12 border rounded p-0">
         <div id="carouselMedecine" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
             <div>
                 <ol class="carousel-indicators">
@@ -611,7 +610,7 @@
 
     <hr class="mt-4 mb-4">
 
-    <div class="col-12 border rounded">
+    <div class="col-12 border rounded p-0">
         <div id="carouselTraduction" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
             <div>
                 <ol class="carousel-indicators">
