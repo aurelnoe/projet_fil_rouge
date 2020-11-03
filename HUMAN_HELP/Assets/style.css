@@ -102,8 +102,8 @@ footer {
 /****liste missions******/
 
 .btnTypeFormation{
-  border: 1px solid black;
-  border-radius: 4px;
+  border: 1px solid #58b368;
+  border-radius: 6px;
 }
 
 .carousel-inner{
@@ -143,9 +143,6 @@ background-color:#58b368;   /*couleur des indacateurs*/
 .formConnexion button,input{
   width: 70%;
   margin: auto;
-}
-.inputConnexion{
-  width: 70%;
 }
 /****Fin formulaire connexion**/
 

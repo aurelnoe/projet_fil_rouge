@@ -6,22 +6,19 @@
     background-color: #58b368;
 }
 
-/* footer {
-    background-color: #f7f7f7;
-} */
-
-
 .carousel-control-next-icon:after
 {
-  content: '>';
-  font-size: 80px;
-  color: #58b368;
+    background-image: none!important;
+    content: '>';
+    font-size: 60px;
+    color: #58b368;
 }
 
 .carousel-control-prev-icon:after {
-  content: '<';
-  font-size: 80px;
-  color: #58b368;
+    content: '<';
+    background-image: none!important;
+    font-size: 60px;
+    color: #58b368;
 }
 
 .hrGreen{
@@ -30,4 +27,16 @@
 
 .temoignageAccueil{
     box-sizing: border-box;
+}
+
+.container{
+    margin-top: 50px;
+}
+
+.cardListeMissionPro{
+    box-sizing: border-box;
+    justify-content: justify;
+    min-height: 620px;
+    width:100%;
+    margin-top: 15px;
 }

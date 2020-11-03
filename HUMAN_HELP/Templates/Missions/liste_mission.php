@@ -2,18 +2,18 @@
     <title>Liste des missions</title>
 </head>
 
-<div class="container">
+<div class="container p-0">
    
     <div class="col-12 col-md-4 m-auto">
-        <a href="/HUMAN_HELP/?q=Missions/liste_mission_pro" class="btn btnGreen w-100 mt-2 mb-2">Consulter mes missions</a>
+        <a href="/HUMAN_HELP/?q=Missions/liste_mission_pro" class="btn btnGreen w-100 my-2">Consulter mes missions</a>
     </div>
     
-    <div class="col-12 col-md-5 m-auto">
-        <div class="btn-group btnTypeFormation w-100 mt-2 mb-2">
-            <button class="btn btn-lg w-75">
+    <div class="col-12 col-md-4 m-auto">
+        <div class="btn-group btnTypeFormation w-100 my-2">
+            <button class="btn w-75">
                 Type de formation
             </button>
-            <button type="button" class="btn btn-lg btnGreen dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button type="button" class="btn btnGreen dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <div class="dropdown-menu">          
@@ -48,49 +48,9 @@
             </div>
             <div class="carousel-inner w-100">
 
+                <h3>Enseignement :</h3>
+
                 <div class="carousel-item active">
-                    <h3>Enseignement :</h3>
-                    <div class="card-group">
-                        <div class="row m-auto">
-                            <div class="col-12 col-md-6">
-                                <div class="card cardListeMission">
-                                    <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titre : Développement numérique</h5>
-                                        <p class="card-text">Type d'activité : informatique</p>
-                                        <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <div class="card cardListeMission">
-                                    <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titre de la mission</h5>
-                                        <p class="card-text">Type d'activité :</p>
-                                        <p class="card-text">Pays :</p>
-                                        <p class="card-text">Date de début :</p>
-                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                     
-                    </div>
-                    <div class="row my-4 m-auto">
-                        <a class="carousel-control-prev" href="#carouselEnseignement" role="button" data-slide="next">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselEnseignement" role="button" data-slide="prev">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
                     <div class="card-group">
                         <div class="row justify-content-between m-auto">
                             <div class="col-12 col-md-6">
@@ -101,6 +61,8 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -113,6 +75,8 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -142,6 +106,53 @@
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
                                         <p class="card-text">Date de début : 26 Mai 2021</p>
+                                    </div>                   
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>                 
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <div class="card cardListeMission">
+                                    <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Titre de la mission</h5>
+                                        <p class="card-text">Type d'activité :</p>
+                                        <p class="card-text">Pays :</p>
+                                        <p class="card-text">Date de début :</p>
+                                    </div>  
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                     
+                    </div>
+                    <div class="row my-4">
+                        <a class="carousel-control-prev" href="#carouselEnseignement" role="button" data-slide="next">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselEnseignement" role="button" data-slide="prev">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="card-group">
+                        <div class="row justify-content-between m-auto">
+                            <div class="col-12 col-md-6">
+                                <div class="card cardListeMission">
+                                    <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Titre : Développement numérique</h5>
+                                        <p class="card-text">Type d'activité : informatique</p>
+                                        <p class="card-text">Pays : Ghana (Afrique)</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -154,7 +165,9 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
+                                    </div> 
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +175,7 @@
                     </div>
                     <div class="row my-4">
                         <a class="carousel-control-prev" href="#carouselEnseignement" role="button" data-slide="next">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
                         <a class="carousel-control-next" href="#carouselEnseignement" role="button" data-slide="prev">
@@ -173,6 +186,8 @@
                 </div>
 
             </div>
+
+
         </div>
     </div>
 
@@ -201,7 +216,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -214,8 +231,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
@@ -242,7 +261,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -255,8 +276,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
@@ -283,7 +306,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -296,8 +321,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
@@ -345,7 +372,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -358,8 +387,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
@@ -386,7 +417,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -399,8 +432,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
@@ -427,7 +462,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -440,8 +477,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
@@ -489,7 +528,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -502,8 +543,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
@@ -530,7 +573,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -543,8 +588,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
@@ -571,7 +618,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -584,8 +633,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
@@ -633,7 +684,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -646,8 +699,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
@@ -674,7 +729,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -687,8 +744,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
@@ -715,7 +774,9 @@
                                         <h5 class="card-title">Titre : Développement numérique</h5>
                                         <p class="card-text">Type d'activité : informatique</p>
                                         <p class="card-text">Pays : Ghana (Afrique)</p>
-                                        <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        <p class="card-text">Date de début : 26 Mai 2021</p>                                        
+                                    </div>
+                                    <div class="card-footer">
                                         <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
                                     </div>
                                 </div>
@@ -728,8 +789,10 @@
                                         <p class="card-text">Type d'activité :</p>
                                         <p class="card-text">Pays :</p>
                                         <p class="card-text">Date de début :</p>
-                                        <a href="#" class="btn btn-primary">Voir la mission</a>
                                     </div>
+                                    <div class="card-footer">
+                                        <a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir la mission</a>
+                                    </div>    
                                 </div>
                             </div>
                         </div>                     
