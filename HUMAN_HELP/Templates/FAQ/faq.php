@@ -15,16 +15,35 @@
                                     <div class="card-header" id="faqHeading-1">
                                         <div class="mb-0">
                                             <h5 class="faq-title">
-                                                <span class="badge">1</span> Comments'inscrire à mission ? 
+                                                <div class="row">
+                                                    <div class="col-1">
+                                                        <span class="badge">1</span>
+                                                    </div> 
+                                                    <div class="col">
+                                                        <p>Comment s'inscrire à mission ?</p>
+                                                    </div>
+                                                </div>
                                             </h5>
                                         </div>
-                                    </div>   
+                                    </div>
+                                        <!-- <div id="faqCollapse-1" class="collapse" aria-labelledby="faqHeading-1" data-parent="#all-card">
+                                            <div class="card-body">
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+                                            </div>
+                                        </div>    -->
                                 </div>
                                 <div class="card card-faq">
                                     <div class="card-header" id="faqHeading-2">
                                         <div class="mb-0">
                                             <h5 class="faq-title" >
-                                                <span class="badge">2</span>Comment faire une mission à distance ?
+                                                <div class="row">
+                                                    <div class="col-1">
+                                                        <span class="badge">1</span>
+                                                    </div> 
+                                                    <div class="col">
+                                                        <p>Comment s'inscrire à mission ?</p>
+                                                    </div>
+                                                </div>
                                             </h5>
                                         </div>
                                     </div>
@@ -33,7 +52,14 @@
                                     <div class="card-header" id="faqHeading-3">
                                         <div class="mb-0">
                                             <h5 class="faq-title">
-                                                <span class="badge">3</span>Comment s'inscrire à une mission ?
+                                                <div class="row">
+                                                    <div class="col-1">
+                                                        <span class="badge">1</span>
+                                                    </div> 
+                                                    <div class="col">
+                                                        <p>Comment s'inscrire à mission ?</p>
+                                                    </div>
+                                                </div>
                                             </h5>
                                         </div>
                                     </div>
@@ -42,7 +68,14 @@
                                     <div class="card-header" id="faqHeading-4">
                                         <div class="mb-0">
                                             <h5 class="faq-title">
-                                                <span class="badge">4</span>Comment s'inscrire à une mission ?
+                                                <div class="row">
+                                                    <div class="col-1">
+                                                        <span class="badge">1</span>
+                                                    </div> 
+                                                    <div class="col">
+                                                        <p>Comment s'inscrire à mission ?</p>
+                                                    </div>
+                                                </div>
                                             </h5>
                                         </div>
                                     </div>
@@ -51,7 +84,14 @@
                                     <div class="card-header" id="faqHeading-5">
                                         <div class="mb-0">
                                             <h5 class="faq-title" >
-                                                <span class="badge">5</span>Comment s'inscrire à une mission ?
+                                                <div class="row">
+                                                    <div class="col-1">
+                                                        <span class="badge">1</span>
+                                                    </div> 
+                                                    <div class="col">
+                                                        <p>Comment s'inscrire à mission ?</p>
+                                                    </div>
+                                                </div>
                                             </h5>
                                         </div>
                                     </div>
