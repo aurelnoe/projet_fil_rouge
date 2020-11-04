@@ -2,7 +2,7 @@
 
 	<div class="container accueil">
 		
-		<h1 class="text-center">Bienvenue sur Human Help</h1>
+		<h1 class="text-center">Bienvenue sur Human Helps</h1>
 
 		<div class="my-4 p-2">
 			<h2>Qui somme nous ?</h2>
@@ -26,7 +26,7 @@
 				</div>
 				<div class="carousel-inner w-100">
 
-					<h3>Une mission à distance avec Human Help :</h3>
+					<h3>Une mission à distance avec Human Helps :</h3>
 
 					<div class="carousel-item active">
 						<div class="card-group">
@@ -59,11 +59,11 @@
 						</div>
 						<div class="row my-4">
 							<a class="carousel-control-prev" href="#carouselDistanceAccueil" role="button" data-slide="next">
-								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="carousel-control-prev-icon"></span>
 								<span class="sr-only">Previous</span>
 							</a>
 							<a class="carousel-control-next" href="#carouselDistanceAccueil" role="button" data-slide="prev">
-								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="carousel-control-next-icon"></span>
 								<span class="sr-only">Next</span>
 							</a>
 						</div>
@@ -224,7 +224,7 @@
 				</div>
 				<div class="carousel-inner w-100">
 
-					<h3>Les actualités avec Human Help :</h3>
+					<h3>Les actualités avec Human Helps :</h3>
 
 					<div class="carousel-item active">
 						<div class="card-group">
@@ -365,7 +365,7 @@
 				</div>
 				<div class="carousel-inner w-100">
 
-					<h3>Une mission humanitaire avec Human Help :</h3>
+					<h3>Une mission humanitaire avec Human Helps:</h3>
 
 					<div class="carousel-item active">
 						<div class="card-group">

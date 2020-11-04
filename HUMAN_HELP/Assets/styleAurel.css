@@ -6,19 +6,23 @@
     background-color: #58b368;
 }
 
+.carousel-control-next-icon,.carousel-control-prev-icon{
+
+    background-image: none!important;
+}
 .carousel-control-next-icon:after
 {
-    background-image: none!important;
     content: '>';
     font-size: 60px;
     color: #58b368;
+    margin: auto;
 }
 
 .carousel-control-prev-icon:after {
     content: '<';
-    background-image: none!important;
     font-size: 60px;
     color: #58b368;
+    margin-right: 20px;
 }
 
 .hrGreen{

@@ -2,7 +2,7 @@
     <title>Formulaire de mofification d'une mission</title>
 </head>
 
-<div class="col-12 col-md-6 container pt-4 my-4 border rounded">
+<div class="col-12 col-md-6 container p-4 my-4 border rounded">
 
     <h2 class="text-center">Formulaire de modification d'une mission</h2>
 
