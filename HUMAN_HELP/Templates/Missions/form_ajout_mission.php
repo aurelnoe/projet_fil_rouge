@@ -51,7 +51,7 @@
                 </div>
                 
                 <div class="col-12 col-md-6 w-50 form-group pl-3">
-                    <label class=" h-50" for="activity">Type d'activité de la mission</label>
+                    <label class=" h-50" for="activity">Type d'activité</label>
                     <select class="custom-select list-group d-block h-50 w-100" name="activity" required>
                         <option class="list-group-item" value="">Choisissez...</option>
                         <option class="list-group-item">Médecine</option>

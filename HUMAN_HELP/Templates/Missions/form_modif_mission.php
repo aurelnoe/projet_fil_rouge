@@ -2,11 +2,14 @@
     <title>Formulaire de mofification d'une mission</title>
 </head>
 
-<div class="col-12 col-md-5 container p-4 my-4 border rounded">
+<div class="col-12 col-md-6 container pt-4 my-4 border rounded">
 
     <h2 class="text-center">Formulaire de modification d'une mission</h2>
 
     <form class="needs-validation" novalidate>
+
+        <hr class="mb-4 mt-2">
+
             <div class="mb-3 form-group">
                 <label for="modifDenomination">Dénomination sociale</label>
                 <input type="text" class="form-control" name="modifDenomination" placeholder="" value="" required>
@@ -21,8 +24,8 @@
                     Ce champ est requis.
                 </div>
             </div>          
-            <div class="row">
-                <div class="col-auto mb-3 w-50">
+            <div class="row row p-0 mb-3">
+                <div class="col-12 col-md-6 form-group w-50 pl-3">
                     <label for="modifCountry">Pays concerné</label>
                     <select class="custom-select d-block w-100" name="modifCountry" required>
                     <option value="">Choisissez...</option>
@@ -36,8 +39,8 @@
                     Choisissez un pays valide.
                     </div>
                 </div>
-                <div class="col-auto mb-3 w-50">
-                    <label for="modifActivity">Type d'activité de la mission</label>
+                <div class="col-12 col-md-6 w-50 form-group pl-3">
+                    <label for="modifActivity">Type d'activité</label>
                     <select class="custom-select d-block w-100" name="modifActivity" required>
                         <option value="">Choisissez...</option>
                         <option>Médecine</option>
