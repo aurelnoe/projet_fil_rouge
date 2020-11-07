@@ -68,13 +68,13 @@ CREATE TABLE AVIS(
         date_commentaire Date NOT NULL ,
         id_mission       Int NOT NULL ,
         id_auteur        Int NOT NULL ,
-        id_avis_reponse  Int NOT NULL ,
+        id_utilisateur  Int NOT NULL ,
         id_blog          Int NOT NULL ,
         id_etablissement Int NOT NULL
 	,CONSTRAINT AVIS_PK PRIMARY KEY (id_avis)
     	,CONSTRAINT AVIS_MISSION_FK FOREIGN KEY (id_mission) REFERENCES MISSION(id_mission)
-    	,CONSTRAINT AVIS_UTILISATEUR_FK FOREIGN KEY (id_auteur) REFERENCES UTILISATEUR(id_utilisateur)
-	,CONSTRAINT AVIS_AVIS_FK FOREIGN KEY (id_avis_reponse) REFERENCES AVIS(id_avis)
+    	,CONSTRAINT AVIS_UTILISATEUR_FK FOREIGN KEY (id_utilisateur) REFERENCES UTILISATEUR(id_utilisateur)
+	,CONSTRAINT AVIS_UTILISATEUR_FK FOREIGN KEY (id_auteur) REFERENCES UTILISATEUR(nom_util)
 	,CONSTRAINT AVIS_BLOG_FK FOREIGN KEY (id_blog) REFERENCES BLOG(id_article)
     ,CONSTRAINT AVIS_ETABLISSEMENT_FK FOREIGN KEY (id_etablissement) REFERENCES ETABLISSEMENT(id_etablissement)
 )ENGINE=InnoDB;
@@ -103,7 +103,7 @@ CREATE TABLE PAYS(
         id_pays          Int  Auto_increment  NOT NULL ,
         nom_pays         Varchar (100) NOT NULL ,
         continent        Varchar (100) NOT NULL ,
-        id_etablissement Int NOT NULL ,
+        Uid_etablissement Int NOT NULL ,
         id_mission       Int NOT NULL
 	,CONSTRAINT PAYS_PK PRIMARY KEY (id_pays)
 )ENGINE=InnoDB;

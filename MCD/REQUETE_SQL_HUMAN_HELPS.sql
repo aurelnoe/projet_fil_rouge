@@ -23,7 +23,7 @@ CREATE TABLE BLOG(
         titre_article       Varchar (100) NOT NULL ,
         description_article Text NOT NULL ,
         date_article        Date NOT NULL ,
-        date_ajout_article  Time NOT NULL ,
+        date_ajout_article  Date NOT NULL ,
         image_article       Numeric NOT NULL
 	,CONSTRAINT BLOG_PK PRIMARY KEY (id_article)
 )ENGINE=InnoDB;
@@ -50,6 +50,7 @@ CREATE TABLE MISSION(
     ,CONSTRAINT MISSION_TYPE_ACTIVITE_FK FOREIGN KEY (id_type_activite) REFERENCES TYPE_ACTIVITE(id_type_activite)
 	,CONSTRAINT MISSION_PK PRIMARY KEY (id_mission)
 )ENGINE=InnoDB;
+
 
 #------------------------------------------------------------
 # Table: ETABLISSEMENT
@@ -80,7 +81,6 @@ CREATE TABLE ETABLISSEMENT(
 # Table: AVIS
 #------------------------------------------------------------
 
-
 CREATE TABLE AVIS(
         id_avis          Int  Auto_increment  NOT NULL ,
         auteur           Varchar (50) NOT NULL ,
@@ -88,17 +88,16 @@ CREATE TABLE AVIS(
         date_commentaire Date NOT NULL ,
         id_mission       Int NOT NULL ,
         id_auteur        Int NOT NULL ,
-        id_avis_reponse  Int NOT NULL ,
+        id_utilisateur  Int NOT NULL ,
         id_blog          Int NOT NULL ,
         id_etablissement Int NOT NULL
 	,CONSTRAINT AVIS_PK PRIMARY KEY (id_avis)
     	,CONSTRAINT AVIS_MISSION_FK FOREIGN KEY (id_mission) REFERENCES MISSION(id_mission)
-    	,CONSTRAINT AVIS_UTILISATEUR_FK FOREIGN KEY (id_auteur) REFERENCES UTILISATEUR(id_utilisateur)
-	,CONSTRAINT AVIS_AVIS_FK FOREIGN KEY (id_avis_reponse) REFERENCES AVIS(id_avis)
+    	,CONSTRAINT AVIS_UTILISATEUR_FK FOREIGN KEY (id_utilisateur) REFERENCES UTILISATEUR(id_utilisateur)
+	,CONSTRAINT AVIS_UTILISATEUR_FK FOREIGN KEY (id_auteur) REFERENCES UTILISATEUR(nom_util)
 	,CONSTRAINT AVIS_BLOG_FK FOREIGN KEY (id_blog) REFERENCES BLOG(id_article)
     ,CONSTRAINT AVIS_ETABLISSEMENT_FK FOREIGN KEY (id_etablissement) REFERENCES ETABLISSEMENT(id_etablissement)
 )ENGINE=InnoDB;
-
 
 #------------------------------------------------------------
 # Table: UTILISATEUR
@@ -123,10 +122,10 @@ CREATE TABLE UTILISATEUR(
 	,CONSTRAINT UTILISATEUR_ROLE_FK FOREIGN KEY (id_role) REFERENCES ROLE(id_role)
 )ENGINE=InnoDB;
 
+
 #------------------------------------------------------------
 # Table: PAYS
 #------------------------------------------------------------
-
 
 CREATE TABLE PAYS(
         id_pays          Int  Auto_increment  NOT NULL ,
@@ -137,13 +136,17 @@ CREATE TABLE PAYS(
 	,CONSTRAINT PAYS_PK PRIMARY KEY (id_pays)
 )ENGINE=InnoDB;
 
+
 #------------------------------------------------------------
 # Table: TYPE_ACTIVITE
 #------------------------------------------------------------
+
 CREATE TABLE TYPE_ACTIVITE(
         id_type_activite Int  Auto_increment  NOT NULL ,
         type_activite    Varchar (100) NOT NULL ,
         id_mission       Int NOT NULL
 	,CONSTRAINT TYPE_ACTIVITE_PK PRIMARY KEY (id_type_activite)
+
+	,CONSTRAINT TYPE_ACTIVITE_MISSION_FK FOREIGN KEY (id_mission) REFERENCES MISSION(id_mission)
 )ENGINE=InnoDB;
 
