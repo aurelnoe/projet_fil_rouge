@@ -9,6 +9,8 @@
     include("Templates/Bases/navbarDev.php");
 
     include("Templates/Bases/header.php");
+
+    include("Templates/Bases/navbar.php");
     
     if (empty($_GET['q'])) {
         include("Templates/Bases/accueil.php");        

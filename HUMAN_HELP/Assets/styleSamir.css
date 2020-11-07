@@ -1,0 +1,136 @@
+/***************DEBUT DE LA NAV BAR*********************/
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.contant{
+    position: relative;
+    z-index : 100;           /*Rendre plus lisible les textes au dessus de la banière*/
+}
+/* Header */
+.header{
+    height          : 500px;
+    background-color: rgb(169,169,169);
+    position        : relative;
+}
+.header_texture{
+    width          : 100%;
+    height         : 100%;
+    position       : absolute;  /*Prend taille entière du fond de couleur du header*/
+    top            : 0; left: 0;
+    background     : url('../images/banner.jpg') center no-repeat ;
+    background-size: cover;
+    z-index        : 1;
+    opacity        : 0.7;
+}
+.header_mask{
+    position  : absolute;
+    bottom    : 0; /*fixer le mask tout en bas car c'est la qu'on veut les arrondis*/
+    background: 0 0;
+    height    : 42px;
+    width     : 100%;
+    z-index   : 15;
+}
+/*! -------------------------- PAS TOUCHE ----------------------------*/
+
+.navLink{
+    margin    : 20px 10px 20px 10px;
+    padding: 0px !important;
+    color      : white !important;
+}
+.header_slogan{
+    text-align: center;
+    margin-top: 10%;
+}
+.slogan{
+    color         : #fff;
+    font-size     : 45px;
+    text-transform: uppercase;
+    font-family   : 'Allan'; /* possibilité de la changer avec 'Anton', il y a deja le link google font*/
+    letter-spacing: 2px;
+}
+.search_box{
+    margin-top: 5%;
+}
+.btn_rechercher{
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 991px){
+    .dropdown {
+        margin    : 20px 10px 20px 10px !important;
+    }
+    .navLink {
+        background-color: white;
+        color: #52566c !important;
+    }
+    .dropdown-menu {
+        min-width: 96.5% !important;
+        text-align: center !important;
+    }
+    .BlockLogo{
+        -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
+        box-shadow        :  0px 4px 5px 0px rgba(0,0,0,0.5);
+        background-color: white;
+        text-align      : center;
+    }
+    #BoutonBurgermenuTab{
+        width      : 30px;
+        height     : 30px;
+        margin-top : 40px;
+        margin-left: 30px;        
+        z-index    : 999;
+        position   : absolute;
+        cursor     : pointer;
+    }
+    #BoutonBurgermenuTab .barre1{
+        width           : 100%;
+        height          : 3px;
+        background-color: #228b22;
+        z-index         : 999;
+        margin-top      : 5px;
+    }
+    #BoutonBurgermenuTab .barre2{
+        width           : 100%;
+        height          : 3px;
+        background-color: #228b22; ;
+        z-index         : 999;
+        margin-top      : 5px;
+    }
+    #BoutonBurgermenuTab .barre1.isClick{
+        transform : rotate(45deg);
+        transition: transform 1s;
+        position  : fixed;
+        width     : 30px;
+    }  
+    #BoutonBurgermenuTab .barre2.isClick{
+        transform : rotate(-45deg);
+        transition: transform 1s;
+        position  : fixed;
+        width     : 30px;
+    } 
+    .menuTab{
+        position         : absolute !important;
+        transition       : transform .2s ease-in-out;
+        transform        : translate(0%,-200%);
+        -webkit-transform: translate(0%,-200%);
+        box-sizing       : content-box;
+        background-color : white;
+    }
+    .menuTab.isOpen{
+        position          : absolute;
+        z-index           : 999;
+        position          : absolute;
+        transform         : translate(0%, 20%);
+        -webkit-transform : translate(0%, 20%);
+        -webkit-box-shadow: 0px 4px 5px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow   : 0px 4px 5px 0px rgba(0,0,0,0.5);
+        box-shadow        : 0px 4px 5px 0px rgba(0,0,0,0.5);
+    }
+    
+}
+
+
+/******************FIN NAV BAR************/
