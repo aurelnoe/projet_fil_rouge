@@ -44,3 +44,27 @@
     width:100%;
     margin-top: 15px;
 }
+
+/****LISTES TYPES ACTIVITES ET PAYS****/
+.h1-select{
+    font-weight: bold;
+    margin: 30px auto 30px;
+}
+
+.card-select{
+    box-sizing: border-box;
+    padding: 0;   
+    margin: 15px auto 15px;
+}
+
+.card-select card-body{
+    padding: 30px;
+}
+
+.card-select card-body img{
+    min-height: 340px;
+}
+
+.text-card-select{
+    margin: 20px auto 0;
+}
