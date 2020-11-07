@@ -43,8 +43,8 @@
           </li>
       </ul>
       <ul class="navbar-nav mr-auto">
-       <a class="nav-link" href="/HUMAN_HELP/?q=Security/form_inscription" tabindex="-1" aria-disabled="true">Inscription</a>
-      <a class="nav-link" href="/HUMAN_HELP/?q=Security/form_connexion" tabindex="-1" aria-disabled="true">Connexion</a>
+       <a class="nav-link" href="/HUMAN_HELP/?q=Utilisateur/form_inscription" tabindex="-1" aria-disabled="true">Inscription</a>
+      <a class="nav-link" href="/HUMAN_HELP/?q=Utilisateur/form_connexion" tabindex="-1" aria-disabled="true">Connexion</a>
     </ul>
     </div>
   </nav>

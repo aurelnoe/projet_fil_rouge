@@ -7,10 +7,10 @@
           <a class="nav-link" href="/HUMAN_HELP/?q=Bases/Accueil">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/HUMAN_HELP/?q=Security/form_connexion">Connexion</a>
+          <a class="nav-link" href="/HUMAN_HELP/?q=Utilisateur/form_connexion">Connexion</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link" href="/HUMAN_HELP/?q=Security/form_inscription">Inscription</a>
+          <a class="nav-link" href="/HUMAN_HELP/?q=Utilisateur/form_inscription">Inscription</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/HUMAN_HELP/?q=Contact/form_contact">Contact</a>
