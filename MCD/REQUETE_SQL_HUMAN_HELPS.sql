@@ -149,3 +149,5 @@ CREATE TABLE TYPE_ACTIVITE(
 	,CONSTRAINT TYPE_ACTIVITE_MISSION_FK FOREIGN KEY (id_mission) REFERENCES MISSION(id_mission)
 )ENGINE=InnoDB;
 
+
+/* Table "proffesionnel" à la place d'établissement et création de table particulier 
