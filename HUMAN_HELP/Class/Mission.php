@@ -31,18 +31,6 @@ class Mission
     }
 
     /**
-     * Set the value of idMission
-     *
-     * @return  self
-     */ 
-    public function setIdMission(int $idMission):self
-    {
-        $this->idMission = $idMission;
-
-        return $this;
-    }
-
-    /**
      * Get the value of titreMission
      */ 
     public function getTitreMission():string
