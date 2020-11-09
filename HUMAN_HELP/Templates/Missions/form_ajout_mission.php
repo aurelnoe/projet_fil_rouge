@@ -6,44 +6,34 @@
 
         <h2 class="text-center my-2 pb-2">Ajouter une nouvelle mission</h2>
 
-        <form class="needs-validation p-3" action="" method="POST" novalidate>
+        <form class="needs-validation p-3" action="?q=Missions/list_mission_pro?action=add" method="POST" novalidate>
 
             <hr class="mb-4 mt-2">
 
             <div class="mb-3 form-group">
-                <label for="denomination">Dénomination sociale</label>
-                <input type="text" class="form-control" name="denomination" placeholder="" value="" required>
+                <label for="id_etablissement">Dénomination de l'établissement</label>
+                <input type="text" class="form-control" name="id_etablissement" placeholder="" value="">
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div>
-
             <div class="mb-3 form-group">
                 <label for="title">Titre de la mission</label>
-                <input type="text" class="form-control" name="title" placeholder="" value="" required>
+                <input type="text" class="form-control" name="titre_mission" placeholder="" value="" required>
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
-            </div>   
-
-            <div class="mb-3 form-group">
-                <label for="email">Adresse mail</label>
-                <input type="email" class="form-control" name="email" placeholder="you@example.com" required pattern="^\w{2,}@\w{2,}\.\w{2,}$">
-                <div class="invalid-feedback">
-                    Please enter a valid email address for shipping updates.
-                </div>
-            </div>
-
+            </div> 
             <div class="row p-0 mb-3">
                 <div class="col-12 col-md-6 form-group w-50 pl-3">
-                    <label class="h-50" for="country">Pays concerné</label>
-                    <select class="custom-select list-group d-block h-50 w-100" name="country" required>
+                    <label class="h-50" for="id_pays">Pays concerné</label>
+                    <select class="custom-select list-group d-block h-50 w-100" required>
                     <option class="list-group-item" value="">Choisissez...</option>
-                    <option class="list-group-item">Mali</option>
-                    <option class="list-group-item">Gabon</option>
-                    <option class="list-group-item">Somalie</option>
-                    <option class="list-group-item">Egypte</option>
-                    <option class="list-group-item">Maroc</option>
+                    <option name="id_pays" value=1 class="list-group-item">Mali</option>
+                    <option name="id_pays" value=2 class="list-group-item">Gabon</option>
+                    <option name="id_pays" value=3 class="list-group-item">Somalie</option>
+                    <option name="id_pays" value=4 class="list-group-item">Egypte</option>
+                    <option name="id_pays" value=5 class="list-group-item">Maroc</option>
                     </select>
                     <div class="invalid-feedback">
                     Choisissez un pays valide.
@@ -51,28 +41,27 @@
                 </div>
                 
                 <div class="col-12 col-md-6 w-50 form-group pl-3">
-                    <label class=" h-50" for="activity">Type d'activité</label>
-                    <select class="custom-select list-group d-block h-50 w-100" name="activity" required>
+                    <label class=" h-50" for="id_type_activite">Type d'activité</label>
+                    <select class="custom-select list-group d-block h-50 w-100" name="id_type_activite" required>
                         <option class="list-group-item" value="">Choisissez...</option>
-                        <option class="list-group-item">Médecine</option>
-                        <option class="list-group-item">Enseignement</option>
-                        <option class="list-group-item">Donations</option>
-                        <option class="list-group-item">Traduction</option>
-                        <option class="list-group-item">Construction</option>
-                        <option class="list-group-item">Sportive</option>
-                        <option class="list-group-item">Aide juridique</option>
-                        <option class="list-group-item">Soutient psychologique</option>
-                        <option class="list-group-item">Aide administrative</option>
+                        <option name="id_pays" value=1 class="list-group-item">Médecine</option>
+                        <option name="id_pays" value=2 class="list-group-item">Donations</option>
+                        <option name="id_pays" value=3 class="list-group-item">Enseignement</option>
+                        <option name="id_pays" value=4 class="list-group-item">Formation</option>
+                        <option name="id_pays" value=5 class="list-group-item">Informatique</option>
+                        <option name="id_pays" value=6 class="list-group-item">Traduction</option>
+                        <option name="id_pays" value=7 class="list-group-item">Sportive</option>
+                        <option name="id_pays" value=8 class="list-group-item">Aide juridique</option>
+                        <option name="id_pays" value=9 class="list-group-item">Soutient psychologique</option>
                     </select>
                     <div class="invalid-feedback">
                         Ce champ est requis.
                     </div>
                 </div>
             </div>
-
             <div class="mb-3 form-group">
                 <label for="descriptionMission">Description de la mission</label>
-                <textarea type="textarea" class="form-control" name="descriptionMission" placeholder=""></textarea>
+                <textarea type="textarea" class="form-control" name="description_mission" placeholder=""></textarea>
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
@@ -90,11 +79,10 @@
                     </div>
                 </div>  
             </div>
-
             <div class="mb-3 form-group">
-                <label for="dateMission">Date de début de la mission</label>
+                <label for="date_mission">Date de début de la mission</label>
                 <div class="input-group date"  data-provide="datepicker">
-                    <input type="date" class="form-control" name="dateMission" placeholder="jj/mm/aaaa" required>
+                    <input type="date" class="form-control" name="date_mission" placeholder="jj/mm/aaaa" required>
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -103,17 +91,16 @@
                     Ce champ est requis.
                 </div>
             </div>
-
             <div class="mb-3 form-group">
-                <label for="dureeMission">Durée de la mission<span class="text-muted"> (en jour)</span></label>
-                <input type="number" class="form-control" name="dureeMission" placeholder="">
+                <label for="duree">Durée de la mission<span class="text-muted"> (en jour)</span></label>
+                <input type="number" class="form-control" name="duree" placeholder="">
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div>
             <div class="mb-3 form-group">
-                <label for="imageMission">Ajouter une image</label>
-                <input type="file" class="form-control-file" name="imageMission" placeholder="" capture>
+                <label for="image_mission">Ajouter une image</label>
+                <input type="file" class="form-control-file" name="image_mission" placeholder="" capture>
             </div>
 
             <hr class="mb-4 mt-4">

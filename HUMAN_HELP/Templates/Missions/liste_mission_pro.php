@@ -1,3 +1,6 @@
+<?php
+include("../../Controller/formAjoutMissionController.php");
+?>
 <head>
     <title>Liste mission pro</title>
 </head>
