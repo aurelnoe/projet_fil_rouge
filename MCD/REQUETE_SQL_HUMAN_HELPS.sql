@@ -47,7 +47,7 @@ CREATE TABLE BLOG(
         description_article Text NOT NULL ,
         date_article        Date NOT NULL ,
         date_ajout_article  Date NOT NULL ,
-        image_article       Numeric NULL
+        image_article       Varchar (255) NULL
 	,CONSTRAINT BLOG_PK PRIMARY KEY (id_article)
 )ENGINE=InnoDB;
 
@@ -124,7 +124,8 @@ CREATE TABLE MISSION(
         id_mission          Int  Auto_increment  NOT NULL ,
         titre_mission       Varchar (100) NOT NULL ,
         description_mission Text NOT NULL ,
-        image_mission       Numeric NOT NULL ,
+	type_formation	    Boolean NOT NULL ,
+        image_mission       Varchar (255) NOT NULL ,
         date_debut          Date NOT NULL ,
         duree               Int NOT NULL ,
         date_ajout          Date NOT NULL ,

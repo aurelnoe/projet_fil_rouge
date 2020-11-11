@@ -5,28 +5,27 @@ class Mission
     private $idMission;
     private $titreMission;
     private $descriptionMission;
+    private $typeFormation;
     private $imageMission;
-    private $paysMission;
     private $dateDebut;
     private $duree;
     private $dateAjout;
-    private $idPays;
-    private $idProfessionnel;
-    private $idTypeActivite;
+    public $idPays;
+    public $idEtablissement;
+    public $idTypeActivite;
     
     public function __toString(){
+        return
         $this->idMission;
         $this->titreMission;
         $this->descriptionMission;
         $this->imageMission;
-        $this->paysMission;
         $this->dateDebut;
         $this->duree;
         $this->dateAjout;
         $this->idPays;
-        $this->idProfessionnel;
+        $this->idEtablissement;
         $this->idTypeActivite;
-       
     }
 
     /**
@@ -35,18 +34,6 @@ class Mission
     public function getIdMission():int
     {
         return $this->idMission;
-    }
-
-    /**
-     * Set the value of idMission
-     *
-     * @return  self
-     */ 
-    public function setIdMission(int $idMission):self
-    {
-        $this->idMission = $idMission;
-
-        return $this;
     }
 
     /**
@@ -78,21 +65,41 @@ class Mission
     }
 
     /**
-     * Set the value of descriptionMission
+    * Set the value of descriptionMission
+    *
+    * @return  self
+    */ 
+    public function setDescriptionMission(string $descriptionMission):self
+    {
+        $this->descriptionMission = $descriptionMission;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of typeFormation
+     */ 
+    public function getTypeFormation():?int
+    {
+        return $this->typeFormation;
+    }
+
+    /**
+     * Set the value of typeFormation
      *
      * @return  self
      */ 
-    public function setDescriptionMission(string $descriptionMission):self
+    public function setTypeFormation(?int $typeFormation):self
     {
-            $this->descriptionMission = $descriptionMission;
+        $this->typeFormation = $typeFormation;
 
-            return $this;
+        return $this;
     }
 
     /**
      * Get the value of imageMission
      */ 
-    public function getImageMission():string
+    public function getImageMission():?string
     {
         return $this->imageMission;
     }
@@ -102,29 +109,9 @@ class Mission
      *
      * @return  self
      */ 
-    public function setImageMission(string $imageMission):self
+    public function setImageMission(?string $imageMission):self
     {
         $this->imageMission = $imageMission;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of paysMission
-     */ 
-    public function getPaysMission():string
-    {
-        return $this->paysMission;
-    }
-
-    /**
-     * Set the value of paysMission
-     *
-     * @return  self
-     */ 
-    public function setPaysMission(string $paysMission):self
-    {
-        $this->paysMission = $paysMission;
 
         return $this;
     }
@@ -210,21 +197,21 @@ class Mission
     }
 
     /**
-     * Get the value of idProfessionnel
+     * Get the value of idEtablissement
      */ 
-    public function getIdProfessionnel():int
+    public function getIdEtablissement():int
     {
-        return $this->idProfessionnel;
+        return $this->idEtablissement;
     }
 
     /**
-     * Set the value of idProfessionnel
+     * Set the value of idEtablissement
      *
      * @return  self
      */ 
-    public function setIdProfessionnel(int $idProfessionnel):self
+    public function setIdEtablissement($idEtablissement):self
     {
-        $this->idProfessionnel = $idProfessionnel;
+        $this->idEtablissement = $idEtablissement;
 
         return $this;
     }
@@ -232,7 +219,7 @@ class Mission
     /**
      * Get the value of idTypeActivite
      */ 
-    public function getIdTypeActivite():int 
+    public function getIdTypeActivite():int
     {
         return $this->idTypeActivite;
     }
@@ -248,4 +235,6 @@ class Mission
 
         return $this;
     }
+
+   
 }

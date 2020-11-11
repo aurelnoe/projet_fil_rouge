@@ -23,6 +23,7 @@ CREATE TABLE MISSION(
         id_mission          Int  Auto_increment  NOT NULL ,
         titre_mission       Varchar (100) NOT NULL ,
         description_mission Text NOT NULL ,
+	type_formation	    Boolean NOT NULL ,
         image_mission       Numeric NULL ,
         type_formation      Int NOT NULL ,
         date_debut          Date NOT NULL ,
