@@ -6,12 +6,20 @@ class Mission
     private $auteurAvis;
     private $temoignageAvis;
     private $dateCommentaire;
+    private $idUtilisateur;
+    private $idMission;
+    private $idAuteur;
+    private $idBlog;
   
     public function __toString(){
         $this->idAvis;
         $this->auteurAvis;
         $this->temoignageAvis;
         $this->dateCommentaire;
+        $this->idUtilisateur;
+        $this->idMission;
+        $this->idAuteur;
+        $this->idBlog;
     }
 
 
@@ -91,6 +99,86 @@ class Mission
     public function setDateCommentaire($dateCommentaire)
     {
         $this->dateCommentaire = $dateCommentaire;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of idUtilisateur
+     */ 
+    public function getIdUtilisateur()
+    {
+        return $this->idUtilisateur;
+    }
+
+    /**
+     * Set the value of idUtilisateur
+     *
+     * @return  self
+     */ 
+    public function setIdUtilisateur($idUtilisateur)
+    {
+        $this->idUtilisateur = $idUtilisateur;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of idMission
+     */ 
+    public function getIdMission()
+    {
+        return $this->idMission;
+    }
+
+    /**
+     * Set the value of idMission
+     *
+     * @return  self
+     */ 
+    public function setIdMission($idMission)
+    {
+        $this->idMission = $idMission;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of idAuteur
+     */ 
+    public function getIdAuteur()
+    {
+        return $this->idAuteur;
+    }
+
+    /**
+     * Set the value of idAuteur
+     *
+     * @return  self
+     */ 
+    public function setIdAuteur($idAuteur)
+    {
+        $this->idAuteur = $idAuteur;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of idBlog
+     */ 
+    public function getIdBlog()
+    {
+        return $this->idBlog;
+    }
+
+    /**
+     * Set the value of idBlog
+     *
+     * @return  self
+     */ 
+    public function setIdBlog($idBlog)
+    {
+        $this->idBlog = $idBlog;
 
         return $this;
     }

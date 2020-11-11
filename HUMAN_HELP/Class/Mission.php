@@ -10,6 +10,9 @@ class Mission
     private $dateDebut;
     private $duree;
     private $dateAjout;
+    private $idPays;
+    private $idProfessionnel;
+    private $idTypeActivite;
     
     public function __toString(){
         $this->idMission;
@@ -20,6 +23,10 @@ class Mission
         $this->dateDebut;
         $this->duree;
         $this->dateAjout;
+        $this->idPays;
+        $this->idProfessionnel;
+        $this->idTypeActivite;
+       
     }
 
     /**
@@ -178,6 +185,66 @@ class Mission
     public function setDateAjout(DateTime $dateAjout):self
     {
         $this->dateAjout = $dateAjout;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of idPays
+     */ 
+    public function getIdPays()
+    {
+        return $this->idPays;
+    }
+
+    /**
+     * Set the value of idPays
+     *
+     * @return  self
+     */ 
+    public function setIdPays($idPays)
+    {
+        $this->idPays = $idPays;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of idProfessionnel
+     */ 
+    public function getIdProfessionnel()
+    {
+        return $this->idProfessionnel;
+    }
+
+    /**
+     * Set the value of idProfessionnel
+     *
+     * @return  self
+     */ 
+    public function setIdProfessionnel($idProfessionnel)
+    {
+        $this->idProfessionnel = $idProfessionnel;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of idTypeActivite
+     */ 
+    public function getIdTypeActivite()
+    {
+        return $this->idTypeActivite;
+    }
+
+    /**
+     * Set the value of idTypeActivite
+     *
+     * @return  self
+     */ 
+    public function setIdTypeActivite($idTypeActivite)
+    {
+        $this->idTypeActivite = $idTypeActivite;
 
         return $this;
     }
