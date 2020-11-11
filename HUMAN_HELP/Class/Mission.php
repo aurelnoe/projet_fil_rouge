@@ -92,7 +92,7 @@ class Mission
     /**
      * Get the value of imageMission
      */ 
-    public function getImageMission()
+    public function getImageMission():string
     {
         return $this->imageMission;
     }
@@ -102,7 +102,7 @@ class Mission
      *
      * @return  self
      */ 
-    public function setImageMission(?numeric $imageMission):self
+    public function setImageMission(string $imageMission):self
     {
         $this->imageMission = $imageMission;
 
@@ -192,7 +192,7 @@ class Mission
     /**
      * Get the value of idPays
      */ 
-    public function getIdPays()
+    public function getIdPays():int
     {
         return $this->idPays;
     }
@@ -202,7 +202,7 @@ class Mission
      *
      * @return  self
      */ 
-    public function setIdPays($idPays)
+    public function setIdPays(int $idPays):self
     {
         $this->idPays = $idPays;
 
@@ -212,7 +212,7 @@ class Mission
     /**
      * Get the value of idProfessionnel
      */ 
-    public function getIdProfessionnel()
+    public function getIdProfessionnel():int
     {
         return $this->idProfessionnel;
     }
@@ -222,7 +222,7 @@ class Mission
      *
      * @return  self
      */ 
-    public function setIdProfessionnel($idProfessionnel)
+    public function setIdProfessionnel(int $idProfessionnel):self
     {
         $this->idProfessionnel = $idProfessionnel;
 
@@ -232,7 +232,7 @@ class Mission
     /**
      * Get the value of idTypeActivite
      */ 
-    public function getIdTypeActivite()
+    public function getIdTypeActivite():int 
     {
         return $this->idTypeActivite;
     }
@@ -242,7 +242,7 @@ class Mission
      *
      * @return  self
      */ 
-    public function setIdTypeActivite($idTypeActivite)
+    public function setIdTypeActivite(int $idTypeActivite):self
     {
         $this->idTypeActivite = $idTypeActivite;
 
