@@ -26,20 +26,20 @@ class MissionMySqliDAO
         $getIdMission = $mission->getIdMission();
         $getTitreMission = $mission->getTitreMission();
         $getDescriptionMission = $mission->getDescriptionMission();
+        $getTypeFormation = $mission->getTypeFormation();
         $getImageMission = $mission->getImageMission();
-        $getPaysMission = $mission->getEmbauche();
         $getDateDebut = $mission->getDateDebut()->format('Y-m-d');
         $getDuree = $mission->getDuree();
         $getDateAjout = $mission->getDateAjout()->format('Y-m-d');
         $getIdPays = getIdPays($idPays);
-        $getEtablissement = getEtablissement($etablissement);
+        $getIdEtablissement = getIdEtablissement($idEtablissement);
         $getIdTypeActivite = getIdTypeActivite($idTypeActivite);
 
-        $query = "INSERT INTO employes VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)";            
+        $query = "INSERT INTO employes VALUES (?,?,?,?,?,?,?,?,?,?,?)";            
         $stmt = $db->prepare($query); 
-        $stmt->bind_param("issssssisiii",$getIdMission,$getTitreMission,$getDescriptionMission,$getImageMission,
-                                        $getPaysMission,$getDateMission,$getDateDebut,$getDuree,
-                                        $getDateAjout,$getIdPays,$getEtablissement,$getIdTypeActivite);
+        $stmt->bind_param("ississssisiii",$getIdMission,$getTitreMission,$getDescriptionMission,$getTypeFormation,$getImageMission,
+                                        $getDateDebut,$getDuree,
+                                        $getDateAjout,$getIdPays,$getIdEtablissement,$getIdTypeActivite);
         $stmt->execute();
 
         $db->close();  
@@ -53,7 +53,8 @@ class MissionMySqliDAO
 
         //$getIdMission = $mission->getIdMission();
         $getTitreMission = $mission->getTitreMission();
-        $getDescriptionMission = $mission->getDescriptionMission();
+        $getDescriptionMission = $mission->getDescriptionMission();       
+        $getTypeFormation = $mission->getTypeFormation();
         $getImageMission = $mission->getImageMission();
         $getPaysMission = $mission->getEmbauche();
         $getDateDebut = $mission->getDateDebut()->format('Y-m-d');
@@ -66,8 +67,8 @@ class MissionMySqliDAO
         $query = "UPDATE mission 
                     SET titre_mission = ?,
                         descripition_mission = ?,
+                        type_formation = ?,
                         image_mission = ?,
-                        pays_mission = ?,
                         date_debut = ?,
                         duree = ?,
                         date_ajout = ?,
@@ -77,7 +78,7 @@ class MissionMySqliDAO
                     WHERE id_mission = ?";  
 
         $stmt = $db->prepare($query);
-        $stmt->bind_param("sssssisiiii",$getTitreMission,$getDescriptionMission,$getImageMission,$getPaysMission,
+        $stmt->bind_param("ssissisiiii",$getTitreMission,$getDescriptionMission,$getTypeFormation,$getImageMission,
                                         $getDateDebut,$getDuree,$getDateAjout,$getIdPays,
                                         $getIdEtablissement,$getIdTypeActivite,$idMission);
         $stmt->execute();

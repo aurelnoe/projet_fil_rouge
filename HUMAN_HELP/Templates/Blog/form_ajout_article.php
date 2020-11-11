@@ -1,6 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <?php include("../../head.php"); ?>
+    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/styleMoh.css">
+    <title>Infos personnelles</title>
+</head>
 <body>
+    <?php
+    include("../Bases/navbarDev.php");
 
-<div class="container col-12 col-md-6 pt-4 my-4 border rounded">
+    include("../Bases/header.php");
+
+    include("../Bases/navbar.php");
+    ?>
+    <div class="container col-12 col-md-6 pt-4 my-4 border rounded">
 
         <h2 class="text-center my-2 pb-2">Ajouter une nouvelle actualité</h2>
 
@@ -62,8 +78,12 @@
             <hr class="mb-4 mt-4">
 
             <button class="btn btnGreen btn-lg btn-block mb-5" type="submit">Ajouter un article</button>
-
+            
         </form>
     </div>
+    <?php      
+    include("../Bases/footer.php") 
+    ?>
 </body>
+</html>
 

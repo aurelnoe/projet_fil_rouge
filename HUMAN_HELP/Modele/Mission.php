@@ -5,6 +5,7 @@ class Mission
     private $idMission;
     private $titreMission;
     private $descriptionMission;
+    private $typeFormation;
     private $imageMission;
     private $dateDebut;
     private $duree;
@@ -64,15 +65,35 @@ class Mission
     }
 
     /**
-     * Set the value of descriptionMission
+    * Set the value of descriptionMission
+    *
+    * @return  self
+    */ 
+    public function setDescriptionMission(string $descriptionMission):self
+    {
+        $this->descriptionMission = $descriptionMission;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of typeFormation
+     */ 
+    public function getTypeFormation():?int
+    {
+        return $this->typeFormation;
+    }
+
+    /**
+     * Set the value of typeFormation
      *
      * @return  self
      */ 
-    public function setDescriptionMission(string $descriptionMission):self
+    public function setTypeFormation(?int $typeFormation):self
     {
-            $this->descriptionMission = $descriptionMission;
+        $this->typeFormation = $typeFormation;
 
-            return $this;
+        return $this;
     }
 
     /**
@@ -214,4 +235,6 @@ class Mission
 
         return $this;
     }
+
+   
 }

@@ -11,11 +11,11 @@ if(!empty($_GET['action']) && isset($_GET['action'])
         $idMission = $_POST['id_mission'];
         $titreMission = $_POST['titre_mission'];
         $descriptionMission = $_POST['description_mission'];
-        $imageMission = is_null($_POST['image_mission']) ? 'NULL' : $_POST['image_mission'];;
-        //$paysMission = $_POST['pays_mission'];
-        $dateDebut = $_POST['date_mission'];
+        $typeFormation = $_POST['type_formation'];
+        $imageMission = is_null($_POST['image_mission']) ? 'NULL' : $_POST['image_mission'];
+        $dateDebut = $_POST['date_debut'];
         $newDate = new DateTime($dateDebut);
-        $duree = $_POST['duree_mission'];
+        $duree = $_POST['duree'];
         $dateAjout = new DateTime(time());
         $idPays = $_POST['id_pays'];
         $idEtablissement = is_null($_POST['id_etablissement']) ? 'NULL' : $_POST['id_etablissement'];
@@ -26,12 +26,13 @@ if(!empty($_GET['action']) && isset($_GET['action'])
         $mission->setIdMission($idMission)
                 ->setTitreMission($titreMission)
                 ->setDescriptionMission($descriptionMission)
+                ->setTypeFormation($typeFormation)
                 ->setImageMission($imageMission)
-                ->setDateDebutMission($dateDebut)
+                ->setDateDebut($dateDebut)
                 ->setDuree($duree)
                 ->setDateAjout($dateAjout)
                 ->setIdPays($idPays)
-                ->setEtablissement($etablissement)
+                ->setIdEtablissement($idEtablissement)
                 ->setIdTypeActivite($idTypeActivite);
 
         $newAdd = new MissionMySqliDAO;
@@ -49,10 +50,11 @@ if(!empty($_GET['action']) && isset($_GET['action'])
         $idMission = $_GET['id_mission'];
         $titreMission = $_POST['titre_mission'];
         $descriptionMission = $_POST['desccription_mission'];
-        $imageMission = $_POST['image_mission'];
-        $dateDebut = $_POST['date_mission'];
+        $typeFormation = $_POST['type_formation'];
+        $imageMission = is_null($_POST['image_mission']) ? 'NULL' : $_POST['image_mission'];
+        $dateDebut = $_POST['date_debut'];
         $newDate = new DateTime($dateDebut);
-        $duree = $_POST['duree_mission'];
+        $duree = $_POST['duree'];
         $dateAjout = new DateTime(time());
         $idPays = $_POST['id_pays'];
         $idEtablissement = $_POST['id_etablissement'];
@@ -62,12 +64,13 @@ if(!empty($_GET['action']) && isset($_GET['action'])
         $mission->setIdMission($idMission)
                 ->setTitreMission($titreMission)
                 ->setDescriptionMission($descriptionMission)
+                ->setTypeFormation($typeFormation)
                 ->setImageMission($imageMission)
-                ->setDateDebutMission($dateDebut)
+                ->setDateDebut($dateDebut)
                 ->setDuree($duree)
                 ->setDateAjout($dateAjout)
                 ->setIdPays($idPays)
-                ->setEtablissement($etablissement)
+                ->setEtablissement($idEtablissement)
                 ->setIdTypeActivite($idTypeActivite);
 
         $newUpdate = new MissionMySqliDAO;

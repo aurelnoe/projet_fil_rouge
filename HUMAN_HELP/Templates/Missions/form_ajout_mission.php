@@ -1,8 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">    
 <head>
+    <?php include("../../head.php"); ?>
+    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/styleMoh.css">
     <title>Formulaire d'ajout d'une mission</title>
+    
 </head>
+<body>
+    <?php
+    include("../Bases/navbarDev.php");
 
-<div class="col-12 col-md-6 container pt-4 my-4 border rounded">
+    include("../Bases/header.php");
+
+    include("../Bases/navbar.php");
+    ?>
+    <div class="col-12 col-md-6 container pt-4 my-4 border rounded">
 
         <h2 class="text-center my-2 pb-2">Ajouter une nouvelle mission</h2>
 
@@ -29,11 +44,11 @@
                     <label class="h-50" for="id_pays">Pays concerné</label>
                     <select class="custom-select list-group d-block h-50 w-100" required>
                     <option class="list-group-item" value="">Choisissez...</option>
-                    <option name="id_pays" value=1 class="list-group-item">Mali</option>
+                    <option name="id_pays" value=1 class="list-group-item">Maroc</option>
                     <option name="id_pays" value=2 class="list-group-item">Gabon</option>
                     <option name="id_pays" value=3 class="list-group-item">Somalie</option>
                     <option name="id_pays" value=4 class="list-group-item">Egypte</option>
-                    <option name="id_pays" value=5 class="list-group-item">Maroc</option>
+                    <option name="id_pays" value=5 class="list-group-item">Mali</option>
                     </select>
                     <div class="invalid-feedback">
                     Choisissez un pays valide.
@@ -44,15 +59,15 @@
                     <label class=" h-50" for="id_type_activite">Type d'activité</label>
                     <select class="custom-select list-group d-block h-50 w-100" name="id_type_activite" required>
                         <option class="list-group-item" value="">Choisissez...</option>
-                        <option name="id_pays" value=1 class="list-group-item">Médecine</option>
-                        <option name="id_pays" value=2 class="list-group-item">Donations</option>
-                        <option name="id_pays" value=3 class="list-group-item">Enseignement</option>
-                        <option name="id_pays" value=4 class="list-group-item">Formation</option>
-                        <option name="id_pays" value=5 class="list-group-item">Informatique</option>
-                        <option name="id_pays" value=6 class="list-group-item">Traduction</option>
-                        <option name="id_pays" value=7 class="list-group-item">Sportive</option>
-                        <option name="id_pays" value=8 class="list-group-item">Aide juridique</option>
-                        <option name="id_pays" value=9 class="list-group-item">Soutient psychologique</option>
+                        <option name="id_type_activite" value=1 class="list-group-item">Médecine</option>
+                        <option name="id_type_activite" value=2 class="list-group-item">Donations</option>
+                        <option name="id_type_activite" value=3 class="list-group-item">Enseignement</option>
+                        <option name="id_type_activite" value=4 class="list-group-item">Formation</option>
+                        <option name="id_type_activite" value=5 class="list-group-item">Informatique</option>
+                        <option name="id_type_activite" value=6 class="list-group-item">Traduction</option>
+                        <option name="id_type_activite" value=7 class="list-group-item">Sportive</option>
+                        <option name="id_type_activite" value=8 class="list-group-item">Aide juridique</option>
+                        <option name="id_type_activite" value=9 class="list-group-item">Soutient psychologique</option>
                     </select>
                     <div class="invalid-feedback">
                         Ce champ est requis.
@@ -70,12 +85,12 @@
                 <label>Type de formation</label>
                 <div class="row">
                     <div class="custom-control custom-radio mx-4">
-                        <input name="TypeForm" id="distance" type="radio" class="custom-control-input" checked required>
                         <label class="custom-control-label" for="distance">Distance</label>
+                        <input name="type_formation" value=1 id="distance" type="radio" class="custom-control-input" checked required>
                     </div>
                     <div class="custom-control custom-radio mx-2">
-                        <input name="TypeForm" id="terrain" type="radio" class="custom-control-input" required>
                         <label class="custom-control-label" for="terrain">Sur le terrain</label>
+                        <input name="type_formation" value=2 id="terrain" type="radio" class="custom-control-input" required>
                     </div>
                 </div>  
             </div>
@@ -106,5 +121,10 @@
             <hr class="mb-4 mt-4">
             
             <button class="btn btnGreen btn-lg btn-block mb-5" type="submit">Ajouter une mission</button>
-    </form>   
-</div>
+        </form>   
+    </div>
+    <?php      
+    include("../Bases/footer.php") 
+    ?>
+</body>
+</html>

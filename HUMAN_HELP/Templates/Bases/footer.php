@@ -4,9 +4,9 @@
         <ul class="list-footer list-group list-group-flush">
             <li class="list-group-item"><a style="text-decoration:none" href="#navbarSupportedContent">Pays d'action</a></li>
             <li class="list-group-item"><a style="text-decoration:none" href="#navbarSupportedContent">Types d'activités</a></li>
-            <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/?q=Autres/comment_ca_marche">Comment ça marche</a></li>
-            <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/?q=Utilisateur/form_inscription">Inscription</a></li>
-            <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/?q=Utilisateur/form_connexion">Connexion</a></li>
+            <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/Templates/Autres/comment_ca_marche.php">Comment ça marche</a></li>
+            <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/Templates/Utilisateur/form_inscription.php">Inscription</a></li>
+            <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/Templates/Utilisateur/form_connexion.php">Connexion</a></li>
         </ul>
         <!-- changer les liens ancres pour les mettres sur la banière -->
         </div>
@@ -15,8 +15,8 @@
             <li class="list-group-item">Politiques de confidentialités</li>
             <li class="list-group-item">Politique d'utilisation des cookies</li>
             <li class="list-group-item">Conditions générales</li> 
-            <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/?q=FAQ/faq">FAQ</a></li>
-            <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/?q=Blog/liste_article">Blog</a></li>
+            <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/Templates/FAQ/faq.php">FAQ</a></li>
+            <li class="list-group-item"><a style="text-decoration:none" href="/HUMAN_HELP/Templates/Blog/liste_article.php">Blog</a></li>
         </ul>
         </div>
         <div class="col-xl-4 col-md-12 button-footer">

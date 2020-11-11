@@ -7,7 +7,7 @@
           <a class="nav-link" href="#">Projets <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/HUMAN_HELP/?q=missions/liste_missions" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="/HUMAN_HELP/Templates/missions/liste_missions.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Pays d'action
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -30,21 +30,21 @@
           </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="/HUMAN_HELP/?q=Autres/comment_ca_marche">Comment ça marche</a>
+          <a class="nav-link" href="/HUMAN_HELP/Templates/Autres/comment_ca_marche.php">Comment ça marche</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="/HUMAN_HELP/?q=FAQ/faq" tabindex="-1" aria-disabled="true">FAQ</a>
+          <a class="nav-link" href="/HUMAN_HELP/Templates/FAQ/faq.php" tabindex="-1" aria-disabled="true">FAQ</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/HUMAN_HELP/?q=Blog/liste_articles"  tabindex="-1" aria-disabled="true">
+            <a class="nav-link" href="/HUMAN_HELP/Templates/Blog/liste_articles.php"  tabindex="-1" aria-disabled="true">
               Blog
             </a>
           </li>
       </ul>
       <ul class="navbar-nav mr-auto">
-       <a class="nav-link" href="/HUMAN_HELP/?q=Utilisateur/form_inscription" tabindex="-1" aria-disabled="true">Inscription</a>
-      <a class="nav-link" href="/HUMAN_HELP/?q=Utilisateur/form_connexion" tabindex="-1" aria-disabled="true">Connexion</a>
+       <a class="nav-link" href="/HUMAN_HELP/Templates/Utilisateur/form_inscription.php" tabindex="-1" aria-disabled="true">Inscription</a>
+      <a class="nav-link" href="/HUMAN_HELP/Templates/Utilisateur/form_connexion.php" tabindex="-1" aria-disabled="true">Connexion</a>
     </ul>
     </div>
   </nav>
