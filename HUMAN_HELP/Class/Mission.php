@@ -12,14 +12,14 @@ class Mission
     private $dateAjout;
     
     public function __toString(){
-        $this->$idMission;
-        $this->$titreMission;
-        $this->$descriptionMission;
-        $this->$imageMission;
-        $this->$paysMission;
-        $this->$dateDebut;
-        $this->$duree;
-        $this->$dateAjout;
+        $this->idMission;
+        $this->titreMission;
+        $this->descriptionMission;
+        $this->imageMission;
+        $this->paysMission;
+        $this->dateDebut;
+        $this->duree;
+        $this->dateAjout;
     }
 
     /**
