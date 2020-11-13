@@ -16,16 +16,16 @@ class Mission
     
     public function __toString(){
         return
-        $this->$idMission;
-        $this->$titreMission;
-        $this->$descriptionMission;
-        $this->$imageMission;
-        $this->$dateDebut;
-        $this->$duree;
-        $this->$dateAjout;
-        $this->$idPays;
-        $this->$idEtablissement;
-        $this->$idTypeActivite;
+        $this->idMission;
+        $this->titreMission;
+        $this->descriptionMission;
+        $this->imageMission;
+        $this->dateDebut;
+        $this->duree;
+        $this->dateAjout;
+        $this->idPays;
+        $this->idEtablissement;
+        $this->idTypeActivite;
     }
 
     /**
