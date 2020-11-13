@@ -1,6 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">    
 <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <?php include("../../head.php"); ?>
     <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
@@ -21,7 +25,7 @@
 
         <h2 class="text-center my-2 pb-2">Ajouter une nouvelle mission</h2>
 
-        <form class="needs-validation p-3" action="?q=Missions/list_mission_pro?action=add" method="POST" novalidate>
+        <form class="needs-validation p-3" action="/HUMAN_HELP/Templates/Missions/liste_mission_pro.php?action=add" method="POST" novalidate>
 
             <hr class="mb-4 mt-2">
 
@@ -85,19 +89,19 @@
                 <label>Type de formation</label>
                 <div class="row">
                     <div class="custom-control custom-radio mx-4">
-                        <label class="custom-control-label" for="distance">Distance</label>
-                        <input name="type_formation" value=1 id="distance" type="radio" class="custom-control-input" checked required>
+                        <input name="type_formation" id="distance" value=0 type="radio" class="custom-control-input">
+                        <label for="distance" class="custom-control-label">Distance</label>                       
                     </div>
                     <div class="custom-control custom-radio mx-2">
-                        <label class="custom-control-label" for="terrain">Sur le terrain</label>
-                        <input name="type_formation" value=2 id="terrain" type="radio" class="custom-control-input" required>
+                        <input name="type_formation" id="terrain" value=1 type="radio" class="custom-control-input">
+                        <label for="terrain" class="custom-control-label">Sur le terrain</label>                       
                     </div>
                 </div>  
             </div>
             <div class="mb-3 form-group">
-                <label for="date_mission">Date de début de la mission</label>
-                <div class="input-group date"  data-provide="datepicker">
-                    <input type="date" class="form-control" name="date_mission" placeholder="jj/mm/aaaa" required>
+                <label for="date_debut">Date de début de la mission</label>
+                <div class="input-group"  data-provide="datepicker">
+                    <input type="date" class="form-control" name="date_debut" placeholder="jj/mm/aaaa" required>
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>

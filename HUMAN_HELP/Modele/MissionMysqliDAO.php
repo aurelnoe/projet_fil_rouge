@@ -1,6 +1,6 @@
 <?php
 
-include_once("Mission.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Mission.php");
 
 function connexion(){
     $db = new mysqli('localhost','root','','human_helps');
@@ -30,7 +30,7 @@ class MissionMySqliDAO
         $getImageMission = $mission->getImageMission();
         $getDateDebut = $mission->getDateDebut()->format('Y-m-d');
         $getDuree = $mission->getDuree();
-        $getDateAjout = $mission->getDateAjout()->format('Y-m-d');
+        $getDateAjout = $mission->getDateAjout();//->format('Y-m-d')
         $getIdPays = getIdPays($idPays);
         $getIdEtablissement = getIdEtablissement($idEtablissement);
         $getIdTypeActivite = getIdTypeActivite($idTypeActivite);
@@ -109,11 +109,36 @@ class MissionMySqliDAO
 
     /**************** CHERCHE TOUTES LES MISSIONS ***************/
     public static function searchAllMissions()
-    {}
+    {
+        $query = 'SELECT * FROM mission';
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        $rs = $stmt->get_result();
+        $missions = $rs->fetch_all(MYSQLI_ASSOC);
+        
+        $rs->free(); 
+        $db->close();  
+        
+        return $missions;
+    }
 
     /**************** CHERCHE UNE MISSION ***********************/
-    public static function searchMissionById()
-    {}
+    public static function searchMissionById($getIdMission)
+    {
+        $db = connexion();
+        
+        $query = "SELECT * FROM employes WHERE no_employe = ?";   
+        $stmt = $db->prepare($query);
+        $stmt->bind_param("i", $getNoEmploye);
+        $stmt->execute();       
+        $rs = $stmt->get_result();
+        $employe = $rs->fetch_array(MYSQLI_ASSOC);
+        
+        $rs->free(); 
+        $db->close();    
+        
+        return $employe;
+    }
 
     /**************** CHERCHE TOUTES LES MISSIONS D'UN PRO *******/
     public static function searchMissionByPro()

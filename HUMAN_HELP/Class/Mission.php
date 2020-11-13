@@ -16,16 +16,16 @@ class Mission
     
     public function __toString(){
         return
-        $this->idMission;
-        $this->titreMission;
-        $this->descriptionMission;
-        $this->imageMission;
-        $this->dateDebut;
-        $this->duree;
-        $this->dateAjout;
-        $this->idPays;
-        $this->idEtablissement;
-        $this->idTypeActivite;
+        $this->$idMission;
+        $this->$titreMission;
+        $this->$descriptionMission;
+        $this->$imageMission;
+        $this->$dateDebut;
+        $this->$duree;
+        $this->$dateAjout;
+        $this->$idPays;
+        $this->$idEtablissement;
+        $this->$idTypeActivite;
     }
 
     /**
@@ -119,7 +119,7 @@ class Mission
     /**
      * Get the value of dateDebut
      */ 
-    public function getDateDebut():DateTime
+    public function getDateDebut():?DateTime
     {
         return $this->dateDebut;
     }
@@ -129,7 +129,7 @@ class Mission
      *
      * @return  self
      */ 
-    public function setDateDebut(DateTime $dateDebut):self
+    public function setDateDebut(?DateTime $dateDebut):self
     {
         $this->dateDebut = $dateDebut;
 
