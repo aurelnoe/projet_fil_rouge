@@ -8,13 +8,15 @@ if(!empty($_GET['action']) && isset($_GET['action'])
 {
     if (!empty($_POST) && isset($_POST)) 
     {
-        
+        echo'<pre>';
+        var_dump($_POST);
+        echo '</pre>';
         $titreMission = $_POST['titre_mission'];
         $descriptionMission = $_POST['description_mission'];
         $typeFormation = $_POST['type_formation'];
         $imageMission = is_null($_POST['image_mission']) ? 'NULL' : $_POST['image_mission'];
-        $dateDebut = $_POST['date_debut'];
-        $newDate = new DateTime($dateDebut);
+        $postdateDebut = $_POST['date_debut'];
+        $dateDebut = new DateTime($postdateDebut);
         $duree = $_POST['duree'];
         $newDate = date("Y-m-d");
         $dateAjout = new DateTime($newDate);
@@ -55,7 +57,7 @@ if(!empty($_GET['action']) && isset($_GET['action'])
         $dateDebut = $_POST['date_debut'];
         $newDate = new DateTime($dateDebut);
         $duree = $_POST['duree'];
-        $dateAjout = new DateTime(time());
+        $dateAjout = new DateTime(date("Y-m-d"));
         $idPays = $_POST['id_pays'];
         $idEtablissement = $_POST['id_etablissement'];
         $idTypeActivite = $_POST['id_type_activite'];

@@ -2,38 +2,51 @@
 
 class Mission 
 {
-    private $idMission;
-    private $titreMission;
-    private $descriptionMission;
-    private $typeFormation;
-    private $imageMission;
-    private $dateDebut;
+    private $id_mission;
+    private $titre_mission;
+    private $description_mission;
+    private $type_formation;
+    private $image_mission;
+    private $date_debut;
     private $duree;
-    private $dateAjout;
-    public $idPays;
-    public $idEtablissement;
-    public $idTypeActivite;
+    private $date_ajout;
+    public $id_pays;
+    public $id_etablissement;
+    public $id_type_activite;
     
     public function __toString(){
         return
-        $this->idMission;
-        $this->titreMission;
-        $this->descriptionMission;
-        $this->imageMission;
-        $this->dateDebut;
+        $this->id_mission;
+        $this->titre_mission;
+        $this->description_mission;
+        $this->type_formation;
+        $this->image_mission;
+        $this->date_debut;
         $this->duree;
-        $this->dateAjout;
-        $this->idPays;
-        $this->idEtablissement;
-        $this->idTypeActivite;
+        $this->date_ajout;
+        $this->id_pays;
+        $this->id_etablissement;
+        $this->id_type_activite;
     }
 
     /**
      * Get the value of idMission
      */ 
-    public function getIdMission():int
+    public function getIdMission():?int
     {
-        return $this->idMission;
+        return $this->id_mission;
+    }
+
+    /**
+     * Set the value of id_mission
+     *
+     * @return  self
+     */ 
+    public function setIdMission(?int $idMission)
+    {
+        $this->id_mission = $idMission;
+
+        return $this;
     }
 
     /**
@@ -41,7 +54,7 @@ class Mission
      */ 
     public function getTitreMission():string
     {
-        return $this->titreMission;
+        return $this->titre_mission;
     }
 
     /**
@@ -51,7 +64,7 @@ class Mission
      */ 
     public function setTitreMission(string $titreMission):self
     {
-        $this->titreMission = $titreMission;
+        $this->titre_mission = $titreMission;
 
         return $this;
     }
@@ -61,7 +74,7 @@ class Mission
      */ 
     public function getDescriptionMission():string
     {
-            return $this->descriptionMission;
+            return $this->description_mission;
     }
 
     /**
@@ -71,7 +84,7 @@ class Mission
     */ 
     public function setDescriptionMission(string $descriptionMission):self
     {
-        $this->descriptionMission = $descriptionMission;
+        $this->description_mission = $descriptionMission;
 
         return $this;
     }
@@ -81,7 +94,7 @@ class Mission
      */ 
     public function getTypeFormation():?int
     {
-        return $this->typeFormation;
+        return $this->type_formation;
     }
 
     /**
@@ -91,7 +104,7 @@ class Mission
      */ 
     public function setTypeFormation(?int $typeFormation):self
     {
-        $this->typeFormation = $typeFormation;
+        $this->type_formation = $typeFormation;
 
         return $this;
     }
@@ -101,7 +114,7 @@ class Mission
      */ 
     public function getImageMission():?string
     {
-        return $this->imageMission;
+        return $this->image_mission;
     }
 
     /**
@@ -111,7 +124,7 @@ class Mission
      */ 
     public function setImageMission(?string $imageMission):self
     {
-        $this->imageMission = $imageMission;
+        $this->image_mission = $imageMission;
 
         return $this;
     }
@@ -121,7 +134,7 @@ class Mission
      */ 
     public function getDateDebut():?DateTime
     {
-        return $this->dateDebut;
+        return $this->date_debut;
     }
 
     /**
@@ -131,7 +144,7 @@ class Mission
      */ 
     public function setDateDebut(?DateTime $dateDebut):self
     {
-        $this->dateDebut = $dateDebut;
+        $this->date_debut = $dateDebut;
 
         return $this;
     }
@@ -161,7 +174,7 @@ class Mission
      */ 
     public function getDateAjout():DateTime
     {
-        return $this->dateAjout;
+        return $this->date_ajout;
     }
 
     /**
@@ -171,7 +184,7 @@ class Mission
      */ 
     public function setDateAjout(DateTime $dateAjout):self
     {
-        $this->dateAjout = $dateAjout;
+        $this->date_ajout = $dateAjout;
 
         return $this;
     }
@@ -181,7 +194,7 @@ class Mission
      */ 
     public function getIdPays():int
     {
-        return $this->idPays;
+        return $this->id_pays;
     }
 
     /**
@@ -191,7 +204,7 @@ class Mission
      */ 
     public function setIdPays(int $idPays):self
     {
-        $this->idPays = $idPays;
+        $this->id_pays = $idPays;
 
         return $this;
     }
@@ -201,7 +214,7 @@ class Mission
      */ 
     public function getIdEtablissement():int
     {
-        return $this->idEtablissement;
+        return $this->id_etablissement;
     }
 
     /**
@@ -211,7 +224,7 @@ class Mission
      */ 
     public function setIdEtablissement($idEtablissement):self
     {
-        $this->idEtablissement = $idEtablissement;
+        $this->id_etablissement = $idEtablissement;
 
         return $this;
     }
@@ -221,7 +234,7 @@ class Mission
      */ 
     public function getIdTypeActivite():int
     {
-        return $this->idTypeActivite;
+        return $this->id_type_activite;
     }
 
     /**
@@ -231,10 +244,8 @@ class Mission
      */ 
     public function setIdTypeActivite(int $idTypeActivite):self
     {
-        $this->idTypeActivite = $idTypeActivite;
+        $this->id_type_activite = $idTypeActivite;
 
         return $this;
     }
-
-   
 }

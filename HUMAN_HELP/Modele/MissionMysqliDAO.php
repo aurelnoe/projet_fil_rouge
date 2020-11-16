@@ -31,9 +31,9 @@ class MissionMySqliDAO
         $getDateDebut = $mission->getDateDebut()->format('Y-m-d');
         $getDuree = $mission->getDuree();
         $getDateAjout = $mission->getDateAjout();//->format('Y-m-d')
-        $getIdPays = getIdPays($idPays);
-        $getIdEtablissement = getIdEtablissement($idEtablissement);
-        $getIdTypeActivite = getIdTypeActivite($idTypeActivite);
+        $getIdPays = getIdPays();
+        $getIdEtablissement = getIdEtablissement();
+        $getIdTypeActivite = getIdTypeActivite();
 
         $query = "INSERT INTO employes VALUES (?,?,?,?,?,?,?,?,?,?,?)";            
         $stmt = $db->prepare($query); 
@@ -59,7 +59,7 @@ class MissionMySqliDAO
         $getPaysMission = $mission->getEmbauche();
         $getDateDebut = $mission->getDateDebut()->format('Y-m-d');
         $getDuree = $mission->getDuree();
-        $getDateAjout = $mission->getDateAjout()->format('Y-m-d');
+        $getDateAjout = $mission->getDateAjout();
         $getIdPays = $mission->getIdPays();
         $getIdEtablissement = $mission->getIdEtablisse();
         $getIdTypeActivite = $mission->getIdTypeActivite();

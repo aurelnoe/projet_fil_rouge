@@ -46,13 +46,13 @@
             <div class="row p-0 mb-3">
                 <div class="col-12 col-md-6 form-group w-50 pl-3">
                     <label class="h-50" for="id_pays">Pays concerné</label>
-                    <select class="custom-select list-group d-block h-50 w-100" required>
+                    <select type="number" name="id_pays" class="custom-select list-group d-block h-50 w-100" required>
                     <option class="list-group-item" value="">Choisissez...</option>
-                    <option name="id_pays" value=1 class="list-group-item">Maroc</option>
-                    <option name="id_pays" value=2 class="list-group-item">Gabon</option>
-                    <option name="id_pays" value=3 class="list-group-item">Somalie</option>
-                    <option name="id_pays" value=4 class="list-group-item">Egypte</option>
-                    <option name="id_pays" value=5 class="list-group-item">Mali</option>
+                    <option value=1 class="list-group-item">Maroc</option>
+                    <option value=2 class="list-group-item">Gabon</option>
+                    <option value=3 class="list-group-item">Somalie</option>
+                    <option value=4 class="list-group-item">Egypte</option>
+                    <option value=5 class="list-group-item">Mali</option>
                     </select>
                     <div class="invalid-feedback">
                     Choisissez un pays valide.
@@ -61,17 +61,17 @@
                 
                 <div class="col-12 col-md-6 w-50 form-group pl-3">
                     <label class=" h-50" for="id_type_activite">Type d'activité</label>
-                    <select class="custom-select list-group d-block h-50 w-100" name="id_type_activite" required>
+                    <select name="id_type_activite" class="custom-select list-group d-block h-50 w-100" required>
                         <option class="list-group-item" value="">Choisissez...</option>
-                        <option name="id_type_activite" value=1 class="list-group-item">Médecine</option>
-                        <option name="id_type_activite" value=2 class="list-group-item">Donations</option>
-                        <option name="id_type_activite" value=3 class="list-group-item">Enseignement</option>
-                        <option name="id_type_activite" value=4 class="list-group-item">Formation</option>
-                        <option name="id_type_activite" value=5 class="list-group-item">Informatique</option>
-                        <option name="id_type_activite" value=6 class="list-group-item">Traduction</option>
-                        <option name="id_type_activite" value=7 class="list-group-item">Sportive</option>
-                        <option name="id_type_activite" value=8 class="list-group-item">Aide juridique</option>
-                        <option name="id_type_activite" value=9 class="list-group-item">Soutient psychologique</option>
+                        <option  value=1 class="list-group-item">Médecine</option>
+                        <option  value=2 class="list-group-item">Donations</option>
+                        <option  value=3 class="list-group-item">Enseignement</option>
+                        <option  value=4 class="list-group-item">Formation</option>
+                        <option  value=5 class="list-group-item">Informatique</option>
+                        <option  value=6 class="list-group-item">Traduction</option>
+                        <option  value=7 class="list-group-item">Sportive</option>
+                        <option  value=8 class="list-group-item">Aide juridique</option>
+                        <option  value=9 class="list-group-item">Soutient psychologique</option>
                     </select>
                     <div class="invalid-feedback">
                         Ce champ est requis.

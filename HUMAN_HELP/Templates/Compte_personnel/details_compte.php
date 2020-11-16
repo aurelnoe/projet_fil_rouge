@@ -49,7 +49,7 @@
                 <h3>Votre adresse :</h3>
                 <div class="row">
                     <div class="col-9 mr-auto">
-                        <p>Nméro, libéllé de la voie :</p>
+                        <p>Numéro, libellé de la voie :</p>
                         <p>Ville :</p>
                         <p>Code postale :</p>
                         <p>Complément d'adresse :</p>

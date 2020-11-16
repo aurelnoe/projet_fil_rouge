@@ -2,21 +2,21 @@
 
 class Role
 {
-    private $idRole;
-    private $nomRole;
+    private $id_role;
+    private $nom_role;
 
     public function __toString()
     {
         return
-        $this->idRole;
-        $this->nomRole;
+        $this->id_role;
+        $this->nom_role;
     }
     /**
      * Get the value of idRole
      */ 
     public function getIdRole():int
     {
-        return $this->idRole;
+        return $this->id_role;
     }
 
     /**
@@ -26,7 +26,7 @@ class Role
      */ 
     public function setIdRole(int $idRole):self
     {
-        $this->idRole = $idRole;
+        $this->id_role = $idRole;
 
         return $this;
     }
@@ -36,7 +36,7 @@ class Role
      */ 
     public function getNomRole():string
     {
-        return $this->nomRole;
+        return $this->nom_role;
     }
 
     /**
@@ -46,7 +46,7 @@ class Role
      */ 
     public function setNomRole(string $nomRole):self
     {
-        $this->nomRole = $nomRole;
+        $this->nom_role = $nomRole;
 
         return $this;
     }
