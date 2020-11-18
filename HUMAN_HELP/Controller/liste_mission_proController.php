@@ -8,9 +8,9 @@ if(!empty($_GET['action']) && isset($_GET['action'])
 {
     if (!empty($_POST) && isset($_POST)) 
     {
-        echo'<pre>';
-        var_dump($_POST);
-        echo '</pre>';
+        // echo'<pre>';
+        // var_dump($_POST);
+        // echo '</pre>';
         $titreMission = utf8_decode($_POST['titre_mission']);
         $descriptionMission = $_POST['description_mission'];
         $typeFormation = $_POST['type_formation'];
@@ -21,7 +21,7 @@ if(!empty($_GET['action']) && isset($_GET['action'])
         $newDate = date("Y-m-d");
         $dateAjout = new DateTime($newDate);
         $idPays = $_POST['id_pays'];
-        $idEtablissement = is_null($_POST['id_etablissement']) ? 'NULL' : $_POST['id_etablissement'];
+        $idEtablissement = $_POST['id_etablissement'];
         $idTypeActivite = $_POST['id_type_activite'];
 
         $mission = new Mission;
@@ -80,13 +80,15 @@ if(!empty($_GET['action']) && isset($_GET['action'])
     }
 }
 
-
 /**************************************** SUPPRIME MISSION ************************/
 elseif (isset($_GET['action']) && $_GET['action'] == 'delete') 
 {
     if (!empty($_GET['id_mission'])) 
     {              
-        MissionMysqliDAO::deleteEmploye($_GET['id_mission']);  
+        MissionMysqliDAO::deleteMission($_GET['id_mission']);  
     }
 }
+
+$allMissionsPro = MissionMysqliDAO::searchMissionByPro(1);
+
 

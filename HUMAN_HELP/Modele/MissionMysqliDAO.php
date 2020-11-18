@@ -57,12 +57,12 @@ class MissionMySqliDAO
         $getDescriptionMission = $mission->getDescriptionMission();       
         $getTypeFormation = $mission->getTypeFormation();
         $getImageMission = $mission->getImageMission();
-        $getPaysMission = $mission->getEmbauche();
+        $getPaysMission = $mission->getPaysMission();
         $getDateDebut = $mission->getDateDebut()->format('Y-m-d');
         $getDuree = $mission->getDuree();
         $getDateAjout = $mission->getDateAjout();
         $getIdPays = $mission->getIdPays();
-        $getIdEtablissement = $mission->getIdEtablisse();
+        $getIdEtablissement = $mission->getIdEtablissement();
         $getIdTypeActivite = $mission->getIdTypeActivite();
         //var_dump($idMission);
         $query = "UPDATE mission 
@@ -128,7 +128,7 @@ class MissionMySqliDAO
     {
         $db = connexion();
         
-        $query = "SELECT * FROM employes WHERE no_employe = ?";   
+        $query = "SELECT * FROM mission WHERE id_mission = ?";   
         $stmt = $db->prepare($query);
         $stmt->bind_param("i", $getNoEmploye);
         $stmt->execute();       
@@ -142,6 +142,45 @@ class MissionMySqliDAO
     }
 
     /**************** CHERCHE TOUTES LES MISSIONS D'UN PRO *******/
-    public static function searchMissionByPro()
-    {}
+    public static function searchMissionByPro($id_etablissement)
+    {
+        $db = connexion();
+        
+        $query = "SELECT * FROM mission WHERE id_etablissement = ?";
+
+        $stmt = $db->prepare($query);
+        $stmt->bind_param("i", $id_etablissement);
+        $stmt->execute();       
+        $rs = $stmt->get_result();
+        $missions = $rs->fetch_all(MYSQLI_ASSOC);
+               
+        $rs->free(); 
+        $db->close();
+        
+        $allMissionsPro = array();
+        $i = 1;
+        foreach ($missions as $mission) 
+        {
+            $newDateDebut = new DateTime($mission['date_debut']);
+            $newDateAjout = new DateTime($mission['date_ajout']);
+            $newMission = new Mission();
+            $newMission->setIdMission($mission['id_mission'])
+                       ->setTitreMission($mission['titre_mission'])
+                       ->setDescriptionMission($mission['description_mission'])
+                       ->setTypeFormation($mission['type_formation'])
+                       ->setImageMission($mission['image_mission'])
+                       ->setDateDebut($newDateDebut)
+                       ->setDuree($mission['duree'])
+                       ->setDateAjout($newDateAjout)
+                       ->setIdPays($mission['id_pays'])
+                       ->setIdEtablissement($mission['id_etablissement'])
+                       ->setIdTypeActivite($mission['id_type_activite']);
+            $allMissionsPro[$i] = $newMission;
+            $i++;
+        } 
+                      
+        return $allMissionsPro;
+
+    }
 }
+?>

@@ -10,9 +10,9 @@ class Mission
     private $date_debut;
     private $duree;
     private $date_ajout;
-    public $id_pays;
-    public $id_etablissement;
-    public $id_type_activite;
+    private $id_pays;
+    private $id_etablissement;
+    private $id_type_activite;
     
     public function __toString(){
         return
@@ -52,7 +52,7 @@ class Mission
     /**
      * Get the value of titreMission
      */ 
-    public function getTitreMission():string
+    public function getTitreMission():?string
     {
         return $this->titre_mission;
     }
@@ -132,7 +132,7 @@ class Mission
     /**
      * Get the value of dateDebut
      */ 
-    public function getDateDebut():?DateTime
+    public function getDateDebut():DateTime
     {
         return $this->date_debut;
     }
@@ -142,7 +142,7 @@ class Mission
      *
      * @return  self
      */ 
-    public function setDateDebut(?DateTime $dateDebut):self
+    public function setDateDebut(DateTime $dateDebut):self
     {
         $this->date_debut = $dateDebut;
 
@@ -212,7 +212,7 @@ class Mission
     /**
      * Get the value of idEtablissement
      */ 
-    public function getIdEtablissement():int
+    public function getIdEtablissement():?int
     {
         return $this->id_etablissement;
     }
@@ -222,7 +222,7 @@ class Mission
      *
      * @return  self
      */ 
-    public function setIdEtablissement($idEtablissement):self
+    public function setIdEtablissement(int $idEtablissement):self
     {
         $this->id_etablissement = $idEtablissement;
 

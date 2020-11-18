@@ -31,13 +31,13 @@
 
             <div class="mb-3 form-group">
                 <label for="id_etablissement">Dénomination de l'établissement</label>
-                <input type="text" class="form-control" name="id_etablissement" placeholder="" value="">
+                <input type="number" class="form-control" name="id_etablissement" placeholder="" value="">
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div>
             <div class="mb-3 form-group">
-                <label for="title">Titre de la mission</label>
+                <label for="titre_mission">Titre de la mission</label>
                 <input type="text" class="form-control" name="titre_mission" placeholder="" value="" required>
                 <div class="invalid-feedback">
                     Ce champ est requis.
