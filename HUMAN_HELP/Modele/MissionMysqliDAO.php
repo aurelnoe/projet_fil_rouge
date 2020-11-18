@@ -23,35 +23,36 @@ class MissionMySqliDAO
     {   
         $db = connexion(); 
 
-        $getIdMission = $mission->getIdMission();
+        //$getIdMission = $mission->getIdMission();
         $getTitreMission = $mission->getTitreMission();
         $getDescriptionMission = $mission->getDescriptionMission();
         $getTypeFormation = $mission->getTypeFormation();
         $getImageMission = $mission->getImageMission();
         $getDateDebut = $mission->getDateDebut()->format('Y-m-d');
         $getDuree = $mission->getDuree();
-        $getDateAjout = $mission->getDateAjout();//->format('Y-m-d')
-        $getIdPays = getIdPays();
-        $getIdEtablissement = getIdEtablissement();
-        $getIdTypeActivite = getIdTypeActivite();
+        $getDateAjout = $mission->getDateAjout()->format('Y-m-d');
+        $getIdPays = $mission->getIdPays();
+        $getIdEtablissement = $mission->getIdEtablissement();
+        $getIdTypeActivite = $mission->getIdTypeActivite();
 
-        $query = "INSERT INTO employes VALUES (?,?,?,?,?,?,?,?,?,?,?)";            
+        $query = "INSERT INTO mission VALUES (NULL,?,?,?,?,?,?,?,?,?,?)";            
         $stmt = $db->prepare($query); 
-        $stmt->bind_param("ississssisiii",$getIdMission,$getTitreMission,$getDescriptionMission,$getTypeFormation,$getImageMission,
+        
+        $stmt->bind_param("ssissssiii",$getTitreMission,$getDescriptionMission,$getTypeFormation,$getImageMission,
                                         $getDateDebut,$getDuree,
                                         $getDateAjout,$getIdPays,$getIdEtablissement,$getIdTypeActivite);
-        $stmt->execute();
-
+        //$stmt->execute();
+        var_dump($stmt->execute(),$db->error);
         $db->close();  
     }
 
     /******************* MODIFIE MISSION *****************************/
 
-    public static function updateMission(Mission $mission, $idMission)
+    public static function updateMission(Mission $mission)
     { 
         $db = connexion(); 
 
-        //$getIdMission = $mission->getIdMission();
+        $getIdMission = $mission->getIdMission();
         $getTitreMission = $mission->getTitreMission();
         $getDescriptionMission = $mission->getDescriptionMission();       
         $getTypeFormation = $mission->getTypeFormation();
@@ -80,7 +81,7 @@ class MissionMySqliDAO
         $stmt = $db->prepare($query);
         $stmt->bind_param("ssissisiiii",$getTitreMission,$getDescriptionMission,$getTypeFormation,$getImageMission,
                                         $getDateDebut,$getDuree,$getDateAjout,$getIdPays,
-                                        $getIdEtablissement,$getIdTypeActivite,$idMission);
+                                        $getIdEtablissement,$getIdTypeActivite,$getIdMission);
         $stmt->execute();
 
         //*VERIF REQUETE SQL

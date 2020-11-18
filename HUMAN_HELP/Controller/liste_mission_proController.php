@@ -11,7 +11,7 @@ if(!empty($_GET['action']) && isset($_GET['action'])
         echo'<pre>';
         var_dump($_POST);
         echo '</pre>';
-        $titreMission = $_POST['titre_mission'];
+        $titreMission = utf8_decode($_POST['titre_mission']);
         $descriptionMission = $_POST['description_mission'];
         $typeFormation = $_POST['type_formation'];
         $imageMission = is_null($_POST['image_mission']) ? 'NULL' : $_POST['image_mission'];
@@ -76,7 +76,7 @@ if(!empty($_GET['action']) && isset($_GET['action'])
                 ->setIdTypeActivite($idTypeActivite);
 
         $newUpdate = new MissionMySqliDAO;
-        $newUpdate::addMission($mission,$idmission);
+        $newUpdate::updateMission($mission);//,$idmission
     }
 }
 

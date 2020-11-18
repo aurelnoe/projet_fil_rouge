@@ -27,9 +27,7 @@ class Etablissement {
         $this->date_ajout_etablissement;
         $this->id_utilisateur;
         $this->id_type_activite;
-        $this->id_pays;
-
-        
+        $this->id_pays;      
     }
 
 

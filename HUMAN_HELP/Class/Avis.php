@@ -2,7 +2,7 @@
 
 class Mission 
 {
-    private $idAvis;
+    private $id_avis;
     private $auteurAvis;
     private $temoignageAvis;
     private $dateCommentaire;
@@ -10,7 +10,7 @@ class Mission
     private $idMission;
     private $idAuteur;
     private $idBlog;
-  
+
     public function __toString(){
         $this->idAvis;
         $this->auteurAvis;
@@ -21,7 +21,6 @@ class Mission
         $this->idAuteur;
         $this->idBlog;
     }
-
 
     /**
      * Get the value of idAvis
