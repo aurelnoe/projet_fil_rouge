@@ -1,25 +1,21 @@
 <?php
 
-class Mission 
+class Avis
 {
-    private $id_avis;
-    private $auteurAvis;
-    private $temoignageAvis;
-    private $dateCommentaire;
-    private $idUtilisateur;
-    private $idMission;
-    private $idAuteur;
-    private $idBlog;
-
+    private $id_avis ;
+    private $auteur;
+    private $temoignage;
+    private $date_commentaire;
+    private $id_utilisateur;
+    private $id_blog;
+  
     public function __toString(){
-        $this->idAvis;
-        $this->auteurAvis;
-        $this->temoignageAvis;
-        $this->dateCommentaire;
-        $this->idUtilisateur;
-        $this->idMission;
-        $this->idAuteur;
-        $this->idBlog;
+        $this->id_avis;
+        $this->auteur;
+        $this->temoignage;
+        $this->date_commentaire;
+        $this->id_utilisateur;
+        $this->id_blog;
     }
 
     /**
@@ -27,7 +23,7 @@ class Mission
      */ 
     public function getIdAvis():int
     {
-        return $this->idAvis;
+        return $this->id_avis ;
     }
 
     /**
@@ -35,9 +31,9 @@ class Mission
      *
      * @return  self
      */ 
-    public function setIdAvis(int $idAvis):self
+    public function setIdAvis(int $id_avis ):self
     {
-        $this->idAvis = $idAvis;
+        $this->id_avis= $id_avis ;
 
         return $this;
     }
@@ -45,9 +41,9 @@ class Mission
     /**
      * Get the value of auteurAvis
      */ 
-    public function getAuteurAvis():string
+    public function getAuteur():string
     {
-        return $this->auteurAvis;
+        return $this->auteur;
     }
 
     /**
@@ -55,29 +51,29 @@ class Mission
      *
      * @return  self
      */ 
-    public function setAuteurAvis(string $auteurAvis):self
+    public function setAuteur(string $auteur):self
     {
-        $this->auteurAvis = $auteurAvis;
+        $this->auteur = $auteur;
 
         return $this;
     }
 
     /**
-     * Get the value of temoignageAvis
+     * Get the value of temoignage
      */ 
-    public function getTemoignageAvis():string
+    public function gettemoignage():string
     {
-        return $this->temoignageAvis;
+        return $this->temoignage;
     }
 
     /**
-     * Set the value of temoignageAvis
+     * Set the value of temoignage
      *
      * @return  self
      */ 
-    public function setTemoignageAvis(string $temoignageAvis):self
+    public function settemoignage(string $temoignage):self
     {
-        $this->temoignageAvis = $temoignageAvis;
+        $this->temoignage = $temoignage;
 
         return $this;
     }
@@ -87,7 +83,7 @@ class Mission
      */ 
     public function getDateCommentaire():DateTime
     {
-        return $this->dateCommentaire;
+        return $this->date_commentaire;
     }
 
     /**
@@ -95,9 +91,9 @@ class Mission
      *
      * @return  self
      */ 
-    public function setDateCommentaire(DateTime $dateCommentaire)
+    public function setDateCommentaire(DateTime $date_commentaire)
     {
-        $this->dateCommentaire = $dateCommentaire;
+        $this->date_commentaire = $date_commentaire;
 
         return $this;
     }
@@ -107,7 +103,7 @@ class Mission
      */ 
     public function getIdUtilisateur():int
     {
-        return $this->idUtilisateur;
+        return $this->id_utilisateur;
     }
 
     /**
@@ -115,49 +111,9 @@ class Mission
      *
      * @return  self
      */ 
-    public function setIdUtilisateur(int $idUtilisateur):self
+    public function setIdUtilisateur(int $id_utilisateur):self
     {
-        $this->idUtilisateur = $idUtilisateur;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of idMission
-     */ 
-    public function getIdMission():int
-    {
-        return $this->idMission;
-    }
-
-    /**
-     * Set the value of idMission
-     *
-     * @return  self
-     */ 
-    public function setIdMission(int $idMission):self
-    {
-        $this->idMission = $idMission;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of idAuteur
-     */ 
-    public function getIdAuteur():int
-    {
-        return $this->idAuteur;
-    }
-
-    /**
-     * Set the value of idAuteur
-     *
-     * @return  self
-     */ 
-    public function setIdAuteur(int $idAuteur):self
-    {
-        $this->idAuteur = $idAuteur;
+        $this->id_utilisateur = $id_utilisateur;
 
         return $this;
     }
@@ -167,7 +123,7 @@ class Mission
      */ 
     public function getIdBlog():int
     {
-        return $this->idBlog;
+        return $this->id_blog;
     }
 
     /**
@@ -175,9 +131,9 @@ class Mission
      *
      * @return  self
      */ 
-    public function setIdBlog(int $idBlog):self
+    public function setIdBlog(int $id_blog):self
     {
-        $this->idBlog = $idBlog;
+        $this->id_blog = $id_blog;
 
         return $this;
     }

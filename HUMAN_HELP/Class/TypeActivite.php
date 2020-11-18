@@ -3,11 +3,11 @@
 
 class TypeActivite{
 
-    private $idTypeActivite;
-    private $typeActivite;
+    private $id_type_activite;
+    private $type_activite;
 
     public function __toString(){
-        $this->idTypeActivite;
+        $this->id_type_activite;
         $this->typeActivite;
     }
     
@@ -17,7 +17,7 @@ class TypeActivite{
      */ 
     public function getIdTypeActivite():int
     {
-        return $this->idTypeActivite;
+        return $this->id_type_activite;
     }
 
     /**
@@ -25,9 +25,9 @@ class TypeActivite{
      *
      * @return  self
      */ 
-    public function setIdTypeActivite(int $idTypeActivite):self
+    public function setIdTypeActivite(int $id_type_activite):self
     {
-        $this->idTypeActivite = $idTypeActivite;
+        $this->id_type_activite = $id_type_activite;
 
         return $this;
     }
@@ -37,7 +37,7 @@ class TypeActivite{
      */ 
     public function getTypeActivite():string
     {
-        return $this->typeActivite;
+        return $this->type_activite;
     }
 
     /**
@@ -45,9 +45,9 @@ class TypeActivite{
      *
      * @return  self
      */ 
-    public function setTypeActivite(string $typeActivite):self
+    public function setTypeActivite(string $type_activite):self
     {
-        $this->typeActivite = $typeActivite;
+        $this->type_activite = $type_activite;
 
         return $this;
     }
