@@ -125,6 +125,7 @@
             <hr class="mb-4 mt-4">
             
             <button class="btn btnGreen btn-lg btn-block mb-5" type="submit">Ajouter une mission</button>
+            <a href="liste_mission_pro.php" class="btn btn-primary w-100">Retour à la liste des missions</a>
         </form>   
     </div>
     <?php      

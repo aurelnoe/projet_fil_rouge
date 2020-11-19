@@ -1,3 +1,6 @@
+<?php
+include_once("../../Controller/detailsMissionController.php");
+?>
 <!DOCTYPE html>
 <html lang="en">    
 <head>
@@ -29,13 +32,13 @@
             </div>
             <div class="col-10 col-md-6">
                 <ul class="liDetailsMission">
-                    <li><strong>Titre de la mission :</strong> Développement numérique</li>
-                    <li><strong>Type d'activité :</strong> Informatique</li>
-                    <li><strong>Mission :</strong> à distance</li>
-                    <li><strong>Pays :</strong> Ghana (Afrique centrale)</li>
-                    <li><strong>Organisateur :</strong> Association Développement Numérique d'Accra</li>
-                    <li><strong>Durée de la mission :</strong> 60 jours</li>
-                    <li><strong>Date début :</strong> 26 Mai 2021</li>
+                    <li><strong>Titre de la mission :</strong> <?php echo $mission->getTitreMission(); ?></li>
+                    <li><strong>Type d'activité :</strong> <?php echo $mission->getIdTypeActivite(); ?></li>
+                    <li><strong>Mission :</strong> <?php echo $mission->getTypeFormation(); ?></li>
+                    <li><strong>Pays :</strong> <?php echo $mission->getIdPays(); ?> (Afrique)</li>
+                    <li><strong>Organisateur :</strong> <?php echo $mission->getIdEtablissement(); ?></li>
+                    <li><strong>Durée de la mission :</strong> <?php echo $mission->getDuree(); ?> jours</li>
+                    <li><strong>Date début :</strong> <?php echo $mission->getDateDebut()->format('d-m-Y'); ?></li>
                 </ul>
             </div>
         </div>
@@ -44,18 +47,7 @@
         <!-- description -->
         <h2 class="mb-4 mt-4">Description :</h2>
 
-        <div class="mb-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga quae, a, ducimus error aut eos odio porro quam repellendus nisi, laborum corporis doloremque deserunt unde perferendis velit. Molestiae, rem fugit?
-            Adipisci inventore ad odit vitae suscipit voluptates! Libero nisi cum odio necessitatibus eos fuga ex pariatur, nesciunt illo, nam quos. Error tempora nihil similique ab consectetur optio laboriosam blanditiis sequi.
-            Quas tempora optio aliquid iusto facilis et rerum. Aperiam animi expedita, doloremque cumque id laborum eligendi maxime minima eaque quisquam sunt recusandae fugiat omnis reiciendis, vero, aliquam aut necessitatibus dolorem!
-        </div>
-        <div class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam harum nostrum suscipit quas doloribus exercitationem ipsum id alias laudantium illo cupiditate, voluptatibus perspiciatis similique labore at totam quos accusamus consequuntur.
-            Harum, sit eum. Quibusdam nulla voluptatum voluptatem quo minus sunt quod natus tempora mollitia saepe ea eaque a alias atque ullam maiores obcaecati magnam, veniam ad suscipit autem temporibus dicta.
-            Vitae labore ratione quia ab ipsam impedit sint reprehenderit fugiat dolorum at aliquid, neque illo voluptates alias ullam aliquam, quam, blanditiis cupiditate! Ullam odit magni, a natus quis nam omnis!
-        </div>
-        <div class="mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam harum nostrum suscipit quas doloribus exercitationem ipsum id alias laudantium illo cupiditate, voluptatibus perspiciatis similique labore at totam quos accusamus consequuntur.
-            Harum, sit eum. Quibusdam nulla voluptatum voluptatem quo minus sunt quod natus tempora mollitia saepe ea eaque a alias atque ullam maiores obcaecati magnam, veniam ad suscipit autem temporibus dicta.
-            Vitae labore ratione quia ab ipsam impedit sint reprehenderit fugiat dolorum at aliquid, neque illo voluptates alias ullam aliquam, quam, blanditiis cupiditate! Ullam odit magni, a natus quis nam omnis!
-        </div>
+        <div class="mb-3"><?php echo $mission->getDescriptionMission(); ?></div>
             
         <hr class="mb-4 mt-5">
 

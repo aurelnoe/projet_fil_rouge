@@ -1,5 +1,5 @@
 <?php
-include_once("../../Controller/liste_mission_proController.php");
+include_once("../../Controller/listeMissionProController.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">    
@@ -8,7 +8,6 @@ include_once("../../Controller/liste_mission_proController.php");
     <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleMoh.css">
     <title>Liste mission pro</title>
 </head>
 <body>
