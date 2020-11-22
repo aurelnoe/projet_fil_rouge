@@ -27,7 +27,7 @@ include_once("../../Controller/listeMissionProController.php");
             <div class="row mx-0 my-5 w-100">
             <?php 
             
-            foreach($allMissionsPro as $mission)
+            foreach($missions as $mission)
             {
             ?>
                 <div class="col-12 col-md-6 col-lg-5 m-auto my-1">

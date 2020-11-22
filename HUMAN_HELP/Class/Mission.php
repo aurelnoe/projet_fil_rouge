@@ -133,8 +133,8 @@ class Mission
      * Get the value of dateDebut
      */ 
     public function getDateDebut():DateTime
-    {
-        return $this->date_debut;
+    {  
+        return new DateTime($this->date_debut);
     }
 
     /**
@@ -142,8 +142,8 @@ class Mission
      *
      * @return  self
      */ 
-    public function setDateDebut(DateTime $dateDebut):self
-    {
+    public function setDateDebut(string $dateDebut):self
+    {       
         $this->date_debut = $dateDebut;
 
         return $this;
@@ -174,7 +174,7 @@ class Mission
      */ 
     public function getDateAjout():DateTime
     {
-        return $this->date_ajout;
+        return new DateTime($this->date_ajout);
     }
 
     /**
@@ -182,10 +182,9 @@ class Mission
      *
      * @return  self
      */ 
-    public function setDateAjout(DateTime $dateAjout):self
+    public function setDateAjout(string $dateAjout):self  //SELF = ERREUR
     {
         $this->date_ajout = $dateAjout;
-
         return $this;
     }
 

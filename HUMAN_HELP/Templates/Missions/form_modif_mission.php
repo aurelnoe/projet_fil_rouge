@@ -21,7 +21,7 @@
 
         <h2 class="text-center">Formulaire de modification d'une mission</h2>
 
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" method="POST" action="/HUMAN_HELP/Templates/Missions/liste_mission_pro.php?action=update" novalidate>
 
             <hr class="mb-4 mt-2">
 
