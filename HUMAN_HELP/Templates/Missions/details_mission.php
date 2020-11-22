@@ -110,7 +110,7 @@ include_once("../../Controller/detailsMissionController.php");
         </div>
         <div class="row mb-4">
             <div class="col-12 col-md-3 my-2">
-                <a href="/HUMAN_HELP/Templates/form_modif_mission.php" class="btn btn-primary w-100">Modifier</a>
+                <a href="/HUMAN_HELP/Templates/Missions/form_modif_mission.php" class="btn btn-primary w-100">Modifier</a>
             </div>
             <form class="col-12 offset-md-6 col-md-3 my-2" action="?action=delete" method="POST">
                 <button type="submit" class="btn btn-danger w-100">Supprimer</button>
