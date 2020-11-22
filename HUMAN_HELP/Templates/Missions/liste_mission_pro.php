@@ -57,7 +57,7 @@ include_once("../../Controller/listeMissionProController.php");
         <hr class="my-4">
 
         <div class="col-10 col-md-6 m-auto">
-            <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Templates/Missions/form_ajout_mission.php">Ajouter une nouvelle mission</a>
+            <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Templates/Missions/formulairesMission.php?action=add">Ajouter une nouvelle mission</a>
         </div>
 
     </div>

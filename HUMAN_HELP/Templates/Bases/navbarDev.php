@@ -67,10 +67,10 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/liste_mission.php">Liste des missions</a>
-              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/form_ajout_mission.php">ajout mission</a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/formulairesMission.php?action=add">ajout mission</a>
               <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/form_inscription_mission.php">participer à une mission</a>
               <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/details_mission.php">détails mission</a>
-              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/form_modif_mission.php">Modifier une mission</a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/formulairesMission?action=update.php">Modifier une mission</a>
               <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/liste_mission_pro.php">Liste mission pro</a>
               <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/pays_mission.php">Missions par pays</a>
               <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/type_activite_mission.php">Missions par type d'activité</a>
