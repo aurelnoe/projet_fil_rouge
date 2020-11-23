@@ -11,7 +11,7 @@ if (isset($_GET['action']))
         //     header('Location: ../../index.php');
         // }
         $newMission = new ServiceMission();
-        $mission = $newMission->searchById($_GET['id_mission']);
+        $mission = $newMission->searchById($_GET['idMission']);
         
         $title = 'Modification de la mission';
         $titleBtn = 'Modifier la mission';

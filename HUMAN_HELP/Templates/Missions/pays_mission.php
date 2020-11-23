@@ -1,3 +1,6 @@
+<?php
+include("C:/xampp/htdocs/HUMAN_HELP/Controller/PaysMissionController.php");
+?>
 <!DOCTYPE html>
 <html lang="en">    
 <head>
@@ -8,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="../../Assets/styleMoh.css">
     <title>Types activites</title>
 </head>
-
 <body>
     <?php
     include("../Bases/navbarDev.php");
@@ -25,20 +27,27 @@
 
         <div class="card-group my-4">
             <div class="row mx-0 my-2">
-                <div class="card card-select col-12 col-md-5">
-                    <div class="card-body">
-                        <img src="\HUMAN_HELP\images\enseignementThai.jpg" height="auto" width="100%" alt="">
-                        <div class="text-card-select">
-                            <h2 class="my-2">Description</h2>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                                Dolor, officia! Sit unde iure eaque velit nisi, sapiente libero numquam.
-                            </p>
+                <?php 
+                    foreach ($missions as $mission) {
+                        ?>
+                        <div class="card card-select col-12 col-md-5">
+                            <div class="card-body">
+                                <img src="\HUMAN_HELP\images\enseignementThai.jpg" height="auto" width="100%" alt="">
+                                <div class="text-card-select">
+                                    <h2 class="my-2">Description</h2>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                        Dolor, officia! Sit unde iure eaque velit nisi, sapiente libero numquam.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="btn btn-primary my-1 col-12 col-md-6">Détails de la mission</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="" class="btn btn-primary my-1 col-12 col-md-6">Détails de la mission</a>
-                    </div>
-                </div>
+                    <?php
+                    }
+                ?>
+                
                 <div class="card card-select col-12 col-md-5">
                     <div class="card-body">
                         <img src="\HUMAN_HELP\images\enseignementThai.jpg" height="auto" width="100%" alt="">

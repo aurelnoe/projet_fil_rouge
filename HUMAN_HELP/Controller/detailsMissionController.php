@@ -1,10 +1,10 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
 
-if(!empty($_GET) && isset($_GET['id_mission']))
+if(!empty($_GET) && isset($_GET['idMission']))
 {
     $service = new ServiceMission(); 
-    $mission = $service->searchById($_GET['id_mission']);
+    $mission = $service->searchById($_GET['idMission']);
 }
 // echo'<pre>';
 // var_dump($mission);

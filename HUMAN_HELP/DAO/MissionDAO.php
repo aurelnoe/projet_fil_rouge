@@ -38,20 +38,20 @@ class MissionDAO
             $getIdEtablissement = $mission->getIdEtablissement();
             $getIdTypeActivite = $mission->getIdTypeActivite();
 
-            $query = "INSERT INTO mission VALUES (NULL,:titre_mission,:description_mission,:type_formation,:image_mission,
-                                                    :date_debut,:duree,:date_ajout,:id_pays,:id_etablissement,:id_type_activite)"; //           
+            $query = "INSERT INTO mission VALUES (NULL,:titreMission,:descriptionMission,:typeFormation,:imageMission,
+                                                    :dateDebut,:duree,:dateAjout,:idPays,:idEtablissement,:idTypeActivite)"; //           
             $stmt = $db->prepare($query); 
             
-            $stmt->bindParam(':titre_mission', $getTitreMission);           
-            $stmt->bindParam(':description_mission', $getDescriptionMission);
-            $stmt->bindParam(':type_formation', $getTypeFormation);
-            $stmt->bindParam(':image_mission', $getImageMission);
-            $stmt->bindParam(':date_debut', $getDateDebut);
+            $stmt->bindParam(':titreMission', $getTitreMission);           
+            $stmt->bindParam(':descriptionMission', $getDescriptionMission);
+            $stmt->bindParam(':typeFormation', $getTypeFormation);
+            $stmt->bindParam(':imageMission', $getImageMission);
+            $stmt->bindParam(':dateDebut', $getDateDebut);
             $stmt->bindParam(':duree', $getDuree);
-            $stmt->bindParam(':date_ajout', $getDateAjout);
-            $stmt->bindParam(':id_pays', $getIdPays);
-            $stmt->bindParam(':id_etablissement', $getIdEtablissement);
-            $stmt->bindParam(':id_type_activite', $getIdTypeActivite);
+            $stmt->bindParam(':dateAjout', $getDateAjout);
+            $stmt->bindParam(':idPays', $getIdPays);
+            $stmt->bindParam(':idEtablissement', $getIdEtablissement);
+            $stmt->bindParam(':idTypeActivite', $getIdTypeActivite);
 
             $stmt->execute();
 
@@ -83,32 +83,32 @@ class MissionDAO
             $getIdPays = $mission->getIdPays();
             $getIdEtablissement = $mission->getIdEtablissement();
             $getIdTypeActivite = $mission->getIdTypeActivite();
-            //var_dump($idMission);
+            //varDump($idMission);
             $query = "UPDATE mission 
-                        SET titre_mission = :titre_mission,
-                            descripition_mission = :description_mission,
-                            type_formation = :type_formation,
-                            image_mission = :image_mission,
-                            date_debut = :date_debut,
+                        SET titreMission = :titreMission,
+                            descripitionMission = :descriptionMission,
+                            typeFormation = :typeFormation,
+                            imageMission = :imageMission,
+                            dateDebut = :dateDebut,
                             duree = :duree,
-                            date_ajout = :date_ajout,
-                            id_pays = :id_pays,
-                            id_etablissement = ,
-                            id_type_activite = :id_etablissement
-                        WHERE id_mission = :id_type_activite";  
+                            dateAjout = :dateAjout,
+                            idPays = :idPays,
+                            idEtablissement = ,
+                            idTypeActivite = :idEtablissement
+                        WHERE idMission = :idTypeActivite";  
 
             $stmt = $db->prepare($query);
 
-            $stmt->bindParam(':titre_mission', $getTitreMission);           
-            $stmt->bindParam(':description_mission', $getDescriptionMission);
-            $stmt->bindParam(':type_formation', $getTypeFormation);
-            $stmt->bindParam(':image_mission', $getImageMission);
-            $stmt->bindParam(':date_debut', $getDateDebut);
+            $stmt->bindParam(':titreMission', $getTitreMission);           
+            $stmt->bindParam(':descriptionMission', $getDescriptionMission);
+            $stmt->bindParam(':typeFormation', $getTypeFormation);
+            $stmt->bindParam(':imageMission', $getImageMission);
+            $stmt->bindParam(':dateDebut', $getDateDebut);
             $stmt->bindParam(':duree', $getDuree);
-            $stmt->bindParam(':date_ajout', $getDateAjout);
-            $stmt->bindParam(':id_pays', $getIdPays);
-            $stmt->bindParam(':id_etablissement', $getIdEtablissement);
-            $stmt->bindParam(':id_type_activite', $getIdTypeActivite);
+            $stmt->bindParam(':dateAjout', $getDateAjout);
+            $stmt->bindParam(':idPays', $getIdPays);
+            $stmt->bindParam(':idEtablissement', $getIdEtablissement);
+            $stmt->bindParam(':idTypeActivite', $getIdTypeActivite);
 
             $stmt->execute();
 
@@ -128,9 +128,9 @@ class MissionDAO
         {
             $db = connexion();
 
-            $query = "DELETE FROM mission WHERE id_mission = :id_mission";
+            $query = "DELETE FROM mission WHERE idMission = :idMission";
             $stmt = $db->prepare($query);
-            $stmt->bindParam(":id_mission", $idMission);
+            $stmt->bindParam(":idMission", $idMission);
             $stmt->execute();
 
             $db = null;
@@ -166,19 +166,19 @@ class MissionDAO
     }
 
     /**************** CHERCHE UNE MISSION ***********************/
-    public function searchById($id_mission)
+    public function searchById($idMission)
     {
         try 
         {
             $db = connexion();
             
-            $query = "SELECT * FROM mission WHERE id_mission = :id_mission";   
+            $query = "SELECT * FROM mission WHERE idMission = :idMission";   
             $stmt = $db->prepare($query);
-            $stmt->bindParam(":id_mission", $id_mission);
+            $stmt->bindParam(":idMission", $idMission);
             $stmt->execute();       
 
             $mission = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');////MYSQLI FETCH ARRAY
-            //var_dump($mission);
+            //varDump($mission);
 
             return $mission[0];
         } 
@@ -189,18 +189,18 @@ class MissionDAO
     }
 
     /**************** CHERCHE TOUTES LES MISSIONS D'UN PRO *****OK**/
-    public function searchMissionByPro($id_etablissement)
+    public function searchMissionByPro($idEtablissement)
     {
         try {
             $db = connexion();
         
-            $query = "SELECT * FROM mission WHERE id_etablissement = :id_etablissement";
+            $query = "SELECT * FROM mission WHERE idEtablissement = :idEtablissement";
             $stmt = $db->prepare($query);
-            $stmt->bindParam(':id_etablissement', $id_etablissement);
+            $stmt->bindParam(':idEtablissement', $idEtablissement);
             $stmt->execute();  
 
             $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');
-            //var_dump($missions);
+            //varDump($missions);
             $db = null;
             $stmt = null;
                                   
@@ -212,13 +212,13 @@ class MissionDAO
     }
 
 /**************** CHERCHE TOUTES LES MISSIONS PAR TYPE D'ACTIVITE *******/
-    public function searchMissionByTypActivite($id_type_activite){
+    public function searchMissionByTypActivite($idTypeActivite){
         try {
             $db = connexion();
         
-            $query = "SELECT * FROM mission WHERE id_type_activite = :id_type_activite";
+            $query = "SELECT * FROM mission WHERE idTypeActivite = :idTypeActivite";
             $stmt = $db->prepare($query);
-            $stmt->bindParam(":id_type_activite", $id_type_activite);
+            $stmt->bindParam(":idTypeActivite", $idTypeActivite);
             $stmt->execute();       
 
             $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');
@@ -234,14 +234,14 @@ class MissionDAO
     }
 
 /**************** CHERCHE TOUTES LES MISSIONS PAR PAYS *******/
-    public function searchMissionByPays($id_pays){
+    public function searchMissionByPays($idPays){
         try{
             $db = connexion();
             
-            $query = "SELECT * FROM mission WHERE id_pays = :id_pays";
+            $query = "SELECT * FROM mission WHERE idPays = :idPays";
 
             $stmt = $db->prepare($query);
-            $stmt->bind_param(":id_pays", $id_pays);
+            $stmt->bindParam(":idPays", $idPays);
             $stmt->execute();       
 
             $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');

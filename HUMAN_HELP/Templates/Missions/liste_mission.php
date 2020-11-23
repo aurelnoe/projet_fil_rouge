@@ -1,3 +1,6 @@
+<?php
+include("C:/xampp/htdocs/HUMAN_HELP/Controller/ListeMissionController.php");
+?>
 <!DOCTYPE html>
 <html lang="en">    
 <head>
@@ -62,12 +65,16 @@
                 </div>
                 <div class="carousel-inner w-100">
 
-                    <h3>Enseignement :</h3>
+                    <h3>Médecine :</h3>
 
                     <div class="carousel-item active">
                         <div class="card-group">
                             <div class="row justify-content-between m-auto">
-                                <div class="col-12 col-md-6">
+                                
+                                <?php
+                                    foreach ($medecines as $medecine) {
+                                    ?>
+                                    <div class="col-12 col-md-6">
                                     <div class="card cardListeMission">
                                         <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                         <div class="card-body">
@@ -80,21 +87,13 @@
                                             <a href="/HUMAN_HELP/Templates/Missions/details_mission.php" class="btn btn-primary">Voir la mission</a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="card cardListeMission">
-                                        <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Titre de la mission</h5>
-                                            <p class="card-text">Type d'activité :</p>
-                                            <p class="card-text">Pays :</p>
-                                            <p class="card-text">Date de début :</p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <a href="/HUMAN_HELP/Templates/Missions/details_mission.php" class="btn btn-primary">Voir la mission</a>
-                                        </div>
                                     </div>
-                                </div>
+                                    <?php
+                                    }
+                                ?>
+                                    
+                                
+                                
                             </div>                     
                         </div>
                         <div class="row my-4">

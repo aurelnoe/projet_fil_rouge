@@ -20,9 +20,9 @@ class ServiceMission
         return $this->missionDAO->update($mission);
     }
 
-    public function delete($id_mission)
+    public function delete($idMission)
     {
-        $this->missionDAO->delete($id_mission);
+        $this->missionDAO->delete($idMission);
     }
 
     public function searchAll()
@@ -31,25 +31,25 @@ class ServiceMission
     }
 
     /************ PAGE DETAIL MISSION *********/
-    public function searchById($id_mission)
+    public function searchById($idMission)
     {
-        return $this->missionDAO->searchById($id_mission);
+        return $this->missionDAO->searchById($idMission);
     }
 
     /************ PAGE LISTE MISSION PRO ***********/
-    public function searchMissionByPro($id_etablissement)
+    public function searchMissionByPro($idEtablissement)
     {
-        return $this->missionDAO->searchMissionByPro($id_etablissement);      
+        return $this->missionDAO->searchMissionByPro($idEtablissement);      
+    }
+    /************ PAGE MISSION PAR TYPE ACTIVITE ***********/
+    public function searchMissionByTypActivite($idTypeActivite)
+    {
+        return $this->missionDAO->searchMissionByTypActivite($idTypeActivite);
     }
 
-    public function searchMissionByTypActivite($id_type_activite)
+    public function searchMissionByPays($idPays)
     {
-        return $this->missionDAO->searchMissionByTypActivite($id_type_activite);
-    }
-
-    public function searchMissionByPays($id_pays)
-    {
-        return $this->missionDAO->searchMissionByPays($id_pays);
+        return $this->missionDAO->searchMissionByPays($idPays);
     }
 
     /**

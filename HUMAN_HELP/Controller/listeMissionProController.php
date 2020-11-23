@@ -12,16 +12,16 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             // echo'<pre>';
             // var_dump($_POST);
             // echo '</pre>';
-            $titreMission = utf8_decode($_POST['titre_mission']);
-            $descriptionMission = $_POST['description_mission'];
-            $typeFormation = $_POST['type_formation'];
-            $imageMission = is_null($_POST['image_mission']) ? 'NULL' : $_POST['image_mission'];
-            $dateDebut = $_POST['date_debut'];
+            $titreMission = utf8_decode($_POST['titreMission']);
+            $descriptionMission = $_POST['descriptionMission'];
+            $typeFormation = $_POST['typeFormation'];
+            $imageMission = is_null($_POST['imageMission']) ? 'NULL' : $_POST['imageMission'];
+            $dateDebut = $_POST['dateDebut'];
             $duree = $_POST['duree'];
             $dateAjout = date("Y-m-d"); //TypeError: Return value of Mission::setDateAjout() must be an instance of Mission, instance of DateTime returned -> Mission.php on line 188
-            $idPays = $_POST['id_pays'];
-            $idEtablissement = $_POST['id_etablissement'];
-            $idTypeActivite = $_POST['id_type_activite'];
+            $idPays = $_POST['idPays'];
+            $idEtablissement = $_POST['idEtablissement'];
+            $idTypeActivite = $_POST['idTypeActivite'];
 
             $mission = new Mission();
 
@@ -41,21 +41,21 @@ if(!empty($_GET['action']) && isset($_GET['action']))
         }
     }
     /************************** MODIFIE MISSION ***************************/
-    else if($_GET['action'] == 'update' && isset($_GET['id_mission']))
+    else if($_GET['action'] == 'update' && isset($_GET['idMission']))
     {
         if(!empty($_POST) && isset($_POST))
         {
-            $idMission = $_GET['id_mission'];
-            $titreMission = $_POST['titre_mission'];
-            $descriptionMission = $_POST['desccription_mission'];
-            $typeFormation = $_POST['type_formation'];
-            $imageMission = is_null($_POST['image_mission']) ? 'NULL' : $_POST['image_mission'];
-            $dateDebut = $_POST['date_debut'];
+            $idMission = $_GET['idMission'];
+            $titreMission = $_POST['titreMission'];
+            $descriptionMission = $_POST['desccriptionMission'];
+            $typeFormation = $_POST['typeFormation'];
+            $imageMission = is_null($_POST['imageMission']) ? 'NULL' : $_POST['imageMission'];
+            $dateDebut = $_POST['dateDebut'];
             $duree = $_POST['duree'];
             $dateAjout = date("Y-m-d");
-            $idPays = $_POST['id_pays'];
-            $idEtablissement = $_POST['id_etablissement'];
-            $idTypeActivite = $_POST['id_type_activite'];
+            $idPays = $_POST['idPays'];
+            $idEtablissement = $_POST['idEtablissement'];
+            $idTypeActivite = $_POST['idTypeActivite'];
 
             $mission = new Mission();
             $mission->setIdMission($idMission)
@@ -77,10 +77,10 @@ if(!empty($_GET['action']) && isset($_GET['action']))
     /**************************************** SUPPRIME MISSION ************************/
     elseif ($_GET['action'] == 'delete') 
     {
-        if (!empty($_GET['id_mission'])) 
+        if (!empty($_GET['idMission'])) 
         {      
             $delete = new ServiceMission();        
-            $delete->delete($_GET['id_mission']);  
+            $delete->delete($_GET['idMission']);  
         }
     }
 }
