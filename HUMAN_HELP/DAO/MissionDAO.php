@@ -212,7 +212,7 @@ class MissionDAO
     }
 
 /**************** CHERCHE TOUTES LES MISSIONS PAR TYPE D'ACTIVITE *******/
-    public function searchMissionByTypActivite($idTypeActivite){
+    public function searchMissionByTypeActivite($idTypeActivite){
         try {
             $db = connexion();
         

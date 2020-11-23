@@ -43,9 +43,9 @@ class ServiceMission
         return $this->missionDAO->searchMissionByPro($idEtablissement);      
     }
     /************ PAGE MISSION PAR TYPE ACTIVITE ***********/
-    public function searchMissionByTypActivite($idTypeActivite)
+    public function searchMissionByTypeActivite($idTypeActivite)
     {
-        return $this->missionDAO->searchMissionByTypActivite($idTypeActivite);
+        return $this->missionDAO->searchMissionByTypeActivite($idTypeActivite);
     }
 
     public function searchMissionByPays($idPays)

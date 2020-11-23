@@ -3,11 +3,11 @@
 include_once("../../Services/ServiceMission.php");
 
 $newMission = new ServiceMission();
-//$mission = $newMission->searchMissionByTypActivite($_GET['id_type_activite']);
-$medecines = $newMission->searchMissionByTypActivite(1);
-$donations = $newMission->searchMissionByTypActivite(2);
-$enseignements = $newMission->searchMissionByTypActivite(3);
-$construction = $newMission->searchMissionByTypActivite(4);
-$traduction = $newMission->searchMissionByTypActivite(5);
+//$mission = $newMission->searchMissionByTypeActivite($_GET['id_type_activite']);
+$medecines = $newMission->searchMissionByTypeActivite(1);
+$donations = $newMission->searchMissionByTypeActivite(2);
+$enseignements = $newMission->searchMissionByTypeActivite(3);
+$constructions = $newMission->searchMissionByTypeActivite(4);
+$traductions = $newMission->searchMissionByTypeActivite(5);
 
 ?>

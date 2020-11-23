@@ -69,12 +69,8 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/ListeMissionController.php");
 
                     <div class="carousel-item active">
                         <div class="card-group">
-                            <div class="row justify-content-between m-auto">
-                                
-                                <?php
-                                    foreach ($medecines as $medecine) {
-                                    ?>
-                                    <div class="col-12 col-md-6">
+                        <div class="row justify-content-between m-auto">
+                                <div class="col-12 col-md-6">
                                     <div class="card cardListeMission">
                                         <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                         <div class="card-body">
@@ -82,19 +78,27 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/ListeMissionController.php");
                                             <p class="card-text">Type d'activité : informatique</p>
                                             <p class="card-text">Pays : Ghana (Afrique)</p>
                                             <p class="card-text">Date de début : 26 Mai 2021</p>
-                                        </div>
+                                        </div>                   
+                                        <div class="card-footer">
+                                            <a href="/HUMAN_HELP/Templates/Missions/details_mission.php" class="btn btn-primary">Voir la mission</a>
+                                        </div>                 
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="card cardListeMission">
+                                        <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Titre de la mission</h5>
+                                            <p class="card-text">Type d'activité :</p>
+                                            <p class="card-text">Pays :</p>
+                                            <p class="card-text">Date de début :</p>
+                                        </div>  
                                         <div class="card-footer">
                                             <a href="/HUMAN_HELP/Templates/Missions/details_mission.php" class="btn btn-primary">Voir la mission</a>
                                         </div>
                                     </div>
-                                    </div>
-                                    <?php
-                                    }
-                                ?>
-                                    
-                                
-                                
-                            </div>                     
+                                </div>
+                            </div>                    
                         </div>
                         <div class="row my-4">
                             <a class="carousel-control-prev" href="#carouselEnseignement" role="button" data-slide="next">

@@ -47,7 +47,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/PaysMissionController.php");
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <a href="details_mission.php?idMission=<?php echo $mission->getIdMission() ?>" class="btn btn-primary my-1 col-12 col-md-6">Détails de la mission</a>
+                                <a href="details_mission.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary my-1 col-12 col-md-6">Détails de la mission</a>
                             </div>
                         </div>
                     <?php
@@ -55,6 +55,8 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/PaysMissionController.php");
                 ?>         
             </div>
         </div>
+
+        <a href="liste_mission.php" class="btn btnGreen w-100 my-3">Retour à la liste des missions</a>
     </div>
     <?php      
     include("../Bases/footer.php") 
