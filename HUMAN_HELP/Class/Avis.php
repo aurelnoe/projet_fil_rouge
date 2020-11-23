@@ -2,20 +2,20 @@
 
 class Avis
 {
-    private $id_avis ;
+    private $idAvis ;
     private $auteur;
     private $temoignage;
-    private $date_commentaire;
-    private $id_utilisateur;
-    private $id_blog;
+    private $dateCommentaire;
+    private $idUtilisateur;
+    private $idBlog;
   
     public function __toString(){
-        $this->id_avis;
+        $this->idAvis;
         $this->auteur;
         $this->temoignage;
-        $this->date_commentaire;
-        $this->id_utilisateur;
-        $this->id_blog;
+        $this->dateCommentaire;
+        $this->idUtilisateur;
+        $this->idBlog;
     }
 
     /**
@@ -23,7 +23,7 @@ class Avis
      */ 
     public function getIdAvis():int
     {
-        return $this->id_avis ;
+        return $this->idAvis ;
     }
 
     /**
@@ -31,9 +31,9 @@ class Avis
      *
      * @return  self
      */ 
-    public function setIdAvis(int $id_avis ):self
+    public function setIdAvis(int $idAvis ):self
     {
-        $this->id_avis= $id_avis ;
+        $this->idAvis= $idAvis ;
 
         return $this;
     }
@@ -83,7 +83,7 @@ class Avis
      */ 
     public function getDateCommentaire():DateTime
     {
-        return $this->date_commentaire;
+        return $this->dateCommentaire;
     }
 
     /**
@@ -91,9 +91,9 @@ class Avis
      *
      * @return  self
      */ 
-    public function setDateCommentaire(DateTime $date_commentaire)
+    public function setDateCommentaire(DateTime $dateCommentaire)
     {
-        $this->date_commentaire = $date_commentaire;
+        $this->dateCommentaire = $dateCommentaire;
 
         return $this;
     }
@@ -103,7 +103,7 @@ class Avis
      */ 
     public function getIdUtilisateur():int
     {
-        return $this->id_utilisateur;
+        return $this->idUtilisateur;
     }
 
     /**
@@ -111,9 +111,9 @@ class Avis
      *
      * @return  self
      */ 
-    public function setIdUtilisateur(int $id_utilisateur):self
+    public function setIdUtilisateur(int $idUtilisateur):self
     {
-        $this->id_utilisateur = $id_utilisateur;
+        $this->idUtilisateur = $idUtilisateur;
 
         return $this;
     }
@@ -123,7 +123,7 @@ class Avis
      */ 
     public function getIdBlog():int
     {
-        return $this->id_blog;
+        return $this->idBlog;
     }
 
     /**
@@ -131,9 +131,9 @@ class Avis
      *
      * @return  self
      */ 
-    public function setIdBlog(int $id_blog):self
+    public function setIdBlog(int $idBlog):self
     {
-        $this->id_blog = $id_blog;
+        $this->idBlog = $idBlog;
 
         return $this;
     }

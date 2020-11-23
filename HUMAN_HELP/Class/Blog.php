@@ -2,21 +2,21 @@
 
 class Blog
 {
-    private $id_article;
-    private $titre_article;
-    private $description_article;
-    private $date_article;
-    private $date_ajout_article;
-    private $image_article;
+    private $idArticle;
+    private $titreArticle;
+    private $descriptionArticle;
+    private $dateArticle;
+    private $dateAjoutArticle;
+    private $imageArticle;
    
   
     public function __toString(){
-        $this->id_article;
-        $this->titre_article;
-        $this->description_article;
-        $this->date_article;
-        $this->date_ajout_article;
-        $this->image_article;
+        $this->idArticle;
+        $this->titreArticle;
+        $this->descriptionArticle;
+        $this->dateArticle;
+        $this->dateAjoutArticle;
+        $this->imageArticle;
     }
 
     
@@ -26,7 +26,7 @@ class Blog
      */ 
     public function getIdArticle():int
     {
-        return $this->id_article;
+        return $this->idArticle;
     }
 
     /**
@@ -34,9 +34,9 @@ class Blog
      *
      * @return  self
      */ 
-    public function setIdArticle(int $id_article):self
+    public function setIdArticle(int $idArticle):self
     {
-        $this->id_article = $id_article;
+        $this->idArticle = $idArticle;
 
         return $this;
     }
@@ -46,7 +46,7 @@ class Blog
      */ 
     public function getTitreArticle():string
     {
-        return $this->titre_article;
+        return $this->titreArticle;
     }
 
     /**
@@ -54,9 +54,9 @@ class Blog
      *
      * @return  self
      */ 
-    public function setTitreArticle(string $titre_article):self
+    public function setTitreArticle(string $titreArticle):self
     {
-        $this->titre_article = $titre_article;
+        $this->titreArticle = $titreArticle;
 
         return $this;
     }
@@ -66,7 +66,7 @@ class Blog
      */ 
     public function getDescriptionArticle():string
     {
-        return $this->description_article;
+        return $this->descriptionArticle;
     }
 
     /**
@@ -74,9 +74,9 @@ class Blog
      *
      * @return  self
      */ 
-    public function setDescriptionArticle(string $description_article):self
+    public function setDescriptionArticle(string $descriptionArticle):self
     {
-        $this->description_article = $description_article;
+        $this->descriptionArticle = $descriptionArticle;
 
         return $this;
     }
@@ -86,7 +86,7 @@ class Blog
      */ 
     public function getDateArticle():DateTime
     {
-        return $this->date_article;
+        return $this->dateArticle;
     }
 
     /**
@@ -94,9 +94,9 @@ class Blog
      *
      * @return  self
      */ 
-    public function setDateArticle(DateTime $date_article):self
+    public function setDateArticle(DateTime $dateArticle):self
     {
-        $this->date_article = $date_article;
+        $this->dateArticle = $dateArticle;
 
         return $this;
     }
@@ -106,7 +106,7 @@ class Blog
      */ 
     public function getDateAjout():DateTime
     {
-        return $this->date_ajout_article;
+        return $this->dateAjoutArticle;
     }
 
     /**
@@ -114,9 +114,9 @@ class Blog
      *
      * @return  self
      */ 
-    public function setDateAjout(DateTime $date_ajout_article):self
+    public function setDateAjout(DateTime $dateAjoutArticle):self
     {
-        $this->date_ajout_article = $date_ajout_article;
+        $this->dateAjoutArticle = $dateAjoutArticle;
 
         return $this;
     }
@@ -126,7 +126,7 @@ class Blog
      */ 
     public function getImageArticle():string
     {
-        return $this->image_article;
+        return $this->imageArticle;
     }
 
     /**
@@ -134,9 +134,9 @@ class Blog
      *
      * @return  self
      */ 
-    public function setImageArticle(string $image_article):self
+    public function setImageArticle(string $imageArticle):self
     {
-        $this->image_article = $image_article;
+        $this->imageArticle = $imageArticle;
 
         return $this;
     }

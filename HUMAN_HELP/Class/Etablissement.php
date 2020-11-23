@@ -2,51 +2,51 @@
 
 class Etablissement {
 
-    private $id_etablissement;
+    private $idEtablissement;
     private $denomination;
-    private $adresse_etablissement;
-    private $ville_etablissement;
-    private $code_postal_etablissement;
-    private $mail_etablissement;
-    private $tel_etablissement;
-    private $date_ajout_etablissement;
-    private $id_utilisateur;           
-    private $id_type_activite;          
-    private $id_pays;
+    private $adresseEtablissement;
+    private $villeEtablissement;
+    private $codePostalEtablissement;
+    private $mailEtablissement;
+    private $telEtablissement;
+    private $dateAjoutEtablissement;
+    private $idUtilisateur;           
+    private $idTypeActivite;          
+    private $idPays;
     
     public function __toString(){
         return
-        $this->id_etablissement;
+        $this->idEtablissement;
         $this->denomination;
-        $this->adresse_etablissement;
-        $this->adresse_etablissement;
-        $this->ville_etablissement;
-        $this->code_postal_etablissement;
-        $this->mail_etablissement;
-        $this->tel_etablissement;
-        $this->date_ajout_etablissement;
-        $this->id_utilisateur;
-        $this->id_type_activite;
-        $this->id_pays;      
+        $this->adresseEtablissement;
+        $this->adresseEtablissement;
+        $this->villeEtablissement;
+        $this->codePostalEtablissement;
+        $this->mailEtablissement;
+        $this->telEtablissement;
+        $this->dateAjoutEtablissement;
+        $this->idUtilisateur;
+        $this->idTypeActivite;
+        $this->idPays;      
     }
 
 
     /**
-     * Get the value of id_etablissement
+     * Get the value of idEtablissement
      */ 
-    public function getId_etablissement():int
+    public function getidEtablissement():int
     {
-        return $this->id_etablissement;
+        return $this->idEtablissement;
     }
 
     /**
-     * Set the value of id_etablissement
+     * Set the value of idEtablissement
      *
      * @return  self
      */ 
-    public function setId_etablissement(int $id_etablissement):self
+    public function setidEtablissement(int $idEtablissement):self
     {
-        $this->id_etablissement = $id_etablissement;
+        $this->idEtablissement = $idEtablissement;
 
         return $this;
     }
@@ -72,181 +72,179 @@ class Etablissement {
     }
 
     /**
-     * Get the value of adresse_etablissement
+     * Get the value of adresseEtablissement
      */ 
-    public function getAdresse_etablissement():string
+    public function getadresseEtablissement():string
     {
-        return $this->adresse_etablissement;
+        return $this->adresseEtablissement;
     }
 
     /**
-     * Set the value of adresse_etablissement
+     * Set the value of adresseEtablissement
      *
      * @return  self
      */ 
-    public function setAdresse_etablissement(string $adresse_etablissement):self
+    public function setadresseEtablissement(string $adresseEtablissement):self
     {
-        $this->adresse_etablissement = $adresse_etablissement;
+        $this->adresseEtablissement = $adresseEtablissement;
 
         return $this;
     }
 
     /**
-     * Get the value of ville_etablissement
+     * Get the value of villeEtablissement
      */ 
-    public function getVille_etablissement():string
+    public function getvilleEtablissement():string
     {
-        return $this->ville_etablissement;
+        return $this->villeEtablissement;
     }
 
     /**
-     * Set the value of ville_etablissement
+     * Set the value of villeEtablissement
      *
      * @return  self
      */ 
-    public function setVille_etablissement(string $ville_etablissement):self
+    public function setvilleEtablissement(string $villeEtablissement):self
     {
-        $this->ville_etablissement = $ville_etablissement;
+        $this->villeEtablissement = $villeEtablissement;
 
         return $this;
     }
 
     /**
-     * Get the value of code_postal_etablissement
+     * Get the value of codePostalEtablissement
      */ 
-    public function getCode_postal_etablissement():int
+    public function getcodePostalEtablissement():int
     {
-        return $this->code_postal_etablissement;
+        return $this->codePostalEtablissement;
     }
 
     /**
-     * Set the value of code_postal_etablissement
+     * Set the value of codePostalEtablissement
      *
      * @return  self
      */ 
-    public function setCode_postal_etablissement(int $code_postal_etablissement):self
+    public function setcodePostalEtablissement(int $codePostalEtablissement):self
     {
-        $this->code_postal_etablissement = $code_postal_etablissement;
+        $this->codePostalEtablissement = $codePostalEtablissement;
 
         return $this;
     }
 
     /**
-     * Get the value of mail_etablissement
+     * Get the value of mailEtablissement
      */ 
-    public function getMail_etablissement():string
+    public function getmailEtablissement():string
     {
-        return $this->mail_etablissement;
+        return $this->mailEtablissement;
     }
 
     /**
-     * Set the value of mail_etablissement
+     * Set the value of mailEtablissement
      *
      * @return  self
      */ 
-    public function setMail_etablissement(string $mail_etablissement):self
+    public function setmailEtablissement(string $mailEtablissement):self
     {
-        $this->mail_etablissement = $mail_etablissement;
+        $this->mailEtablissement = $mailEtablissement;
 
         return $this;
     }
 
     /**
-     * Get the value of tel_etablissement
+     * Get the value of telEtablissement
      */ 
-    public function getTel_etablissement():int
+    public function gettelEtablissement():int
     {
-        return $this->tel_etablissement;
+        return $this->telEtablissement;
     }
 
     /**
-     * Set the value of tel_etablissement
+     * Set the value of telEtablissement
      *
      * @return  self
      */ 
-    public function setTel_etablissement(int $tel_etablissement):self
+    public function settelEtablissement(int $telEtablissement):self
     {
-        $this->tel_etablissement = $tel_etablissement;
+        $this->telEtablissement = $telEtablissement;
 
         return $this;
     }
 
     /**
-     * Get the value of date_ajout_etablissement
-     */ 
-    public function getDate_ajout_etablissement():DateTime
+     * Get the value of dateAjoutEtablissement     */ 
+    public function getdateAjoutEtablissement():DateTime
     {
-        return $this->date_ajout_etablissement;
+        return $this->dateAjoutEtablissement;
     }
 
     /**
-     * Set the value of date_ajout_etablissement
-     *
+     * Set the value of dateAjoutEtablissement     *
      * @return  self
      */ 
-    public function setDate_ajout_etablissement(DateTime $date_ajout_etablissement):self
+    public function setdateAjoutEtablissement(DateTime $dateAjoutEtablissement):self
     {
-        $this->date_ajout_etablissement = $date_ajout_etablissement;
+        $this->dateAjoutEtablissement = $dateAjoutEtablissement;
 
         return $this;
     }
 
     /**
-     * Get the value of id_utilisateur
+     * Get the value of idUtilisateur
      */ 
-    public function getId_utilisateur():int 
+    public function getidUtilisateur():int 
     {
-        return $this->id_utilisateur;
+        return $this->idUtilisateur;
     }
 
     /**
-     * Set the value of id_utilisateur
+     * Set the value of idUtilisateur
      *
      * @return  self
      */ 
-    public function setId_utilisateur(int $id_utilisateur):self
+    public function setidUtilisateur(int $idUtilisateur):self
     {
-        $this->id_utilisateur = $id_utilisateur;
+        $this->idUtilisateur = $idUtilisateur;
 
         return $this;
     }
 
     /**
-     * Get the value of id_type_activite
+     * Get the value of idTypeActivite
      */ 
-    public function getId_type_activite():int
+    public function getidTypeActivite():int
     {
-        return $this->id_type_activite;
+        return $this->idTypeActivite;
     }
 
     /**
-     * Set the value of id_type_activite
+     * Set the value of idTypeActivite
      *
      * @return  self
      */ 
-    public function setId_type_activite(int $id_type_activite):self
+    public function setidTypeActivite(int $idTypeActivite):self
     {
-        $this->id_type_activite = $id_type_activite;
+        $this->idTypeActivite = $idTypeActivite;
 
         return $this;
     }
 
     /**
-     * Get the value of id_pays
+     * Get the value of idPays
      */ 
-    public function getId_pays():int
+    public function getidPays():int
     {
-        return $this->id_pays;
+        return $this->idPays;
     }
 
     /**
-     * Set the value of id_pays
+     * Set the value of idPays
      *
      * @return  self
      */ 
-    public function setId_pays(int $id_pays):self
+    public function setidPays(int $idPays):self
     {
-        $this->id_pays = $id_pays;
+        $this->idPays = $idPays;
 
         return $this;
     }
