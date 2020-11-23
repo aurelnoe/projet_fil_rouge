@@ -5,6 +5,12 @@ if(!empty($_GET) && isset($_GET['idMission']))
 {
     $service = new ServiceMission(); 
     $mission = $service->searchById($_GET['idMission']);
+
+    if ($mission->getTypeFormation() == 1) {
+        $typeFormation = 'distance';
+    }else{
+        $typeFormation = 'terrain';
+    }
 }
 // echo'<pre>';
 // var_dump($mission);

@@ -34,7 +34,7 @@ include_once("../../Controller/detailsMissionController.php");
                 <ul class="liDetailsMission">
                     <li><strong>Titre de la mission :</strong> <?php echo $mission->getTitreMission(); ?></li>
                     <li><strong>Type d'activité :</strong> <?php echo $mission->getIdTypeActivite(); ?></li>
-                    <li><strong>Mission :</strong> <?php echo $mission->getTypeFormation(); ?></li>
+                    <li><strong>Mission :</strong> <?php echo $typeFormation; ?></li>
                     <li><strong>Pays :</strong> <?php echo $mission->getIdPays(); ?> (Afrique)</li>
                     <li><strong>Organisateur :</strong> <?php echo $mission->getIdEtablissement(); ?></li>
                     <li><strong>Durée de la mission :</strong> <?php echo $mission->getDuree(); ?> jours</li>
@@ -102,7 +102,7 @@ include_once("../../Controller/detailsMissionController.php");
 
         <div class="row mb-4">
             <div class="col-12 col-md-5 my-2">
-                <a href="/HUMAN_HELP/Templates/Autres/Comment_ca_marche.php" class="btn btnGreen w-100">Comment y participer ?</a>
+                <a href="/HUMAN_HELP/Templates/Autres/Comment_ca_marche.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btnGreen w-100">Comment y participer ?</a>
             </div>
             <div class="col-12 offset-md-2 col-md-5 my-2">
                 <a href="/HUMAN_HELP/Templates/Contact/form_contact.php" class="btn btnGreen w-100">contactez nous</a>
@@ -110,7 +110,7 @@ include_once("../../Controller/detailsMissionController.php");
         </div>
         <div class="row mb-4">
             <div class="col-12 col-md-3 my-2">
-                <a href="/HUMAN_HELP/Templates/Missions/formulairesMission.php?action=update&id_mission=<?php echo $mission->getIdMission();?>" class="btn btn-primary w-100">Modifier</a>
+                <a href="/HUMAN_HELP/Templates/Missions/formulairesMission.php?action=update&idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary w-100">Modifier</a>
             </div>
             <form class="col-12 offset-md-6 col-md-3 my-2" action="?action=delete" method="POST">
                 <button type="submit" class="btn btn-danger w-100">Supprimer</button>

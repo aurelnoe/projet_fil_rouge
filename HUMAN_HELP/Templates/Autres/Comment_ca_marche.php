@@ -61,6 +61,10 @@
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium necessitibus doloremque accusamus illum quia ex quas mollitia assumenda inventore provident vel, earum, minima quae! Tempora officia nemo libero quidem at.
 			</p>
 		</div>
+		<a href="../Missions/details_mission.php?idMission=<?php echo $_GET['idMission'];?>" 
+		   class="btn btnGreen w-100 my-1">Retour aux détails de la mission</a>
+		<a href="../Missions/form_inscription_mission.php?idMission=<?php echo $_GET['idMission'];?>"
+		   class="btn btn-primary w-100 my-3">PARTICIPER A CETTE MISSION</a>
 	</div>
 		<?php      
     include("../Bases/footer.php") 

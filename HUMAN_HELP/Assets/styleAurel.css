@@ -68,3 +68,7 @@
 .text-card-select{
     margin: 20px auto 0;
 }
+
+.messageMission{
+    min-height: 100px;
+}
