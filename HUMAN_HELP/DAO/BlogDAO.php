@@ -1,15 +1,9 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Blog.php");
-
-function connexion(){
-
-    $db = new PDO("mysql:host=localhost;dbname=human_helps",'root','');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    return $db;
-}
+include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
 
 
-class BlogDAO
+class BlogDAO extends BddConnect 
 {
     //probablement mettre une fonction IsAdmin
 
@@ -19,7 +13,8 @@ class BlogDAO
     {   
         try {
 
-            $db = connexion(); 
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
 
             //$getIdArticle = $artcile->getIdArticle();
             $getTitreArticle = $article->getTitreArticle();
@@ -56,7 +51,8 @@ class BlogDAO
     {   
         try {
 
-            $db = connexion(); 
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
 
             //$getIdArticle = $artcile->getIdArticle();
             $getTitreArticle = $article->getTitreArticle();
@@ -98,7 +94,8 @@ class BlogDAO
      {
          try 
          {
-             $db = connexion();
+             $newConnect = new BddConnect();
+             $db = $newConnect->connexion();
  
              $query = "DELETE FROM blog WHERE id_article = :id_article";
              $stmt = $db->prepare($query);
@@ -120,7 +117,8 @@ class BlogDAO
      {
          try 
          {
-             $db = connexion();
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
  
              $query = 'SELECT * FROM blog';
              $stmt = $db->prepare($query);
@@ -143,7 +141,8 @@ class BlogDAO
     {
         try 
         {
-            $db = connexion();
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
             
             $query = "SELECT * FROM blog WHERE id_article = :id_article";   
             $stmt = $db->prepare($query);
