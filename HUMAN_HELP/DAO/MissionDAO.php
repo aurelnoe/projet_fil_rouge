@@ -1,14 +1,8 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Mission.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
 
-function connexion(){
-
-    $db = new PDO("mysql:host=localhost;dbname=human_helps",'root','');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    return $db;
-}
-
-class MissionDAO
+class MissionDAO extends BddConnect
 {
     public function isAdmin($sessionProfil)
     {
@@ -23,7 +17,8 @@ class MissionDAO
     public function add(Mission $mission)
     {   
         try {
-            $db = connexion(); 
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion(); 
 
             //$getIdMission = $mission->getIdMission();
             $getTitreMission = $mission->getTitreMission();
@@ -69,33 +64,33 @@ class MissionDAO
     { 
         try 
         {
-            $db = connexion(); 
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion(); 
 
             $getIdMission = $mission->getIdMission();
             $getTitreMission = $mission->getTitreMission();
             $getDescriptionMission = $mission->getDescriptionMission();       
             $getTypeFormation = $mission->getTypeFormation();
             $getImageMission = $mission->getImageMission();
-            $getPaysMission = $mission->getPaysMission();
             $getDateDebut = $mission->getDateDebut()->format('Y-m-d');
             $getDuree = $mission->getDuree();
-            $getDateAjout = $mission->getDateAjout();
+            $getDateAjout = $mission->getDateAjout()->format('Y-m-d');
             $getIdPays = $mission->getIdPays();
             $getIdEtablissement = $mission->getIdEtablissement();
             $getIdTypeActivite = $mission->getIdTypeActivite();
             //varDump($idMission);
             $query = "UPDATE mission 
                         SET titreMission = :titreMission,
-                            descripitionMission = :descriptionMission,
+                            descriptionMission = :descriptionMission,
                             typeFormation = :typeFormation,
                             imageMission = :imageMission,
                             dateDebut = :dateDebut,
                             duree = :duree,
                             dateAjout = :dateAjout,
                             idPays = :idPays,
-                            idEtablissement = ,
-                            idTypeActivite = :idEtablissement
-                        WHERE idMission = :idTypeActivite";  
+                            idEtablissement = :idEtablissement,
+                            idTypeActivite = :idTypeActivite
+                        WHERE idMission = :idMission";  
 
             $stmt = $db->prepare($query);
 
@@ -109,6 +104,7 @@ class MissionDAO
             $stmt->bindParam(':idPays', $getIdPays);
             $stmt->bindParam(':idEtablissement', $getIdEtablissement);
             $stmt->bindParam(':idTypeActivite', $getIdTypeActivite);
+            $stmt->bindParam(':idMission', $getIdMission);
 
             $stmt->execute();
 
@@ -126,7 +122,8 @@ class MissionDAO
     {
         try 
         {
-            $db = connexion();
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
 
             $query = "DELETE FROM mission WHERE idMission = :idMission";
             $stmt = $db->prepare($query);
@@ -147,7 +144,8 @@ class MissionDAO
     {
         try 
         {
-            $db = connexion();
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
 
             $query = 'SELECT * FROM mission';
             $stmt = $db->prepare($query);
@@ -170,7 +168,8 @@ class MissionDAO
     {
         try 
         {
-            $db = connexion();
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
             
             $query = "SELECT * FROM mission WHERE idMission = :idMission";   
             $stmt = $db->prepare($query);
@@ -192,7 +191,8 @@ class MissionDAO
     public function searchMissionByPro($idEtablissement)
     {
         try {
-            $db = connexion();
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
         
             $query = "SELECT * FROM mission WHERE idEtablissement = :idEtablissement";
             $stmt = $db->prepare($query);
@@ -214,7 +214,8 @@ class MissionDAO
 /**************** CHERCHE TOUTES LES MISSIONS PAR TYPE D'ACTIVITE *******/
     public function searchMissionByTypeActivite($idTypeActivite){
         try {
-            $db = connexion();
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
         
             $query = "SELECT * FROM mission WHERE idTypeActivite = :idTypeActivite";
             $stmt = $db->prepare($query);
@@ -236,7 +237,8 @@ class MissionDAO
 /**************** CHERCHE TOUTES LES MISSIONS PAR PAYS *******/
     public function searchMissionByPays($idPays){
         try{
-            $db = connexion();
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
             
             $query = "SELECT * FROM mission WHERE idPays = :idPays";
 

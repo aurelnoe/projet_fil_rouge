@@ -1,5 +1,5 @@
 <?php
-include("C:/xampp/htdocs/HUMAN_HELP/Controller/ListeMissionController.php");
+include("C:/xampp/htdocs/HUMAN_HELP/Controller/MissionsController/ListeMissionController.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">    
@@ -22,7 +22,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/ListeMissionController.php");
     <div class="container p-0">
     
         <div class="col-12 col-md-4 m-auto">
-            <a href="/HUMAN_HELP/Templates/Missions/liste_mission_pro.php" class="btn btnGreen w-100 my-2">Consulter mes missions</a>
+            <a href="/HUMAN_HELP/Templates/Missions/liste_mission_pro.php?idUtilisateur=" class="btn btnGreen w-100 my-2">Consulter mes missions</a>
         </div>
         
         <div class="col-12 col-md-4 m-auto">
@@ -65,7 +65,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/ListeMissionController.php");
                 </div>
                 <div class="carousel-inner w-100">
 
-                    <h3>Médecine :</h3>
+                    <a href="searchMissions.php?action=typeActivite&idTypeActivite=1"><h3>Médecine :</h3></a>
 
                     <div class="carousel-item active">
                         <div class="card-group">
@@ -221,7 +221,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/ListeMissionController.php");
                 </div>
                 <div class="carousel-inner w-100">
 
-                    <h3>Construction :</h3>
+                <a href="searchMissions.php?action=typeActivite&idTypeActivite=2"><h3>Donations :</h3></a>
 
                     <div class="carousel-item active">
                         <div class="card-group">
@@ -377,7 +377,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/ListeMissionController.php");
                 </div>
                 <div class="carousel-inner w-100">
 
-                    <h3>Donations :</h3>
+                    <a href="searchMissions.php?action=typeActivite&idTypeActivite=3"><h3>Enseignement :</h3></a>
 
                     <div class="carousel-item active">
                         <div class="card-group">
@@ -533,7 +533,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/ListeMissionController.php");
                 </div>
                 <div class="carousel-inner w-100">
 
-                    <h3>Médecine :</h3>
+                <a href="searchMissions.php?action=typeActivite&idTypeActivite=4"><h3>Construction :</h3></a>
 
                     <div class="carousel-item active">
                         <div class="card-group">
@@ -689,7 +689,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/ListeMissionController.php");
                 </div>
                 <div class="carousel-inner w-100">
 
-                    <h3>Traduction :</h3>
+                <a href="searchMissions.php?action=typeActivite&idTypeActivite=5"><h3>Traduction :</h3></a>
 
                     <div class="carousel-item active">
                         <div class="card-group">

@@ -1,5 +1,5 @@
 <?php
-include_once("../../Controller/detailsMissionController.php");
+include_once("../../Controller/MissionsController/detailsMissionController.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">    

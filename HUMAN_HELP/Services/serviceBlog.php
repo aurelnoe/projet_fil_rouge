@@ -36,8 +36,6 @@ class ServiceBlog
         return $this->BlogDAO->searchById($idArticle);
     }
 
-    
-
     /**
      * Get the value of BlogDAO
      */ 

@@ -1,6 +1,5 @@
 <?php
-
-include("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
 
 /************************** AJOUT MISSION ***************************/
 if(!empty($_GET['action']) && isset($_GET['action']))
@@ -41,21 +40,21 @@ if(!empty($_GET['action']) && isset($_GET['action']))
         }
     }
     /************************** MODIFIE MISSION ***************************/
-    else if($_GET['action'] == 'update' && isset($_GET['idMission']))
+    else if($_GET['action'] == 'update' && isset($_POST['idMission']))
     {
         if(!empty($_POST) && isset($_POST))
-        {
-            $idMission = $_GET['idMission'];
+        {//var_dump($_POST);
+            $idMission = $_POST['idMission'];
             $titreMission = $_POST['titreMission'];
-            $descriptionMission = $_POST['desccriptionMission'];
+            $descriptionMission = $_POST['descriptionMission'];
             $typeFormation = $_POST['typeFormation'];
             $imageMission = is_null($_POST['imageMission']) ? 'NULL' : $_POST['imageMission'];
             $dateDebut = $_POST['dateDebut'];
             $duree = $_POST['duree'];
             $dateAjout = date("Y-m-d");
-            $idPays = $_POST['idPays'];
-            $idEtablissement = $_POST['idEtablissement'];
-            $idTypeActivite = $_POST['idTypeActivite'];
+            $idPays = (int)$_POST['idPays'];
+            $idEtablissement = (int)$_POST['idEtablissement'];
+            $idTypeActivite = (int)$_POST['idTypeActivite'];
 
             $mission = new Mission();
             $mission->setIdMission($idMission)
@@ -67,7 +66,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                     ->setDuree($duree)
                     ->setDateAjout($dateAjout);
             $mission->setIdPays($idPays)
-                    ->setEtablissement($idEtablissement)
+                    ->setIdEtablissement($idEtablissement)
                     ->setIdTypeActivite($idTypeActivite);
 
             $newUpdate = new ServiceMission();

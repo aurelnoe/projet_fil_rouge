@@ -1,5 +1,5 @@
 <?php
-include("C:/xampp/htdocs/HUMAN_HELP/Controller/typeActiviteMissionController.php");
+include("C:/xampp/htdocs/HUMAN_HELP/Controller/MissionsController/searchMissionsController.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">    
@@ -9,7 +9,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/typeActiviteMissionController.php
     <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/styleMoh.css">
-    <title>Types activites</title>
+    <title>Search Missions</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/typeActiviteMissionController.php
     ?>
     <div class="container text-center ">
 
-        <h1 class="h1-select"><?php echo "Enseignement :"; ?></h1>
+        <h1 class="h1-select">Titre de la recherche<?php //echo $title; ?></h1>
         
         <hr class="my-4 hrGreen ">
 
@@ -53,7 +53,9 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/typeActiviteMissionController.php
                 </div>
                 <?php
             }
+            
             ?>                            
+            
             </div>            
         </div>
 

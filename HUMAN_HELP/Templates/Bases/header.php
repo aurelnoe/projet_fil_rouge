@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light mt-5">
-<img class="logo" src="\HUMAN_HELP\images\logo2.png" height="100px" width="" alt="">
+  <img class="logo" src="\HUMAN_HELP\images\logo2.png" height="100px" width="200px" alt="">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">

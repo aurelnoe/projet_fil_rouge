@@ -1,5 +1,5 @@
 <?php
-include("C:/xampp/htdocs/HUMAN_HELP/Controller/formulairesMissionController.php");
+include("C:/xampp/htdocs/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">    
@@ -29,33 +29,34 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/formulairesMissionController.php"
         <h2 class="text-center my-2 pb-2"><?php echo $title; ?></h2>
 
         <form class="needs-validation p-3" action="/HUMAN_HELP/Templates/Missions/liste_mission_pro.php?action=<?php echo $action; ?>" method="POST" novalidate>
+            <input type="hidden" name="idMission" value="<?php echo isset($idMission) ? $idMission : '' ?>">
 
             <hr class="mb-4 mt-2">
 
             <div class="mb-3 form-group">
-                <label for="id_etablissement">Dénomination de l'établissement</label>
-                <input type="number" class="form-control" name="id_etablissement" placeholder="<?php if(($_GET['action']) == 'update'){echo $mission->getIdEtablissement();}?>" value="">
+                <label for="idEtablissement">Dénomination de l'établissement</label>
+                <input type="number" class="form-control" name="idEtablissement" placeholder="" value="<?php if(($_GET['action']) == 'update'){echo $mission->getIdEtablissement();}?>">
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div>
             <div class="mb-3 form-group">
-                <label for="titre_mission">Titre de la mission</label>
-                <input type="text" class="form-control" name="titre_mission" placeholder="<?php if(($_GET['action']) == 'update'){echo $mission->getTitreMission();}?>" value="" required>
+                <label for="titreMission">Titre de la mission</label>
+                <input type="text" class="form-control" name="titreMission" placeholder="" value="<?php if(($_GET['action']) == 'update'){echo $mission->getTitreMission();}?>" required>
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div> 
             <div class="row p-0 mb-3">
                 <div class="col-12 col-md-6 form-group w-50 pl-3">
-                    <label class="h-50" for="id_pays">Pays concerné</label>
-                    <select type="number" name="id_pays" class="custom-select list-group d-block h-50 w-100" required>
-                    <option class="list-group-item" value="">Choisissez...</option>
-                    <option value=1 class="list-group-item">Maroc</option>
-                    <option value=2 class="list-group-item">Gabon</option>
-                    <option value=3 class="list-group-item">Somalie</option>
-                    <option value=4 class="list-group-item">Egypte</option>
-                    <option value=5 class="list-group-item">Mali</option>
+                    <label class="h-50" for="idPays">Pays concerné</label>
+                    <select type="number" name="idPays" class="custom-select list-group d-block h-50 w-100" required>
+                    <option class="list-group-item">Choisissez...</option>
+                    <option value="1" class="list-group-item">Maroc</option>
+                    <option value="2" class="list-group-item">Gabon</option>
+                    <option value="3" class="list-group-item">Somalie</option>
+                    <option value="4" class="list-group-item">Egypte</option>
+                    <option value="5" class="list-group-item">Mali</option>
                     </select>
                     <div class="invalid-feedback">
                     Choisissez un pays valide.
@@ -63,18 +64,18 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/formulairesMissionController.php"
                 </div>
                 
                 <div class="col-12 col-md-6 w-50 form-group pl-3">
-                    <label class=" h-50" for="id_type_activite">Type d'activité</label>
-                    <select name="id_type_activite" class="custom-select list-group d-block h-50 w-100" required>
+                    <label class=" h-50" for="idTypeActivite">Type d'activité</label>
+                    <select name="idTypeActivite" class="custom-select list-group d-block h-50 w-100" required>
                         <option class="list-group-item" value="">Choisissez...</option>
-                        <option  value=1 class="list-group-item">Médecine</option>
-                        <option  value=2 class="list-group-item">Donations</option>
-                        <option  value=3 class="list-group-item">Enseignement</option>
-                        <option  value=4 class="list-group-item">Formation</option>
-                        <option  value=5 class="list-group-item">Informatique</option>
-                        <option  value=6 class="list-group-item">Traduction</option>
-                        <option  value=7 class="list-group-item">Sportive</option>
-                        <option  value=8 class="list-group-item">Aide juridique</option>
-                        <option  value=9 class="list-group-item">Soutient psychologique</option>
+                        <option  value="1" class="list-group-item">Médecine</option>
+                        <option  value="2" class="list-group-item">Donations</option>
+                        <option  value="3" class="list-group-item">Enseignement</option>
+                        <option  value="4" class="list-group-item">Formation</option>
+                        <option  value="5" class="list-group-item">Informatique</option>
+                        <option  value="6" class="list-group-item">Traduction</option>
+                        <option  value="7" class="list-group-item">Sportive</option>
+                        <option  value="8" class="list-group-item">Aide juridique</option>
+                        <option  value="9" class="list-group-item">Soutient psychologique</option>
                     </select>
                     <div class="invalid-feedback">
                         Ce champ est requis.
@@ -83,7 +84,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/formulairesMissionController.php"
             </div>
             <div class="mb-3 form-group">
                 <label for="descriptionMission">Description de la mission</label>
-                <textarea type="textarea" class="form-control" name="description_mission" placeholder="<?php if(($_GET['action']) == 'update'){echo $mission->getDescriptionMission();}?>"></textarea>
+                <textarea type="textarea" class="form-control" name="descriptionMission" placeholder=""><?php if(($_GET['action']) == 'update'){echo $mission->getDescriptionMission();}?></textarea>
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
@@ -92,19 +93,19 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/formulairesMissionController.php"
                 <label>Type de formation</label>
                 <div class="row">
                     <div class="custom-control custom-radio mx-4">
-                        <input name="type_formation" id="distance" value=0 type="radio" class="custom-control-input">
+                        <input name="typeFormation" id="distance" value=0 type="radio" class="custom-control-input">
                         <label for="distance" class="custom-control-label">Distance</label>                       
                     </div>
                     <div class="custom-control custom-radio mx-2">
-                        <input name="type_formation" id="terrain" value=1 type="radio" class="custom-control-input">
+                        <input name="typeFormation" id="terrain" value=1 type="radio" class="custom-control-input">
                         <label for="terrain" class="custom-control-label">Sur le terrain</label>                       
                     </div>
                 </div>  
             </div>
             <div class="mb-3 form-group">
-                <label for="date_debut">Date de début de la mission</label>
+                <label for="dateDebut">Date de début de la mission</label>
                 <div class="input-group"  data-provide="datepicker">
-                    <input type="date" class="form-control" name="date_debut" value="<?php if(($_GET['action']) == 'update') {echo $mission->getDateDebut()->format('Y-m-d');}?>">
+                    <input type="date" class="form-control" name="dateDebut" value="<?php if(($_GET['action']) == 'update') {echo $mission->getDateDebut()->format('Y-m-d');}?>">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -115,20 +116,20 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/formulairesMissionController.php"
             </div>
             <div class="mb-3 form-group">
                 <label for="duree">Durée de la mission<span class="text-muted"> (en jour)</span></label>
-                <input type="number" class="form-control" name="duree" placeholder="<?php if(($_GET['action']) == 'update'){echo $mission->getDuree();}?>">
+                <input type="number" class="form-control" name="duree" placeholder="" value="<?php if(($_GET['action']) == 'update'){echo $mission->getDuree();}?>">
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
             </div>
             <div class="mb-3 form-group">
-                <label for="image_mission">Ajouter une image</label>
-                <input type="file" class="form-control-file" name="image_mission" placeholder="" capture>
+                <label for="imageMission">Ajouter une image</label>
+                <input type="file" class="form-control-file" name="imageMission" placeholder="" capture>
             </div>
 
             <hr class="mb-4 mt-4">
             
             <button class="btn btnGreen btn-lg btn-block mb-5" type="submit"><?php echo $titleBtn;?></button>
-            <a href="liste_mission_pro.php" class="btn btn-primary w-100">Retour à la liste des missions</a>
+            <a href="liste_Mission.php" class="btn btn-primary w-100">Retour à la liste des missions</a>
         </form>   
     </div>
     <?php      

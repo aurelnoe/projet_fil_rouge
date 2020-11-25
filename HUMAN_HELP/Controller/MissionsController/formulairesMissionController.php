@@ -1,6 +1,5 @@
 <?php
-
-include_once("../../Services/ServiceMission.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
 
 if (isset($_GET['action'])) 
 {
@@ -16,6 +15,7 @@ if (isset($_GET['action']))
         $title = 'Modification de la mission';
         $titleBtn = 'Modifier la mission';
         $action = 'update';
+        $idMission = $_GET['idMission'];
 
         //echo formulairesMission($title,$mission,$titleBtn,$action);
         //die;

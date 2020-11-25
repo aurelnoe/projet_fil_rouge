@@ -12,6 +12,4 @@ if(!empty($_GET) && isset($_GET['idMission']))
         $typeFormation = 'terrain';
     }
 }
-// echo'<pre>';
-// var_dump($mission);
-// echo '</pre>';
+

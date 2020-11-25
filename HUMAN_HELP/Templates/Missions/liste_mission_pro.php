@@ -1,5 +1,5 @@
 <?php
-include_once("../../Controller/listeMissionProController.php");
+include_once("../../Controller/MissionsController/listeMissionProController.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">    
@@ -41,8 +41,8 @@ include_once("../../Controller/listeMissionProController.php");
                         </div>
                         <div class="card-footer">
                             <div class="row m-auto">
-                                <a href="/HUMAN_HELP/Templates/Missions/details_mission.php?id_mission=<?php echo $mission->getIdMission(); ?>" class="col-12 col-md-5 btn btn-primary my-1 w-100">Voir la mission</a>
-                                <a href="liste_mission_pro.php?action=delete&id_mission=<?php echo $mission->getIdMission(); ?>"  class="col-12 offset-md-2 col-md-5 btn btn-danger my-1 w-100">Supprimer</a>
+                                <a href="/HUMAN_HELP/Templates/Missions/details_mission.php?idMission=<?php echo $mission->getIdMission(); ?>" class="col-12 col-md-5 btn btn-primary my-1 w-100">Voir la mission</a>
+                                <a href="liste_mission_pro.php?action=delete&idMission=<?php echo $mission->getIdMission(); ?>"  class="col-12 offset-md-2 col-md-5 btn btn-danger my-1 w-100">Supprimer</a>
                             </div>                    
                         </div>
                     </div>
