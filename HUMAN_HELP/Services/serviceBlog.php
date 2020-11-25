@@ -10,6 +10,7 @@ class ServiceBlog
         return $this->BlogDAO = new BlogDAO();
     }
 
+    /************ PAGE liste/article BLOG *********/
     public function add($article)
     {
         return $this->BlogDAO->add($article);
