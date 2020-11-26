@@ -2,270 +2,270 @@
 
 class Utilisateur
 {
-    private $id_utilisateur;
-    private $nom_util;
-    private $prenom_util;
-    private $adresse_util;
-    private $code_postal_util;
-    private $ville_util;
-    private $mail_util;
-    private $tel_util;
-    private $password_util;
-    private $date_inscription_util;
-    private $id_role;
-    private $id_pays;
+    private $idUtilisateur;
+    private $nomUtil;
+    private $prenomUtil;
+    private $adresseUtil;
+    private $codePostalUtil;
+    private $villeUtil;
+    private $mailUtil;
+    private $telUtil;
+    private $passwordUtil;
+    private $dateInscriptionUtil;
+    private $idRole;
+    private $idPays;
     
     public function __toString(){
-        $this->id_utilisateur;
-        $this->nom_util;
-        $this->prenom_util;
-        $this->adresse_util;
-        $this->code_postal_util;
-        $this->ville_util;
-        $this->mail_util;
-        $this->tel_util;
-        $this->password_util;
-        $this->id_role;
-        $this->id_pays;
+        $this->idUtilisateur;
+        $this->nomUtil;
+        $this->prenomUtil;
+        $this->adresseUtil;
+        $this->codePostalUtil;
+        $this->villeUtil;
+        $this->mailUtil;
+        $this->telUtil;
+        $this->passwordUtil;
+        $this->idRole;
+        $this->idPays;
     }
     
 
     /**
-     * Get the value of id_utilisateur
+     * Get the value of idUtilisateur
      */ 
-    public function getId_utilisateur():int
+    public function getIdUtilisateur():int
     {
-        return $this->id_utilisateur;
+        return $this->idUtilisateur;
     }
 
     /**
-     * Set the value of id_utilisateur
+     * Set the value of idUtilisateur
      *
      * @return  self
      */ 
-    public function setId_utilisateur($id_utilisateur):self
+    public function setIdUtilisateur($idUtilisateur):self
     {
-        $this->id_utilisateur = $id_utilisateur;
+        $this->idUtilisateur = $idUtilisateur;
 
         return $this;
     }
 
     /**
-     * Get the value of prenom_util
+     * Get the value of nomUtil
      */ 
-    public function getPrenom_util():string
+    public function getNomUtil():string
     {
-        return $this->prenom_util;
+        return $this->nomUtil;
     }
 
     /**
-     * Set the value of prenom_util
+     * Set the value of nomUtil
      *
      * @return  self
      */ 
-    public function setPrenom_util($prenom_util):self
+    public function setnomUtil($nomUtil):self
     {
-        $this->prenom_util = $prenom_util;
+        $this->nomUtil = $nomUtil;
 
         return $this;
     }
 
     /**
-     * Get the value of prenom_util
+     * Get the value of prenomUtil
      */ 
-    public function getPrenom_util():string
+    public function getPrenomUtil():string
     {
-        return $this->prenom_util;
+        return $this->prenomUtil;
     }
 
     /**
-     * Set the value of prenom_util
+     * Set the value of prenomUtil
      *
      * @return  self
      */ 
-    public function setPrenom_util($prenom_util):self
+    public function setPrenomUtil($prenomUtil):self
     {
-        $this->prenom_util = $prenom_util;
+        $this->prenomUtil = $prenomUtil;
 
         return $this;
     }
 
     /**
-     * Get the value of adresse_util
+     * Get the value of adresseUtil
      */ 
-    public function getAdresse_util():string
+    public function getAdresseUtil():string
     {
-        return $this->adresse_util;
+        return $this->adresseUtil;
     }
 
     /**
-     * Set the value of adresse_util
+     * Set the value of adresseUtil
      *
      * @return  self
      */ 
-    public function setAdresse_util($adresse_util):self
+    public function setAdresseUtil($adresseUtil):self
     {
-        $this->adresse_util = $adresse_util;
+        $this->adresseUtil = $adresseUtil;
 
         return $this;
     }
 
     /**
-     * Get the value of code_postal_util
+     * Get the value of codePostal_util
      */ 
-    public function getCode_postal_util():int
+    public function getCodePostal_util():int
     {
-        return $this->code_postal_util;
+        return $this->codePostal_util;
     }
 
     /**
-     * Set the value of code_postal_util
+     * Set the value of codePostal_util
      *
      * @return  self
      */ 
-    public function setCode_postal_util($code_postal_util):self
+    public function setCodePostalUtil($codePostal_util):self
     {
-        $this->code_postal_util = $code_postal_util;
+        $this->codePostal_util = $codePostal_util;
 
         return $this;
     }
 
     /**
-     * Get the value of ville_util
+     * Get the value of villeUtil
      */ 
-    public function getVille_util():string
+    public function getVilleUtil():string
     {
-        return $this->ville_util;
+        return $this->villeUtil;
     }
 
     /**
-     * Set the value of ville_util
+     * Set the value of villeUtil
      *
      * @return  self
      */ 
-    public function setVille_util($ville_util):self
+    public function setVilleUtil($villeUtil):self
     {
-        $this->ville_util = $ville_util;
+        $this->villeUtil = $villeUtil;
 
         return $this;
     }
 
     /**
-     * Get the value of mail_util
+     * Get the value of mailUtil
      */ 
-    public function getMail_util():string
+    public function getMailUtil():string
     {
-        return $this->mail_util;
+        return $this->mailUtil;
     }
 
     /**
-     * Set the value of mail_util
+     * Set the value of mailUtil
      *
      * @return  self
      */ 
-    public function setMail_util($mail_util):self
+    public function setMailUtil($mailUtil):self
     {
-        $this->mail_util = $mail_util;
+        $this->mailUtil = $mailUtil;
 
         return $this;
     }
 
     /**
-     * Get the value of tel_util
+     * Get the value of telUtil
      */ 
-    public function getTel_util():int
+    public function getTelUtil():int
     {
-        return $this->tel_util;
+        return $this->telUtil;
     }
 
     /**
-     * Set the value of tel_util
+     * Set the value of telUtil
      *
      * @return  self
      */ 
-    public function setTel_util($tel_util):self
+    public function setTelUtil($telUtil):self
     {
-        $this->tel_util = $tel_util;
+        $this->telUtil = $telUtil;
 
         return $this;
     }
 
     /**
-     * Get the value of password_util
+     * Get the value of passwordUtil
      */ 
-    public function getPassword_util():string
+    public function getPasswordUtil():string
     {
-        return $this->password_util;
+        return $this->passwordUtil;
     }
 
     /**
-     * Set the value of password_util
+     * Set the value of passwordUtil
      *
      * @return  self
      */ 
-    public function setPassword_util($password_util):self
+    public function setPasswordUtil($passwordUtil):self
     {
-        $this->password_util = $password_util;
+        $this->passwordUtil = $passwordUtil;
 
         return $this;
     }
 
     /**
-     * Get the value of date_inscription_util
+     * Get the value of dateInscriptionUtil
      */ 
-    public function getDate_inscription_util():dateTime
+    public function getDateInscription_util():dateTime
     {
-        return $this->date_inscription_util;
+        return $this->dateInscriptionUtil;
     }
 
     /**
-     * Set the value of date_inscription_util
+     * Set the value of dateInscriptionUtil
      *
      * @return  self
      */ 
-    public function setDate_inscription_util($date_inscription_util):self
+    public function setDateInscriptionUtil($dateInscriptionUtil):self
     {
-        $this->date_inscription_util = $date_inscription_util;
+        $this->dateInscriptionUtil = $dateInscriptionUtil;
 
         return $this;
     }
 
     /**
-     * Get the value of id_role
+     * Get the value of idRole
      */ 
-    public function getId_role():int
+    public function getIdRole():int
     {
-        return $this->id_role;
+        return $this->idRole;
     }
 
     /**
-     * Set the value of id_role
+     * Set the value of idRole
      *
      * @return  self
      */ 
-    public function setId_role($id_role):self
+    public function setIdRole($idRole):self
     {
-        $this->id_role = $id_role;
+        $this->idRole = $idRole;
 
         return $this;
     }
 
     /**
-     * Get the value of id_pays
+     * Get the value of idPays
      */ 
-    public function getId_pays():int
+    public function getIdPays():int
     {
-        return $this->id_pays;
+        return $this->idPays;
     }
 
     /**
-     * Set the value of id_pays
+     * Set the value of idPays
      *
      * @return  self
      */ 
-    public function setId_pays($id_pays):self
+    public function setIdPays($idPays):self
     {
-        $this->id_pays = $id_pays;
+        $this->idPays = $idPays;
 
         return $this;
     }
