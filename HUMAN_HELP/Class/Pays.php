@@ -3,19 +3,19 @@
 class Pays
 {
     private $idPays;
-    private $mon_pays;
+    private $nomPays;
     private $continent;
     
     public function __toString(){
         $this->idPays;
-        $this->mon_pays;
+        $this->monPays;
         $this->continent;
     }
 
     /**
      * Get the value of idPays
      */ 
-    public function getidPays():int
+    public function getIdPays():int
     {
         return $this->idPays;
     }
@@ -25,7 +25,7 @@ class Pays
      *
      * @return  self
      */ 
-    public function setidPays($idPays):self
+    public function setIdPays($idPays):self
     {
         $this->idPays = $idPays;
 
@@ -33,21 +33,21 @@ class Pays
     }
 
     /**
-     * Get the value of mon_pays
+     * Get the value of monPays
      */ 
-    public function getMon_pays():string
+    public function getNomPays():string
     {
-        return $this->mon_pays;
+        return $this->nomPays;
     }
 
     /**
-     * Set the value of mon_pays
+     * Set the value of monPays
      *
      * @return  self
      */ 
-    public function setMon_pays($mon_pays):self
+    public function setMonPays($nomPays):self
     {
-        $this->mon_pays = $mon_pays;
+        $this->monPays = $nomPays;
 
         return $this;
     }
