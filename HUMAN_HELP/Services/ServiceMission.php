@@ -13,12 +13,22 @@ class ServiceMission
 
     public function add($mission)
     {
-        return $this->missionDAO->add($mission);
+        try {
+            return $this->missionDAO->add($mission);
+        } 
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }      
     }
 
     public function update($mission)
     {
-        return $this->missionDAO->update($mission);
+        try {
+            return $this->missionDAO->update($mission);
+        } 
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }     
     }
 
     public function delete($idMission)

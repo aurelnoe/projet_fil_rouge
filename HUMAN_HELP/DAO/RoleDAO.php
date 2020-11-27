@@ -1,7 +1,7 @@
 <?php
 
-include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Role.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+require("C:/xampp/htdocs/HUMAN_HELP/Class/Role.php");
+require("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
 
 class RoleDAO extends BddConnect 
 {

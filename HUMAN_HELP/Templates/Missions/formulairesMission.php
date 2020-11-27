@@ -11,15 +11,13 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/MissionsController/formulairesMis
     <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleMoh.css">
+
     <title>Formulaire mission</title>
     
 </head>
 <body>
     <?php
     include("../Bases/navbarDev.php");
-
-    include("../Bases/header.php");
 
     include("../Bases/navbar.php");
     
@@ -84,7 +82,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/MissionsController/formulairesMis
             </div>
             <div class="mb-3 form-group">
                 <label for="descriptionMission">Description de la mission</label>
-                <textarea type="textarea" class="form-control" name="descriptionMission" placeholder=""><?php if(($_GET['action']) == 'update'){echo $mission->getDescriptionMission();}?></textarea>
+                <textarea type="textarea" class="form-control" name="descriptionMission" placeholder=""><?php echo ($_GET['action'] == 'update') ? $mission->getDescriptionMission() : ''; ?></textarea>
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>
@@ -105,7 +103,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/MissionsController/formulairesMis
             <div class="mb-3 form-group">
                 <label for="dateDebut">Date de début de la mission</label>
                 <div class="input-group"  data-provide="datepicker">
-                    <input type="date" class="form-control" name="dateDebut" value="<?php if(($_GET['action']) == 'update') {echo $mission->getDateDebut()->format('Y-m-d');}?>">
+                    <input type="date" class="form-control" name="dateDebut" value="<?php echo ($_GET['action'] == 'update') ? $mission->getDateDebut()->format('Y-m-d') : ''; ?>">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -116,7 +114,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/MissionsController/formulairesMis
             </div>
             <div class="mb-3 form-group">
                 <label for="duree">Durée de la mission<span class="text-muted"> (en jour)</span></label>
-                <input type="number" class="form-control" name="duree" placeholder="" value="<?php if(($_GET['action']) == 'update'){echo $mission->getDuree();}?>">
+                <input type="number" class="form-control" name="duree" placeholder="" value="<?php echo ($_GET['action'] == 'update') ? $mission->getDuree() : ''; ?>">
                 <div class="invalid-feedback">
                     Ce champ est requis.
                 </div>

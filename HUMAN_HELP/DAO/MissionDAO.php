@@ -1,6 +1,6 @@
 <?php
-include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Mission.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+require("C:/xampp/htdocs/HUMAN_HELP/Class/Mission.php");
+require("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
 
 class MissionDAO extends BddConnect
 {
@@ -54,7 +54,7 @@ class MissionDAO extends BddConnect
             $stmt = null;           
         } 
         catch (PDOException $e){
-            echo 'Echec de la connexion : '.$e->getMessage();
+            throw new PDOException($e->getMessage(),$e->getCode());
         }         
     }
 
@@ -112,7 +112,7 @@ class MissionDAO extends BddConnect
             $stmt = null;
         }
         catch (PDOException $e){
-            echo 'Echec de la connexion : '.$e->getMessage();
+            throw new PDOException($e->getMessage(),$e->getCode());
         }
     }
 
@@ -207,7 +207,7 @@ class MissionDAO extends BddConnect
             return $missions;
         } 
         catch (PDOException $e){
-            echo 'Echec de la connexion : '.$e->getMessage();
+            throw new PDOException($e->getMessage(),$e->getCode());
         }       
     }
 
@@ -230,7 +230,7 @@ class MissionDAO extends BddConnect
             return $missions;
         } 
         catch (PDOException $e){
-            echo 'Echec de la connexion : '.$e->getMessage();
+            throw new PDOException($e->getMessage(),$e->getCode());
         }       
     }
 
@@ -254,7 +254,7 @@ class MissionDAO extends BddConnect
             return $missions;
         }       
         catch (PDOException $e){
-            echo 'Echec de la connexion : '.$e->getMessage();
+            throw new PDOException($e->getMessage(),$e->getCode());
         }
     }
 }

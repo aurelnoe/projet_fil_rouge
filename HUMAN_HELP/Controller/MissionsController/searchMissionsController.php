@@ -1,12 +1,12 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
-// include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceTypeActivite.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Services/serviceTypeActivite.php");
 // include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
 
-if (!empty($_GET) && isset($_GET['action'])) 
+if (!empty($_GET)) 
 {
     //TRI PAR TYPE ACTIVITE  
-    if (isset($_GET['idTypeActivite']) && $_GET['action'] == 'typeActivite') {
+    if (isset($_GET['idTypeActivite'])) {
         $newSearch = new ServiceMission();
         $missions = $newSearch->searchMissionByTypeActivite($_GET['idTypeActivite']);
 
@@ -15,7 +15,7 @@ if (!empty($_GET) && isset($_GET['action']))
         // $title = ucfirst($typeActivite->getTypeActivite());
 
     }//TRI PAR PAYS 
-    else if (isset($_GET['idPays']) && $_GET['action'] == '') {
+    else if (isset($_GET['idPays'])) {
         $newSearch = new ServiceMission();
         $missions = $newSearch->searchMissionByPays(1);
 

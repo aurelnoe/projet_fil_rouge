@@ -7,17 +7,14 @@ include_once("../../Controller/MissionsController/formParticipationMissionContro
     <?php include("../../head.php"); ?>
     <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleMoh.css">
+    
     <title>Formulaire de participation à une mission</title>
 </head>
 <body>
     <?php
     include("../Bases/navbarDev.php");
 
-    include("../Bases/header.php");
-
-    include("../Bases/navbar.php");
+    //include("../Bases/navbar.php");
     ?>
     <div class="container col-12 col-md-6 pt-4 my-4 border rounded">
 

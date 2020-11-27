@@ -1,3 +1,6 @@
+<?php
+include_once("../../Controller/MissionsController/formulaireEtablissementController.php");
+?>
 <!DOCTYPE html>
 <html lang="en">    
 <head>

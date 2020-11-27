@@ -14,12 +14,10 @@ include_once("../../Controller/MissionsController/listeMissionProController.php"
     <?php
     include("../Bases/navbarDev.php");
 
-    //include("../Bases/header.php");
-
     include("../Bases/navbar.php");
     ?>
     <div class="container">
-        <h2 class="text-center">Liste de vos missions:</h2>
+        <h2 class="text-center mt-5">Liste de vos missions:</h2>
 
         <hr class="my-4">
 

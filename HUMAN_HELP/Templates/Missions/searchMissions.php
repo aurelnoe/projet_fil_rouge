@@ -11,12 +11,9 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/MissionsController/searchMissions
     <link rel="stylesheet" type="text/css" href="../../Assets/styleMoh.css">
     <title>Search Missions</title>
 </head>
-
 <body>
     <?php
         include("../Bases/navbarDev.php");
-
-        include("../Bases/header.php");
 
         include("../Bases/navbar.php");
     ?>
@@ -59,7 +56,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/MissionsController/searchMissions
             </div>            
         </div>
 
-        <a href="liste_mission.php" class="btn btnGreen w-100 my-3">Retour à la liste des missions</a>
+        <a href="liste_mission.php" class="btn btnGreen w-50 my-3">Retour à la liste des missions</a>
 
     </div>
     <?php      

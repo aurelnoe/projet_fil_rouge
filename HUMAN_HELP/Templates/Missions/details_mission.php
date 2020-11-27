@@ -8,14 +8,12 @@ include_once("../../Controller/MissionsController/detailsMissionController.php")
     <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleMoh.css">
+
     <title>Détails de la mission</title>
 </head>
 <body>
     <?php
     include("../Bases/navbarDev.php");
-
-    include("../Bases/header.php");
 
     include("../Bases/navbar.php");
     ?>
