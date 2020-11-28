@@ -182,7 +182,7 @@ class Mission
      *
      * @return  self
      */ 
-    public function setDateAjout(string $dateAjout):self  //SELF = ERREUR
+    public function setDateAjout(string $dateAjout):self 
     {
         $this->dateAjout = $dateAjout;
         return $this;

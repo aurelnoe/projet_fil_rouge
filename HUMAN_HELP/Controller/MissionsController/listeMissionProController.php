@@ -1,12 +1,13 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceEtablissement.php");
 
-/************************** AJOUT MISSION ***************************/
 if(!empty($_GET['action']) && isset($_GET['action']))
 {
-    if ($_GET['action'] == 'add')
+    if (!empty($_POST) && isset($_POST)) 
     {
-        if (!empty($_POST) && isset($_POST)) 
+        /************************** AJOUTER UNE MISSION ***************************/
+        if ($_GET['action'] == 'add')
         {
             // echo'<pre>';
             // var_dump($_POST);
@@ -37,13 +38,10 @@ if(!empty($_GET['action']) && isset($_GET['action']))
 
             $newAdd = new ServiceMission();
             $newAdd->add($mission);
-        }
-    }
-    /************************** MODIFIE MISSION ***************************/
-    else if($_GET['action'] == 'update' && isset($_POST['idMission']))
-    {
-        if(!empty($_POST) && isset($_POST))
-        {//var_dump($_POST);
+        }    
+        /************************** MODIFIE MISSION ***************************/
+        else if($_GET['action'] == 'update' && isset($_POST['idMission']))
+        {         
             $idMission = $_POST['idMission'];
             $titreMission = $_POST['titreMission'];
             $descriptionMission = $_POST['descriptionMission'];
@@ -72,8 +70,69 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             $newUpdate = new ServiceMission();
             $newUpdate->update($mission);//,$idmission
         }
+        /**************************************** AJOUTER UN ETABLISSEMENT ************************/
+        elseif ($_GET['action'] == 'addEtablissement') 
+        {    
+            $denomination = utf8_decode($_POST['denomination']);
+            $adresseEtablissement = $_POST['adresseEtablissement'];
+            $villeEtablissement = $_POST['villeEtablissement'];
+            $codePostalEtablissement = ($_POST['codePostalEtablissement']);
+            $mailEtablissement = $_POST['mailEtablissement'];
+            $telEtablissement = $_POST['telEtablissement'];
+            $dateAjoutEtablissement = date("Y-m-d"); 
+            $idUtilisateur = $_POST['idUtilisateur'];
+            //$idTypeActivite = $_POST['idTypeActivite'];
+            $idPays = $_POST['idPays'];
+    
+            $etablissement = new Etablissement();
+    
+            $etablissement->setDenomination($denomination)
+                            ->setAdresseEtablissement($adresseEtablissement)
+                            ->setVilleEtablissement($villeEtablissement)
+                            ->setCodePostalEtablissement($codePostalEtablissement)
+                            ->setMailEtablissement($mailEtablissement)
+                            ->setTelEtablissement($telEtablissement)
+                            ->setDateAjoutEtablissement($dateAjoutEtablissement)
+                            ->setIdUtilisateur($idUtilisateur)
+                            //->setIdTypeActivite($idTypeActivite)
+                            ->setIdPays($idPays);
+    
+            $newAdd = new ServiceEtablissement();
+            $newAdd->add($etablissement);
+        }
+        /**************************************** MODIFIER UN ETABLISSEMENT ************************/
+        elseif ($_GET['action'] == 'updateEtablissement') 
+        {
+            $idEtablissement = $_POST['idEtablissement'];
+            $denomination = utf8_decode($_POST['denomination']);
+            $adresseEtablissement = $_POST['adresseEtablissement'];
+            $villeEtablissement = $_POST['villeEtablissement'];
+            $codePostalEtablissement = ($_POST['codePostalEtablissement']);
+            $mailEtablissement = $_POST['mailEtablissement'];
+            $telEtablissement = $_POST['telEtablissement'];
+            $dateAjoutEtablissement = date("Y-m-d"); 
+            $idUtilisateur = $_POST['idUtilisateur'];
+            //$idTypeActivite = $_POST['idTypeActivite'];
+            $idPays = $_POST['idPays'];
+
+            $etablissement = new Etablissement();
+            $etablissement->setIdEtablissement($idEtablissement)
+                          ->setDenomination($denomination)
+                          ->setAdresseEtablissement($adresseEtablissement)
+                          ->setVilleEtablissement($villeEtablissement)
+                          ->setCodePostalEtablissement($codePostalEtablissement)
+                          ->setMailEtablissement($mailEtablissement)
+                          ->setTelEtablissement($telEtablissement)
+                          ->setDateAjoutEtablissement($dateAjoutEtablissement)
+                          ->setIdUtilisateur($idUtilisateur)
+                          //->setIdTypeActivite($idTypeActivite)
+                          ->setIdPays($idPays);
+
+            $newUpdate = new ServiceEtablissement();
+            $newUpdate->update($etablissement);//,$idEtablissement
+        }
     }
-    /**************************************** SUPPRIME MISSION ************************/
+    /**************************************** SUPPRIMER UNE MISSION ************************/
     elseif ($_GET['action'] == 'delete') 
     {
         if (!empty($_GET['idMission'])) 

@@ -4,7 +4,7 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
 if (isset($_GET['action'])) 
 {
 
-    if ($_GET['action'] == 'update') 
+    if ($_GET['action'] == 'update' && isset($_GET['idMission'])) 
     {  
         // if (isset($_SESSION['profil']) && $_SESSION['profil']=='utilisateur') {
         //     header('Location: ../../index.php');
@@ -20,7 +20,7 @@ if (isset($_GET['action']))
         //echo formulairesMission($title,$mission,$titleBtn,$action);
         //die;
     } 
-    elseif ($_GET['action'] == 'add') {
+    else if ($_GET['action'] == 'add') {
         $title = "Ajout d'une mission";
         $titleBtn = 'ajouter la mission';
         $action = 'add';

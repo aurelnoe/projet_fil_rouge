@@ -1,6 +1,6 @@
 <?php
 require("C:/xampp/htdocs/HUMAN_HELP/Class/Etablissement.php");
-require("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
 
 class EtablissementDAO 
 {
@@ -10,21 +10,19 @@ class EtablissementDAO
             $newConnect = new BddConnect();
             $db = $newConnect->connexion(); 
 
-            //$getIdEtablissement = $etablissement->getIdEtablissement();
             $getDenomination = $etablissement->getDenomination();
             $getAdresseEtablissement = $etablissement->getAdresseEtablissement();
             $getVilleEtablissement = $etablissement->getVilleEtablissement();
-            $getCodePostalEtablissement = $etablissement->getCodePostalEtablissement()->format('Y-m-d');
+            $getCodePostalEtablissement = $etablissement->getCodePostalEtablissement();
             $getMailEtablissement = $etablissement->getMailEtablissement();
-            $getTelEtablissement = $etablissement->getTelEtablissement()->format('Y-m-d');
-            $getDateAjoutEtablissement = $etablissement->getDateAjoutEtablissement();
+            $getTelEtablissement = $etablissement->getTelEtablissement();
+            $getDateAjoutEtablissement = $etablissement->getDateAjoutEtablissement()->format('Y-m-d');
             $getIdUtilisateur = $etablissement->getIdUtilisateur();
-            $getIdTypeActivite = $etablissement->getIdTypeActivite();
             $getIdPays = $etablissement->getIdPays();
 
             $query = "INSERT INTO etablissement VALUES (NULL,:denomination,:adresseEtablissement,:villeEtablissement,
                                                     :codePostalEtablissement,:mailEtablissement,:telEtablissement,
-                                                    :dateAjoutEtablissement,:idUtilisateur,:idTypeActivite,:idPays)";            
+                                                    :dateAjoutEtablissement,:idUtilisateur,NULL,:idPays)";            
             $stmt = $db->prepare($query); 
             
             $stmt->bindParam(':denomination', $getDenomination);           
@@ -34,8 +32,7 @@ class EtablissementDAO
             $stmt->bindParam(':mailEtablissement', $getMailEtablissement);
             $stmt->bindParam(':telEtablissement', $getTelEtablissement);
             $stmt->bindParam(':dateAjoutEtablissement', $getDateAjoutEtablissement);
-            $stmt->bindParam(':idUtilisateur', $getIdEtablissement);
-            $stmt->bindParam(':idTypeActivite', $getIdTypeActivite);
+            $stmt->bindParam(':idUtilisateur', $getIdUtilisateur);
             $stmt->bindParam(':idPays', $getIdPays);
 
             $stmt->execute();
@@ -61,12 +58,12 @@ class EtablissementDAO
             $getDenomination = $etablissement->getDenomination();
             $getAdresseEtablissement = $etablissement->getAdresseEtablissement();
             $getVilleEtablissement = $etablissement->getVilleEtablissement();
-            $getCodePostalEtablissement = $etablissement->getCodePostalEtablissement()->format('Y-m-d');
+            $getCodePostalEtablissement = $etablissement->getCodePostalEtablissement();
             $getMailEtablissement = $etablissement->getMailEtablissement();
-            $getTelEtablissement = $etablissement->getTelEtablissement()->format('Y-m-d');
-            $getDateAjoutEtablissement = $etablissement->getDateAjoutEtablissement();
+            $getTelEtablissement = $etablissement->getTelEtablissement();
+            $getDateAjoutEtablissement = $etablissement->getDateAjoutEtablissement()->format('Y-m-d');
             $getIdUtilisateur = $etablissement->getIdUtilisateur();
-            $getIdTypeActivite = $etablissement->getIdTypeActivite();
+            //$getIdTypeActivite = $etablissement->getIdTypeActivite();
             $getIdPays = $etablissement->getIdPays();
             
             $query = "UPDATE etablissement 
@@ -78,7 +75,6 @@ class EtablissementDAO
                             telEtablissement = :telEtablissement,
                             dateAjoutEtablissement = :dateAjoutEtablissement,
                             idUtilisateur = :idUtilisateur,
-                            idTypeActivite = :idTypeActivite,
                             idPays = :idPays
                         WHERE idEtablissement = :idEtablissement";  
 
@@ -92,7 +88,6 @@ class EtablissementDAO
             $stmt->bindParam(':telEtablissement', $getTelEtablissement);
             $stmt->bindParam(':dateAjoutEtablissement', $getDateAjoutEtablissement);
             $stmt->bindParam(':idUtilisateur', $getIdUtilisateur);
-            $stmt->bindParam(':idTypeActivite', $getIdTypeActivite);
             $stmt->bindParam(':idPays', $getIdPays);
             $stmt->bindParam(':idEtablissement', $getIdEtablissement);
 
@@ -144,7 +139,7 @@ class EtablissementDAO
             
             $query = "SELECT * FROM etablissement WHERE idEtablissement = :idEtablissement";   
             $stmt = $db->prepare($query);
-            $stmt->bindParam(":idEtablissement", $idEtablissement);
+            $stmt->bindParam(":idEtablissement",$idEtablissement);
             $stmt->execute();       
 
             $etablissement = $stmt->fetchAll(PDO::FETCH_CLASS,'Etablissement');////MYSQLI FETCH ARRAY

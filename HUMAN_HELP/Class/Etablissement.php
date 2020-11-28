@@ -11,7 +11,7 @@ class Etablissement {
     private $telEtablissement;
     private $dateAjoutEtablissement;
     private $idUtilisateur;           
-    private $idTypeActivite;          
+    //private $idTypeActivite;          
     private $idPays;
     
     public function __toString(){
@@ -26,7 +26,6 @@ class Etablissement {
         $this->telEtablissement;
         $this->dateAjoutEtablissement;
         $this->idUtilisateur;
-        $this->idTypeActivite;
         $this->idPays;      
     }
 
@@ -34,7 +33,7 @@ class Etablissement {
     /**
      * Get the value of idEtablissement
      */ 
-    public function getidEtablissement():int
+    public function getIdEtablissement():int
     {
         return $this->idEtablissement;
     }
@@ -44,7 +43,7 @@ class Etablissement {
      *
      * @return  self
      */ 
-    public function setidEtablissement(int $idEtablissement):self
+    public function setIdEtablissement(int $idEtablissement):self
     {
         $this->idEtablissement = $idEtablissement;
 
@@ -74,7 +73,7 @@ class Etablissement {
     /**
      * Get the value of adresseEtablissement
      */ 
-    public function getadresseEtablissement():string
+    public function getAdresseEtablissement():string
     {
         return $this->adresseEtablissement;
     }
@@ -84,7 +83,7 @@ class Etablissement {
      *
      * @return  self
      */ 
-    public function setadresseEtablissement(string $adresseEtablissement):self
+    public function setAdresseEtablissement(string $adresseEtablissement):self
     {
         $this->adresseEtablissement = $adresseEtablissement;
 
@@ -94,7 +93,7 @@ class Etablissement {
     /**
      * Get the value of villeEtablissement
      */ 
-    public function getvilleEtablissement():string
+    public function getVilleEtablissement():string
     {
         return $this->villeEtablissement;
     }
@@ -104,7 +103,7 @@ class Etablissement {
      *
      * @return  self
      */ 
-    public function setvilleEtablissement(string $villeEtablissement):self
+    public function setVilleEtablissement(string $villeEtablissement):self
     {
         $this->villeEtablissement = $villeEtablissement;
 
@@ -114,7 +113,7 @@ class Etablissement {
     /**
      * Get the value of codePostalEtablissement
      */ 
-    public function getcodePostalEtablissement():int
+    public function getCodePostalEtablissement():int
     {
         return $this->codePostalEtablissement;
     }
@@ -124,7 +123,7 @@ class Etablissement {
      *
      * @return  self
      */ 
-    public function setcodePostalEtablissement(int $codePostalEtablissement):self
+    public function setCodePostalEtablissement(int $codePostalEtablissement):self
     {
         $this->codePostalEtablissement = $codePostalEtablissement;
 
@@ -134,7 +133,7 @@ class Etablissement {
     /**
      * Get the value of mailEtablissement
      */ 
-    public function getmailEtablissement():string
+    public function getMailEtablissement():string
     {
         return $this->mailEtablissement;
     }
@@ -144,7 +143,7 @@ class Etablissement {
      *
      * @return  self
      */ 
-    public function setmailEtablissement(string $mailEtablissement):self
+    public function setMailEtablissement(string $mailEtablissement):self
     {
         $this->mailEtablissement = $mailEtablissement;
 
@@ -154,7 +153,7 @@ class Etablissement {
     /**
      * Get the value of telEtablissement
      */ 
-    public function gettelEtablissement():int
+    public function getTelEtablissement():int
     {
         return $this->telEtablissement;
     }
@@ -164,7 +163,7 @@ class Etablissement {
      *
      * @return  self
      */ 
-    public function settelEtablissement(int $telEtablissement):self
+    public function setTelEtablissement(int $telEtablissement):self
     {
         $this->telEtablissement = $telEtablissement;
 
@@ -173,16 +172,16 @@ class Etablissement {
 
     /**
      * Get the value of dateAjoutEtablissement     */ 
-    public function getdateAjoutEtablissement():DateTime
+    public function getDateAjoutEtablissement():DateTime
     {
-        return $this->dateAjoutEtablissement;
+        return new DateTime($this->dateAjoutEtablissement);
     }
 
     /**
      * Set the value of dateAjoutEtablissement     *
      * @return  self
      */ 
-    public function setdateAjoutEtablissement(DateTime $dateAjoutEtablissement):self
+    public function setDateAjoutEtablissement(string $dateAjoutEtablissement):self
     {
         $this->dateAjoutEtablissement = $dateAjoutEtablissement;
 
@@ -192,7 +191,7 @@ class Etablissement {
     /**
      * Get the value of idUtilisateur
      */ 
-    public function getidUtilisateur():int 
+    public function getIdUtilisateur():int 
     {
         return $this->idUtilisateur;
     }
@@ -202,7 +201,7 @@ class Etablissement {
      *
      * @return  self
      */ 
-    public function setidUtilisateur(int $idUtilisateur):self
+    public function setIdUtilisateur(int $idUtilisateur):self
     {
         $this->idUtilisateur = $idUtilisateur;
 
@@ -210,29 +209,9 @@ class Etablissement {
     }
 
     /**
-     * Get the value of idTypeActivite
-     */ 
-    public function getidTypeActivite():int
-    {
-        return $this->idTypeActivite;
-    }
-
-    /**
-     * Set the value of idTypeActivite
-     *
-     * @return  self
-     */ 
-    public function setidTypeActivite(int $idTypeActivite):self
-    {
-        $this->idTypeActivite = $idTypeActivite;
-
-        return $this;
-    }
-
-    /**
      * Get the value of idPays
      */ 
-    public function getidPays():int
+    public function getIdPays():int
     {
         return $this->idPays;
     }
@@ -242,7 +221,7 @@ class Etablissement {
      *
      * @return  self
      */ 
-    public function setidPays(int $idPays):self
+    public function setIdPays(int $idPays):self
     {
         $this->idPays = $idPays;
 

@@ -49,7 +49,7 @@ include("C:/xampp/htdocs/HUMAN_HELP/Controller/MissionsController/formulairesMis
                 <div class="col-12 col-md-6 form-group w-50 pl-3">
                     <label class="h-50" for="idPays">Pays concerné</label>
                     <select type="number" name="idPays" class="custom-select list-group d-block h-50 w-100" required>
-                    <option class="list-group-item">Choisissez...</option>
+                    <option class="list-group-item" value="">Choisissez...</option>
                     <option value="1" class="list-group-item">Maroc</option>
                     <option value="2" class="list-group-item">Gabon</option>
                     <option value="3" class="list-group-item">Somalie</option>
