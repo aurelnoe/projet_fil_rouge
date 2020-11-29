@@ -1,5 +1,5 @@
 <?php
-include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Blog.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Utilisateur.php");
 
 function connexion(){
 
@@ -150,12 +150,12 @@ public function searchAll()
         $query = 'SELECT * FROM utilisateur';
         $stmt = $db->prepare($query);
         $stmt->execute();
-        $utilisateur = $stmt->fetchAll(PDO::FETCH_CLASS,'Blog');
+        $utilisateur = $stmt->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
  
              $db = null;
              $stmt = null;
              
-             return $articles;
+             return $utilisiateur;
     }
     catch (PDOException $e) {
         print "Erreur !: " . $e->getMessage() . "<br/>";
