@@ -48,14 +48,15 @@ class MissionDAO extends BddConnect
             $stmt->bindParam(':idEtablissement', $getIdEtablissement);
             $stmt->bindParam(':idTypeActivite', $getIdTypeActivite);
 
-            $stmt->execute();
-
-            $db = null;
-            $stmt = null;           
+            $stmt->execute();      
         } 
         catch (PDOException $e){
             throw new PDOException($e->getMessage(),$e->getCode());
-        }         
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }       
     }
 
     /******************* MODIFIE MISSION *****************************/
@@ -107,12 +108,13 @@ class MissionDAO extends BddConnect
             $stmt->bindParam(':idMission', $getIdMission);
 
             $stmt->execute();
-
-            $db = null;
-            $stmt = null;
         }
         catch (PDOException $e){
             throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 
@@ -129,14 +131,14 @@ class MissionDAO extends BddConnect
             $stmt = $db->prepare($query);
             $stmt->bindParam(":idMission", $idMission);
             $stmt->execute();
-
-            $db = null;
-            $stmt = null;
         } 
-        catch (PDOException $e) {
-            print "Erreur !: " . $e->getMessage() . "<br/>";
-            die();
-        }        
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }       
     }
 
     /**************** CHERCHE TOUTES LES MISSIONS ***************/
@@ -151,15 +153,15 @@ class MissionDAO extends BddConnect
             $stmt = $db->prepare($query);
             $stmt->execute();
             $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');
-
-            $db = null;
-            $stmt = null;
             
             return $missions;
         } 
-        catch (PDOException $e) {
-            print "Erreur !: " . $e->getMessage() . "<br/>";
-            die();
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 
@@ -181,9 +183,12 @@ class MissionDAO extends BddConnect
 
             return $mission[0];
         } 
-        catch (PDOException $e) {
-            print "Erreur !: " . $e->getMessage() . "<br/>";
-            die();
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 
@@ -200,14 +205,15 @@ class MissionDAO extends BddConnect
             $stmt->execute();  
 
             $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');
-            //varDump($missions);
-            $db = null;
-            $stmt = null;
                                   
             return $missions;
         } 
         catch (PDOException $e){
             throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }       
     }
 
@@ -223,14 +229,15 @@ class MissionDAO extends BddConnect
             $stmt->execute();       
 
             $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');
-
-            $db = null;
-            $stmt = null;
                                         
             return $missions;
         } 
         catch (PDOException $e){
             throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }       
     }
 
@@ -247,14 +254,15 @@ class MissionDAO extends BddConnect
             $stmt->execute();       
 
             $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');
-
-            $db = null;
-            $stmt = null;
                     
             return $missions;
         }       
         catch (PDOException $e){
             throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 }

@@ -17,15 +17,15 @@ class RoleDAO extends BddConnect
             $stmt = $db->prepare($query);
             $stmt->execute();
             $roles = $stmt->fetchAll(PDO::FETCH_CLASS,'Role');
-
-            $db = null;
-            $stmt = null;
             
             return $roles;
         } 
-        catch (PDOException $e) {
-            print "Erreur !: " . $e->getMessage() . "<br/>";
-            die();
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 
@@ -43,13 +43,15 @@ class RoleDAO extends BddConnect
             $stmt->execute();       
 
             $role = $stmt->fetchAll(PDO::FETCH_CLASS,'Role');////MYSQLI FETCH ARRAY
-            //varDump($role);
 
             return $role[0];
         } 
-        catch (PDOException $e) {
-            print "Erreur !: " . $e->getMessage() . "<br/>";
-            die();
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 }

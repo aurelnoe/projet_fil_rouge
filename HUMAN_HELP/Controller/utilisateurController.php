@@ -15,7 +15,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             $adresseUtil = $_POST['adresseUtil'];
             $codePostalUtil = $_POST['codePostalUtil'];
             $villeUtil = $_POST['villeUtil'];
-            $mailUtil = $_POST['mailUtil];'
+            $mailUtil = $_POST['mailUtil'];
             $telUtil = $_POST['telUtil'];
             $passwordUtil = $_POST['passwordUtil'];
             $dateInscriptionUtil = $_POST['dateInscription'];
@@ -42,17 +42,17 @@ if(!empty($_GET['action']) && isset($_GET['action']))
         }
     }
     /************************** MODIFIER UN UTILISATEUR ***************************/
-    else if($_GET['action'] == 'update' && isset($_GET['idUtil']))
+    else if($_GET['action'] == 'update' && isset($_GET['idUtilisateur']))
     {
         if(!empty($_POST) && isset($_POST))
         {
-            $idUtil = $_POST['idUtil'];
+            $idUtilisateur = $_POST['idUtilisateur'];
             $nomUtil = $_POST['nomUtil'];
             $prenomUtile = $_POST['prenomUtil'];           
-            $adresseUtil = $_POST['adresseUtil';
+            $adresseUtil = $_POST['adresseUtil'];
             $codePostalUtil = $_POST['codePostalUtil'];
             $villeUtil = $_POST['villeUtil'];
-            $mailUtil = $_POST['mailUtil];'
+            $mailUtil = $_POST['mailUtil'];
             $telUtil = $_POST['telUtil'];
             $passwordUtil = $_POST['passwordUtil'];
             $dateInscriptionUtil = $_POST['dateInscrption'];
@@ -80,10 +80,10 @@ if(!empty($_GET['action']) && isset($_GET['action']))
     /**************************************** SUPPRIME UTILISATEUR ************************/
     elseif ($_GET['action'] == 'delete') 
     {
-        if (!empty($_GET['idUtil'])) 
+        if (!empty($_GET['idUtilisateur'])) 
         {      
             $delete = new ServiceUtilisateur();
-            $delete->delete($_GET['idUtil']);
+            $delete->delete($_GET['idUtilisateur']);
         }
     }
 }
