@@ -10,7 +10,7 @@ if (!empty($_GET) && isset($_GET['action']))
         // }
         $newEtablissement = new ServiceEtablissement();
         $etablissement = $newEtablissement->searchById($_GET['idEtablissement']);
-        var_dump($etablissement);
+        //var_dump($etablissement);
         $title = "Modification d'un établissement";
         $titleBtn = "Modifier l'établissement";
         $action = 'updateEtablissement';
