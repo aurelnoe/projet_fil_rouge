@@ -33,34 +33,65 @@ class ServiceMission
 
     public function delete($idMission)
     {
-        $this->missionDAO->delete($idMission);
+        try {
+            $this->missionDAO->delete($idMission);
+        } 
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }        
     }
 
     public function searchAll()
     {
-        return $this->missionDAO->searchAll();
+        try {
+            return $this->missionDAO->searchAll();
+        } 
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }    
     }
 
     /************ PAGE DETAIL MISSION *********/
     public function searchById($idMission)
     {
-        return $this->missionDAO->searchById($idMission);
+        try 
+        {          
+            return $this->missionDAO->searchById($idMission);
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        } 
     }
 
     /************ PAGE LISTE MISSION PRO ***********/
     public function searchMissionByPro($idEtablissement)
     {
-        return $this->missionDAO->searchMissionByPro($idEtablissement);      
+        try {
+            return $this->missionDAO->searchMissionByPro($idEtablissement);      
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
     }
     /************ PAGE MISSION PAR TYPE ACTIVITE ***********/
     public function searchMissionByTypeActivite($idTypeActivite)
     {
-        return $this->missionDAO->searchMissionByTypeActivite($idTypeActivite);
+        try {
+            return $this->missionDAO->searchMissionByTypeActivite($idTypeActivite);
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        } 
     }
 
     public function searchMissionByPays($idPays)
     {
-        return $this->missionDAO->searchMissionByPays($idPays);
+        try {
+            return $this->missionDAO->searchMissionByPays($idPays);
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        } 
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
+include_once("../../Presentation/PresentationMission.php");
 
 if (isset($_GET['action'])) 
 {
@@ -17,14 +18,14 @@ if (isset($_GET['action']))
         $action = 'update';
         $idMission = $_GET['idMission'];
 
-        //echo formulairesMission($title,$mission,$titleBtn,$action);
-        //die;
+        echo formulairesMission($title,$mission,$titleBtn,$action,$idMission);
+        die;
     } 
     else if ($_GET['action'] == 'add') {
         $title = "Ajout d'une mission";
         $titleBtn = 'ajouter la mission';
         $action = 'add';
-        //echo formulairesMission($title,$affiche,$titleBtn,$action);
-        //die;
+        echo formulairesMission($title,$affiche,$titleBtn,$action);
+        die;
     }
 }

@@ -37,8 +37,7 @@ class ServiceEtablissement
         } 
         catch (PDOException $e) {
             throw new PDOException($e->getMessage(),$e->getCode());
-        }
-        
+        }       
     }
 
     public function searchAll()
@@ -48,8 +47,7 @@ class ServiceEtablissement
         } 
         catch (PDOException $e) {
             throw new PDOException($e->getMessage(),$e->getCode());
-        }
-        
+        }  
     }
 
     /************ PAGE DETAIL Etablissement *********/
@@ -60,7 +58,6 @@ class ServiceEtablissement
         } 
         catch (PDOException $e) {
             throw new PDOException($e->getMessage(),$e->getCode());
-        }
-        
+        }        
     }
 }

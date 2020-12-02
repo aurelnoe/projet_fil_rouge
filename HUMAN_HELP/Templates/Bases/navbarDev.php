@@ -66,9 +66,9 @@
               Missions
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/liste_mission.php">Liste des missions</a>
-              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/formulairesMission.php?action=add">ajout mission</a>
-              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Missions/liste_mission_pro.php">Liste mission pro</a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/listeMissionController.php">Liste des missions</a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=add">ajout mission</a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php">Liste mission pro</a>
             </div>
           </div>   
         </li>
