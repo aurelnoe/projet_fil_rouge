@@ -3,7 +3,7 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
 
 
 
-/************************** AJOUT MISSION ***************************/
+/************************** AJOUT ARTICLE ***************************/
 if(!empty($_GET['action']) && isset($_GET['action']))
 {
     if ($_GET['action'] == 'add')
@@ -13,11 +13,11 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             // echo'<pre>';
             // var_dump($_POST);
             // echo '</pre>';
-            $titreArticle = utf8_decode($_POST['titreArticle']);
-            $descriptionArticle = $_POST['descriptionArticle'];
-            $dateArticle = $_POST['dateArticle'];
+            $titreArticle = utf8_decode(htmlentities($_POST['titreArticle']));
+            $descriptionArticle = htmlentities($_POST['descriptionArticle']);
+            $dateArticle = htmlentities($_POST['dateArticle']);
             $dateAjoutArticle = date("Y-m-d"); 
-            $imageArticle = is_null($_POST['imageArticle']) ? 'NULL' : $_POST['imageArticle'];
+            $imageArticle = is_null($_POST['imageArticle']) ? 'NULL' : htmlentities($_POST['imageArticle']);
 
             $article = new Blog();
 
@@ -31,16 +31,16 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             $newAdd->add($article);
         }
     }
-    /************************** MODIFIE MISSION ***************************/
+    /************************** MODIFIE ARTICLE ***************************/
     else if($_GET['action'] == 'update' && isset($_GET['idArticle']))
     {
         if(!empty($_POST) && isset($_POST))
         {
-            $titreArticle = utf8_decode($_POST['titreArticle']);
-            $descriptionArticle = $_POST['descriptionArticle'];
-            $dateArticle = $_POST['dateArticle'];
+            $titreArticle = utf8_decode(htmlentities($_POST['titreArticle']));
+            $descriptionArticle = htmlentities($_POST['descriptionArticle']);
+            $dateArticle = htmlentities($_POST['dateArticle']);
             $dateAjoutArticle = date("Y-m-d"); 
-            $imageArticle = is_null($_POST['imageArticle']) ? 'NULL' : $_POST['imageArticle'];
+            $imageArticle = is_null($_POST['imageArticle']) ? 'NULL' : htmlentities($_POST['imageArticle']);
 
             $mission = new Mission();
 
@@ -54,7 +54,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             $newUpdate->update($article);//,$idmission
         }
     }
-    /**************************************** SUPPRIME MISSION ************************/
+    /**************************************** SUPPRIME ARTICLE ************************/
     elseif ($_GET['action'] == 'delete') 
     {
         if (!empty($_GET['idArticle'])) 
@@ -65,6 +65,6 @@ if(!empty($_GET['action']) && isset($_GET['action']))
     }
 }
 
-/******************************************** Afficher toutes les missions ***********************************************/
+/******************************************** Afficher tous les articles ***********************************************/
     $service = new ServiceBlog(); 
     $Allarticle = $service->searchAll();
