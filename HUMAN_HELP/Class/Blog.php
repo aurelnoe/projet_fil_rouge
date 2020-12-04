@@ -86,7 +86,7 @@ class Blog
      */ 
     public function getDateArticle():DateTime
     {
-        return $this->dateArticle;
+        return new DateTime($this->dateArticle);
     }
 
     /**
@@ -94,7 +94,7 @@ class Blog
      *
      * @return  self
      */ 
-    public function setDateArticle(DateTime $dateArticle):self
+    public function setDateArticle(string $dateArticle):self
     {
         $this->dateArticle = $dateArticle;
 
@@ -106,7 +106,7 @@ class Blog
      */ 
     public function getDateAjout():DateTime
     {
-        return $this->dateAjoutArticle;
+        return new DateTime($this->dateAjoutArticle);
     }
 
     /**
@@ -114,7 +114,7 @@ class Blog
      *
      * @return  self
      */ 
-    public function setDateAjout(DateTime $dateAjoutArticle):self
+    public function setDateAjout(string $dateAjoutArticle):self
     {
         $this->dateAjoutArticle = $dateAjoutArticle;
 
@@ -124,7 +124,7 @@ class Blog
     /**
      * Get the value of imageArticle
      */ 
-    public function getImageArticle():string
+    public function getImageArticle():?string
     {
         return $this->imageArticle;
     }
@@ -134,7 +134,7 @@ class Blog
      *
      * @return  self
      */ 
-    public function setImageArticle(string $imageArticle):self
+    public function setImageArticle(?string $imageArticle):self
     {
         $this->imageArticle = $imageArticle;
 

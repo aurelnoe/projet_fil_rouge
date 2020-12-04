@@ -1,6 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
-
+include_once("../Presentation/PresentationBlog.php");
 
 
 /************************** AJOUT ARTICLE ***************************/
@@ -25,7 +25,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                     ->setDescriptionArticle($descriptionArticle)
                     ->setDateArticle($dateArticle)
                     ->setDateAjout($dateAjoutArticle)
-                    ->setImageArticle($setImageArticle);
+                    ->setImageArticle($imageArticle);
 
             $newAdd = new ServiceBlog();
             $newAdd->add($article);

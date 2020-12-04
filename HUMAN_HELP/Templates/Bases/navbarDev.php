@@ -42,7 +42,7 @@
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <a class="dropdown-item" href="/HUMAN_HELP/Templates/Blog/liste_article.php">Liste des articles</a>
               <a class="dropdown-item" href="/HUMAN_HELP/Templates/Blog/details_article.php">détails article</a>
-              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Blog/form_ajout_article.php">Ajouter un article</a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Controller/formulaireArticleController.php?action=add">Ajouter un article</a>
               <a class="dropdown-item" href="/HUMAN_HELP/Templates/Blog/form_modif_article.php">Modifier un article</a>
             </div>
           </div>   
