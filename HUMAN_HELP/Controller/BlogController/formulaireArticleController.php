@@ -1,6 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
-include_once("../Presentation/PresentationBlog.php");
+include_once("../../Presentation/PresentationBlog.php");
 
 if (isset($_GET['action'])) 
 {

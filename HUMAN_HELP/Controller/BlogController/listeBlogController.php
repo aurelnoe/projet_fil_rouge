@@ -1,6 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
-include_once("../Presentation/PresentationBlog.php");
+include_once("../../Presentation/PresentationBlog.php");
 
 
 /************************** AJOUT ARTICLE ***************************/
@@ -67,4 +67,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
 
 /******************************************** Afficher tous les articles ***********************************************/
     $service = new ServiceBlog(); 
-    $Allarticle = $service->searchAll();
+    $articles = $service->searchAll();
+
+
+    echo listeArticle($articles);
