@@ -24,15 +24,15 @@ class BlogDAO extends BddConnect
             $getImageArticle = $article->getImageArticle();
             
 
-            $query = "INSERT INTO blog VALUES (NULL,:titre_article,:description_article,:date_article,:date_ajout_article,
-                                                    :image_article)";            
+            $query = "INSERT INTO blog VALUES (NULL,:titreArticle,:descriptionArticle,:dateArticle,:dateAjoutArticle,
+                                                    :imageArticle)";            
             $stmt = $db->prepare($query); 
             
-            $stmt->bindParam(':titre_article', $getTitreArticle);           
-            $stmt->bindParam(':description_article', $getDescriptionArticle);
-            $stmt->bindParam(':date_article', $getDateArticle);
-            $stmt->bindParam(':date_ajout_article', $getDateAjout);
-            $stmt->bindParam(':image_article', $getImageArticle);
+            $stmt->bindParam(':titreArticle', $getTitreArticle);           
+            $stmt->bindParam(':descriptionArticle', $getDescriptionArticle);
+            $stmt->bindParam(':dateArticle', $getDateArticle);
+            $stmt->bindParam(':dateAjoutArticle', $getDateAjout);
+            $stmt->bindParam(':imageArticle', $getImageArticle);
 
             $stmt->execute();
 
@@ -63,20 +63,20 @@ class BlogDAO extends BddConnect
             
 
             $query = "UPDATE blog 
-            SET titre_article = :titre_article,
-                descripition_article = :description_article,
-                date_article = :date_article,
-                date_ajout_article = :date_ajout_article,
-                image_article = :image_article
-            WHERE id_article = :id_article";    
+            SET titreArticle = :titreArticle,
+                descripitionArticle = :descriptionArticle,
+                dateArticle = :dateArticle,
+                dateAjoutArticle = :dateAjoutArticle,
+                imageArticle = :imageArticle
+            WHERE idArticle = :idArticle";    
 
             $stmt = $db->prepare($query); 
             
-            $stmt->bindParam(':titre_article', $getTitreArticle);           
-            $stmt->bindParam(':description_article', $getDescriptionArticle);
-            $stmt->bindParam(':date_article', $getDateArticle);
-            $stmt->bindParam(':date_ajout_article', $getDateAjout);
-            $stmt->bindParam(':image_article', $getImageArticle);
+            $stmt->bindParam(':titreArticle', $getTitreArticle);           
+            $stmt->bindParam(':descriptionArticle', $getDescriptionArticle);
+            $stmt->bindParam(':dateArticle', $getDateArticle);
+            $stmt->bindParam(':dateAjoutArticle', $getDateAjout);
+            $stmt->bindParam(':imageArticle', $getImageArticle);
 
             $stmt->execute();
 
@@ -97,9 +97,9 @@ class BlogDAO extends BddConnect
              $newConnect = new BddConnect();
              $db = $newConnect->connexion();
  
-             $query = "DELETE FROM blog WHERE id_article = :id_article";
+             $query = "DELETE FROM blog WHERE idArticle = :idArticle";
              $stmt = $db->prepare($query);
-             $stmt->bindParam(":id_article", $idArticle);
+             $stmt->bindParam(":idArticle", $idArticle);
              $stmt->execute();
  
              $db = null;
@@ -137,16 +137,16 @@ class BlogDAO extends BddConnect
      }
  
      /**************** FONCTION CHERCHER UN ARTICLE PAR ID ***********************/
-    public function searchById($id_article)
+    public function searchById($idArticle)
     {
         try 
         {
             $newConnect = new BddConnect();
             $db = $newConnect->connexion();
             
-            $query = "SELECT * FROM blog WHERE id_article = :id_article";   
+            $query = "SELECT * FROM blog WHERE idArticle = :idArticle";   
             $stmt = $db->prepare($query);
-            $stmt->bindParam(":id_article", $id_article);
+            $stmt->bindParam(":idArticle", $idArticle);
             $stmt->execute();       
 
             $article = $stmt->fetchAll(PDO::FETCH_CLASS,'Blog');////MYSQLI FETCH ARRAY
