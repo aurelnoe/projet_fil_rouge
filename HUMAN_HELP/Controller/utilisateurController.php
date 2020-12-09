@@ -86,5 +86,9 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             $delete->delete($_GET['idUtilisateur']);
         }
     }
+    elseif ($_GET['action'] == 'connection') 
+    {
+        
+    }
 }
 

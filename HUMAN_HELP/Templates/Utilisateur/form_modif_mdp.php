@@ -19,7 +19,7 @@
 
     <div class="col-md-6 col-lg-4 container pt-2 my-5 border rounded">
 
-    <form class="form-signin m-auto text-center p-3 formConnexion" action="../../Sources/recuperation.php" method="POST">
+    <form class="form-signin m-auto text-center p-3 formConnexion" action="../../index.php" method="POST">
 
         <div class="logo1 mb-4"></div>
 

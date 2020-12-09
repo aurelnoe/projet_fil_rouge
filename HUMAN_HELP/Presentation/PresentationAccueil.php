@@ -1,6 +1,10 @@
-<head><title>ACCUEIL</title></head>
+<?php 
 
-	<div class="container accueil">
+
+function Accueil()
+{
+    ?>
+    <div class="container accueil">
 		
 		<h1 class="text-center">Bienvenue sur Human Helps</h1>
 
@@ -492,7 +496,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
-
-	
-
+    </div>
+<?php
+}
+?>

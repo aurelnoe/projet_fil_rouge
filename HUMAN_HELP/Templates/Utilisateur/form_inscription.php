@@ -21,7 +21,7 @@
 
     ​<h2 class="text-center my-2 pb-2">formulaire d'inscription</h2>
 
-    ​<form class="needs-validation p-3" action="" method="POST" novalidate>
+    ​<form class="needs-validation p-3" action="../../index.php?action=add" method="POST" novalidate>
                 ​
         <hr class="mb-4 mt-2">
     

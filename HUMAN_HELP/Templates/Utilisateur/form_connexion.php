@@ -19,7 +19,7 @@
     ?>
     <div class="container col-12 col-md-6 col-lg-4 pt-2 my-5 border rounded">
 
-        <form class="form-signin m-auto text-center p-3 formConnexion" action="" method="POST">
+        <form class="form-signin m-auto text-center p-3 formConnexion" action="../../index.php?action=connection" method="POST">
 
             <div class="logo1 m-auto"></div>
 
