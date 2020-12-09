@@ -111,21 +111,21 @@ class Utilisateur
     }
 
     /**
-     * Get the value of codePostal_util
+     * Get the value of codePostalUtil
      */ 
-    public function getCodePostal_util():int
+    public function getCodePostalUtil():int
     {
-        return $this->codePostal_util;
+        return $this->codePostalUtil;
     }
 
     /**
-     * Set the value of codePostal_util
+     * Set the value of codePostalUtil
      *
      * @return  self
      */ 
-    public function setCodePostalUtil($codePostal_util):self
+    public function setCodePostalUtil($codePostalUtil):self
     {
-        $this->codePostal_util = $codePostal_util;
+        $this->codePostalUtil = $codePostalUtil;
 
         return $this;
     }
@@ -213,7 +213,7 @@ class Utilisateur
     /**
      * Get the value of dateInscriptionUtil
      */ 
-    public function getDateInscription_util():dateTime
+    public function getDateInscriptionUtil():dateTime
     {
         return $this->dateInscriptionUtil;
     }

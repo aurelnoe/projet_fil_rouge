@@ -75,7 +75,7 @@ public function update(Utilisateur $utilisateur){
             $getMailUtil = $utilisateur->getMailUtil();
             $getTelUtil = $utilisateur->getTelUtil();
             $getPasswordUtil = $utilisateur->getPasswordUtil();
-            $getDateInscriptionUtil = $utilisateur->getDateInscrptionUtil()->format('y-m-d');
+            $getDateInscriptionUtil = $utilisateur->getDateInscriptionUtil()->format('y-m-d');
             $getIdRole = $utilisateur->getIdRole();
             $getIdPays = $utilisateur->getIdPays();
 
@@ -178,7 +178,7 @@ public function searchAll()
             $stmt->execute();
             $utilisateur = $stmt->fetchAll(PDO::FETCH_CLASS,'utilisateur');
 
-            return $utilistauer[0];
+            return $utilisateur[0];
         }
         catch (PDOException $e) {
             print "erreur !: " . $e->getMessage() . "<br/>";

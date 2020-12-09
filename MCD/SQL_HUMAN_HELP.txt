@@ -51,12 +51,10 @@ CREATE TABLE ETABLISSEMENT(
         tel_etablissement         Int NOT NULL ,
         date_ajout_etablissement  Date NOT NULL ,
         id_utilisateur            Int NOT NULL ,
-        id_type_activite          Int NULL ,
         id_pays                   Int NOT NULL ,
         id_mission                Int NOT NULL
 	,CONSTRAINT ETABLISSEMENT_PK PRIMARY KEY (id_etablissement)
 	,CONSTRAINT ETABLISSEMENT_UTILISATEUR_FK FOREIGN KEY (id_utilisateur) REFERENCES UTILISATEUR(id_utilisateur)
-    	,CONSTRAINT ETABLISSEMENT_TYPE_ACTIVITE_FK FOREIGN KEY (id_type_activite) REFERENCES TYPE_ACTIVITE(id_type_activite)
     	,CONSTRAINT ETABLISSEMENT_PAYS_FK FOREIGN KEY (id_pays) REFERENCES PAYS(id_pays)
 )ENGINE=InnoDB;
 
