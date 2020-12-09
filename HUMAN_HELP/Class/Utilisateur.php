@@ -215,7 +215,7 @@ class Utilisateur
      */ 
     public function getDateInscriptionUtil():dateTime
     {
-        return $this->dateInscriptionUtil;
+        return new DateTime($this->dateInscriptionUtil);
     }
 
     /**
@@ -223,7 +223,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setDateInscriptionUtil($dateInscriptionUtil):self
+    public function setDateInscriptionUtil(string $dateInscriptionUtil):self
     {
         $this->dateInscriptionUtil = $dateInscriptionUtil;
 

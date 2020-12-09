@@ -1,7 +1,7 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceUtilisateur.php");
-
-
+include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationUtilisateur.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationAccueil.php");
 
 /************************** AJOUT UTILISATEUR ***************************/
 if(!empty($_GET['action']) && isset($_GET['action']))
@@ -11,20 +11,20 @@ if(!empty($_GET['action']) && isset($_GET['action']))
         if (!empty($_POST) && isset($_POST)) 
         {
             $nomUtil = utf8_decode($_POST['nomUtil']);
-            $prenomUtile = $_POST['prenomUtil'];           
+            $prenomUtil = $_POST['prenomUtil'];           
             $adresseUtil = $_POST['adresseUtil'];
             $codePostalUtil = $_POST['codePostalUtil'];
             $villeUtil = $_POST['villeUtil'];
             $mailUtil = $_POST['mailUtil'];
             $telUtil = $_POST['telUtil'];
             $passwordUtil = $_POST['passwordUtil'];
-            $dateInscriptionUtil = $_POST['dateInscription'];
+            $dateInscriptionUtil = date("Y-m-d");
             $idRole = $_POST['idRole'];
             $idPays = $_POST['idPays'];
 
             $utilisateur = new Utilisateur();
 
-            $utilisatueur->setNomUtil($nomUtil)
+            $utilisateur->setNomUtil($nomUtil)
                          ->setPrenomUtil($prenomUtil)
                          ->setAdresseUtil($adresseUtil)
                          ->setCodePostalUtil($codePostalUtil)
@@ -33,14 +33,14 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                          ->setTelUtil($telUtil)
                          ->setPasswordUtil($passwordUtil)
                          ->setDateInscriptionUtil($dateInscriptionUtil)
-                         ->setIdRoleUtil($idRoleUtil)
-                         ->setIdPaysUtil($idPaysUtil);
+                         ->setIdRole($idRole)
+                         ->setIdPays($idPays);
 
             $newAdd = new ServiceUtilisateur();
             $newAdd->add($utilisateur);
-
         }
     }
+
     /************************** MODIFIER UN UTILISATEUR ***************************/
     else if($_GET['action'] == 'update' && isset($_GET['idUtilisateur']))
     {
@@ -86,9 +86,18 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             $delete->delete($_GET['idUtilisateur']);
         }
     }
-    elseif ($_GET['action'] == 'connection') 
+    elseif ($_GET['action'] == 'connexion') 
     {
-        
+        $userName = $_POST['userName'];
+        $password = $_POST['password'];
+
+        //$objectUser = ServiceUtilisateur::searchUserbyUserName($userName);
+        if (!empty($objectUser) && password_verify($password,$objectUser->getPassword()))
+        {
+            $_SESSION['userName']=$userName;
+            $_SESSION['profil']=$objectUser->getProfil();
+            $admin = isset($_SESSION['profil']) && $_SESSION['profil'] == 'admin';  
+        }
     }
 }
 

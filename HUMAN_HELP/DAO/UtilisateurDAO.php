@@ -1,35 +1,31 @@
 <?php
-include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Utilisateur.php");
+require("C:/xampp/htdocs/HUMAN_HELP/Class/Utilisateur.php");
+require("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
 
-function connexion(){
-
-    $db = new PDO("mysql:host=localhost;dbname=human_helps",'root','');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    return $db;
-}
-class UtilisateurDAO
+class UtilisateurDAO extends BddConnect
 {
     //*************FONCTION AJOUTER UN UTILISATEUR*********************/
     public function add(Utilisateur $utilisateur)
     {
-        try
+        try 
         {
-            $db = connexion();
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
 
             //  $getIdUtilisateur = $utilisateur->getIdUtilisateur();
              $getNomUtil = $utilisateur->getNomUtil();
-             $getPrenomUtile = $utilisateur->getPrenomUtil();           
+             $getPrenomUtil = $utilisateur->getPrenomUtil();           
              $getAdresseUtil = $utilisateur->getAdresseUtil();
              $getCodePostalUtil = $utilisateur->getCodePostalUtil();
              $getVilleUtil = $utilisateur->getVilleUtil();
              $getMailUtil = $utilisateur->getMailUtil();
              $getTelUtil = $utilisateur->getTelUtil();
              $getPasswordUtil = $utilisateur->getPasswordUtil();
-             $getDateInscriptionUtil = $utilisateur->getDateInscriptionUtil()->format('y-m-d');
+             $getDateInscriptionUtil = $utilisateur->getDateInscriptionUtil()->format('Y-m-d');
              $getIdRole = $utilisateur->getIdRole();
              $getIdPays = $utilisateur->getIdPays();
 
-             $query ="INSERT INTO utilisateur VALUES (:nomUtil,:prenomUtil,:adresseUtil,:codePostalUtil,
+             $query ="INSERT INTO utilisateur VALUES (NULL,:nomUtil,:prenomUtil,:adresseUtil,:codePostalUtil,
                                                     :villeUtil,:mailUtil,:telUtil,:passwordUtil,
                                                     :dateInscriptionUtil,:idRole,:idPays)";
 
@@ -53,7 +49,11 @@ class UtilisateurDAO
              $stmt = null;
         }
         catch (PDOException $e){
-            echo 'echec de la connexion : '.$e->getMessage();
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 
@@ -64,24 +64,24 @@ public function update(Utilisateur $utilisateur){
 
         try
         {
-            $db = connexion();
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
 
             $getIdUtilisateur = $utilisateur->getIdUtilisateur();
             $getNomUtil = $utilisateur->getNomUtil();
-            $getPrenomUtile = $utilisateur->getPrenomUtil();           
+            $getPrenomUtil = $utilisateur->getPrenomUtil();           
             $getAdresseUtil = $utilisateur->getAdresseUtil();
             $getCodePostalUtil = $utilisateur->getCodePostalUtil();
             $getVilleUtil = $utilisateur->getVilleUtil();
             $getMailUtil = $utilisateur->getMailUtil();
             $getTelUtil = $utilisateur->getTelUtil();
             $getPasswordUtil = $utilisateur->getPasswordUtil();
-            $getDateInscriptionUtil = $utilisateur->getDateInscriptionUtil()->format('y-m-d');
+            $getDateInscriptionUtil = $utilisateur->getDateInscriptionUtil()->format('Y-m-d');
             $getIdRole = $utilisateur->getIdRole();
             $getIdPays = $utilisateur->getIdPays();
 
             $query ="UPDATE utilisateur  
-            SET idUtilisateur = :idUtilisateur,
-                nomUtil = :nomUtil,
+            SET nomUtil = :nomUtil,
                 prenomUtil = :prenomUtil,
                 adresseUtil = :adresseUtil,
                 codePostalUtil = :codePostalUtil,
@@ -91,12 +91,11 @@ public function update(Utilisateur $utilisateur){
                 passwordUtil = :passwordUtil,
                 dateInscriptionUtil = :dateInscriptionUtil,
                 idRole = :idRole,
-                idPays = idPays
-            WHERE idUtilisateur = idUtilisateur";
+                idPays = :idPays
+            WHERE idUtilisateur = :idUtilisateur";
 
             $stmt = $db->prepare($query);
 
-            $stmt->bindParam(':idUtilisateur', $getIdUtilisateur);
             $stmt->bindParam(':nomUtil', $getNomUtil);
             $stmt->bindParam(':prenomUtil', $getPrenomUtil);
             $stmt->bindParam(':adresseUtil', $getAdresseUtil);
@@ -108,6 +107,7 @@ public function update(Utilisateur $utilisateur){
             $stmt->bindParam(':dateInscriptionUtil', $getDateInscriptionUtil);
             $stmt->bindParam(':idRole', $getIdRole);
             $stmt->bindParam(':idPays', $getIdPays);
+            $stmt->bindParam(':idUtilisateur', $getIdUtilisateur);
 
             $db = null;
             $stmt = null;
@@ -123,7 +123,8 @@ public function delete($idUtilisateur)
 {
     try
     {
-        $db = connexion();
+        $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
 
         $query = "DELETE FROM utilisateur WHERE idUtilisateur = :idUtilisateur";
         $stmt = $db->prepare($query);
@@ -146,7 +147,8 @@ public function searchAll()
 {
     try
     {
-        $db = connexion();
+        $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
 
         $query = 'SELECT * FROM utilisateur';
         $stmt = $db->prepare($query);
@@ -170,7 +172,8 @@ public function searchAll()
     {
         try
         {
-            $db = connexion();
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
 
             $query = "SELECT * FROM utilisateur WHERE idUtilisateur = :idUtilisateur";
             $stmt = $db->prepare($query);

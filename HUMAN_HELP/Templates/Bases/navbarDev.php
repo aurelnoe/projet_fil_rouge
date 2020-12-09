@@ -7,10 +7,10 @@
           <a class="nav-link" href="/HUMAN_HELP/">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/HUMAN_HELP/Templates/Utilisateur/form_connexion.php">Connexion</a>
+          <a class="nav-link" href="/HUMAN_HELP/Controller/FormulairesUtilisateurController.php?action=connexion">Connexion</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link" href="/HUMAN_HELP/Templates/Utilisateur/form_inscription.php">Inscription</a>
+          <a class="nav-link" href="/HUMAN_HELP/Controller/FormulairesUtilisateurController.php?action=formAjout">Inscription</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/HUMAN_HELP/Templates/Contact/form_contact.php">Contact</a>
