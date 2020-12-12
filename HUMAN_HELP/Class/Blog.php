@@ -24,7 +24,7 @@ class Blog
     /**
      * Get the value of idArticle
      */ 
-    public function getIdArticle():int
+    public function getIdArticle():?int
     {
         return $this->idArticle;
     }
@@ -34,7 +34,7 @@ class Blog
      *
      * @return  self
      */ 
-    public function setIdArticle(int $idArticle):self
+    public function setIdArticle(?int $idArticle):self
     {
         $this->idArticle = $idArticle;
 

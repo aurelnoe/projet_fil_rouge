@@ -59,7 +59,7 @@ function formulaireArticle(string $title, $article, string $titleBtn, string $ac
 
                 <div class="mb-3 form-group">
                     <label for="descriptionArticle">Description de l'article</label>
-                    <textarea type="textarea" class="form-control" name="descriptionArticle" placeholder=""><?php echo ($_GET['action'] == 'update') ? $mission->getDescriptionArticle() : ''; ?></textarea>
+                    <textarea type="textarea" class="form-control" name="descriptionArticle" placeholder=""><?php echo ($_GET['action'] == 'update') ? $article->getDescriptionArticle() : ''; ?></textarea>
                     <div class="invalid-feedback">
                         Ce champ est requis.
                     </div>
@@ -73,7 +73,7 @@ function formulaireArticle(string $title, $article, string $titleBtn, string $ac
                 <div class="mb-3 form-group">
                     <label for="dateArticle">Date de l'article</label>
                     <div class="input-group date" data-provide="datepicker">
-                        <input type="date" class="form-control" name="dateArticle" placeholder="jj/mm/aaaa" value="<?php echo ($_GET['action'] == 'update') ? $mission->getDateArticle()->format('Y-m-d') : ''; ?>" required>
+                        <input type="date" class="form-control" name="dateArticle" placeholder="jj/mm/aaaa" value="<?php echo ($_GET['action'] == 'update') ? $article->getDateArticle()->format('Y-m-d') : ''; ?>" required>
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-th"></span>
                         </div>
@@ -203,7 +203,6 @@ function detailArticle($article)
 
                 <div class="text-center my-3">
                     <a href="listeBlogController.php" class="btn btnGreen w-50">Retour à la liste des articles</a>
-                    <button type="submit" class="btn btn-danger w-50 col-12 offset-md-6 col-md-3 my-2">Supprimer</button>
                 </div>
                 <div>
                     <a href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=update&idArticle=<?php echo $article->getIdArticle();?>" class="btn btn-primary col-12 col-md-3 my-2 w-50">Modifier</a>

@@ -40,7 +40,7 @@
               Blog
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="/HUMAN_HELP/Controller/BlogController/listeblogController.php">Liste des articles</a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php">Liste des articles</a>
               <a class="dropdown-item" href="/HUMAN_HELP/Templates/Blog/details_article.php">détails article</a>
               <a class="dropdown-item" href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=add">Ajouter un article</a>
               <a class="dropdown-item" href="/HUMAN_HELP/Templates/Blog/form_modif_article.php">Modifier un article</a>

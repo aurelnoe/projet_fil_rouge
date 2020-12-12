@@ -18,14 +18,16 @@ if (isset($_GET['action']))
         $action = 'update';
         $idArticle = $_GET['idArticle'];
 
-        echo formulaireArticle($title,$Article,$titleBtn,$action,$idArticle);
-        die;
+        
+
+        echo formulaireArticle($title,$article,$titleBtn,$action,$idArticle);
+        
     } 
     else if ($_GET['action'] == 'add') {
         $title = "Ajouter un article";
         $titleBtn = "ajouter l'article";
         $action = 'add';
         echo formulaireArticle($title,$affiche,$titleBtn,$action);
-        die;
+        
     }
 }

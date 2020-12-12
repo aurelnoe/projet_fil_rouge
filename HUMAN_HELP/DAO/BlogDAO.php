@@ -54,7 +54,7 @@ class BlogDAO extends BddConnect
             $newConnect = new BddConnect();
             $db = $newConnect->connexion();
 
-            //$getIdArticle = $artcile->getIdArticle();
+            $getIdArticle = $article->getIdArticle();
             $getTitreArticle = $article->getTitreArticle();
             $getDescriptionArticle = $article->getDescriptionArticle();
             $getDateArticle = $article->getDateArticle()->format('Y-m-d'); 
@@ -71,20 +71,25 @@ class BlogDAO extends BddConnect
             WHERE idArticle = :idArticle";    
 
             $stmt = $db->prepare($query); 
-            
+
+            $stmt->bindParam(':idArticle', $getIdArticle);
             $stmt->bindParam(':titreArticle', $getTitreArticle);           
             $stmt->bindParam(':descriptionArticle', $getDescriptionArticle);
             $stmt->bindParam(':dateArticle', $getDateArticle);
             $stmt->bindParam(':dateAjoutArticle', $getDateAjout);
             $stmt->bindParam(':imageArticle', $getImageArticle);
+            
 
             $stmt->execute();
 
-            $db = null;
-            $stmt = null;           
+                    
         } 
         catch (PDOException $e){
             echo 'Echec de la connexion : '.$e->getMessage();
+        }
+        finally{
+            $db = null;
+            $stmt = null;   
         }         
     }
 
