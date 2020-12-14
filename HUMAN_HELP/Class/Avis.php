@@ -83,7 +83,7 @@ class Avis
      */ 
     public function getDateCommentaire():DateTime
     {
-        return $this->dateCommentaire;
+        return new DateTime($this->dateCommentaire);
     }
 
     /**
@@ -91,7 +91,7 @@ class Avis
      *
      * @return  self
      */ 
-    public function setDateCommentaire(DateTime $dateCommentaire)
+    public function setDateCommentaire(string $dateCommentaire):self
     {
         $this->dateCommentaire = $dateCommentaire;
 

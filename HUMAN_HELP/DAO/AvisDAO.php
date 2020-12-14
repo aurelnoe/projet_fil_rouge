@@ -140,5 +140,30 @@ class AvisDAO extends BddConnect
              die();
          }
      }
+     public function searchById($idAvis)
+    {
+        try 
+        {
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
+            
+            $query = "SELECT * FROM avis WHERE idAvis = :idAvis";   
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(":idAvis", $idAvis);
+            $stmt->execute();       
+
+            $avis = $stmt->fetchAll(PDO::FETCH_CLASS,'Avis');////MYSQLI FETCH ARRAY
+            
+
+            return $avis[0];
+        } 
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }
+    }
 }
  
