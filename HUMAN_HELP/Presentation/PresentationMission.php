@@ -42,7 +42,7 @@ function listeMissionsPro($missions)
             <div class="card-group w-100">
                 <div class="row mx-0 my-5 w-100">
                 <?php 
-                
+
                 foreach($missions as $mission)
                 {
                 ?>

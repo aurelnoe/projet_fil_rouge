@@ -1,5 +1,5 @@
 <?php
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceUtilisateur.php");
+require("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceUtilisateur.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationUtilisateur.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationAccueil.php");
 
@@ -10,6 +10,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
     {
         if (!empty($_POST) && isset($_POST)) 
         {
+            
             $nomUtil = utf8_decode($_POST['nomUtil']);
             $prenomUtil = $_POST['prenomUtil'];           
             $adresseUtil = $_POST['adresseUtil'];
@@ -21,7 +22,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             $dateInscriptionUtil = date("Y-m-d");
             $idRole = $_POST['idRole'];
             $idPays = $_POST['idPays'];
-
+            
             $utilisateur = new Utilisateur();
 
             $utilisateur->setNomUtil($nomUtil)
@@ -38,6 +39,10 @@ if(!empty($_GET['action']) && isset($_GET['action']))
 
             $newAdd = new ServiceUtilisateur();
             $newAdd->add($utilisateur);
+
+            echo accueil();
+
+            
         }
     }
 
@@ -75,6 +80,8 @@ if(!empty($_GET['action']) && isset($_GET['action']))
 
             $newAdd = new ServiceUtilisateur();
             $newAdd->update($utilisateur);
+
+            //echo detailsCompte();
         }
     }
     /**************************************** SUPPRIME UTILISATEUR ************************/
@@ -98,6 +105,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             $_SESSION['profil']=$objectUser->getProfil();
             $admin = isset($_SESSION['profil']) && $_SESSION['profil'] == 'admin';  
         }
+        echo accueil();
     }
 }
 

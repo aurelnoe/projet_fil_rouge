@@ -28,7 +28,6 @@ class MissionDAO extends BddConnect
             $getDateDebut = $mission->getDateDebut()->format('Y-m-d');
             $getDuree = $mission->getDuree();
             $getDateAjout = $mission->getDateAjout()->format('Y-m-d');
-            //var_dump($getDateAjout);
             $getIdPays = $mission->getIdPays();
             $getIdEtablissement = $mission->getIdEtablissement();
             $getIdTypeActivite = $mission->getIdTypeActivite();

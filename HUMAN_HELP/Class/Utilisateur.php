@@ -15,17 +15,19 @@ class Utilisateur
     private $idRole;
     private $idPays;
     
-    public function __toString(){
-        $this->idUtilisateur;
-        $this->nomUtil;
-        $this->prenomUtil;
-        $this->adresseUtil;
-        $this->codePostalUtil;
-        $this->villeUtil;
-        $this->mailUtil;
-        $this->telUtil;
-        $this->passwordUtil;
-        $this->idRole;
+    public function __toString()
+    {
+        return
+        $this->idUtilisateur .
+        $this->nomUtil .
+        $this->prenomUtil .
+        $this->adresseUtil .
+        $this->codePostalUtil .
+        $this->villeUtil .
+        $this->mailUtil .
+        $this->telUtil .
+        $this->passwordUtil .
+        $this->idRole .
         $this->idPays;
     }
     

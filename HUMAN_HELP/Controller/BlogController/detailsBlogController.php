@@ -6,5 +6,6 @@ if(!empty($_GET) && isset($_GET['idArticle']))
 {
     $service = new ServiceBlog(); 
     $article = $service->searchById($_GET['idArticle']);
+    
     echo detailArticle($article);
 }

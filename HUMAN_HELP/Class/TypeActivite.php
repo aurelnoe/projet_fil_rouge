@@ -7,7 +7,7 @@ class TypeActivite{
     private $typeActivite;
 
     public function __toString(){
-        $this->idTypeActivite;
+        $this->idTypeActivite .
         $this->typeActivite;
     }
     

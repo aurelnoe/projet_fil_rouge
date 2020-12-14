@@ -54,7 +54,7 @@ function connexion()
 <?php
 }
 
-function formulairesUtilisateur(string $title,$utilisateur,string $titleBtn,string $action)
+function formulairesUtilisateur(string $title,$utilisateur=null,string $titleBtn,string $action)
 {
     echo afficher();
     ?>
@@ -77,12 +77,12 @@ function formulairesUtilisateur(string $title,$utilisateur,string $titleBtn,stri
                     <label for="idRole">Role</label>
                     <div class="row">
                         <div class="custom-control custom-radio mx-4">
-                            <input name="idRole" value="1" id="particulier" type="radio" class="custom-control-input" checked required>
+                            <input name="idRole" value="1" id="particulier" type="radio" class="custom-control-input">
                             <label for="particulier" class="custom-control-label">Particulier</label>
                         </div>
                         <div class="custom-control custom-radio mx-2">
-                            <input name="idRole" value="2" id="Professionnel" type="radio" class="custom-control-input" required>
-                            <label class="custom-control-label" for="professionnel">Professionnel</label>
+                            <input name="idRole" value="2" id="Professionnel" type="radio" class="custom-control-input">
+                            <label for="professionnel" class="custom-control-label">Professionnel</label>
                         </div>
                     </div>  
                 </div>
@@ -114,7 +114,7 @@ function formulairesUtilisateur(string $title,$utilisateur,string $titleBtn,stri
 
                 <div class="mb-3 form-group">
                     <label for="passwordUtil">Mot de passe</label>
-                    <input type="password" name="passwordUtil" class="form-control" id="exampleInputPassword1">
+                    <input type="password" name="passwordUtil" class="form-control" id="password">
                 </div>
 
                 <div class="mb-3 form-group form-check">
@@ -223,3 +223,5 @@ function modifMotDePasse()
     </html>
     <?php
 }
+
+

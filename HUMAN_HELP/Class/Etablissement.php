@@ -16,16 +16,16 @@ class Etablissement {
     
     public function __toString(){
         return
-        $this->idEtablissement;
-        $this->denomination;
-        $this->adresseEtablissement;
-        $this->adresseEtablissement;
-        $this->villeEtablissement;
-        $this->codePostalEtablissement;
-        $this->mailEtablissement;
-        $this->telEtablissement;
-        $this->dateAjoutEtablissement;
-        $this->idUtilisateur;
+        $this->idEtablissement .
+        $this->denomination .
+        $this->adresseEtablissement .
+        $this->adresseEtablissement .
+        $this->villeEtablissement .
+        $this->codePostalEtablissement .
+        $this->mailEtablissement .
+        $this->telEtablissement .
+        $this->dateAjoutEtablissement .
+        $this->idUtilisateur .
         $this->idPays;      
     }
 

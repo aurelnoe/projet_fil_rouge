@@ -18,7 +18,7 @@
     ?>
     <div class="container">
         <div>
-            <h2>Détail des informations personnelles</h2>
+            <h2>Détail des informations personnelles</h2> <!-- FAIRE UN UL LI -->
         </div>
         <hr class="my-4">
         <div class="row">
@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col-9 mr-auto">
                         <p>Numéro, libellé de la voie :</p>
-                        <p>Ville :</p>
+                        <p><?php //$utilisateur->getVilleUtil(); ?></p>
                         <p>Code postale :</p>
                         <p>Complément d'adresse :</p>
                     </div>

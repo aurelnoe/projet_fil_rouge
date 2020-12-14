@@ -13,12 +13,12 @@ class ServiceUtilisateur
 
     public function add($utilisateur)
     {
-        try {
+        // try {
             return $this->utilisateurDAO->add($utilisateur);
-        } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        }      
+        // } 
+        // catch (PDOException $e) {
+        //     throw new PDOException($e->getMessage(),$e->getCode());
+        // }      
     }
 
     public function update($utilisateur)

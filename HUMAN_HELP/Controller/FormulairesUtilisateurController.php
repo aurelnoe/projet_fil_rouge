@@ -17,7 +17,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
     {
             $service = new ServiceUtilisateur();
             $utilisateur = $service->searchById($_GET('idUtilisateur'));
-            echo formulairesUtilisateur('Inscrivez vous',$utilisateur,'Modifier','update');
+            echo formulairesUtilisateur('Modifier',$utilisateur,'Modifier','update');
             die;
     }
     elseif ($_GET['action'] == 'connexion') 
