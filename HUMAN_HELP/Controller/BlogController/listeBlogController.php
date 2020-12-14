@@ -32,9 +32,10 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
             $newAdd->add($article);
         }
 
+       
         /************************** MODIFIE ARTICLE ***************************/
-        else if ($_GET['action'] == 'update' && isset($_POST['idArticle'])) 
-        {
+        elseif ($_GET['action'] == 'update' && isset($_POST['idArticle'])) 
+        { 
             $idArticle = htmlentities($_POST['idArticle']);
             $titreArticle = utf8_decode(htmlentities($_POST['titreArticle']));
             $descriptionArticle = htmlentities($_POST['descriptionArticle']);

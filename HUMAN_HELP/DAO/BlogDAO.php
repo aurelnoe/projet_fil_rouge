@@ -64,7 +64,7 @@ class BlogDAO extends BddConnect
 
             $query = "UPDATE blog 
             SET titreArticle = :titreArticle,
-                descripitionArticle = :descriptionArticle,
+                descriptionArticle = :descriptionArticle,
                 dateArticle = :dateArticle,
                 dateAjoutArticle = :dateAjoutArticle,
                 imageArticle = :imageArticle
