@@ -7,8 +7,8 @@ class UtilisateurDAO extends BddConnect
     //*************FONCTION AJOUTER UN UTILISATEUR*********************/
     public function add(Utilisateur $utilisateur)
     {
-        // try 
-        // {
+        try 
+        {
             $newConnect = new BddConnect();
             $db = $newConnect->connexion();
             
@@ -47,15 +47,15 @@ class UtilisateurDAO extends BddConnect
 
              $db = null;
              $stmt = null;
-        // }
-        // catch (PDOException $e){
-        //     var_dump($utilisateur);
-        //     throw new PDOException($e->getMessage(),$e->getCode());
-        // }  
-        // finally{
-        //     $db = null;
-        //     $stmt = null;   
-        // }
+        }
+        catch (PDOException $e){
+            var_dump($utilisateur);
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }
     }
 
     //********************FONCTION MODIDIER UN UTILISATEUR************************ */
@@ -178,13 +178,36 @@ class UtilisateurDAO extends BddConnect
             $stmt = $db->prepare($query);
             $stmt->bindParam(":idUtilisateur", $idUtilisateur);
             $stmt->execute();
-            $utilisateur = $stmt->fetchAll(PDO::FETCH_CLASS,'utilisateur');
+            $utilisateur = $stmt->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
 
             return $utilisateur[0];
         }
         catch (PDOException $e) {
             print "erreur !: " . $e->getMessage() . "<br/>";
             die();
+        }
+    }
+
+    //*********************FONCTION CHERCHER UTILISATEUR PAR ID**************** */
+    public function searchUserbyMail($mailUtil)
+    {
+        try
+        {
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
+
+            $query = "SELECT * FROM utilisateur WHERE mailUtil = :mailUtil";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(":mailUtil", $mailUtil);
+            $stmt->execute();
+            $utilisateur = $stmt->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
+            if (!($utilisateur)) {
+                throw new PDOException("Veuillez saisir un identifiant ou un mot de passe correct",1081);
+            }
+            return $utilisateur[0];
+        }
+        catch (mysqli_sql_exception $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
         }
     }
 }

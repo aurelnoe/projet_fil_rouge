@@ -65,6 +65,18 @@ class ServiceUtilisateur
         } 
     }
 
+    /************ CONNECTION *********/
+    public function searchUserbyMail($email)
+    {
+        try 
+        {          
+            return $this->utilisateurDAO->searchUserbyMail($email);
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        } 
+    }
+
     /**
      * Get the value of UtilisateurDAO
      */ 

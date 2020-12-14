@@ -6,6 +6,8 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationAccueil.php");
 /************************** AJOUT UTILISATEUR ***************************/
 if(!empty($_GET['action']) && isset($_GET['action']))
 {
+    $service =new ServiceUtilisateur();
+
     if ($_GET['action'] == 'add')
     {
         if (!empty($_POST) && isset($_POST)) 
@@ -36,8 +38,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                          ->setIdRole($idRole)
                          ->setIdPays($idPays);
 
-            $newAdd = new ServiceUtilisateur();
-            $newAdd->add($utilisateur);
+            $service->add($utilisateur);
 
             header("location: ../index.php");
             die;
@@ -76,8 +77,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                          ->setIdRoleUtil($idRoleUtil)
                          ->setIdPaysUtil($idPaysUtil);
 
-            $newAdd = new ServiceUtilisateur();
-            $newAdd->update($utilisateur);
+            $service->update($utilisateur);
 
             //echo detailsCompte();
             header("location: ../index.php");
@@ -89,8 +89,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
     {
         if (!empty($_GET['idUtilisateur'])) 
         {      
-            $delete = new ServiceUtilisateur();
-            $delete->delete($_GET['idUtilisateur']);
+            $service->delete($_GET['idUtilisateur']);
 
             header("location: ../index.php");
             die;
@@ -98,18 +97,28 @@ if(!empty($_GET['action']) && isset($_GET['action']))
     }
     elseif ($_GET['action'] == 'connexion') 
     {
-        $email = $_POST['email'];
+        $mailUtil = $_POST['mailUtil'];
         $password = $_POST['password'];
-
-        //$objectUser = ServiceUtilisateur::searchUserbyUserName($userName);
-        if (!empty($objectUser) && password_verify($password,$objectUser->getPasswordUtil()))
-        {
-            $_SESSION['email']=$email;
-            $_SESSION['profil']=$objectUser->getProfil();
-            $admin = isset($_SESSION['idRole']) && $_SESSION['idRole'] == '3';  
+        try {
+            $objectUser = $service->searchUserbyMail($mailUtil);
+            if (!empty($objectUser) && password_verify($password,$objectUser->getPasswordUtil()))
+            {
+                $_SESSION['mailUtil']=$mailUtil;
+                $_SESSION['idRole']=$objectUser->getIdRole();
+                $admin = isset($_SESSION['idRole']) && $_SESSION['idRole'] == '2';  
+                header("location: ../index.php");
+                die;
+            }
+            else {
+                echo connexion();
+            die;
+            }
+            
+        } 
+        catch (PDOException $se) {
+            echo connexion($se->getMessage(),$se->getCode());
+            die;
         }
-        header("location: ../index.php");
-        die;
     }
 }
 

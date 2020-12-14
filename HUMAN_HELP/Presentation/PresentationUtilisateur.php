@@ -24,8 +24,12 @@ function afficher()
     <?php
 }
 
-function connexion() 
+function connexion($message=null,$errorCode=null) 
 {
+    if ($errorCode == 1081) {
+        
+        echo "<div class='alert alert-danger text-center'>Code : $errorCode, Message : $message</div>";
+    }
     echo afficher();
     ?> 
     <div class="container col-12 col-md-6 col-lg-4 pt-2 my-5 border rounded">
@@ -37,8 +41,8 @@ function connexion()
             <h2 class="my-3 font-weight-normal">Connectez vous</h2>
 
             <div class="form-label-group my-4">
-                <label for="mail" class="sr-only">Adresse mail</label>
-                <input type="email" name="mail" class="form-control m-auto w-75" placeholder="email@mail.com" required pattern="^\w{2,}@\w{2,}\.\w{2,}$">
+                <label for="mailUtil" class="sr-only">Adresse mail</label>
+                <input type="email" name="mailUtil" class="form-control m-auto w-75" placeholder="email@mail.com" required pattern="^\w{2,}@\w{2,}\.\w{2,}$">
             </div>
 
             <div class="form-label-group my-4">
@@ -181,8 +185,6 @@ function modifMotDePasse()
     <body>
         <?php
         include("../Templates/Bases/navbarDev.php");
-
-        include("../Templates/Bases/header.php");
 
         include("../Templates/Bases/navbar.php");
         ?>

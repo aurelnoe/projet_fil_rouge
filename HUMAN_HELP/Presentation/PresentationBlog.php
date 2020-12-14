@@ -34,8 +34,6 @@ function formulaireArticle(string $title, $article, string $titleBtn, string $ac
         <?php
         include("../../Templates/Bases/navbarDev.php");
 
-        include("../../Templates/Bases/header.php");
-
         include("../../Templates/Bases/navbar.php");
         ?>
         <div class="container col-12 col-md-6 pt-4 my-4 border rounded">
@@ -106,8 +104,6 @@ function listeArticle($articles)
     <body>
         <?php
         include("../../Templates/Bases/navbarDev.php");
-
-        include("../../Templates/Bases/header.php");
 
         include("../../Templates/Bases/navbar.php");
         ?>

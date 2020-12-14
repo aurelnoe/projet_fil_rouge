@@ -15,8 +15,6 @@ include_once("Presentation/PresentationAccueil.php");
     <?php
     include("Templates/Bases/navbarDev.php");
 
-    include("Templates/Bases/header.php");
-
     include("Templates/Bases/navbar.php");
     ?>
     <head><title>ACCUEIL</title></head>
