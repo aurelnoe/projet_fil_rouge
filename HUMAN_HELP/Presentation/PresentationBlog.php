@@ -141,6 +141,7 @@ function listeArticle($articles)
                         <h4 class="card-title"><?php echo $article->getTitreArticle() ?></h4>
                         <div class="m-auto">
                             <a href="/HUMAN_HELP/Controller/BlogController/detailsBlogController.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btnGreen w-50">Lire l'article</a>
+                            <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>"  class="btn btn-danger w-50">Supprimer</a>
                         </div>
                     </div>
                 </div>
@@ -151,6 +152,9 @@ function listeArticle($articles)
             }
             ?>
         </div>
+        <div class="col-10 col-md-6 m-auto">
+                <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=add">Ajouter un nouvel article</a>
+            </div>
         <?php
         include("../../Templates/Bases/footer.php")
         ?>
@@ -204,8 +208,9 @@ function detailArticle($article)
                 <div class="text-center my-3">
                     <a href="listeBlogController.php" class="btn btnGreen w-50">Retour à la liste des articles</a>
                 </div>
-                <div>
+                <div class="offset-4">
                     <a href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=update&idArticle=<?php echo $article->getIdArticle();?>" class="btn btn-primary col-12 col-md-3 my-2 w-50">Modifier</a>
+                    <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>"  class="btn btn-danger col-12 col-md-3 my-2 w-50">Supprimer</a>
                 </div>
             </div>
           

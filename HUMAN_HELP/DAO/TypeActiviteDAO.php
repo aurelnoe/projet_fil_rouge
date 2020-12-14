@@ -27,4 +27,6 @@ class TypeActiviteDAO extends BddConnect
             die();
         }
     }
+
+    // search by ID
 }
