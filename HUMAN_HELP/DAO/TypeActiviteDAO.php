@@ -37,7 +37,7 @@ class TypeActiviteDAO extends BddConnect
             
             $query = "SELECT * FROM type_activite WHERE idTypeActivite = :idTypeActivite";   
             $stmt = $db->prepare($query);
-            $stmt->bindParam(":ididTypeActivite", $idTypeActivite);
+            $stmt->bindParam(":idTypeActivite", $idTypeActivite);
             $stmt->execute();       
 
             $typeActivite = $stmt->fetchAll(PDO::FETCH_CLASS,'TypeActivite');////MYSQLI FETCH ARRAY

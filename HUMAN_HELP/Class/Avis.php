@@ -7,7 +7,7 @@ class Avis
     private $temoignage;
     private $dateCommentaire;
     private $idUtilisateur;
-    private $idBlog;
+    private $idArticle;
   
     public function __toString(){
         $this->idAvis;
@@ -15,7 +15,7 @@ class Avis
         $this->temoignage;
         $this->dateCommentaire;
         $this->idUtilisateur;
-        $this->idBlog;
+        $this->idArticle;
     }
 
     /**
@@ -57,11 +57,10 @@ class Avis
 
         return $this;
     }
-
     /**
      * Get the value of temoignage
      */ 
-    public function gettemoignage():string
+    public function getTemoignage()
     {
         return $this->temoignage;
     }
@@ -71,12 +70,13 @@ class Avis
      *
      * @return  self
      */ 
-    public function settemoignage(string $temoignage):self
+    public function setTemoignage($temoignage)
     {
         $this->temoignage = $temoignage;
 
         return $this;
     }
+  
 
     /**
      * Get the value of dateCommentaire
@@ -118,23 +118,26 @@ class Avis
         return $this;
     }
 
+
     /**
-     * Get the value of idBlog
+     * Get the value of idArticle
      */ 
-    public function getIdBlog():int
+    public function getIdArticle()
     {
-        return $this->idBlog;
+        return $this->idArticle;
     }
 
     /**
-     * Set the value of idBlog
+     * Set the value of idArticle
      *
      * @return  self
      */ 
-    public function setIdBlog(int $idBlog):self
+    public function setIdArticle($idArticle)
     {
-        $this->idBlog = $idBlog;
+        $this->idArticle = $idArticle;
 
         return $this;
     }
+
+    
 }

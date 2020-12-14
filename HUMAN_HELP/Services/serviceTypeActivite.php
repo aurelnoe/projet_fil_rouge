@@ -10,9 +10,22 @@ class ServiceTypeActivite
         return $this->TypeActiviteDAO = new TypeActiviteDAO();
     }
 
+    /************ Chercher tous les types d'activités*********/
     public function searchAll()
     {
         return $this->TypeActiviteDAO->searchAll();
+    }
+
+    /************ Chercher par ID*********/
+    public function searchById($idTypeActivite)
+    {
+        try 
+        {          
+            return $this->TypeActiviteDAO->searchById($idTypeActivite);
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        } 
     }
 
     /**
