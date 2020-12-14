@@ -81,7 +81,7 @@ function formulairesUtilisateur(string $title,$utilisateur=null,string $titleBtn
                             <label for="particulier" class="custom-control-label">Particulier</label>
                         </div>
                         <div class="custom-control custom-radio mx-2">
-                            <input name="idRole" value="2" id="Professionnel" type="radio" class="custom-control-input">
+                            <input name="idRole" value="2" id="professionnel" type="radio" class="custom-control-input">
                             <label for="professionnel" class="custom-control-label">Professionnel</label>
                         </div>
                     </div>  

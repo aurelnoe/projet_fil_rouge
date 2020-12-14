@@ -14,6 +14,8 @@ class ServiceUtilisateur
     public function add($utilisateur)
     {
         // try {
+            $hash = password_hash($utilisateur->getPasswordUtil(), PASSWORD_DEFAULT);
+            $utilisateur->setPasswordUtil($hash);
             return $this->utilisateurDAO->add($utilisateur);
         // } 
         // catch (PDOException $e) {

@@ -9,8 +9,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
     if ($_GET['action'] == 'add')
     {
         if (!empty($_POST) && isset($_POST)) 
-        {
-            
+        {         
             $nomUtil = utf8_decode($_POST['nomUtil']);
             $prenomUtil = $_POST['prenomUtil'];           
             $adresseUtil = $_POST['adresseUtil'];
@@ -40,9 +39,8 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             $newAdd = new ServiceUtilisateur();
             $newAdd->add($utilisateur);
 
-            echo accueil();
-
-            
+            header("location: ../index.php");
+            die;
         }
     }
 
@@ -82,6 +80,8 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             $newAdd->update($utilisateur);
 
             //echo detailsCompte();
+            header("location: ../index.php");
+            die;
         }
     }
     /**************************************** SUPPRIME UTILISATEUR ************************/
@@ -91,21 +91,25 @@ if(!empty($_GET['action']) && isset($_GET['action']))
         {      
             $delete = new ServiceUtilisateur();
             $delete->delete($_GET['idUtilisateur']);
+
+            header("location: ../index.php");
+            die;
         }
     }
     elseif ($_GET['action'] == 'connexion') 
     {
-        $userName = $_POST['userName'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
 
         //$objectUser = ServiceUtilisateur::searchUserbyUserName($userName);
-        if (!empty($objectUser) && password_verify($password,$objectUser->getPassword()))
+        if (!empty($objectUser) && password_verify($password,$objectUser->getPasswordUtil()))
         {
-            $_SESSION['userName']=$userName;
+            $_SESSION['email']=$email;
             $_SESSION['profil']=$objectUser->getProfil();
-            $admin = isset($_SESSION['profil']) && $_SESSION['profil'] == 'admin';  
+            $admin = isset($_SESSION['idRole']) && $_SESSION['idRole'] == '3';  
         }
-        echo accueil();
+        header("location: ../index.php");
+        die;
     }
 }
 
