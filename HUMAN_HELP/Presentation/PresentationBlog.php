@@ -137,7 +137,7 @@ function listeArticle($articles)
                         <h4 class="card-title"><?php echo $article->getTitreArticle() ?></h4>
                         <div class="m-auto">
                             <a href="/HUMAN_HELP/Controller/BlogController/detailsBlogController.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btnGreen w-50">Lire l'article</a>
-                            <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>"  class="btn btn-danger w-50">Supprimer</a>
+                            <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-danger w-50">Supprimer</a>
                         </div>
                     </div>
                 </div>
@@ -149,8 +149,8 @@ function listeArticle($articles)
             ?>
         </div>
         <div class="col-10 col-md-6 m-auto">
-                <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=add">Ajouter un nouvel article</a>
-            </div>
+            <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=add">Ajouter un nouvel article</a>
+        </div>
         <?php
         include("../../Templates/Bases/footer.php")
         ?>
@@ -172,44 +172,44 @@ function detailArticle($article)
         include("../../Templates/Bases/navbar.php");
         ?>
         <div class="container">
-            
 
-                <h2 class="text-center my-5"><?php echo $article->getTitreArticle(); ?></h2>
 
-                <div class="p-2">
+            <h2 class="text-center my-5"><?php echo $article->getTitreArticle(); ?></h2>
+
+            <div class="p-2">
+                <p>
+                    <?php echo $article->getDescriptionArticle(); ?>
+                </p>
+            </div>
+
+
+            <hr class="my-4">
+
+            <div class="row my-4 m-auto">
+                <div class="*col-12 col-md-6 m-auto">
+                    <h3>Description :</h3>
                     <p>
                         <?php echo $article->getDescriptionArticle(); ?>
                     </p>
+                    <p>Date : <?php echo $article->getDateArticle()->format('d-m-Y'); ?> </p>
                 </div>
-
-
-                <hr class="my-4">
-
-                <div class="row my-4 m-auto">
-                    <div class="*col-12 col-md-6 m-auto">
-                        <h3>Description :</h3>
-                        <p>
-                            <?php echo $article->getDescriptionArticle(); ?>
-                        </p>
-                        <p>Date : <?php echo $article->getDateArticle()->format('d-m-Y'); ?> </p>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-5 m-auto p-0">
-                        <img class="rounded border w-100" src="\HUMAN_HELP\images\informatiqueAfrique.jpg" height="360" width="420" alt="" />
-                        <hr class="hrGreen">
-                    </div>
-                </div>
-
-                <hr class="my-4">
-
-                <div class="text-center my-3">
-                    <a href="listeBlogController.php" class="btn btnGreen w-50">Retour à la liste des articles</a>
-                </div>
-                <div class="offset-4">
-                    <a href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=update&idArticle=<?php echo $article->getIdArticle();?>" class="btn btn-primary col-12 col-md-3 my-2 w-50">Modifier</a>
-                    <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>"  class="btn btn-danger col-12 col-md-3 my-2 w-50">Supprimer</a>
+                <div class="col-12 col-md-6 col-lg-5 m-auto p-0">
+                    <img class="rounded border w-100" src="\HUMAN_HELP\images\informatiqueAfrique.jpg" height="360" width="420" alt="" />
+                    <hr class="hrGreen">
                 </div>
             </div>
-          
+            <?php echo FormulaireAvis() ?>
+            <hr class="my-4">
+
+            <div class="text-center my-3">
+                <a href="listeBlogController.php" class="btn btnGreen w-50">Retour à la liste des articles</a>
+            </div>
+            <div class="offset-4">
+                <a href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=update&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-primary col-12 col-md-3 my-2 w-50">Modifier</a>
+                <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-danger col-12 col-md-3 my-2 w-50">Supprimer</a>
+            </div>
+        </div>
+
         </div>
         <?php
         include("../../Templates/Bases/footer.php")
@@ -217,6 +217,22 @@ function detailArticle($article)
     </body>
 
     </html>
+<?php
+}
+
+function FormulaireAvis()
+{
+?>
+    <div class="container col-12 col-md-10 pt-2 my-2 border rounded">
+
+        <h2 class="text-center my-2 pb-2">Espace commentaire</h2>
+
+        <form class="col-5 offset-3" action="/HUMAN_HELP//Controller/AvisController/detailBlogController.php?action=add" method="POST">
+            <textarea class="col mb-3 offset-2" name="commentaire" id="areaCommentaire" placeholder="Votre commentaire"></textarea>
+            <button class="btn btnGreen btn-lg btn-block mb-3 offset-2" type="submit">Poster un commentaire</button>
+        </form>
+
+    </div>
 <?php
 }
 ?>
