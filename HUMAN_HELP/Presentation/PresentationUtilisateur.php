@@ -42,7 +42,7 @@ function connexion($message=null,$errorCode=null)
 
             <div class="form-label-group my-4">
                 <label for="mailUtil" class="sr-only">Adresse mail</label>
-                <input type="email" name="mailUtil" class="form-control m-auto w-75" placeholder="email@mail.com" required pattern="^\w{2,}@\w{2,}\.\w{2,}$">
+                <input type="email" name="mailUtil" class="form-control m-auto w-75" placeholder="email@mail.com" required>
             </div>
 
             <div class="form-label-group my-4">
