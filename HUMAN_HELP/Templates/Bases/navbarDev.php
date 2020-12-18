@@ -49,18 +49,6 @@
         <li class="nav-item">
           <div class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Compte
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Compte_personnel/details_compte.php">Détails compte</a>
-              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Compte_personnel/form_modif_compte.php">Modification compte</a>
-            </div>
-          </div>   
-        </li>
-
-        <li class="nav-item">
-          <div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Missions
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
