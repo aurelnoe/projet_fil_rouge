@@ -18,7 +18,7 @@ if (isset($_GET['action']))
         $action = 'update';
         $idAvis = $_GET['idAvis'];
 
-        
+        echo 
         die;
     } 
     else if ($_GET['action'] == 'add') {
