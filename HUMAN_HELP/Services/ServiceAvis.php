@@ -60,6 +60,16 @@ class ServiceAvis
             throw new PDOException($e->getMessage(),$e->getCode());
         } 
     }
+    public function searchByIdArticle($idBlog)
+    {
+        try 
+        {          
+            return $this->avisDAO->searchByIdArticle($idBlog);
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        } 
+    }
 
     /**
      * Get the value of avisDAO

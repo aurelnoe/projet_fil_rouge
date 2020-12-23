@@ -24,15 +24,15 @@ class AvisDAO extends BddConnect
             $getIdArticle = $avis->getIdArticle();
             
 
-            $query = "INSERT INTO blog VALUES (NULL,:auteur,:temoignage,:dateCommentaire,
-                                                    :idUtilisateur,:idArticle)";            
+            $query = "INSERT INTO avis VALUES (NULL,:auteur,:temoignage,:dateCommentaire,
+                                                    :idUtilisateur,:idBlog)";            
             $stmt = $db->prepare($query); 
             
             $stmt->bindParam(':auteur', $getAuteur);           
             $stmt->bindParam(':temoignage', $getTemoignage);
             $stmt->bindParam(':dateCommentaire', $getDateCommentaire);
             $stmt->bindParam(':idUtilisateur', $getIdUtilisateur);
-            $stmt->bindParam(':idArticle', $getIdArticle);
+            $stmt->bindParam(':idBlog', $getIdArticle);
 
             $stmt->execute();
 
@@ -67,7 +67,7 @@ class AvisDAO extends BddConnect
                 temoignage = :temoignage,
                 dateCommentaire = :dateCommentaire,
                 idUtilisateur = :idUtilisateur,
-                idArticle = :idArticle
+                idBlog = :idBlog
             WHERE idAvis = :idAvis";    
 
             $stmt = $db->prepare($query); 
@@ -77,7 +77,7 @@ class AvisDAO extends BddConnect
             $stmt->bindParam(':temoignage', $getTemoignage);
             $stmt->bindParam(':dateCommentaire', $getDateCommentaire);
             $stmt->bindParam(':idUtilisateur', $getIdUtilisateur);
-            $stmt->bindParam(':idArticle', $getIdArticle);
+            $stmt->bindParam(':idBlog', $getIdArticle);
             
 
             $stmt->execute();
@@ -116,7 +116,7 @@ class AvisDAO extends BddConnect
          }        
      }
 
-     /**************** FONCTION CHERCHER TOUS LES ARTICLES ***********************/
+     /**************** FONCTION CHERCHER TOUS LES AVIS ***********************/
 
      public function searchAll()
      {
@@ -140,6 +140,8 @@ class AvisDAO extends BddConnect
              die();
          }
      }
+
+/**************** FONCTION CHERCHER AVIS PAR ID ***********************/ 
      public function searchById($idAvis)
     {
         try 
@@ -156,6 +158,32 @@ class AvisDAO extends BddConnect
             
 
             return $avis[0];
+        } 
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }
+    }
+/**************** FONCTION CHERCHER AVIS PAR ARTICLE ***********************/ 
+public function searchByIdArticle($idBlog)
+    {
+        try 
+        {
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
+            
+            $query = "SELECT * FROM avis WHERE idBlog = :idBlog";   
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(":idBlog", $idBlog);
+            $stmt->execute();       
+
+            $avis = $stmt->fetchAll(PDO::FETCH_CLASS,'Avis');////MYSQLI FETCH ARRAY
+            
+
+            return $avis;
         } 
         catch (PDOException $e){
             throw new PDOException($e->getMessage(),$e->getCode());

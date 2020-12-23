@@ -198,7 +198,8 @@ function detailArticle($article)
                     <hr class="hrGreen">
                 </div>
             </div>
-            <?php echo FormulaireAvis() ?>
+            <?php echo FormulaireAvis($article->getIdArticle()); ?>
+            
             <hr class="my-4">
 
             <div class="text-center my-3">
@@ -220,19 +221,41 @@ function detailArticle($article)
 <?php
 }
 
-function FormulaireAvis()
+function FormulaireAvis(int $idArticle)
 {
 ?>
     <div class="container col-12 col-md-10 pt-2 my-2 border rounded">
 
         <h2 class="text-center my-2 pb-2">Espace commentaire</h2>
 
-        <form class="col-5 offset-3" action="/HUMAN_HELP//Controller/AvisController/detailBlogController.php?action=add" method="POST">
-            <textarea class="col mb-3 offset-2" name="commentaire" id="areaCommentaire" placeholder="Votre commentaire"></textarea>
+        <form class="col-5 offset-3" action="/HUMAN_HELP//Controller/AvisController/listeAvisController.php?action=add" method="POST">
+        <input type="hidden" name="idArticle" value="<?php echo $idArticle; ?>">
+        <input type="hidden" name="auteur" value="TestAuteur2">
+        <input type="hidden" name="dateCommentaire" value="<?php echo date("F j, Y, g:i a");?>">
+        <input type="hidden" name="idUtilisateur" value="1">
+            <textarea class="col mb-3 offset-2" name="temoignage" id="temoignage" placeholder="Votre commentaire"></textarea>
             <button class="btn btnGreen btn-lg btn-block mb-3 offset-2" type="submit">Poster un commentaire</button>
         </form>
 
     </div>
+<?php
+}
+function listeAvis($avis)
+{
+
+?> 
+<h1>Commentaires</h1>
+    <div>
+        <?php foreach ($avis as $commentaire){?>
+
+            <p> <?php echo $commentaire->getAuteur(); ?> : <?php echo $commentaire->getTemoignage(); ?> . <?php echo $commentaire->getDateCommentaire()->format('d-m-Y'); ?> </p>
+            <div>
+                <a href="/HUMAN_HELP/Controller/AvisController/listeAvisController.php?action=delete&idAvis=<?php echo $commentaire->getIdAvis(); ?>" class="btn btn-danger w-50">Supprimer</a>
+            </div>
+        <?php }?>
+
+    </div>
+
 <?php
 }
 ?>

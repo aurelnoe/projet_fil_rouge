@@ -1,6 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceAvis.php");
-// include_once("../../Presentation/PresentationBlog.php");
+include_once("../../Presentation/PresentationBlog.php");
 
 
 /************************** AJOUT Avis ***************************/
@@ -71,4 +71,4 @@ $service = new ServiceAvis();
 $avis = $service->searchAll();
 
 
-echo listeArticle($avis);
+echo listeAvis($avis);
