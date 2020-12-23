@@ -13,7 +13,7 @@
           <a class="nav-link" href="/HUMAN_HELP/Controller/FormulairesUtilisateurController.php?action=formAjout">Inscription</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/HUMAN_HELP/Templates/Contact/form_contact.php">Contact</a>
+          <a class="nav-link" href="/HUMAN_HELP/Controller/ContactController/contactController.php">Contact</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/HUMAN_HELP/Templates/Autres/Comment_ca_marche.php">Comment ca marche?</a>
