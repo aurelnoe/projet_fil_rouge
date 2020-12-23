@@ -6,7 +6,9 @@ class TypeActivite{
     private $idTypeActivite;
     private $typeActivite;
 
-    public function __toString(){
+    public function __toString()
+    {
+        return
         $this->idTypeActivite .
         $this->typeActivite;
     }

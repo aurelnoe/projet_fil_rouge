@@ -14,7 +14,7 @@
 				<div class="barre2"></div>
 			</div>
 			<div class="BlockLogo col-sm-12 col-md-12 col-lg-3 col-xl-5">
-				<img class="logo" src="image/logo2.png" height="100px" alt="">
+				<img class="logo" src="../../images/logo2.png" height="100px" alt="">
 			</div>
 			<!---------------------- Barre de navigation ---------------------->
 			<nav class="navbar col text-center menuTab">

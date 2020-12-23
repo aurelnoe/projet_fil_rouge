@@ -6,9 +6,11 @@ class Pays
     private $nomPays;
     private $continent;
     
-    public function __toString(){
-        $this->idPays;
-        $this->monPays;
+    public function __toString()
+    {
+        return
+        $this->idPays .
+        $this->nomPays .
         $this->continent;
     }
 

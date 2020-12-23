@@ -4,8 +4,6 @@ function head()
 {
     ?>
     <?php include("../../head.php"); ?>
-    <script src="../Assets/jquery-3.5.1.min.js"></script>
-    <script src="Assets/script.js"></script>
     <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
     <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
@@ -88,7 +86,7 @@ function listeMissionsPro($missions)
   <?php
 }
 
-function listeMissions($medecines=null,$donations=null,$enseignements=null,$constructions=null,$traductions=null)
+function listeMissions($medecines=null,$donations=null,$enseignements=null,$constructions=null,$traductions=null,$newtypeActivite=null,$newPays=null)
 {
     echo afficher();
     ?> 
@@ -134,52 +132,50 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
 
             <!-- CAROUSEL --------------------------------------------------------------------------->
             <div class="col-12 border rounded p-0">
-                <div id="carouselEnseignement" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
+                <div id="carouselMedecine" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
                     <div>
                         <ol class="carousel-indicators">
-                            <li data-target="#carouselEnseignement" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselEnseignement" data-slide-to="1"></li>
-                            <li data-target="#carouselEnseignement" data-slide-to="2"></li>
+                            <li data-target="#carouselMedecine" data-slide-to="0"></li>
+                            <li data-target="#carouselMedecine" data-slide-to="1"></li>
+                            <li data-target="#carouselMedecine" data-slide-to="2"></li>
                         </ol>
                     </div>
                     
+                    <a class="text-center" href="/HUMAN_HELP/Controller/MissionsController/searchMissionsController.php?idTypeActivite=1"><h3>Médecine :</h3></a>
                     <div class="carousel-inner w-100">
-                        <a href="/HUMAN_HELP/Controller/MissionsController/searchMissionsController.php?idTypeActivite=1"><h3>Médecine :</h3></a>
-                        <div class="row justify-content-between m-auto">
-                            <div class="col-12 col-md-6">
+                        
                             <?php
-                            // $i=0;
-                            // foreach ($medecines as $medecine) 
-                            // {
-                                ?>  
-                                <?php // if($i==0){ ?><div class="item active"><?php //} ?>
-                                <?php //if($i % 2 == 0){ ?><div class="item"><?php //}?>                       
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : <?php //echo $medecine->getTitreMission(); ?></h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>
-                                            </div>                   
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>                 
-                                        </div>
-                                <?php 
-                            //     if($i % 4 != 0){ ?>
-                                </div><?php // }?>
-                            <?php  //$i++; 
-                            // } 
+                            //$i=0;
+                            // echo '<pre>';
+                            // var_dump($medecines);
+                            // echo '</pre>';
+                            foreach ($medecines as $medecine) 
+                            {
+                            ?>                  
+                                <div class="carousel-item">
+                                    <div class="card cardListeMission">
+                                        <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Titre : <?php echo $medecine->getTitreMission(); ?></h5>
+                                            <p class="card-text">Type d'activité : <?php echo $newtypeActivite->searchById($medecine->getIdTypeActivite()); ?></p>
+                                            <p class="card-text">Pays : <?php echo $newPays->searchById($medecine->getIdPays()); ?> (Afrique)</p>
+                                            <p class="card-text">Date de début : 26 Mai 2021</p>
+                                        </div>                   
+                                        <div class="card-footer">
+                                            <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
+                                        </div>                 
+                                    </div>
+                                </div>
+                            <?php  
+                            // $i++; 
+                            } 
                             ?>
-                            </div>
-                        </div>
                         <div class="row my-4 mx-0">
-                            <a class="carousel-control-prev" href="#carouselEnseignement" role="button" data-slide="next">
+                            <a class="carousel-control-prev" href="#carouselMedecine" role="button" data-slide="next">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next" href="#carouselEnseignement" role="button" data-slide="prev">
+                            <a class="carousel-control-next" href="#carouselMedecine" role="button" data-slide="prev">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
@@ -191,12 +187,12 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
             <hr class="mt-4 mb-4">
 
             <div class="col-12 border rounded p-0">
-                <div id="carouselConstruction" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
+                <div id="carouselDonations" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
                     <div>
                         <ol class="carousel-indicators">
-                            <li data-target="#carouselConstruction" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselConstruction" data-slide-to="1"></li>
-                            <li data-target="#carouselConstruction" data-slide-to="2"></li>
+                            <li data-target="#carouselDonations" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselDonations" data-slide-to="1"></li>
+                            <li data-target="#carouselDonations" data-slide-to="2"></li>
                         </ol>
                     </div>
                     <div class="carousel-inner w-100">
@@ -347,12 +343,12 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
             <hr class="mt-4 mb-4">
 
             <div class="col-12 border rounded p-0">
-                <div id="carouselDonations" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
+                <div id="carouselEnseignement" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
                     <div>
                         <ol class="carousel-indicators">
-                            <li data-target="#carouselDonations" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselDonations" data-slide-to="1"></li>
-                            <li data-target="#carouselDonations" data-slide-to="2"></li>
+                            <li data-target="#carouselEnseignement" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselEnseignement" data-slide-to="1"></li>
+                            <li data-target="#carouselEnseignement" data-slide-to="2"></li>
                         </ol>
                     </div>
                     <div class="carousel-inner w-100">
@@ -503,12 +499,12 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
             <hr class="mt-4 mb-4">
 
             <div class="col-12 border rounded p-0">
-                <div id="carouselMedecine" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
+                <div id="carouselConstruction" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
                     <div>
                         <ol class="carousel-indicators">
-                            <li data-target="#carouselMedecine" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselMedecine" data-slide-to="1"></li>
-                            <li data-target="#carouselMedecine" data-slide-to="2"></li>
+                            <li data-target="#carouselConstruction" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselConstruction" data-slide-to="1"></li>
+                            <li data-target="#carouselConstruction" data-slide-to="2"></li>
                         </ol>
                     </div>
                     <div class="carousel-inner w-100">
@@ -816,7 +812,10 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
         ?>
     </body>
     </html>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+
     <script>
+        
         $('.carousel').carousel({
 
             pause: "null"

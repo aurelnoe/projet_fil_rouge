@@ -1,6 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Pays.php");
-require("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+require_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
 
 class PaysDAO extends BddConnect
 {
