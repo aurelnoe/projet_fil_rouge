@@ -30,6 +30,7 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
 
             $newAdd = new ServiceAvis();
             $newAdd->add($avis);
+
         }
 
        
@@ -67,8 +68,9 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
 }
 
 /******************************************** AFFICHER TOUS LES AVIS ***********************************************/
+    
 $service = new ServiceAvis();
-$avis = $service->searchAll();
+$avis = $service->searchALL();
 
 
 echo listeAvis($avis);

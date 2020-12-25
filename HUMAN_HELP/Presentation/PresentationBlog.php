@@ -160,7 +160,7 @@ function listeArticle($articles)
 <?php
 }
 
-function detailArticle($article)
+function detailArticle($article,$avis)
 {
     echo afficher();
 ?>
@@ -198,8 +198,13 @@ function detailArticle($article)
                     <hr class="hrGreen">
                 </div>
             </div>
-            <?php echo FormulaireAvis($article->getIdArticle()); ?>
+            <?php echo FormulaireAvis($article->getIdArticle()); 
+
+                echo listeAvis($avis);
             
+            
+            ?>
+
             <hr class="my-4">
 
             <div class="text-center my-3">
