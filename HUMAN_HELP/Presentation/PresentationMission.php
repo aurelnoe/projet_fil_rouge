@@ -22,7 +22,7 @@ function afficher()
     <?php
 }
 
-function listeMissionsPro($missions) 
+function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null) 
 {
     echo afficher();
     ?> 
@@ -46,17 +46,23 @@ function listeMissionsPro($missions)
                 ?>
                     <div class="col-12 col-md-6 col-lg-5 m-auto my-1">
                         <div class="card cardListeMissionPro mx-auto">
-                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" width="100" height="320" class="card-img-top" alt="">
+                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" width="100" height="320" class="card-img-top">
                             <div class="card-body">
-                                <h5 class="card-title">Titre : <?php echo $mission->getTitreMission(); ?></h5>
-                                <p class="card-text">Type d'activité : <?php echo $mission->getIdTypeActivite(); ?></p>
-                                <p class="card-text">Pays : <?php echo $mission->getIdPays(); ?> (Afrique)</p>
+                                <h5 class="card-title">Titre : <?php echo utf8_encode($mission->getTitreMission()); ?></h5>
+                                <p class="card-text">Type d'activité : <?php echo utf8_encode($newTypeActivite->searchNameById($mission->getIdTypeActivite())); ?></p>
+                                <p class="card-text">Pays : <?php echo $newPays->searchNameById($mission->getIdPays()); ?> (<?php echo $newPays->searchContinentById($mission->getIdPays()); ?>)</p>
                                 <p class="card-text">Date de début : <?php echo $mission->getDateDebut()->format('d-m-Y'); ?></p>
                             </div>
                             <div class="card-footer">
                                 <div class="row m-auto">
-                                    <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php?idMission=<?php echo $mission->getIdMission(); ?>" class="col-12 col-md-5 btn btn-primary my-1 w-100">Voir la mission</a>
-                                    <a href="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php?action=delete&idMission=<?php echo $mission->getIdMission(); ?>"  class="col-12 offset-md-2 col-md-5 btn btn-danger my-1 w-100">Supprimer</a>
+                                    <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php?idMission=<?php echo $mission->getIdMission(); ?>" 
+                                        class="col-12 col-md-5 btn btn-primary my-1 w-100">
+                                        Voir la mission
+                                    </a>
+                                    <a href="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php?action=delete&idMission=<?php echo $mission->getIdMission(); ?>"  
+                                        class="col-12 col-md-5 btn btn-danger my-1 w-100">
+                                        Supprimer
+                                    </a>
                                 </div>                    
                             </div>
                         </div>
@@ -157,9 +163,9 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                         <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                         <div class="card-body">
                                             <h5 class="card-title">Titre : <?php echo $medecine->getTitreMission(); ?></h5>
-                                            <p class="card-text">Type d'activité : <?php echo $newtypeActivite->searchById($medecine->getIdTypeActivite()); ?></p>
-                                            <p class="card-text">Pays : <?php echo $newPays->searchById($medecine->getIdPays()); ?> (Afrique)</p>
-                                            <p class="card-text">Date de début : 26 Mai 2021</p>
+                                            <p class="card-text">Type d'activité : <?php echo $newtypeActivite->searchNameById($medecine->getIdTypeActivite()); ?></p>
+                                            <p class="card-text">Pays : <?php echo $newPays->searchNameById($medecine->getIdPays()); ?> (<?php echo $newPays->searchContinentById($mission->getIdPays()); ?>)</p>
+                                            <p class="card-text">Date de début : <?php echo $medecine->getDateDebut()->format('d-m-Y'); ?></p>
                                         </div>                   
                                         <div class="card-footer">
                                             <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
@@ -814,15 +820,6 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
     </html>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
-    <script>
-        
-        $('.carousel').carousel({
-
-            pause: "null"
-
-        })
-
-    </script>  
 <?php
 }
 
@@ -942,7 +939,7 @@ function detailsMission($mission,string $typeFormation)
 <?php
 }
 
-function formulairesMission(string $title,$mission,string $titleBtn,string $action,int $idMission=null)
+function formulairesMission(string $title,$mission,string $titleBtn,string $action,int $idMission=null,$newTypeActivite=null,$newPays=null)
 {
     echo afficher();
     ?>

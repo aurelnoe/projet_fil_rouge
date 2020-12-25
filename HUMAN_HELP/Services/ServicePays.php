@@ -28,6 +28,30 @@ class ServicePays
         } 
     }
 
+    /************ Chercher Nom par ID*********/
+    public function searchNameById($idPays)
+    {
+        try 
+        {          
+            return $this->paysDAO->searchNameById($idPays);
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        } 
+    }
+
+    /************ Chercher continent par ID*********/
+    public function searchContinentById($idPays)
+    {
+        try 
+        {          
+            return $this->paysDAO->searchContinentById($idPays);
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        } 
+    }
+
     /**
      * Get the value of PaysDAO
      */ 

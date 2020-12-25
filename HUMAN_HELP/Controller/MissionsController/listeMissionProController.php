@@ -143,9 +143,13 @@ if(!empty($_GET['action']) && isset($_GET['action']))
     }
 }
 
-$service = new ServiceMission();
-$missions = $service->searchMissionByPro(1);
+$newTypeActivite = new ServiceTypeActivite();
+$newPays = new ServicePays();
 
-echo listeMissionsPro($missions);
+$newMission = new ServiceMission();
+$missions = $newMission->searchMissionByPro(1);
+
+echo listeMissionsPro($missions,$newTypeActivite,$newPays);
+
 
 

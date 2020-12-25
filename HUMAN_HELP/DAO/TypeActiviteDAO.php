@@ -53,4 +53,32 @@ class TypeActiviteDAO extends BddConnect
             $stmt = null;   
         }
     }
+
+    
+
+    public function searchNameById($idTypeActivite)
+    {
+        try 
+        {
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
+            
+            $query = "SELECT typeActivite FROM type_activite WHERE idTypeActivite = :idTypeActivite";   
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(":idTypeActivite", $idTypeActivite);
+            $stmt->execute();       
+
+            $typeActivite = $stmt->fetchAll(PDO::FETCH_CLASS,'TypeActivite');////MYSQLI FETCH ARRAY
+            //varDump($mission);
+
+            return $typeActivite[0];
+        } 
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }
+    }
 }

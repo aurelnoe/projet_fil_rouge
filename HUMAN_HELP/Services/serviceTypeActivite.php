@@ -28,6 +28,19 @@ class ServiceTypeActivite
         } 
     }
 
+    /************ Chercher par ID*********/
+    public function searchNameById($idTypeActivite)
+    {
+        try 
+        {          
+            return $this->TypeActiviteDAO->searchNameById($idTypeActivite);
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        } 
+    }
+
+
     /**
      * Get the value of TypeActiviteDAO
      */ 
