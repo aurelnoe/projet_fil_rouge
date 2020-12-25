@@ -1,6 +1,8 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceEtablissement.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
+include_once("../../Services/serviceTypeActivite.php");
+include_once("../../Services/ServiceEtablissement.php");
 include_once("../../Presentation/PresentationMission.php");
 
 $_POST = array_map('htmlentities', $_POST);
