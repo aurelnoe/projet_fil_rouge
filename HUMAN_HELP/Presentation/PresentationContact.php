@@ -28,18 +28,24 @@ function formulaireContact()
 {
     echo afficher();
 ?>
+ <body>
+        <?php
+        include("../../Templates/Bases/navbarDev.php");
+
+        include("../../Templates/Bases/navbar.php");
+        ?>
     <div class="container col-12 col-md-6 pt-4 my-4 border rounded">
 
         <h2 class="text-center my-2 pb-2">Formulaire de contact</h2>
 
-        <form class="needs-validation p-3" action="" method="POST" novalidate>
+        <form class="needs-validation p-3" action="/HUMAN_HELP//Controller/ContactController/contactController.php?action=send" method="POST"" method="POST" novalidate>
 
             <hr class="mb-4 mt-2">
 
             <div class="mb-3 form-group">
                 <label for="ContactEmail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-auto mb-3 w-100">
-                    <input type="email" class="form-control" id="ContactEmail" placeholder="Email" required pattern="^\w{2,}@\w{2,}\.\w{2,}$">
+                    <input type="email" class="form-control" name="ContactEmail" placeholder="Email" required pattern="^\w{2,}@\w{2,}\.\w{2,}$">
                 </div>
             </div>
             <div class="mb-3 form-group">
@@ -91,6 +97,11 @@ function formulaireContact()
             <button class="btn btnGreen btn-lg btn-block mb-5" type="submit">Nous contacter</button>
         </form>
     </div>
+    <?php
+        include("../../Templates/Bases/footer.php")
+        ?>
+    </body>
+    </html>
 <?php
 }
 ?>
