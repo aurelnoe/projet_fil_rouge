@@ -5,10 +5,12 @@ require_once("../../Services/ServicePays.php");
 include_once("../../Presentation/PresentationMission.php");
 
 if (isset($_GET['action'])) 
-{
-    
+{ 
     $newTypeActivite = new ServiceTypeActivite();
     $newPays = new ServicePays();
+    
+    $allPays = $newPays->searchAll();
+    $allTypeActivite = $newTypeActivite->searchAll();
 
     if ($_GET['action'] == 'update' && isset($_GET['idMission'])) 
     {  
@@ -22,15 +24,16 @@ if (isset($_GET['action']))
         $titleBtn = 'Modifier la mission';
         $action = 'update';
         $idMission = $_GET['idMission'];
+        $idEtablissement = $mission->getIdEtablissement();
 
-        echo formulairesMission($title,$mission,$titleBtn,$action,$idMission,$newTypeActivite,$newPays);
+        echo formulairesMission($title,$mission,$titleBtn,$action,$idMission,$newTypeActivite,$newPays,$allPays,$allTypeActivite,$idEtablissement);
         die;
     } 
     else if ($_GET['action'] == 'add') {
         $title = "Ajout d'une mission";
         $titleBtn = 'ajouter la mission';
         $action = 'add';
-        echo formulairesMission($title,$affiche,$titleBtn,$action);
+        echo formulairesMission($title,null,$titleBtn,$action,null,null,null,$allPays,$allTypeActivite);
         die;
     }
 }

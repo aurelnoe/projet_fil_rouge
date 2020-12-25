@@ -60,4 +60,14 @@ class ServiceEtablissement
             throw new PDOException($e->getMessage(),$e->getCode());
         }        
     }
+
+    public function searchNameById($idEtablissement)
+    {
+        try {
+            return $this->etablissementDAO->searchNameById($idEtablissement);
+        } 
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }        
+    }
 }

@@ -108,6 +108,7 @@ footer {
 
 .carousel-inner{
   text-align: center;
+  box-sizing: border-box;
 }
 
 .carouselListeMission .carousel-inner h3{ 
@@ -123,9 +124,12 @@ footer {
 }
 
 .carouselListeMission img{
-  max-height: 260px;
+  margin : 20px auto;
+  max-height: 320px;
   min-height: 260px;
-  border-bottom: 1px solid grey;   
+  width: 80%;
+  border: 1px solid grey;  
+  border-radius: 5px; 
 }
 
 .carousel-indicators > li{

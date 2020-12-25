@@ -77,10 +77,14 @@ function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null)
             <hr class="my-4">
 
             <div class="col-10 col-md-6 m-auto">
-                <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=add">Ajouter une nouvelle mission</a>
+                <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=add">
+                    Ajouter une nouvelle mission
+                </a>
             </div>
             <div class="col-10 col-md-6 m-auto">
-                <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/EtablissementsController/formulaireEtablissementController.php?action=update&idEtablissement=<?php echo $mission->getIdEtablissement(); ?>">Modifier les informations de l'établissement</a>
+                <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/EtablissementsController/formulaireEtablissementController.php?action=update&idEtablissement=<?php echo $mission->getIdEtablissement(); ?>">
+                    Modifier les informations de l'établissement
+                </a>
             </div>
 
         </div>
@@ -139,41 +143,39 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
             <!-- CAROUSEL --------------------------------------------------------------------------->
             <div class="col-12 border rounded p-0">
                 <div id="carouselMedecine" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
-                    <div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselMedecine" data-slide-to="0"></li>
-                            <li data-target="#carouselMedecine" data-slide-to="1"></li>
-                            <li data-target="#carouselMedecine" data-slide-to="2"></li>
-                        </ol>
-                    </div>
                     
-                    <a class="text-center" href="/HUMAN_HELP/Controller/MissionsController/searchMissionsController.php?idTypeActivite=1"><h3>Médecine :</h3></a>
-                    <div class="carousel-inner w-100">
-                        
+                    <ol class="carousel-indicators">
+                        <?php foreach ($medecines as $key => $medecine) {
+                            ?>
+                            <li data-target="#carouselMedecine" data-slide-to="<?php echo $key; ?>"
+                            <?php echo ($key==0) ? 'class="active"' : '' ?>></li>
                             <?php
-                            //$i=0;
-                            // echo '<pre>';
-                            // var_dump($medecines);
-                            // echo '</pre>';
-                            foreach ($medecines as $medecine) 
+                        } ?>
+                    </ol>
+                    
+                    <a class="text-center" href="searchMissionsController.php?idTypeActivite=1">
+                        <h3>Médecine :</h3>
+                    </a>
+                    <div class="carousel-inner w-100">
+                            <?php
+                            foreach ($medecines as $key => $medecine) 
                             {
-                            ?>                  
-                                <div class="carousel-item">
-                                    <div class="card cardListeMission">
+                                ?>                  
+                                <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
+                                    <div class="card cardListeMission col-10 col-md-6 p-0">
                                         <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
                                         <div class="card-body">
-                                            <h5 class="card-title">Titre : <?php echo $medecine->getTitreMission(); ?></h5>
-                                            <p class="card-text">Type d'activité : <?php echo $newtypeActivite->searchNameById($medecine->getIdTypeActivite()); ?></p>
-                                            <p class="card-text">Pays : <?php echo $newPays->searchNameById($medecine->getIdPays()); ?> (<?php echo $newPays->searchContinentById($mission->getIdPays()); ?>)</p>
+                                            <h5 class="card-title">Titre : <?php echo utf8_encode($medecine->getTitreMission()); ?></h5>
+                                            <p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($medecine->getIdTypeActivite())); ?></p>
+                                            <p class="card-text">Pays : <?php echo $newPays->searchNameById($medecine->getIdPays()); ?> (<?php echo $newPays->searchContinentById($medecine->getIdPays()); ?>)</p>
                                             <p class="card-text">Date de début : <?php echo $medecine->getDateDebut()->format('d-m-Y'); ?></p>
                                         </div>                   
                                         <div class="card-footer">
-                                            <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
+                                            <a href="detailsMissionController.php?idMission=<?php echo $medecine->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
                                         </div>                 
                                     </div>
                                 </div>
                             <?php  
-                            // $i++; 
                             } 
                             ?>
                         <div class="row my-4 mx-0">
@@ -194,49 +196,36 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
 
             <div class="col-12 border rounded p-0">
                 <div id="carouselDonations" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
-                    <div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselDonations" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselDonations" data-slide-to="1"></li>
-                            <li data-target="#carouselDonations" data-slide-to="2"></li>
-                        </ol>
-                    </div>
+                    <ol class="carousel-indicators">
+                        <?php foreach ($donations as $key => $donation) {
+                            ?>
+                            <li data-target="#carouselDonations" data-slide-to="<?php echo $key; ?>"
+                            <?php echo ($key==0) ? 'class="active"' : '' ?>></li>
+                            <?php
+                        } ?>
+                    </ol>
+                    <a href="searchMissionsController.php?idTypeActivite=2">
+                        <h3 class="text-center">Donations :</h3>
+                    </a>
                     <div class="carousel-inner w-100">
 
-                    <a href="HUMAN_HELP/Controller/MissionsController/searchMissionsController.php?idTypeActivite=2"><h3>Donations :</h3></a>
-
-                        <div class="carousel-item active">
+                        <?php 
+                        foreach ($donations as $key => $donation) {
+                        ?>
+                        <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
                             <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
+                                <div class="card cardListeMission col-10 col-md-6 p-0">
+                                    <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Titre : <?php echo utf8_encode($donation->getTitreMission()); ?></h5>
+                                        <p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($donation->getIdTypeActivite())); ?></p>
+                                        <p class="card-text">Pays : <?php echo $newPays->searchNameById($donation->getIdPays()); ?> (<?php echo $newPays->searchContinentById($donation->getIdPays()); ?>)</p>
+                                        <p class="card-text">Date de début : <?php echo $donation->getDateDebut()->format('d-m-Y'); ?></p>                                        
                                     </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
+                                    <div class="card-footer">
+                                        <a href="detailsMissionController.php?idMission=<?php echo $donation->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
                                     </div>
-                                </div>                     
+                                </div>                  
                             </div>
                             <div class="row my-4">
                                 <a class="carousel-control-prev" href="#carouselConstruction" role="button" data-slide="next">
@@ -249,100 +238,10 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                 </a>
                             </div>
                         </div>
-
-                        <div class="carousel-item">
-                            <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
-                                    </div>
-                                </div>                     
-                            </div>
-                            <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselConstruction" role="button" data-slide="next">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselConstruction" role="button" data-slide="prev">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
-                                    </div>
-                                </div>                     
-                            </div>
-                            <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselConstruction" role="button" data-slide="next">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselConstruction" role="button" data-slide="prev">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-
+                        <?php  
+                        }
+                        ?>
                     </div>
-
-
                 </div>
             </div>
 
@@ -350,152 +249,48 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
 
             <div class="col-12 border rounded p-0">
                 <div id="carouselEnseignement" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
-                    <div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselEnseignement" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselEnseignement" data-slide-to="1"></li>
-                            <li data-target="#carouselEnseignement" data-slide-to="2"></li>
-                        </ol>
-                    </div>
+                    <ol class="carousel-indicators">
+                        <?php foreach ($enseignements as $key => $enseignement) {
+                            ?>
+                            <li data-target="#carouselEnseignements" data-slide-to="<?php echo $key; ?>"
+                            <?php echo ($key==0) ? 'class="active"' : '' ?>></li>
+                            <?php
+                        } ?>
+                    </ol>
+                    <a href="searchMissionsController.php?idTypeActivite=3">
+                        <h3 class="text-center">Enseignement :</h3>
+                    </a>
                     <div class="carousel-inner w-100">
-
-                        <a href="/HUMAN_HELP/Controller/MissionsController/searchMissionsController.php?idTypeActivite=3"><h3>Enseignement :</h3></a>
-
-                        <div class="carousel-item active">
-                            <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
+                        <?php 
+                        foreach ($enseignements as $key => $enseignement) {
+                        ?>
+                            <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
+                                <div class="card cardListeMission col-10 col-md-6 p-0">
+                                    <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Titre : <?php echo utf8_encode($enseignement->getTitreMission()); ?></h5>
+                                        <p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($enseignement->getIdTypeActivite())); ?></p>
+                                        <p class="card-text">Pays : <?php echo $newPays->searchNameById($enseignement->getIdPays()); ?> (<?php echo $newPays->searchContinentById($enseignement->getIdPays()); ?>)</p>
+                                        <p class="card-text">Date de début : <?php echo $enseignement->getDateDebut()->format('d-m-Y'); ?></p>                                        
                                     </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
+                                    <div class="card-footer">
+                                        <a href="detailsMissionController.php?idMission=<?php echo $donation->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
                                     </div>
-                                </div>                     
+                                </div>
+                                <div class="row my-4">
+                                    <a class="carousel-control-prev" href="#carouselEnseignements" role="button" data-slide="next">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselEnseignements" role="button" data-slide="prev">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselDonations" role="button" data-slide="next">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselDonations" role="button" data-slide="prev">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
-                                    </div>
-                                </div>                     
-                            </div>
-                            <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselDonations" role="button" data-slide="next">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselDonations" role="button" data-slide="prev">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
-                                    </div>
-                                </div>                     
-                            </div>
-                            <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselDonations" role="button" data-slide="next">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselDonations" role="button" data-slide="prev">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-
+                        <?php  
+                        }
+                        ?>
                     </div>
 
 
@@ -505,308 +300,104 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
             <hr class="mt-4 mb-4">
 
             <div class="col-12 border rounded p-0">
-                <div id="carouselConstruction" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
-                    <div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselConstruction" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselConstruction" data-slide-to="1"></li>
-                            <li data-target="#carouselConstruction" data-slide-to="2"></li>
-                        </ol>
-                    </div>
+                <div id="carouselConstructions" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
+                    
+                    <ol class="carousel-indicators">
+                        <?php foreach ($constructions as $key => $construction) {
+                            ?>
+                            <li data-target="#carouselConstructions" data-slide-to="<?php echo $key; ?>"
+                            <?php echo ($key==0) ? 'class="active"' : '' ?>></li>
+                            <?php
+                        } ?>
+                    </ol>
+                    
+                    <a class="text-center" href="searchMissionsController.php?idTypeActivite=1">
+                        <h3>Construction :</h3>
+                    </a>
                     <div class="carousel-inner w-100">
-
-                    <a href="/HUMAN_HELP/Controller/MissionsController/searchMissionsController.php?idTypeActivite=4"><h3>Construction :</h3></a>
-
-                        <div class="carousel-item active">
-                            <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
+                            <?php
+                            foreach ($constructions as $key => $construction) 
+                            {
+                                ?>                  
+                                <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
+                                    <div class="card cardListeMission col-10 col-md-6 p-0">
+                                        <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Titre : <?php echo utf8_encode($construction->getTitreMission()); ?></h5>
+                                            <p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($construction->getIdTypeActivite())); ?></p>
+                                            <p class="card-text">Pays : <?php echo $newPays->searchNameById($construction->getIdPays()); ?> (<?php echo $newPays->searchContinentById($construction->getIdPays()); ?>)</p>
+                                            <p class="card-text">Date de début : <?php echo $construction->getDateDebut()->format('d-m-Y'); ?></p>
+                                        </div>                   
+                                        <div class="card-footer">
+                                            <a href="detailsMissionController.php?idMission=<?php echo $construction->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+                                        </div>                 
                                     </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
-                                    </div>
-                                </div>                     
-                            </div>
-                            <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselMedecine" role="button" data-slide="next">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselMedecine" role="button" data-slide="prev">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
-                                    </div>
-                                </div>                     
-                            </div>
-                            <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselMedecine" role="button" data-slide="next">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselMedecine" role="button" data-slide="prev">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
-                                    </div>
-                                </div>                     
-                            </div>
-                            <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselMedecine" role="button" data-slide="next">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselMedecine" role="button" data-slide="prev">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-
+                                </div>
+                            <?php  
+                            } 
+                            ?>
+                        <div class="row my-4 mx-0">
+                            <a class="carousel-control-prev" href="#carouselConstructions" role="button" data-slide="next">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselConstructions" role="button" data-slide="prev">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>                   
                     </div>
-
-
                 </div>
             </div>
-
             <hr class="mt-4 mb-4">
 
             <div class="col-12 border rounded p-0">
-                <div id="carouselTraduction" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
-                    <div>
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselTraduction" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselTraduction" data-slide-to="1"></li>
-                            <li data-target="#carouselTraduction" data-slide-to="2"></li>
-                        </ol>
-                    </div>
+                <div id="carouselTraductions" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
+                    
+                    <ol class="carousel-indicators">
+                        <?php foreach ($traductions as $key => $traduction) {
+                            ?>
+                            <li data-target="#carouselTraductions" data-slide-to="<?php echo $key; ?>"
+                            <?php echo ($key==0) ? 'class="active"' : '' ?>></li>
+                            <?php
+                        } ?>
+                    </ol>
+                    
+                    <a class="text-center" href="searchMissionsController.php?idTypeActivite=1">
+                        <h3>Médecine :</h3>
+                    </a>
                     <div class="carousel-inner w-100">
-
-                    <a href="/HUMAN_HELP/Controller/MissionsController/searchMissionsController.php?idTypeActivite=5"><h3>Traduction :</h3></a>
-
-                        <div class="carousel-item active">
-                            <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
+                            <?php
+                            foreach ($traductions as $key => $traduction) 
+                            {
+                                ?>                  
+                                <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
+                                    <div class="card cardListeMission col-10 col-md-6 p-0">
+                                        <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Titre : <?php echo utf8_encode($traduction->getTitreMission()); ?></h5>
+                                            <p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($traduction->getIdTypeActivite())); ?></p>
+                                            <p class="card-text">Pays : <?php echo $newPays->searchNameById($traduction->getIdPays()); ?> (<?php echo $newPays->searchContinentById($traduction->getIdPays()); ?>)</p>
+                                            <p class="card-text">Date de début : <?php echo $traduction->getDateDebut()->format('d-m-Y'); ?></p>
+                                        </div>                   
+                                        <div class="card-footer">
+                                            <a href="detailsMissionController.php?idMission=<?php echo $traduction->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+                                        </div>                 
                                     </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
-                                    </div>
-                                </div>                     
-                            </div>
-                            <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselTraduction" role="button" data-slide="next">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselTraduction" role="button" data-slide="prev">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
-                                    </div>
-                                </div>                     
-                            </div>
-                            <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselTraduction" role="button" data-slide="next">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselTraduction" role="button" data-slide="prev">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="card-group">
-                                <div class="row justify-content-between m-auto">
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre : Développement numérique</h5>
-                                                <p class="card-text">Type d'activité : informatique</p>
-                                                <p class="card-text">Pays : Ghana (Afrique)</p>
-                                                <p class="card-text">Date de début : 26 Mai 2021</p>                                        
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6">
-                                        <div class="card cardListeMission">
-                                            <img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <h5 class="card-title">Titre de la mission</h5>
-                                                <p class="card-text">Type d'activité :</p>
-                                                <p class="card-text">Pays :</p>
-                                                <p class="card-text">Date de début :</p>
-                                            </div>
-                                            <div class="card-footer">
-                                                <a href="/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php" class="btn btn-primary">Voir la mission</a>
-                                            </div>    
-                                        </div>
-                                    </div>
-                                </div>                     
-                            </div>
-                            <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselTraduction" role="button" data-slide="next">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#carouselTraduction" role="button" data-slide="prev">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-                        </div>
+                                </div>
+                            <?php  
+                            } 
+                            ?>
+                        <div class="row my-4 mx-0">
+                            <a class="carousel-control-prev" href="#carouselTraductions" role="button" data-slide="next">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselTraductions" role="button" data-slide="prev">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>                   
                     </div>
                 </div>
             </div>
@@ -823,7 +414,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
 <?php
 }
 
-function detailsMission($mission,string $typeFormation)
+function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeActivite=null,$newEtablissement=null)
 {
     echo afficher();
     ?> 
@@ -847,10 +438,10 @@ function detailsMission($mission,string $typeFormation)
                 <div class="col-10 col-md-6">
                     <ul class="liDetailsMission">
                         <li><strong>Titre de la mission :</strong> <?php echo $mission->getTitreMission(); ?></li>
-                        <li><strong>Type d'activité :</strong> <?php echo $mission->getIdTypeActivite(); ?></li>
+                        <li><strong>Type d'activité :</strong> <?php echo utf8_encode($newTypeActivite->searchNameById($mission->getIdTypeActivite())); ?></li>
                         <li><strong>Mission :</strong> <?php echo $typeFormation; ?></li>
-                        <li><strong>Pays :</strong> <?php echo $mission->getIdPays(); ?> (Afrique)</li>
-                        <li><strong>Organisateur :</strong> <?php echo $mission->getIdEtablissement(); ?></li>
+                        <li><strong>Pays :</strong> <?php echo $newPays->searchNameById($mission->getIdPays()); ?> (<?php echo $newPays->searchContinentById($mission->getIdPays()); ?>)</li>
+                        <li><strong>Organisateur :</strong> <?php echo utf8_encode($newEtablissement->searchNameById($mission->getIdEtablissement())); ?></li>
                         <li><strong>Durée de la mission :</strong> <?php echo $mission->getDuree(); ?> jours</li>
                         <li><strong>Date début :</strong> <?php echo $mission->getDateDebut()->format('d-m-Y'); ?></li>
                     </ul>
@@ -939,7 +530,7 @@ function detailsMission($mission,string $typeFormation)
 <?php
 }
 
-function formulairesMission(string $title,$mission,string $titleBtn,string $action,int $idMission=null,$newTypeActivite=null,$newPays=null)
+function formulairesMission(string $title,$mission=null,string $titleBtn,string $action,int $idMission=null,$newTypeActivite=null,$newPays=null,$allPays,$allTypeActivite,$idEtablissement=null)
 {
     echo afficher();
     ?>
@@ -959,13 +550,8 @@ function formulairesMission(string $title,$mission,string $titleBtn,string $acti
 
                 <hr class="mb-4 mt-2">
 
-                <div class="mb-3 form-group">
-                    <label for="idEtablissement">Dénomination de l'établissement</label>
-                    <input type="number" class="form-control" name="idEtablissement" placeholder="" value="<?php if(($_GET['action']) == 'update'){echo $mission->getIdEtablissement();}?>">
-                    <div class="invalid-feedback">
-                        Ce champ est requis.
-                    </div>
-                </div>
+                <input type="hidden" name="idEtablissement" value="<?php echo isset($idEtablissement) ? $idEtablissement : 1 ?>">
+                    
                 <div class="mb-3 form-group">
                     <label for="titreMission">Titre de la mission</label>
                     <input type="text" class="form-control" name="titreMission" placeholder="" value="<?php if(($_GET['action']) == 'update'){echo $mission->getTitreMission();}?>" required>
@@ -977,15 +563,15 @@ function formulairesMission(string $title,$mission,string $titleBtn,string $acti
                     <div class="col-12 col-md-6 form-group w-50 pl-3">
                         <label class="h-50" for="idPays">Pays concerné</label>
                         <select type="number" name="idPays" class="custom-select list-group d-block h-50 w-100" required>
-                        <option class="list-group-item" value="">Choisissez...</option>
-                        <option value="1" class="list-group-item">Maroc</option>
-                        <option value="2" class="list-group-item">Gabon</option>
-                        <option value="3" class="list-group-item">Somalie</option>
-                        <option value="4" class="list-group-item">Egypte</option>
-                        <option value="5" class="list-group-item">Mali</option>
+                            <option class="list-group-item" value="">Choisissez...</option>
+                            <?php foreach ($allPays as $key => $pays) : ?>
+                                <option value="<?php echo $pays->getIdPays(); ?>" class="list-group-item">
+                                    <?php echo $pays->getNomPays(); ?>
+                                </option>
+                            <?php endforeach ?>
                         </select>
                         <div class="invalid-feedback">
-                        Choisissez un pays valide.
+                            Choisissez un pays valide.
                         </div>
                     </div>
                     
@@ -993,15 +579,11 @@ function formulairesMission(string $title,$mission,string $titleBtn,string $acti
                         <label class=" h-50" for="idTypeActivite">Type d'activité</label>
                         <select name="idTypeActivite" class="custom-select list-group d-block h-50 w-100" required>
                             <option class="list-group-item" value="">Choisissez...</option>
-                            <option  value="1" class="list-group-item">Médecine</option>
-                            <option  value="2" class="list-group-item">Donations</option>
-                            <option  value="3" class="list-group-item">Enseignement</option>
-                            <option  value="4" class="list-group-item">Formation</option>
-                            <option  value="5" class="list-group-item">Informatique</option>
-                            <option  value="6" class="list-group-item">Traduction</option>
-                            <option  value="7" class="list-group-item">Sportive</option>
-                            <option  value="8" class="list-group-item">Aide juridique</option>
-                            <option  value="9" class="list-group-item">Soutient psychologique</option>
+                            <?php foreach ($allTypeActivite as $typeActivite) : ?>
+                                <option value="<?php echo $typeActivite->getIdTypeActivite(); ?>" class="list-group-item">
+                                    <?php echo utf8_encode($typeActivite->getTypeActivite()); ?>
+                                </option>
+                            <?php endforeach ?>
                         </select>
                         <div class="invalid-feedback">
                             Ce champ est requis.
@@ -1018,11 +600,11 @@ function formulairesMission(string $title,$mission,string $titleBtn,string $acti
                 <div class="d-block mb-3 form-group">
                     <label>Type de formation</label>
                     <div class="row">
-                        <div class="custom-control custom-radio mx-4">
+                        <div class="custom-control custom-radio col-10 col-md-3 mx-4">
                             <input name="typeFormation" id="distance" value=0 type="radio" class="custom-control-input">
                             <label for="distance" class="custom-control-label">Distance</label>                       
                         </div>
-                        <div class="custom-control custom-radio mx-2">
+                        <div class="custom-control custom-radio col-10 col-md-3 mx-2">
                             <input name="typeFormation" id="terrain" value=1 type="radio" class="custom-control-input">
                             <label for="terrain" class="custom-control-label">Sur le terrain</label>                       
                         </div>
@@ -1066,7 +648,7 @@ function formulairesMission(string $title,$mission,string $titleBtn,string $acti
 <?php
 }
 
-function searchMission($missions)
+function searchMission($missions,$typeActivite=null,$title=null)
 {
     echo afficher();
     ?>
@@ -1078,7 +660,7 @@ function searchMission($missions)
         ?>
         <div class="container text-center ">
 
-            <h1 class="h1-select">Titre de la recherche<?php //echo $title; ?></h1>
+            <h1 class="h1-select"><?php echo $title; ?></h1>
             
             <hr class="my-4 hrGreen ">
 
@@ -1098,13 +680,14 @@ function searchMission($missions)
                                 </div>
                                 <div>
                                     <h2 class="my-2">Description</h2>
-                                    <p><?php echo $mission->getDescriptionMission(); ?>
-                                    </p>
+                                    <p><?php echo $mission->getDescriptionMission(); ?></p>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer">
-                            <a href="detailsMissionController.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary my-1 col-12 col-md-6">Détails de la mission</a>
+                            <a href="detailsMissionController.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary my-1 col-12 col-md-6">
+                                Détails de la mission
+                            </a>
                         </div>
                     </div>
                     <?php

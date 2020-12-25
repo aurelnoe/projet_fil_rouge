@@ -18,7 +18,7 @@ class EtablissementDAO
             $getTelEtablissement = $etablissement->getTelEtablissement();
             $getDateAjoutEtablissement = $etablissement->getDateAjoutEtablissement()->format('Y-m-d');
             $getIdUtilisateur = $etablissement->getIdUtilisateur();
-            $getIdPays = $etablissement->getIdPays();
+            $getIdEtablissement = $etablissement->getIdPays();
 
             $query = "INSERT INTO etablissement VALUES (NULL,:denomination,:adresseEtablissement,:villeEtablissement,
                                                     :codePostalEtablissement,:mailEtablissement,:telEtablissement,
@@ -177,6 +177,31 @@ class EtablissementDAO
         finally{
             $db = null;
             $stmt = null;  
+        }
+    }
+
+    public function searchNameById($idEtablissement)
+    {
+        try
+        {
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
+
+            $query = "SELECT denomination FROM etablissement WHERE idEtablissement = :idEtablissement";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(":idEtablissement", $idEtablissement);
+            $stmt->execute();
+
+            $etablissement = $stmt->fetchAll(PDO::FETCH_CLASS,'Etablissement');
+
+            return $etablissement[0];
+        }
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 }
