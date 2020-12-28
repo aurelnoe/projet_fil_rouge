@@ -241,7 +241,7 @@ class MissionDAO extends BddConnect
     }
 
 /**************** CHERCHE TOUTES LES MISSIONS PAR PAYS *******/
-    public function searchMissionByPays($idPays){
+    public function searchMissionByPays(int $idPays){
         try{
             $newConnect = new BddConnect();
             $db = $newConnect->connexion();
@@ -250,6 +250,30 @@ class MissionDAO extends BddConnect
 
             $stmt = $db->prepare($query);
             $stmt->bindParam(":idPays", $idPays);
+            $stmt->execute();       
+
+            $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');
+                    
+            return $missions;
+        }       
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }
+    }
+
+    public function searchMissionByTypeFormation(int $typeFormation){
+        try{
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
+            
+            $query = "SELECT * FROM mission WHERE typeFormation = :typeFormation";
+
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(":typeFormation", $typeFormation);
             $stmt->execute();       
 
             $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');

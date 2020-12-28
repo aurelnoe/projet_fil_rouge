@@ -93,6 +93,16 @@ class ServiceMission
         } 
     }
 
+    public function searchMissionByTypeFormation($typeFormation)
+    {
+        try {
+            return $this->missionDAO->searchMissionByTypeFormation($typeFormation);
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        } 
+    }
+
     /**
      * Get the value of missionDAO
      */ 

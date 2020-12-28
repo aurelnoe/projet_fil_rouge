@@ -22,7 +22,7 @@ if (!empty($_GET))
 
     }//TRI PAR PAYS 
     else if (isset($_GET['idPays'])) {
-        $missions = $newSearch->searchMissionByPays(1);
+        $missions = $newSearch->searchMissionByPays($_GET['idPays']);
 
         $pays = $newPays->searchById($_GET['idPays']);
         $title = ucfirst($pays->getNomPays());
@@ -30,5 +30,13 @@ if (!empty($_GET))
         echo searchMission($missions,$typeActivite,$title);
     }
     //TRI PAR TYPE FORMATION 
+    else if (isset($_GET['typeFormation'])) {
+        $missions = $newSearch->searchMissionByTypeFormation($_GET['typeFormation']);
+
+        $pays = $newPays->searchById($_GET['idPays']);
+        $title = ucfirst($pays->getNomPays());
+
+        echo searchMission($missions,$typeActivite,$title);
+    }
 }
 ?>

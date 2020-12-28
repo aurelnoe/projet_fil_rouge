@@ -6,8 +6,19 @@
     background-color: #58b368;
 }
 
-.carousel-control-next-icon,.carousel-control-prev-icon{
+.carousel .button {
+    margin-top: 1rem;
+    transition-duration: 0.4s;
+    border: 0.1rem solid #58b368; /* Green */
+}
 
+.carousel .button:hover {
+    background-color: #58b368; /* Green */
+    color: white;
+}
+
+.carousel-control-next-icon,.carousel-control-prev-icon
+{
     background-image: none!important;
 }
 .carousel-control-next-icon:after

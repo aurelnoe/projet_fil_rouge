@@ -14,10 +14,10 @@ if(!empty($_GET) && isset($_GET['idMission']))
 
     $mission = $service->searchById($_GET['idMission']);
 
-    if ($mission->getTypeFormation() == 1) {
-        $typeFormation = 'distance';
+    if ($mission->getTypeFormation() == 0) {
+        $typeFormation = 'à distance';
     }else{
-        $typeFormation = 'terrain';
+        $typeFormation = 'sur le terrain';
     }
     echo detailsMission($mission,$typeFormation,$newPays,$newTypeActivite,$newEtablissement);
 }

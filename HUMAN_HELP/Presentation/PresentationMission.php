@@ -113,16 +113,16 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
             </div>
             
             <div class="col-12 col-md-4 m-auto">
-                <div class="btn-group btnTypeFormation w-100 my-2">
+                <div class="dropdown btn-group btnTypeFormation w-100 my-2">
                     <button class="btn w-75">
                         Type de formation
                     </button>
-                    <button type="button" class="btn btnGreen dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btnGreen dropdown-toggle dropdown-toggle-split" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
-                    <div class="dropdown-menu">          
-                        <a class="dropdown-item" href="#"><strong> à distance</strong></a>
-                        <a class="dropdown-item" href="#"><strong> sur le terrain</strong></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">          
+                        <a class="dropdown-item" href="searchMissionsController.php?typeFormation=0"><strong> à distance</strong></a>
+                        <a class="dropdown-item" href="searchMissionsController.php?typeFormation=1"><strong> sur le terrain</strong></a>
                     </div>
                 </div>     
             </div>
@@ -131,7 +131,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
             
             <h2 class="my-4 text-center">Trouver ma mission humanitaire</h2>
 
-            <div>
+            <div class="p-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos id consequatur amet reprehenderit, ea velit dolorem repellat corrupti commodi? Vero molestias enim quas adipisci iusto cupiditate mollitia accusamus laboriosam velit.
                 Laborum dicta obcaecati modi consequatur porro voluptatum libero non deserunt, ratione, dolore dolor, totam quod perspiciatis magni sed aperiam! Quam, quos fugiat doloremque laudantium possimus iusto voluptates quidem quibusdam non!
                 Asperiores, nam, animi ad minus voluptates doloribus obcaecati ducimus unde dolorum vel voluptate nesciunt quaerat voluptatibus eos dignissimos. Quibusdam amet adipisci praesentium, magni voluptatibus facere temporibus obcaecati magnam velit doloremque?
@@ -152,10 +152,11 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                             <?php
                         } ?>
                     </ol>
-                    
-                    <a class="text-center" href="searchMissionsController.php?idTypeActivite=1">
-                        <h3>Médecine :</h3>
-                    </a>
+                    <div class="text-center mx-auto my-1">
+                        <a class="button btn pb-1 w-25" href="searchMissionsController.php?idTypeActivite=1">
+                            <h3>Médecine</h3>
+                        </a>
+                    </div>
                     <div class="carousel-inner w-100">
                             <?php
                             foreach ($medecines as $key => $medecine) 
@@ -204,9 +205,12 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                             <?php
                         } ?>
                     </ol>
-                    <a href="searchMissionsController.php?idTypeActivite=2">
-                        <h3 class="text-center">Donations :</h3>
-                    </a>
+                    <div class="text-center mx-auto my-1">
+                        <a class="button btn pb-1 w-25" href="searchMissionsController.php?idTypeActivite=2">
+                            <h3>Donations</h3>
+                        </a>
+                    </div>
+                    
                     <div class="carousel-inner w-100">
 
                         <?php 
@@ -257,9 +261,11 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                             <?php
                         } ?>
                     </ol>
-                    <a href="searchMissionsController.php?idTypeActivite=3">
-                        <h3 class="text-center">Enseignement :</h3>
-                    </a>
+                    <div class="text-center mx-auto my-1">
+                        <a class="button btn pb-1 w-25" href="searchMissionsController.php?idTypeActivite=3">
+                            <h3>Enseignement</h3>
+                        </a>
+                    </div>
                     <div class="carousel-inner w-100">
                         <?php 
                         foreach ($enseignements as $key => $enseignement) {
@@ -310,14 +316,17 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                             <?php
                         } ?>
                     </ol>
-                    
-                    <a class="text-center" href="searchMissionsController.php?idTypeActivite=1">
-                        <h3>Construction :</h3>
-                    </a>
+                    <div class="text-center mx-auto my-1">
+                        <a class="button btn pb-1 w-25" href="searchMissionsController.php?idTypeActivite=4">
+                            <h3>Construction</h3>
+                        </a>
+                    </div>
                     <div class="carousel-inner w-100">
                             <?php
                             foreach ($constructions as $key => $construction) 
                             {
+                                if (isset($construction)) 
+                                {
                                 ?>                  
                                 <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
                                     <div class="card cardListeMission col-10 col-md-6 p-0">
@@ -333,7 +342,8 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                         </div>                 
                                     </div>
                                 </div>
-                            <?php  
+                            <?php 
+                                }
                             } 
                             ?>
                         <div class="row my-4 mx-0">
@@ -362,10 +372,11 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                             <?php
                         } ?>
                     </ol>
-                    
-                    <a class="text-center" href="searchMissionsController.php?idTypeActivite=1">
-                        <h3>Médecine :</h3>
-                    </a>
+                    <div class="text-center mx-auto my-1">
+                        <a class="button btn pb-1 w-25" href="searchMissionsController.php?idTypeActivite=5">
+                            <h3>Traductions</h3>
+                        </a>
+                    </div>
                     <div class="carousel-inner w-100">
                             <?php
                             foreach ($traductions as $key => $traduction) 
@@ -545,7 +556,7 @@ function formulairesMission(string $title,$mission=null,string $titleBtn,string 
 
             <h2 class="text-center my-2 pb-2"><?php echo $title; ?></h2>
 
-            <form class="needs-validation p-3" action="/HUMAN_HELP//Controller/MissionsController/listeMissionProController.php?action=<?php echo $action; ?>" method="POST" novalidate>
+            <form class="needs-validation p-3" action="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php?action=<?php echo $action; ?>" method="POST" novalidate>
                 <input type="hidden" name="idMission" value="<?php echo isset($idMission) ? $idMission : '' ?>">
 
                 <hr class="mb-4 mt-2">
@@ -673,12 +684,12 @@ function searchMission($missions,$typeActivite=null,$title=null)
                         <div class="card-body">
                             <img src="\HUMAN_HELP\images\enseignementThai.jpg" height="auto" width="100%" alt="">
                             <div class="text-card-select">
-                                <div>
+                                <div class="text-center mx-auto my-1">
                                     <h2 class="my-2">Titre de la mission</h2>
                                     <p><?php echo $mission->getTitreMission(); ?>
                                     </p>
                                 </div>
-                                <div>
+                                <div class="text-center mx-auto my-1">
                                     <h2 class="my-2">Description</h2>
                                     <p><?php echo $mission->getDescriptionMission(); ?></p>
                                 </div>
