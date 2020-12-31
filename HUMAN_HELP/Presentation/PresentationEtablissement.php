@@ -1,5 +1,5 @@
 <?php
-function formulairesEtablissement(string $title,$etablissement=null,int $idEtablissement=null,int $idUtilisateur ,string $titleBtn,string $action) 
+function formulairesEtablissement(string $title,$etablissement=null,int $idEtablissement=null,int $idUtilisateur,array $allPays=null,string $titleBtn,string $action) 
 {
     ?>
     <!DOCTYPE html>
@@ -30,6 +30,21 @@ function formulairesEtablissement(string $title,$etablissement=null,int $idEtabl
                     </div>
                 </div>
                 <!--id_utilisateur à récupérer en GET apres connexion avant ajout -->
+                
+                <div class="mb-3 form-group">
+                    <label for="mailEtablissement">Adresse mail</label>
+                    <input name="mailEtablissement" type="mail" class="form-control" placeholder="" value="<?php if(($_GET['action']) == 'update'){echo $etablissement->getMailEtablissement();}?>" required>
+                    <div class="invalid-feedback">
+                        Ce champ est requis.
+                    </div>
+                </div> 
+                <div class="mb-3 form-group">
+                    <label for="telEtablissement">Téléphone</label>
+                    <input name="telEtablissement" type="number" class="form-control" placeholder="" value="<?php if(($_GET['action']) == 'update'){echo $etablissement->getTelEtablissement();}?>" required>
+                    <div class="invalid-feedback">
+                        Ce champ est requis.
+                    </div>
+                </div> 
                 <div class="mb-3 form-group">
                     <label for="adresseEtablissement">Numéro et libellé de la voie</label>
                     <input type="text" class="form-control" name="adresseEtablissement" placeholder="" value="<?php if(($_GET['action']) == 'update'){echo $etablissement->getAdresseEtablissement();}?>" required>
@@ -53,36 +68,21 @@ function formulairesEtablissement(string $title,$etablissement=null,int $idEtabl
                         </div>
                     </div>            
                 </div>
-                <div class="mb-3 form-group">
-                    <label for="mailEtablissement">Adresse mail</label>
-                    <input name="mailEtablissement" type="mail" class="form-control" placeholder="" value="<?php if(($_GET['action']) == 'update'){echo $etablissement->getMailEtablissement();}?>" required>
-                    <div class="invalid-feedback">
-                        Ce champ est requis.
-                    </div>
-                </div> 
-                <div class="mb-3 form-group">
-                    <label for="telEtablissement">Téléphone</label>
-                    <input name="telEtablissement" type="number" class="form-control" placeholder="" value="<?php if(($_GET['action']) == 'update'){echo $etablissement->getTelEtablissement();}?>" required>
-                    <div class="invalid-feedback">
-                        Ce champ est requis.
-                    </div>
-                </div> 
                 <div class="row p-0 mb-3">
-                    <div class="form-group col-12 col-md-5">
-                        <label for="idPays" class="h-50">Pays</label>
-                        <select name="idPays" class="list-group custom-select d-block h-50" required>
+                    <div class="form-group col-12 col-md-6 w-50 pl-3">
+                        <label class="h-50" for="idPays">Pays concerné</label>
+                        <select type="number" name="idPays" class="custom-select list-group d-block h-50 w-100" required>
                             <option class="list-group-item" value="">Choisissez...</option>
-                            <option value="1" class="list-group-item">Maroc</option>
-                            <option value="2" class="list-group-item">Gabon</option>
-                            <option value="3" class="list-group-item">Somalie</option>
-                            <option value="4" class="list-group-item">Egypte</option>
-                            <option value="5" class="list-group-item">Mali</option>
+                            <?php foreach ($allPays as $pays) : ?>
+                                <option value="<?php echo $pays->getIdPays(); ?>" class="list-group-item">
+                                    <?php echo $pays->getNomPays(); ?>
+                                </option>
+                            <?php endforeach ?>
                         </select>
                         <div class="invalid-feedback">
-                        Choisissez un pays valide.
+                            Choisissez un pays valide.
                         </div>
                     </div>
-        
                 </div>
                 
                 <hr class="mb-4 mt-4">

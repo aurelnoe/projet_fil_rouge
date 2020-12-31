@@ -531,7 +531,7 @@ function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeAct
 <?php
 }
 
-function formulairesMission(string $title,$mission=null,string $titleBtn,string $action,int $idMission=null,$newTypeActivite=null,$newPays=null,$allPays,$allTypeActivite,$idEtablissement=null)
+function formulairesMission(string $title,$mission=null,string $titleBtn,string $action,int $idMission=null,$allPays,$allTypeActivite,$idEtablissement=null)
 {
     echo afficher();
     ?>

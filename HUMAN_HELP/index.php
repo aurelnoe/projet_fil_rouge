@@ -6,10 +6,6 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
 <!DOCTYPE html>
 <html lang="en">    
 <head>
-    <link rel="stylesheet" type="text/css" href="Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="Assets/styleAurel.css">
-    <link rel="stylesheet" type="text/css" href="Assets/styleSamir.css">
-    <link rel="stylesheet" type="text/css" href="Assets/styleMoh.css">
     <?php include("head.php"); ?>
 </head>
 <body>

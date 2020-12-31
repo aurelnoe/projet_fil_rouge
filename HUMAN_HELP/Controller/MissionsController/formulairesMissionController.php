@@ -26,7 +26,7 @@ if (isset($_GET['action']))
         $idMission = $_GET['idMission'];
         $idEtablissement = $mission->getIdEtablissement();
 
-        echo formulairesMission($title,$mission,$titleBtn,$action,$idMission,$newTypeActivite,$newPays,$allPays,$allTypeActivite,$idEtablissement);
+        echo formulairesMission($title,$mission,$titleBtn,$action,$idMission,$allPays,$allTypeActivite,$idEtablissement);
         die;
     } 
     else if ($_GET['action'] == 'add') {
