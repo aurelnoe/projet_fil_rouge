@@ -1,23 +1,12 @@
 <?php 
 
-function head()
-{
-    ?>
-    <?php include("../../head.php"); ?>
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
-    <?php
-}
-
 function afficher()
 {
     ?>   
     <!DOCTYPE html>
     <html lang="en">
         <head>
-            <?php echo head(); ?>
+        <?php include("../../head.php"); ?>
         </head>   
     <?php
 }
