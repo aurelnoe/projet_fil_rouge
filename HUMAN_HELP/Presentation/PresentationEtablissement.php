@@ -1,11 +1,11 @@
 <?php
-function formulairesEtablissement($title,$etablissement,int $idEtablissement=null,string $titleBtn,string $action) 
+function formulairesEtablissement(string $title,$etablissement=null,int $idEtablissement=null,int $idUtilisateur ,string $titleBtn,string $action) 
 {
     ?>
     <!DOCTYPE html>
     <html lang="en">
         <head>
-            <?php include("../head.php"); ?>
+            <?php include("../../head.php"); ?>
         </head> 
     <body>
         <?php
@@ -15,9 +15,11 @@ function formulairesEtablissement($title,$etablissement,int $idEtablissement=nul
 
             <h2 class="text-center my-2 pb-2"><?php echo $title; ?></h2>
 
-            <form class="needs-validation p-3" action="/HUMAN_HELP/Controller/listeMissionProController.php?action=<?php echo $action; ?>" method="POST" novalidate>
+            <form class="needs-validation p-3" action="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php?action=<?php echo $action; ?>" method="POST" novalidate>
 
                 <input type="hidden" name="idEtablissement" value="<?php echo isset($idEtablissement) ? $idEtablissement : '' ?>">
+                <input type="hidden" name="idUtilisateur" value="<?php echo isset($idUtilisateur) ? $idUtilisateur : '' ?>">
+
                 <hr class="my-4">
 
                 <div class="mb-3 form-group">
@@ -67,14 +69,14 @@ function formulairesEtablissement($title,$etablissement,int $idEtablissement=nul
                 </div> 
                 <div class="row p-0 mb-3">
                     <div class="form-group col-12 col-md-5">
-                        <label class="h-50" for="id_pays">Pays</label>
+                        <label for="idPays" class="h-50">Pays</label>
                         <select name="idPays" class="list-group custom-select d-block h-50" required>
-                        <option class="list-group-item" value="">Choisissez...</option>
-                        <option value="1" class="list-group-item">Maroc</option>
-                        <option value="2" class="list-group-item">Gabon</option>
-                        <option value="3" class="list-group-item">Somalie</option>
-                        <option value="4" class="list-group-item">Egypte</option>
-                        <option value="5" class="list-group-item">Mali</option>
+                            <option class="list-group-item" value="">Choisissez...</option>
+                            <option value="1" class="list-group-item">Maroc</option>
+                            <option value="2" class="list-group-item">Gabon</option>
+                            <option value="3" class="list-group-item">Somalie</option>
+                            <option value="4" class="list-group-item">Egypte</option>
+                            <option value="5" class="list-group-item">Mali</option>
                         </select>
                         <div class="invalid-feedback">
                         Choisissez un pays valide.

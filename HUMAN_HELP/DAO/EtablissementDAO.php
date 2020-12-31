@@ -18,7 +18,7 @@ class EtablissementDAO
             $getTelEtablissement = $etablissement->getTelEtablissement();
             $getDateAjoutEtablissement = $etablissement->getDateAjoutEtablissement()->format('Y-m-d');
             $getIdUtilisateur = $etablissement->getIdUtilisateur();
-            $getIdEtablissement = $etablissement->getIdPays();
+            $getIdPays = $etablissement->getIdPays();
 
             $query = "INSERT INTO etablissement VALUES (NULL,:denomination,:adresseEtablissement,:villeEtablissement,
                                                     :codePostalEtablissement,:mailEtablissement,:telEtablissement,

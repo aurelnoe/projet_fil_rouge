@@ -47,7 +47,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             }
             else {
                 
-                header("location: ../Controller/EtablissementsController/formulaireEtablissementController.php?mail=$mailUtil");
+                header("location: ../Controller/EtablissementsController/formulaireEtablissementController.php?action=add&mail=$mailUtil");
                 die;
             }
             

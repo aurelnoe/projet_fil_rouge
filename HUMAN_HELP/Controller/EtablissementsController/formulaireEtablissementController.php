@@ -26,8 +26,9 @@ if (!empty($_GET) && isset($_GET['action']))
         $titleBtn = "ajouter l'établissement";
         $action = 'addEtablissement';
         $newUser = new ServiceUtilisateur();
-        $idUtilisateur = $newUser->searchUserbyMail($_GET['mail']);
-        echo formulairesEtablissement($title,null,null,$titleBtn,$action);
+        $utilisateur = $newUser->searchUserbyMail($_GET['mail']);
+        $idUtilisateur = $utilisateur->getIdUtilisateur();
+        echo formulairesEtablissement($title,null,null,$idUtilisateur,$titleBtn,$action);
         die;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 require("C:/xampp/htdocs/HUMAN_HELP/Class/Utilisateur.php");
-require("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
 
 class UtilisateurDAO extends BddConnect
 {
@@ -11,7 +11,6 @@ class UtilisateurDAO extends BddConnect
         {
             $newConnect = new BddConnect();
             $db = $newConnect->connexion();
-            
             
              $getNomUtil = $utilisateur->getNomUtil();
              $getPrenomUtil = $utilisateur->getPrenomUtil();           
@@ -124,7 +123,7 @@ class UtilisateurDAO extends BddConnect
         try
         {
             $newConnect = new BddConnect();
-                $db = $newConnect->connexion();
+            $db = $newConnect->connexion();
 
             $query = "DELETE FROM utilisateur WHERE idUtilisateur = :idUtilisateur";
             $stmt = $db->prepare($query);

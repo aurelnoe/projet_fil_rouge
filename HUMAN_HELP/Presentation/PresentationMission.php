@@ -561,7 +561,7 @@ function formulairesMission(string $title,$mission=null,string $titleBtn,string 
                     </div>
                 </div> 
                 <div class="row p-0 mb-3">
-                    <div class="col-12 col-md-6 form-group w-50 pl-3">
+                    <div class="form-group col-12 col-md-6 w-50 pl-3">
                         <label class="h-50" for="idPays">Pays concerné</label>
                         <select type="number" name="idPays" class="custom-select list-group d-block h-50 w-100" required>
                             <option class="list-group-item" value="">Choisissez...</option>
@@ -576,7 +576,7 @@ function formulairesMission(string $title,$mission=null,string $titleBtn,string 
                         </div>
                     </div>
                     
-                    <div class="col-12 col-md-6 w-50 form-group pl-3">
+                    <div class="form-group col-12 col-md-6 w-50 pl-3">
                         <label class=" h-50" for="idTypeActivite">Type d'activité</label>
                         <select name="idTypeActivite" class="custom-select list-group d-block h-50 w-100" required>
                             <option class="list-group-item" value="">Choisissez...</option>

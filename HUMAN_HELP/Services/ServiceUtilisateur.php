@@ -1,6 +1,5 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/DAO/UtilisateurDAO.php");
-//include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
 
 class ServiceUtilisateur 
 {
