@@ -236,13 +236,13 @@ function Accueil($articles)
 					// echo '</pre>';
 					foreach ($articles as $key => $article) {
 					?>
-						<div class="carousel-item  <?php echo ($key == 0) ? 'active' : ''; ?>">
+						<div class="carousel-item  <?php echo ($key == 0) ? 'active' : ''; ?> mb-5">
 
 
 							<div class="card cardListeMission col-10 col-md-6 p-0">
 								<img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
 								<div class="card-body">
-									<h5 class="card-title">Titre :<?php echo $article->getTitreArticle() ?></h5>
+									<h5 class="card-title">Titre : <?php echo $article->getTitreArticle() ?></h5>
 									<p class="card-text">Description : <?php echo $article->getDescriptionArticle() ?></p>
 									<p class="card-text">Pays : Ghana (Afrique)</p>
 									<p class="card-text">Date : <?php echo $article->getDateArticle()->format('d-m-Y'); ?></p>
@@ -256,7 +256,7 @@ function Accueil($articles)
 					<?php
 					}
 					?>
-					<div class="row my-4">
+					<div class="row my-4 mx-0">
 						<a class="carousel-control-prev" href="#carouselArticleAccueil" role="button" data-slide="next">
 							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 							<span class="sr-only">Previous</span>
