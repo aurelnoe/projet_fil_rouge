@@ -18,7 +18,7 @@ if (!empty($_GET))
         $typeActivite = $newTypeActivite->searchById($_GET['idTypeActivite']);
         $title = utf8_encode(ucfirst($typeActivite->getTypeActivite()));
         
-        echo searchMission($missions,$typeActivite,$title);
+        echo searchMission($missions,$title);
 
     }//TRI PAR PAYS 
     else if (isset($_GET['idPays'])) {
@@ -27,16 +27,20 @@ if (!empty($_GET))
         $pays = $newPays->searchById($_GET['idPays']);
         $title = ucfirst($pays->getNomPays());
 
-        echo searchMission($missions,$typeActivite,$title);
+        echo searchMission($missions,$title);
     }
     //TRI PAR TYPE FORMATION 
     else if (isset($_GET['typeFormation'])) {
         $missions = $newSearch->searchMissionByTypeFormation($_GET['typeFormation']);
+        if ($_GET['typeFormation']==0) {
+            $title = 'Missions à distance';
+        }
+        else {
+            $title = 'Missions sur le terrain';
+        }
+        
 
-        $pays = $newPays->searchById($_GET['idPays']);
-        $title = ucfirst($pays->getNomPays());
-
-        echo searchMission($missions,$typeActivite,$title);
+        echo searchMission($missions,$title);
     }
 }
 ?>

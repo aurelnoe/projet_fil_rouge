@@ -37,6 +37,15 @@ function formulairesEtablissement($title,$etablissement,$titleBtn,$action)
             <form class="needs-validation p-3" action="/HUMAN_HELP/Controller/listeMissionProController.php?action=<?php echo $action; ?>" method="POST" novalidate>
 
                 <input type="hidden" name="idEtablissement" value="<?php echo isset($idEtablissement) ? $idEtablissement : '' ?>">
+                
+                <div class="form-group col-12 offset-md-2 col-md-5 ">
+                        <label for="idUtilisateur" class=" h-50">Identifiant du professionnel</label>
+                        <input name="idUtilisateur" type="number" class="form-control">
+                        <div class="invalid-feedback">
+                            Ce champ est requis.
+                        </div>
+                </div>
+                
                 <hr class="my-4">
 
                 <div class="mb-3 form-group">
@@ -100,13 +109,6 @@ function formulairesEtablissement($title,$etablissement,$titleBtn,$action)
                         </div>
                     </div>
                     
-                    <div class="form-group col-12 offset-md-2 col-md-5 ">
-                        <label for="idUtilisateur" class=" h-50">Identifiant du professionnel</label>
-                        <input name="idUtilisateur" type="number" class="form-control">
-                        <div class="invalid-feedback">
-                            Ce champ est requis.
-                        </div>
-                    </div>
                 </div>
                 
                 <hr class="mb-4 mt-4">

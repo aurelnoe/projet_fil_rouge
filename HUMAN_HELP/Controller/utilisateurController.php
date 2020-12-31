@@ -2,6 +2,7 @@
 require("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceUtilisateur.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationUtilisateur.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationAccueil.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationEtablissement.php");
 
 /************************** AJOUT UTILISATEUR ***************************/
 if(!empty($_GET['action']) && isset($_GET['action']))
@@ -39,9 +40,18 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                          ->setIdPays($idPays);
 
             $service->add($utilisateur);
-
-            header("location: ../index.php");
-            die;
+            if ($idRole==1) {
+                header("location: ../index.php");
+                die;
+            }
+            else {
+                $title = "Ajout d'un établissement";
+                $titleBtn = "ajouter l'établissement";
+                $action = 'addEtablissement';
+                echo formulairesEtablissement($title,$affiche,$titleBtn,$action);
+                die;
+            }
+            
         }
     }
 

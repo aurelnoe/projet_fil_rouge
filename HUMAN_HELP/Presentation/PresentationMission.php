@@ -113,16 +113,18 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
             </div>
             
             <div class="col-12 col-md-4 m-auto">
-                <div class="dropdown btn-group btnTypeFormation w-100 my-2">
-                    <button class="btn w-75">
+                <div class="btn-group btnTypeFormation w-100 my-2">
+                    <div class="btn w-75">
                         Type de formation
-                    </button>
-                    <button type="button" class="btn btnGreen dropdown-toggle dropdown-toggle-split" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">          
-                        <a class="dropdown-item" href="searchMissionsController.php?typeFormation=0"><strong> à distance</strong></a>
-                        <a class="dropdown-item" href="searchMissionsController.php?typeFormation=1"><strong> sur le terrain</strong></a>
+                    </div>
+                    <div class="dropdown">
+                        <a class="btn btnGreen dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">          
+                            <a class="dropdown-item" href="searchMissionsController.php?typeFormation=0"><strong> à distance</strong></a>
+                            <a class="dropdown-item" href="searchMissionsController.php?typeFormation=1"><strong> sur le terrain</strong></a>
+                        </div>
                     </div>
                 </div>     
             </div>
@@ -232,11 +234,11 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                 </div>                  
                             </div>
                             <div class="row my-4">
-                                <a class="carousel-control-prev" href="#carouselConstruction" role="button" data-slide="next">
+                                <a class="carousel-control-prev" href="#carouselDonations" role="button" data-slide="next">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#carouselConstruction" role="button" data-slide="prev">
+                                <a class="carousel-control-next" href="#carouselDonations" role="button" data-slide="prev">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
@@ -256,7 +258,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                     <ol class="carousel-indicators">
                         <?php foreach ($enseignements as $key => $enseignement) {
                             ?>
-                            <li data-target="#carouselEnseignements" data-slide-to="<?php echo $key; ?>"
+                            <li data-target="#carouselEnseignement" data-slide-to="<?php echo $key; ?>"
                             <?php echo ($key==0) ? 'class="active"' : '' ?>></li>
                             <?php
                         } ?>
@@ -284,11 +286,11 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                     </div>
                                 </div>
                                 <div class="row my-4">
-                                    <a class="carousel-control-prev" href="#carouselEnseignements" role="button" data-slide="next">
+                                    <a class="carousel-control-prev" href="#carouselEnseignement" role="button" data-slide="next">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
                                     </a>
-                                    <a class="carousel-control-next" href="#carouselEnseignements" role="button" data-slide="prev">
+                                    <a class="carousel-control-next" href="#carouselEnseignement" role="button" data-slide="prev">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Next</span>
                                     </a>
@@ -420,7 +422,6 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
         ?>
     </body>
     </html>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
 <?php
 }
@@ -659,14 +660,13 @@ function formulairesMission(string $title,$mission=null,string $titleBtn,string 
 <?php
 }
 
-function searchMission($missions,$typeActivite=null,$title=null)
+function searchMission($missions,$title=null)
 {
     echo afficher();
     ?>
     <body>
         <?php
         include("../../Templates/Bases/navbarDev.php");
-
         include("../../Templates/Bases/navbar.php");
         ?>
         <div class="container text-center ">
