@@ -1,6 +1,6 @@
 <?php 
 
-function Accueil($articles)
+function Accueil()
 {
     ?>
     <div class="container accueil">
@@ -228,10 +228,7 @@ function Accueil($articles)
 				<div class="carousel-inner w-100">
 
 					<h3>Les actualités avec Human Helps :</h3>
-					<?php
 
-						foreach ($articles as $article) {
-					?>
 					<div class="carousel-item active">
 						<div class="card-group">
 							<div class="row justify-content-between m-auto">
@@ -239,21 +236,28 @@ function Accueil($articles)
 									<div class="card cardListeMission">
 										<img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
 										<div class="card-body">
-											<h5 class="card-title">Titre : <?php echo $article->getTitreArticle() ?></h5>
-											<p class="card-text">Description : <?php echo $article->getDescriptionArticle(); ?></p>
+											<h5 class="card-title">Titre : Développement numérique</h5>
+											<p class="card-text">Type d'activité : informatique</p>
 											<p class="card-text">Pays : Ghana (Afrique)</p>
-											<p class="card-text">Date :  <?php echo $article->getDateArticle()->format('d-m-Y'); ?> </p>
-											<a href="/HUMAN_HELP/Controller/BlogController/detailsBlogController.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btnGreen w-50">Voir plus</a>
+											<p class="card-text">Date de début : 26 Mai 2021</p>
+											<a href="/HUMAN_HELP/?q=Missions/details_mission" class="btn btn-primary">Voir plus</a>
 										</div>
 									</div>
 								</div>
-								
+								<div class="col-12 col-md-6">
+									<div class="card cardListeMission">
+										<img src="\HUMAN_HELP\images\enseignementViet.jpg" class="card-img-top" alt="">
+										<div class="card-body">
+											<h5 class="card-title">Titre de la mission</h5>
+											<p class="card-text">Type d'activité :</p>
+											<p class="card-text">Pays :</p>
+											<p class="card-text">Date de début :</p>
+											<a href="#" class="btn btn-primary">Voir plus</a>
+										</div>
+									</div>
+								</div>
 							</div>                     
 						</div>
-
-						<?php
-           				 }
-            			?>
 						<div class="row my-4">
 							<a class="carousel-control-prev" href="#carouselArticleAccueil" role="button" data-slide="next">
 								<span class="carousel-control-prev-icon" aria-hidden="true"></span>

@@ -40,15 +40,14 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                          ->setIdPays($idPays);
 
             $service->add($utilisateur);
+
             if ($idRole==1) {
                 header("location: ../index.php");
                 die;
             }
             else {
-                $title = "Ajout d'un établissement";
-                $titleBtn = "ajouter l'établissement";
-                $action = 'addEtablissement';
-                echo formulairesEtablissement($title,$affiche,$titleBtn,$action);
+                
+                header("location: ../Controller/EtablissementsController/formulaireEtablissementController.php?mail=$mailUtil");
                 die;
             }
             

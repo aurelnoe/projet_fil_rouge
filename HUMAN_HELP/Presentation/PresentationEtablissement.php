@@ -1,31 +1,12 @@
 <?php
-function head()
+function formulairesEtablissement($title,$etablissement,int $idEtablissement=null,string $titleBtn,string $action) 
 {
     ?>
-    <?php include("../../head.php"); ?>
-    <script src="../../Assets/jquery-3.5.1.min.js"></script>
-    <script src="../../Assets/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
-    <?php
-}
-
-function afficher()
-{
-    ?>   
     <!DOCTYPE html>
     <html lang="en">
         <head>
-            <?php echo head(); ?>
-        </head>   
-    <?php
-}
-function formulairesEtablissement($title,$etablissement,$titleBtn,$action) 
-{
-    echo afficher();
-    ?>
+            <?php include("../head.php"); ?>
+        </head> 
     <body>
         <?php
         include("../../Templates/Bases/navbarDev.php");
@@ -37,15 +18,6 @@ function formulairesEtablissement($title,$etablissement,$titleBtn,$action)
             <form class="needs-validation p-3" action="/HUMAN_HELP/Controller/listeMissionProController.php?action=<?php echo $action; ?>" method="POST" novalidate>
 
                 <input type="hidden" name="idEtablissement" value="<?php echo isset($idEtablissement) ? $idEtablissement : '' ?>">
-                
-                <div class="form-group col-12 offset-md-2 col-md-5 ">
-                        <label for="idUtilisateur" class=" h-50">Identifiant du professionnel</label>
-                        <input name="idUtilisateur" type="number" class="form-control">
-                        <div class="invalid-feedback">
-                            Ce champ est requis.
-                        </div>
-                </div>
-                
                 <hr class="my-4">
 
                 <div class="mb-3 form-group">
@@ -108,7 +80,7 @@ function formulairesEtablissement($title,$etablissement,$titleBtn,$action)
                         Choisissez un pays valide.
                         </div>
                     </div>
-                    
+        
                 </div>
                 
                 <hr class="mb-4 mt-4">

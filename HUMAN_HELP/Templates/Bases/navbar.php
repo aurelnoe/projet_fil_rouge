@@ -47,9 +47,9 @@
 				<!--Comment ça marche-->
 				<a class="col-sm-12 col-lg-2 navLink" href="/HUMAN_HELP/Templates/Autres/comment_ca_marchephp.">Voir plus</a>
 				<!--FAQ-->
-				<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/FaqController/faqController.php" tabindex="-1" aria-disabled="true">FAQ</a>
+				<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Templates/FAQ/faq.php" tabindex="-1" aria-disabled="true">FAQ</a>
 				<!--Blog-->
-				<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php"  tabindex="-1" aria-disabled="true">Blog</a>
+				<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Templates/Blog/liste_articles.php"  tabindex="-1" aria-disabled="true">Blog</a>
 				<?php 
 					if (!isset($_SESSION)) {
 						?><a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Templates/Security/form_inscription.php" tabindex="-1" aria-disabled="true">Inscription</a><?php

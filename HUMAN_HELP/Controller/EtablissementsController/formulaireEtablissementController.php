@@ -1,5 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceEtablissement.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceUtilisateur.php");
 include_once("../../Presentation/PresentationEtablissement.php");
 
 if (!empty($_GET) && isset($_GET['action'])) 
@@ -17,14 +18,16 @@ if (!empty($_GET) && isset($_GET['action']))
         $action = 'updateEtablissement';
         $idEtablissement = $_GET['idEtablissement'];
 
-        echo formulairesEtablissement($title,$etablissement,$titleBtn,$action);
+        echo formulairesEtablissement($title,$etablissement,$idEtablissement,$titleBtn,$action);
         die;
     } 
     else if ($_GET['action'] == 'add') {
         $title = "Ajout d'un établissement";
         $titleBtn = "ajouter l'établissement";
         $action = 'addEtablissement';
-        echo formulairesEtablissement($title,$affiche,$titleBtn,$action);
+        $newUser = new ServiceUtilisateur();
+        $idUtilisateur = $newUser->searchUserbyMail($_GET['mail']);
+        echo formulairesEtablissement($title,null,null,$titleBtn,$action);
         die;
     }
 }
