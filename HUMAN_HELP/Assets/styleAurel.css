@@ -40,6 +40,13 @@
     border-top: 2px outset #58b368!important;
 }
 
+.hrTitreListeMission{
+    height: 0px!important;
+    border-top: 10px outset #58b368!important;
+    opacity: 0.65;
+    width: 20%;
+}
+
 .temoignageAccueil{
     box-sizing: border-box;
 }

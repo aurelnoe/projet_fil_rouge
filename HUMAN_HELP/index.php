@@ -2,6 +2,10 @@
 include_once("Controller/UtilisateurController.php");
 include_once("Presentation/PresentationAccueil.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
+
+$service = new ServiceBlog(); 
+$articles = $service->searchAll();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">    
@@ -17,8 +21,6 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
     <head><title>ACCUEIL</title></head>
 
     <?php 
-    $service = new ServiceBlog(); 
-    $articles = $service->searchAll();
     echo accueil($articles); 
     ?>
 

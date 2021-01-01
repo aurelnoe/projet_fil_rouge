@@ -98,21 +98,27 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
         <div class="container p-0">
         
             <div class="col-12 col-md-4 m-auto">
-                <a href="/HUMAN_HELP//Controller/MissionsController/listeMissionProController.php?idUtilisateur=" class="btn btnGreen w-100 my-2">Consulter mes missions</a>
+                <a href="/HUMAN_HELP//Controller/MissionsController/listeMissionProController.php?idUtilisateur=" class="btn btnGreen w-100 my-2">
+                    Consulter mes missions
+                </a>
             </div>
             
             <div class="col-12 col-md-4 m-auto">
                 <div class="btn-group btnTypeFormation w-100 my-2">
                     <div class="btn w-75">
-                        Type de formation
+                        <strong>Type de formation</strong>
                     </div>
                     <div class="dropdown">
                         <a class="btn btnGreen dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="sr-only">Toggle Dropdown</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">          
-                            <a class="dropdown-item" href="searchMissionsController.php?typeFormation=0"><strong> à distance</strong></a>
-                            <a class="dropdown-item" href="searchMissionsController.php?typeFormation=1"><strong> sur le terrain</strong></a>
+                            <a class="dropdown-item" href="searchMissionsController.php?typeFormation=0">
+                                <strong> à distance</strong>
+                            </a>
+                            <a class="dropdown-item" href="searchMissionsController.php?typeFormation=1">
+                                <strong> sur le terrain</strong>
+                            </a>
                         </div>
                     </div>
                 </div>     
@@ -120,14 +126,23 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
 
             <hr class="mt-3 mb-4">
             
-            <h2 class="my-4 text-center">Trouver ma mission humanitaire</h2>
+            <h1 class="my-5 px-3">Trouver ma mission humanitaire</h1>
+
+            <hr class="hrTitreListeMission ml-3">
 
             <div class="p-3">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos id consequatur amet reprehenderit, ea velit dolorem repellat corrupti commodi? Vero molestias enim quas adipisci iusto cupiditate mollitia accusamus laboriosam velit.
-                Laborum dicta obcaecati modi consequatur porro voluptatum libero non deserunt, ratione, dolore dolor, totam quod perspiciatis magni sed aperiam! Quam, quos fugiat doloremque laudantium possimus iusto voluptates quidem quibusdam non!
-                Asperiores, nam, animi ad minus voluptates doloribus obcaecati ducimus unde dolorum vel voluptate nesciunt quaerat voluptatibus eos dignissimos. Quibusdam amet adipisci praesentium, magni voluptatibus facere temporibus obcaecati magnam velit doloremque?
-                Quos maiores voluptatem eaque atque reprehenderit, porro quis necessitatibus magnam quasi vitae incidunt iure commodi, odio quo recusandae autem excepturi odit deserunt officiis. Iste, a veniam illo dolorum eaque deserunt?
-            </div>
+                <p>
+                    Human Helps vous propose tout types de missions humanitaires que se soit à distance ou sur le terrain et dans tous les secteurs.
+                </p>
+                <p>
+                    Vous souhaitez donner de votre temps, de vos vacances et participer à une mission humanitaire ou réaliser votre stage dans un cadre humanitaire sérieux, alors votre candidature nous intéresse.
+                </p>
+                <p>
+                    Si vous étiez venus chercher un voyage humanitaire, vous repartirez avec une mission concrète à effectuer pour aider les populations que nous soutenons.
+                </p>
+                <p>
+                    Vous intégrerez alors des équipes bénévoles (médicales, paramédicales ou chantiers humanitaires) pour une mission humanitaire de 15 jours ou un stage de plusieurs mois.            </div>
+                </p>
 
             <hr class="mt-3 mb-4">
 
@@ -150,36 +165,43 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                     </div>
                     <div class="carousel-inner w-100">
                             <?php
-                            foreach ($medecines as $key => $medecine) 
-                            {
-                                ?>                  
-                                <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
-                                    <div class="card cardListeMission col-10 col-md-6 p-0">
-                                        <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Titre : <?php echo utf8_encode($medecine->getTitreMission()); ?></h5>
-                                            <p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($medecine->getIdTypeActivite())); ?></p>
-                                            <p class="card-text">Pays : <?php echo $newPays->searchNameById($medecine->getIdPays()); ?> (<?php echo $newPays->searchContinentById($medecine->getIdPays()); ?>)</p>
-                                            <p class="card-text">Date de début : <?php echo $medecine->getDateDebut()->format('d-m-Y'); ?></p>
-                                        </div>                   
-                                        <div class="card-footer">
-                                            <a href="detailsMissionController.php?idMission=<?php echo $medecine->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
-                                        </div>                 
+                            if (!empty($medecines)) {
+                                foreach ($medecines as $key => $medecine) 
+                                {
+                                    ?>                  
+                                    <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
+                                        <div class="card cardListeMission col-10 col-md-6 p-0">
+                                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Titre : <?php echo utf8_encode($medecine->getTitreMission()); ?></h5>
+                                                <p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($medecine->getIdTypeActivite())); ?></p>
+                                                <p class="card-text">Pays : <?php echo $newPays->searchNameById($medecine->getIdPays()); ?> (<?php echo $newPays->searchContinentById($medecine->getIdPays()); ?>)</p>
+                                                <p class="card-text">Date de début : <?php echo $medecine->getDateDebut()->format('d-m-Y'); ?></p>
+                                            </div>                   
+                                            <div class="card-footer">
+                                                <a href="detailsMissionController.php?idMission=<?php echo $medecine->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+                                            </div>                 
+                                        </div>
                                     </div>
-                                </div>
-                            <?php  
-                            } 
+                                <?php  
+                                } ?>
+                                <div class="row my-4 mx-0">
+                                    <a class="carousel-control-prev" href="#carouselMedecine" role="button" data-slide="next">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselMedecine" role="button" data-slide="prev">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>                   
+                            <?php
+                            }else {
                             ?>
-                        <div class="row my-4 mx-0">
-                            <a class="carousel-control-prev" href="#carouselMedecine" role="button" data-slide="next">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselMedecine" role="button" data-slide="prev">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>                   
+                                <div class="my-5 py-5 text-center">Pas de mission dans la catégorie médecine pour le moment</div>
+                            <?php
+                            }
+                            ?>
                     </div>
                 </div>
             </div>
@@ -205,23 +227,28 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                     <div class="carousel-inner w-100">
 
                         <?php 
-                        foreach ($donations as $key => $donation) {
-                        ?>
-                        <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
-                            <div class="card-group">
-                                <div class="card cardListeMission col-10 col-md-6 p-0">
-                                    <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titre : <?php echo utf8_encode($donation->getTitreMission()); ?></h5>
-                                        <p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($donation->getIdTypeActivite())); ?></p>
-                                        <p class="card-text">Pays : <?php echo $newPays->searchNameById($donation->getIdPays()); ?> (<?php echo $newPays->searchContinentById($donation->getIdPays()); ?>)</p>
-                                        <p class="card-text">Date de début : <?php echo $donation->getDateDebut()->format('d-m-Y'); ?></p>                                        
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="detailsMissionController.php?idMission=<?php echo $donation->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
-                                    </div>
-                                </div>                  
+                        if (!empty($donations)) {
+                            foreach ($donations as $key => $donation) {
+                            ?>
+                            <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
+                                <div class="card-group">
+                                    <div class="card cardListeMission col-10 col-md-6 p-0">
+                                        <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Titre : <?php echo utf8_encode($donation->getTitreMission()); ?></h5>
+                                            <p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($donation->getIdTypeActivite())); ?></p>
+                                            <p class="card-text">Pays : <?php echo $newPays->searchNameById($donation->getIdPays()); ?> (<?php echo $newPays->searchContinentById($donation->getIdPays()); ?>)</p>
+                                            <p class="card-text">Date de début : <?php echo $donation->getDateDebut()->format('d-m-Y'); ?></p>                                        
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="detailsMissionController.php?idMission=<?php echo $donation->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+                                        </div>
+                                    </div>                  
+                                </div>
                             </div>
+                            <?php  
+                            }
+                            ?>
                             <div class="row my-4">
                                 <a class="carousel-control-prev" href="#carouselDonations" role="button" data-slide="next">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -232,8 +259,11 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
-                        </div>
-                        <?php  
+                        <?php
+                        }else {
+                            ?>
+                            <div class="my-3 py-3 text-center">Pas de mission dans la catégorie donation pour le moment</div>
+                            <?php
                         }
                         ?>
                     </div>
@@ -259,38 +289,45 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                     </div>
                     <div class="carousel-inner w-100">
                         <?php 
-                        foreach ($enseignements as $key => $enseignement) {
-                        ?>
-                            <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
-                                <div class="card cardListeMission col-10 col-md-6 p-0">
-                                    <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Titre : <?php echo utf8_encode($enseignement->getTitreMission()); ?></h5>
-                                        <p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($enseignement->getIdTypeActivite())); ?></p>
-                                        <p class="card-text">Pays : <?php echo $newPays->searchNameById($enseignement->getIdPays()); ?> (<?php echo $newPays->searchContinentById($enseignement->getIdPays()); ?>)</p>
-                                        <p class="card-text">Date de début : <?php echo $enseignement->getDateDebut()->format('d-m-Y'); ?></p>                                        
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="detailsMissionController.php?idMission=<?php echo $donation->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+                        if (!empty($enseignements)) {
+                            
+                            foreach ($enseignements as $key => $enseignement) {
+                            ?>
+                                <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
+                                    <div class="card cardListeMission col-10 col-md-6 p-0">
+                                        <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Titre : <?php echo utf8_encode($enseignement->getTitreMission()); ?></h5>
+                                            <p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($enseignement->getIdTypeActivite())); ?></p>
+                                            <p class="card-text">Pays : <?php echo $newPays->searchNameById($enseignement->getIdPays()); ?> (<?php echo $newPays->searchContinentById($enseignement->getIdPays()); ?>)</p>
+                                            <p class="card-text">Date de début : <?php echo $enseignement->getDateDebut()->format('d-m-Y'); ?></p>                                        
+                                        </div>
+                                        <div class="card-footer">
+                                            <a href="detailsMissionController.php?idMission=<?php echo $donation->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row my-4">
-                                    <a class="carousel-control-prev" href="#carouselEnseignement" role="button" data-slide="next">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselEnseignement" role="button" data-slide="prev">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </div>
+                            <?php  
+                            }
+                            ?>
+                            <div class="row my-4">
+                                <a class="carousel-control-prev" href="#carouselEnseignement" role="button" data-slide="next">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselEnseignement" role="button" data-slide="prev">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
                             </div>
-                        <?php  
+                        <?php
+                        }else {
+                        ?>
+                            <div class="my-3 py-3 text-center">Pas de mission dans la catégorie enseignement pour le moment</div>
+                        <?php
                         }
                         ?>
                     </div>
-
-
                 </div>
             </div>
 
@@ -314,11 +351,10 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                     </div>
                     <div class="carousel-inner w-100">
                             <?php
+                        if (!empty($constructions)) 
+                        {
                             foreach ($constructions as $key => $construction) 
-                            {
-                                if (isset($construction)) 
-                                {
-                                ?>                  
+                            {   ?>                  
                                 <div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
                                     <div class="card cardListeMission col-10 col-md-6 p-0">
                                         <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
@@ -334,19 +370,25 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                     </div>
                                 </div>
                             <?php 
-                                }
-                            } 
+                            }
                             ?>
-                        <div class="row my-4 mx-0">
-                            <a class="carousel-control-prev" href="#carouselConstructions" role="button" data-slide="next">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselConstructions" role="button" data-slide="prev">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>                   
+                            <div class="row my-4 mx-0">
+                                <a class="carousel-control-prev" href="#carouselConstructions" role="button" data-slide="next">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselConstructions" role="button" data-slide="prev">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div> 
+                        <?php                  
+                        }else {
+                            ?>
+                            <div class="my-3 py-3 text-center">Pas de mission dans la catégorie construction pour le moment</div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -369,7 +411,8 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                         </a>
                     </div>
                     <div class="carousel-inner w-100">
-                            <?php
+                        <?php
+                        if (!empty($traductions)) {
                             foreach ($traductions as $key => $traduction) 
                             {
                                 ?>                  
@@ -388,18 +431,25 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                     </div>
                                 </div>
                             <?php  
-                            } 
-                            ?>
-                        <div class="row my-4 mx-0">
-                            <a class="carousel-control-prev" href="#carouselTraductions" role="button" data-slide="next">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselTraductions" role="button" data-slide="prev">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>                   
+                            }       
+                            ?>             
+                            <div class="row my-4 mx-0">
+                                <a class="carousel-control-prev" href="#carouselTraductions" role="button" data-slide="next">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselTraductions" role="button" data-slide="prev">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div> 
+                            <?php                  
+                        }else 
+                        {   ?>
+                            <div class="my-3 py-3 text-center">Pas de mission dans la catégorie traduction pour le moment</div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -565,7 +615,7 @@ function formulairesMission(string $title,$mission=null,string $titleBtn,string 
                         <label class="h-50" for="idPays">Pays concerné</label>
                         <select type="number" name="idPays" class="custom-select list-group d-block h-50 w-100" required>
                             <option class="list-group-item" value="">Choisissez...</option>
-                            <?php foreach ($allPays as $key => $pays) : ?>
+                            <?php foreach ($allPays as $pays) : ?>
                                 <option value="<?php echo $pays->getIdPays(); ?>" class="list-group-item">
                                     <?php echo $pays->getNomPays(); ?>
                                 </option>
@@ -664,39 +714,47 @@ function searchMission($missions,$title=null)
             
             <hr class="my-4 hrGreen ">
 
-            <div class="card-group my-4">
-                <div class="row mx-0 my-2">
-                <?php
-                foreach ($missions as $mission) {
-                    ?>
-                    <div class="card card-select col-12 col-md-5">
-                        <div class="card-body">
-                            <img src="\HUMAN_HELP\images\enseignementThai.jpg" height="auto" width="100%" alt="">
-                            <div class="text-card-select">
-                                <div class="text-center mx-auto my-1">
-                                    <h2 class="my-2">Titre de la mission</h2>
-                                    <p><?php echo $mission->getTitreMission(); ?>
-                                    </p>
-                                </div>
-                                <div class="text-center mx-auto my-1">
-                                    <h2 class="my-2">Description</h2>
-                                    <p><?php echo $mission->getDescriptionMission(); ?></p>
+            <?php
+                if (!empty($missions)) 
+                {   ?>
+                    <div class="card-group my-4">
+                        <div class="row mx-0 my-2">
+                    <?php
+                    foreach ($missions as $mission) {
+                        ?>
+                        <div class="card card-select col-12 col-md-5">
+                            <div class="card-body">
+                                <img src="\HUMAN_HELP\images\enseignementThai.jpg" height="auto" width="100%" alt="">
+                                <div class="text-card-select">
+                                    <div class="text-center mx-auto my-1">
+                                        <h2 class="my-2">Titre de la mission</h2>
+                                        <p><?php echo $mission->getTitreMission(); ?>
+                                        </p>
+                                    </div>
+                                    <div class="text-center mx-auto my-1">
+                                        <h2 class="my-2">Description</h2>
+                                        <p><?php echo $mission->getDescriptionMission(); ?></p>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="card-footer">
+                                <a href="detailsMissionController.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary my-1 col-12 col-md-6">
+                                    Détails de la mission
+                                </a>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                            <a href="detailsMissionController.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary my-1 col-12 col-md-6">
-                                Détails de la mission
-                            </a>
-                        </div>
-                    </div>
-                    <?php
+                        <?php
+                    }
+                    ?>
+                    </div>            
+                </div>
+                <?php
+                }else {
+                ?>
+                    <div class="my-3 py-3 text-center">Pas de mission dans la catégorie recherchée pour le moment</div>
+                <?php
                 }
-                
-                ?>                            
-                
-                </div>            
-            </div>
+                ?>  
 
             <a href="listeMissionController.php" class="btn btnGreen w-50 my-3">Retour à la liste des missions</a>
 

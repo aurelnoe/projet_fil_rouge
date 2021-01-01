@@ -1,4 +1,3 @@
-
 <div class="header mt-5">
 	<div class="header_texture"></div>
 	<!-- Arrondi -->
@@ -13,8 +12,10 @@
 				<div class="barre1"></div>
 				<div class="barre2"></div>
 			</div>
-			<div class="BlockLogo col-sm-12 col-md-12 col-lg-3 col-xl-5">
-				<img class="logo" src="\HUMAN_HELP\images\logo2.png" height="100px" alt="">
+			<div class="BlockLogo col-md-12 col-lg-3 col-xl-5 pt-3">
+				<a href="\HUMAN_HELP\">
+					<img class="logo" src="\HUMAN_HELP\images\logo2.png" height="100px" alt="">
+				</a>
 			</div>
 			<!---------------------- Barre de navigation ---------------------->
 			<nav class="navbar col text-center menuTab">
