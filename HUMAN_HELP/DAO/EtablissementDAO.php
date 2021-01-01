@@ -204,4 +204,29 @@ class EtablissementDAO
             $stmt = null;   
         }
     }
+
+    public function searchEtablissementByIdUtilisateur($idUtilisateur)
+    {
+        try
+        {
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
+
+            $query = "SELECT * FROM etablissement WHERE idUtilisateur = :idUtilisateur";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(":idUtilisateur", $idUtilisateur);
+            $stmt->execute();
+
+            $etablissement = $stmt->fetchAll(PDO::FETCH_CLASS,'Etablissement');
+
+            return $etablissement[0];
+        }
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }
+    }
 }

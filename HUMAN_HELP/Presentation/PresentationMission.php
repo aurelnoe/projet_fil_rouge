@@ -11,7 +11,7 @@ function afficher()
     <?php
 }
 
-function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null) 
+function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null,$etablissementPro=null,$utilisateur) 
 {
     echo afficher();
     ?> 
@@ -22,22 +22,54 @@ function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null)
         include("../../Templates/Bases/navbar.php");
         ?>
         <div class="container">
-            <h2 class="text-center mt-5">Liste de vos missions:</h2>
+            <hr class="hrGreen mx-3 my-4">
+            <div class="p-3">
+                <h2>Etablissement :</h2>
+                <hr class="hrTitreListeMission">
+                <div class="row p-3">
+                    <div class="col-12 col-md-4">
+                        <p><strong>Dénomination :</strong> <br><?php echo $etablissementPro->getDenomination();?></p>
+                        <p><strong>Adresse mail :</strong> <br><?php echo $etablissementPro->getMailEtablissement();?></p>
+                        <p><strong>Téléphone établissement:</strong> <br>0<?php echo $etablissementPro->getTelEtablissement();?></p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <p><strong>Responsable :</strong> <br><?php echo $utilisateur->getPrenomUtil(). ' ' .$utilisateur->getNomUtil();?></p>
+                        <p><strong></strong></p>
+                        <p><strong>Téléphone professionnel :</strong> <br>0<?php echo $utilisateur->getTelUtil();?></p>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <h4><strong>Adresse :</strong></h4>
+                        <div class="pl-1">
+                            <p class="my-3"><strong>Libellé voie :</strong> <?php echo $etablissementPro->getAdresseEtablissement();?></p>
+                            <p><strong>Ville :</strong> <?php echo $etablissementPro->getVilleEtablissement();?></p>
+                            <p><strong>Pays :</strong> <?php echo $newPays->searchNameById($etablissementPro->getIdPays()); ?> (<?php echo $newPays->searchContinentById($etablissementPro->getIdPays()); ?>)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-10 col-md-6 m-auto">
+                    <a class="btn btnGreen w-100 my-4" href="/HUMAN_HELP/Controller/EtablissementsController/formulaireEtablissementController.php?action=update&idEtablissement=<?php echo $etablissementPro->getIdEtablissement(); ?>">
+                        Modifier les informations de l'établissement
+                    </a>
+                </div>
+                
+            </div>
+            <hr class="hrGreen mx-4 my-4">
+            <h2 class="text-center mt-5">Liste de vos missions :</h2>
 
-            <hr class="my-4">
 
             <div class="card-group w-100">
-                <div class="row mx-0 my-5 w-100">
+                <div class="row mx-0 my-3 w-100">
                 <?php 
 
                 foreach($missions as $mission)
                 {
                 ?>
-                    <div class="col-12 col-md-6 col-lg-5 m-auto my-1">
+                    <div class="col-12 col-md-6 col-lg-5 m-auto my-3">
                         <div class="card cardListeMissionPro mx-auto">
                             <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" width="100" height="320" class="card-img-top">
                             <div class="card-body">
-                                <h5 class="card-title">Titre : <?php echo utf8_encode($mission->getTitreMission()); ?></h5>
+                                <h5 class="card-title">Titre : <?php echo ucfirst(utf8_encode($mission->getTitreMission())); ?></h5>
                                 <p class="card-text">Type d'activité : <?php echo utf8_encode($newTypeActivite->searchNameById($mission->getIdTypeActivite())); ?></p>
                                 <p class="card-text">Pays : <?php echo $newPays->searchNameById($mission->getIdPays()); ?> (<?php echo $newPays->searchContinentById($mission->getIdPays()); ?>)</p>
                                 <p class="card-text">Date de début : <?php echo $mission->getDateDebut()->format('d-m-Y'); ?></p>
@@ -68,11 +100,6 @@ function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null)
             <div class="col-10 col-md-6 m-auto">
                 <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=add">
                     Ajouter une nouvelle mission
-                </a>
-            </div>
-            <div class="col-10 col-md-6 m-auto">
-                <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/EtablissementsController/formulaireEtablissementController.php?action=update&idEtablissement=<?php echo $mission->getIdEtablissement(); ?>">
-                    Modifier les informations de l'établissement
                 </a>
             </div>
 

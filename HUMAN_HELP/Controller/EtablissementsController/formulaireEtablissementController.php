@@ -22,7 +22,7 @@ if (!empty($_GET) && isset($_GET['action']))
         $idEtablissement = $_GET['idEtablissement'];
         $allPays = $newPays->searchAll();
 
-        echo formulairesEtablissement($title,$etablissement,$idEtablissement,$allPays,$titleBtn,$action);
+        echo formulairesEtablissement($title,$etablissement,$idEtablissement,null,$allPays,$titleBtn,$action);
         die;
     } 
     else if ($_GET['action'] == 'add') {

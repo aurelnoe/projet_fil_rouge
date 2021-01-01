@@ -37,7 +37,9 @@
 }
 
 .hrGreen{
-    border-top: 2px outset #58b368!important;
+    border-top: 4px outset #58b368!important;
+    height: 0px!important;
+    opacity: 0.65;
 }
 
 .hrTitreListeMission{

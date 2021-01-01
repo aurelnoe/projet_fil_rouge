@@ -1,5 +1,5 @@
 <?php
-function formulairesEtablissement(string $title,$etablissement=null,int $idEtablissement=null,int $idUtilisateur,array $allPays=null,string $titleBtn,string $action) 
+function formulairesEtablissement(string $title,$etablissement=null,int $idEtablissement=null,int $idUtilisateur=null,array $allPays=null,string $titleBtn,string $action) 
 {
     ?>
     <!DOCTYPE html>
@@ -18,7 +18,7 @@ function formulairesEtablissement(string $title,$etablissement=null,int $idEtabl
             <form class="needs-validation p-3" action="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php?action=<?php echo $action; ?>" method="POST" novalidate>
 
                 <input type="hidden" name="idEtablissement" value="<?php echo isset($idEtablissement) ? $idEtablissement : '' ?>">
-                <input type="hidden" name="idUtilisateur" value="<?php echo isset($idUtilisateur) ? $idUtilisateur : '' ?>">
+                <input type="hidden" name="idUtilisateur" value="<?php echo isset($idUtilisateur) ? $idUtilisateur : $etablissement->getIdUtilisateur() ?>">
 
                 <hr class="my-4">
 

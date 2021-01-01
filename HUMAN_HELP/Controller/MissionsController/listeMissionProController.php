@@ -1,8 +1,9 @@
 <?php
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
-include_once("../../Services/serviceTypeActivite.php");
+include_once("../../Services/ServiceMission.php");
+include_once("../../Services/ServicePays.php");
 include_once("../../Services/ServiceEtablissement.php");
+include_once("../../Services/ServiceUtilisateur.php");
+include_once("../../Services/serviceTypeActivite.php");
 include_once("../../Presentation/PresentationMission.php");
 
 $_POST = array_map('htmlentities', $_POST);
@@ -148,10 +149,16 @@ if(!empty($_GET['action']) && isset($_GET['action']))
 $newTypeActivite = new ServiceTypeActivite();
 $newPays = new ServicePays();
 
+$newEtablissement = new ServiceEtablissement();
+$etablissementPro = $newEtablissement->searchEtablissementByIdUtilisateur(1);
+
+$newUtilisateur = new ServiceUtilisateur();
+$utilisateur = $newUtilisateur->searchById(1);
+
 $newMission = new ServiceMission();
 $missions = $newMission->searchMissionByPro(1);
 
-echo listeMissionsPro($missions,$newTypeActivite,$newPays);
+echo listeMissionsPro($missions,$newTypeActivite,$newPays,$etablissementPro,$utilisateur);
 
 
 
