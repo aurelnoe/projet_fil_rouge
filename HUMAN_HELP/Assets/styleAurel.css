@@ -2,6 +2,10 @@
     border: 2px outset #58b368;;
 }
 
+.btn {
+    font-size: 20px;
+}
+
 .card hr{
     background-color: #58b368;
 }
@@ -95,4 +99,16 @@
 
 .formEtablissement{
     margin-top: 200px;
+}
+
+.formParticipationMission{
+    margin: 100px auto 100px;
+    border: 2px outset #58b368;
+}
+
+.formParticipationMission label{
+    font-weight: bold;
+}
+.custom-control-label{
+    font-weight: inherit!important;
 }
