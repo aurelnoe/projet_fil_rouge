@@ -98,7 +98,7 @@ function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null,$etablis
             <hr class="my-4">
 
             <div class="col-10 col-md-6 m-auto">
-                <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=add">
+                <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=add&idEtablissement=<?php echo $etablissementPro->getIdEtablissement();?>">
                     Ajouter une nouvelle mission
                 </a>
             </div>
@@ -616,7 +616,7 @@ function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeAct
 <?php
 }
 
-function formulairesMission(string $title,$mission=null,string $titleBtn,string $action,int $idMission=null,$allPays,$allTypeActivite,$idEtablissement=null)
+function formulairesMission(string $title,$mission=null,string $titleBtn,string $action,int $idMission=null,$allPays,$allTypeActivite,int $idEtablissement=null,$newPays=null,$newTypeActivite=null)
 {
     echo afficher();
     ?>
@@ -651,7 +651,9 @@ function formulairesMission(string $title,$mission=null,string $titleBtn,string 
                     <div class="form-group col-12 col-md-6 w-50 pl-3">
                         <label class="h-50" for="idPays">Pays concerné</label>
                         <select type="number" name="idPays" class="custom-select list-group d-block h-50 w-100" required>
-                            <option class="list-group-item" value="">Choisissez...</option>
+                            <option class="list-group-item" value="<?php echo (($_GET['action']) == 'update') ? $mission->getIdPays() : '' ?>">
+                                <?php echo (($_GET['action']) == 'update') ? $newPays->searchNameById($mission->getIdPays()) : 'Choisissez...' ?>
+                            </option>
                             <?php foreach ($allPays as $pays) : ?>
                                 <option value="<?php echo $pays->getIdPays(); ?>" class="list-group-item">
                                     <?php echo $pays->getNomPays(); ?>
@@ -666,7 +668,9 @@ function formulairesMission(string $title,$mission=null,string $titleBtn,string 
                     <div class="form-group col-12 col-md-6 w-50 pl-3">
                         <label class=" h-50" for="idTypeActivite">Type d'activité</label>
                         <select name="idTypeActivite" class="custom-select list-group d-block h-50 w-100" required>
-                            <option class="list-group-item" value="">Choisissez...</option>
+                            <option class="list-group-item" value="<?php echo (($_GET['action']) == 'update') ? $mission->getIdTypeActivite() : '' ?>">
+                                <?php echo (($_GET['action']) == 'update') ? utf8_encode($newTypeActivite->searchNameById($mission->getIdTypeActivite())) : 'Choisissez...' ?>
+                            </option>
                             <?php foreach ($allTypeActivite as $typeActivite) : ?>
                                 <option value="<?php echo $typeActivite->getIdTypeActivite(); ?>" class="list-group-item">
                                     <?php echo utf8_encode($typeActivite->getTypeActivite()); ?>
@@ -689,11 +693,11 @@ function formulairesMission(string $title,$mission=null,string $titleBtn,string 
                     <label>Type de formation</label>
                     <div class="row">
                         <div class="custom-control custom-radio col-10 col-md-3 mx-4">
-                            <input name="typeFormation" id="distance" value=0 type="radio" class="custom-control-input">
+                            <input name="typeFormation" id="distance" value=0 type="radio" class="custom-control-input" <?php echo ($action=='update' && $mission->getTypeFormation()==0) ? 'checked' : '' ?>>
                             <label for="distance" class="custom-control-label">Distance</label>                       
                         </div>
                         <div class="custom-control custom-radio col-10 col-md-3 mx-2">
-                            <input name="typeFormation" id="terrain" value=1 type="radio" class="custom-control-input">
+                            <input name="typeFormation" id="terrain" value=1 type="radio" class="custom-control-input" <?php echo ($action=='update' && $mission->getTypeFormation()==1) ? 'checked' : '' ?>>
                             <label for="terrain" class="custom-control-label">Sur le terrain</label>                       
                         </div>
                     </div>  

@@ -26,15 +26,17 @@ if (isset($_GET['action']))
         $idMission = $_GET['idMission'];
         $idEtablissement = $mission->getIdEtablissement();
 
-        echo formulairesMission($title,$mission,$titleBtn,$action,$idMission,$allPays,$allTypeActivite,$idEtablissement);
+        echo formulairesMission($title,$mission,$titleBtn,$action,$idMission,$allPays,$allTypeActivite,$idEtablissement,$newPays,$newTypeActivite);
         die;
     } 
-    else if ($_GET['action'] == 'add') 
+    else if ($_GET['action'] == 'add' && isset($_GET['idEtablissement'])) 
     {
         $title = "Ajout d'une mission";
         $titleBtn = 'ajouter la mission';
         $action = 'add';
-        echo formulairesMission($title,null,$titleBtn,$action,null,null,null,$allPays,$allTypeActivite);
+        $idEtablissement = $_GET['idEtablissement'];
+
+        echo formulairesMission($title,null,$titleBtn,$action,null,$allPays,$allTypeActivite,$idEtablissement,null,null);
         die;
     }
 }

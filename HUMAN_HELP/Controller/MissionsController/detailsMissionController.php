@@ -14,7 +14,7 @@ if(!empty($_GET))
 
     if (isset($_GET['idMission']) && empty($_GET['action'])) 
     {
-        $mission = $service->searchById($_GET['idMission']);
+        $mission = $serviceMission->searchById($_GET['idMission']);
     
         if ($mission->getTypeFormation() == 0) {
             $typeFormation = 'à distance';
