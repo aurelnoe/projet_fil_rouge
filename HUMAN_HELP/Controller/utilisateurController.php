@@ -122,7 +122,6 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                 echo connexion();
             die;
             }
-            
         } 
         catch (PDOException $se) {
             echo connexion($se->getMessage(),$se->getCode());
@@ -130,4 +129,3 @@ if(!empty($_GET['action']) && isset($_GET['action']))
         }
     }
 }
-

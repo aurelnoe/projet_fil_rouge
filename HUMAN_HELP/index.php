@@ -1,10 +1,7 @@
 <?php
+include_once("Controller/AccueilController.php");
 include_once("Controller/UtilisateurController.php");
 include_once("Presentation/PresentationAccueil.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
-
-$service = new ServiceBlog(); 
-$articles = $service->searchAll();
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +18,7 @@ $articles = $service->searchAll();
     <head><title>ACCUEIL</title></head>
 
     <?php 
-    echo accueil($articles); 
+    echo accueil($articles,$missionsADistance,$allMissions,$newTypeActivite,$newPays); 
     ?>
 
 <?php      

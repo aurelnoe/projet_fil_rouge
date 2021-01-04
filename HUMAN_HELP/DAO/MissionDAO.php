@@ -1,6 +1,6 @@
 <?php
-require("C:/xampp/htdocs/HUMAN_HELP/Class/Mission.php");
-require("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Mission.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
 
 class MissionDAO extends BddConnect
 {
