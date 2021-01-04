@@ -12,6 +12,7 @@ if (!empty($_GET))
     $newPays = new ServicePays();
 
     //TRI PAR TYPE ACTIVITE  
+    
     if (isset($_GET['idTypeActivite'])) {
         $missions = $newSearch->searchMissionByTypeActivite($_GET['idTypeActivite']);
 
@@ -42,5 +43,17 @@ if (!empty($_GET))
 
         echo searchMission($missions,$title);
     }
+    // else if (isset($_GET['idPayss'])){
+        
+    //     $missions = $newSearch->searchMissionByPays($_GET['idPays']);
+
+    //     $pays = $newPays->searchById($_GET['idPays']);
+    //     $title = ucfirst($pays->getNomPays());
+
+    //     echo searchMission($missions,$title);
+
+    // }
 }
+
+
 ?>

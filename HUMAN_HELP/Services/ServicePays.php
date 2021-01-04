@@ -10,7 +10,7 @@ class ServicePays
         return $this->paysDAO = new PaysDAO();
     }
 
-    /************ Chercher tous les types d'activités*********/
+    /************ Chercher tous les pays*********/
     public function searchAll()
     {
         return $this->paysDAO->searchAll();
@@ -39,7 +39,17 @@ class ServicePays
             throw new PDOException($e->getMessage(),$e->getCode());
         } 
     }
-
+    /************ Chercher ID par NOM*********/
+    public function searchIdByName($namePays)
+    {
+        try 
+        {          
+            return $this->paysDAO->searchNameById($namePays);
+        }
+        catch (PDOException $e) {
+            throw new PDOException($e->getMessage(),$e->getCode());
+        } 
+    }
     /************ Chercher continent par ID*********/
     public function searchContinentById($idPays)
     {

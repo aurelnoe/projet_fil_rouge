@@ -76,16 +76,73 @@
 			<form>
 				<div class="row justify-content-md-center search_box">
 					<div class="col-md-3 col-lg-3 search_pays">
-						<input type="search" class="form-control search_box_pays" placeholder="Pays d'actions">
+						<input type="text" id="search-country" class="form-control search_box_pays" placeholder="Pays d'actions">
 					</div>
 					<div class="col-md-3 col-lg-3 search_activite">
-						<input type="search" class="form-control search_box_activite" placeholder="Types d'activités">
+						<input type="text" id="search-activity" class="form-control search_box_activite" placeholder="Types d'activités">
 					</div>
 					<div class="col-md-1 col-lg-1 btn_search">
 						<button type="button" class="btn btn-success btn_rechercher">Rechercher</button>
 					</div>
+					<div style="margin-top:20px">
+						<div id="result-search">
+						</div>
+					</div>
+					
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
+
+<script>
+	$(document).ready(function(){
+		$('#search-country').keyup(function(){
+			$('#result-search').html('');
+			var country = $(this).val();
+			if(country !=""){
+				$.ajax({
+					type:'GET',
+					url:'Controller/MissionsController/searchMissionsController.php?idPays=' + country,
+					data:'country=' + encodeURIComponent(country),
+					success: function(data){
+						if(data != ""){
+							$('#result-search').append(data);
+							
+						}else{
+							document.getElementById('result-search').innerHTML = "<div style='font-size:20px; text-align:center; magin-top:10px;'>Aucune mission</div>"
+						}
+						
+					}
+					
+				});
+			}
+		})
+	})
+
+	$(document).ready(function(){
+		$('#search-activity').keyup(function(){
+			$('#result-search').html('');
+			var activity = $(this).val();
+			if(activity !=""){
+				$.ajax({
+					type:'GET',
+					url:'Controller/MissionsController/searchMissionsController.php?idTypeActivite=' + activity,
+					data:'activity=' + encodeURIComponent(activity),
+					success: function(data){
+						if(data != ""){
+							$('#result-search').append(data);
+							// console.log(activity);
+						}else{
+							document.getElementById('result-search').innerHTML = "<div style='font-size:20px; text-align:center; magin-top:10px;'>Aucune mission</div>"
+						}
+						
+					}
+					
+				});
+				
+			}
+			
+		});
+	});
+</script>

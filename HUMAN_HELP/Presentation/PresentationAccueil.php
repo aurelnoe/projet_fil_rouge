@@ -3,7 +3,7 @@
 function Accueil(array $articles=null,array $missionsADistance=null,array $allMissions=null,$newtypeActivite=null,$newPays=null)
 {
 ?>
-	<div class="container accueil">
+	<div class="container accueil" id="Accueil">
 
 		<h1 class="text-center">Bienvenue sur Human Helps</h1>
 

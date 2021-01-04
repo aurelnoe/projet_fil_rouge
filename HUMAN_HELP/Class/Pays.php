@@ -17,7 +17,7 @@ class Pays
     /**
      * Get the value of idPays
      */ 
-    public function getIdPays():int
+    public function getIdPays():?int
     {
         return $this->idPays;
     }
@@ -27,7 +27,7 @@ class Pays
      *
      * @return  self
      */ 
-    public function setIdPays($idPays):self
+    public function setIdPays(?int $idPays):self
     {
         $this->idPays = $idPays;
 

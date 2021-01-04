@@ -240,8 +240,9 @@ class MissionDAO extends BddConnect
         }       
     }
 
+
 /**************** CHERCHE TOUTES LES MISSIONS PAR PAYS *******/
-    public function searchMissionByPays(int $idPays){
+    public function searchMissionByPays( $idPays){
         try{
             $newConnect = new BddConnect();
             $db = $newConnect->connexion();

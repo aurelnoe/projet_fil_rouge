@@ -171,6 +171,31 @@ class PaysDAO extends BddConnect
         }
     }
 
+    public function searchIdByName($namePays)
+    {
+        try
+        {
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
+
+            $query = "SELECT * FROM pays WHERE nomPays = :nomPays";
+            $stmt = $db->prepare($query);
+            $stmt->bindParam(":nomPays", $namePays);
+            $stmt->execute();
+
+            $pays = $stmt->fetchAll(PDO::FETCH_CLASS,'Pays');
+            var_dump($pays);
+            return $pays;
+        }
+        catch (PDOException $e){
+            throw new PDOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }
+    }
+
     public function searchContinentById($idPays)
     {
         try
