@@ -28,8 +28,12 @@
               Compte perso
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Compte_personnel/details_compte.php">Details compte</a>
-              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Compte_personnel/form_modif_compte.php">Modification infos perso</a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Compte_personnel/details_compte.php">
+                Details compte
+              </a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Templates/Compte_personnel/form_modif_compte.php">
+                Modification infos perso
+              </a>
             </div>
           </div>   
         </li>
@@ -40,8 +44,12 @@
               Blog
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php">Liste des articles</a>
-              <a class="dropdown-item" href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=add">Ajouter un article</a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php">
+                Liste des articles
+              </a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=add">
+                Ajouter un article
+              </a>
             </div>
           </div>   
         </li>
@@ -52,9 +60,15 @@
               Missions
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/listeMissionController.php">Liste des missions</a>
-              <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=add">ajout mission</a>
-              <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php">Liste mission pro</a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/listeMissionController.php">
+                Liste des missions
+              </a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=add">
+                ajout mission
+              </a>
+              <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php">
+                Liste mission pro
+              </a>
             </div>
           </div>   
         </li>

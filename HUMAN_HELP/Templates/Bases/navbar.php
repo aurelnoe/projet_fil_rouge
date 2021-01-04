@@ -19,9 +19,7 @@
 			</div>
 			<!---------------------- Barre de navigation ---------------------->
 			<nav class="navbar col text-center menuTab">
-				<!-- Projets -->
 				<a class="col-sm-12 col-lg-1 navLink" href="#">Projets</a>
-				<!-- Pays d'action -->
 				<div class="dropdown col-sm-12 col-md-12 col-lg-2 col-xl-2">
 					<a class="col-sm-12 dropdown-toggle navLink" href="/HUMAN_HELP/Templates/missions/liste_missions.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						Pays d'action
@@ -49,20 +47,22 @@
 				<a class="col-sm-12 col-lg-2 navLink" href="/HUMAN_HELP/Controller/CommentCaMarcheController.php">
 					Voir plus
 				</a>
-				<!--FAQ-->
-				<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/FaqController/faqController.php" tabindex="-1" aria-disabled="true">FAQ</a>
-				<!--Blog-->
-				<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php"  tabindex="-1" aria-disabled="true">Blog</a>
+				<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/FaqController/faqController.php" tabindex="-1" aria-disabled="true">
+					FAQ
+				</a>
+				<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php"  tabindex="-1" aria-disabled="true">
+					Blog
+				</a>
 				<?php 
 					if (!isset($_SESSION)) {
 					?>
-						<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Templates/Security/form_inscription.php" tabindex="-1" aria-disabled="true">
+						<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/FormulairesUtilisateurController.php?action=formAjout" tabindex="-1" aria-disabled="true">
 							Inscription
 						</a>
 					<?php
 					} else {
 					?>
-						<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Templates/Security/form_connexion.php" tabindex="-1" aria-disabled="true">
+						<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/FormulairesUtilisateurController.php?action=connexion" tabindex="-1" aria-disabled="true">
 							Connexion
 						</a>
 					<?php

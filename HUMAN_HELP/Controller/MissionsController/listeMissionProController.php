@@ -8,10 +8,16 @@ include_once("../../Presentation/PresentationMission.php");
 
 $_POST = array_map('htmlentities', $_POST);
 
+$serviceMission = new ServiceMission();   
+$serviceEtablissement = new ServiceEtablissement();
+$ServiceUtilisateur = new ServiceUtilisateur();
+$mission = new Mission();
+$etablissement = new Etablissement();
+
 if(!empty($_GET['action']) && isset($_GET['action']))
 {
     if (!empty($_POST) && isset($_POST)) 
-    {
+    {  
         /************************** AJOUTER UNE MISSION ***************************/
         if ($_GET['action'] == 'add')
         {
@@ -26,8 +32,6 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             $idEtablissement = $_POST['idEtablissement'];
             $idTypeActivite = $_POST['idTypeActivite'];
 
-            $mission = new Mission();
-
             $mission->setTitreMission($titreMission)
                     ->setDescriptionMission($descriptionMission)
                     ->setTypeFormation($typeFormation)
@@ -39,40 +43,9 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                     ->setIdEtablissement($idEtablissement)
                     ->setIdTypeActivite($idTypeActivite);
 
-            $newAdd = new ServiceMission();
-            $newAdd->add($mission);
-        }    
-        /************************** MODIFIE MISSION ***************************/
-        else if($_GET['action'] == 'update' && isset($_POST['idMission']))
-        {         
-            $idMission = $_POST['idMission'];
-            $titreMission = $_POST['titreMission'];
-            $descriptionMission = $_POST['descriptionMission'];
-            $typeFormation = $_POST['typeFormation'];
-            $imageMission = is_null($_POST['imageMission']) ? 'NULL' : $_POST['imageMission'];
-            $dateDebut = $_POST['dateDebut'];
-            $duree = $_POST['duree'];
-            $dateAjout = date("Y-m-d");
-            $idPays = (int)$_POST['idPays'];
-            $idEtablissement = (int)$_POST['idEtablissement'];
-            $idTypeActivite = (int)$_POST['idTypeActivite'];
+            $serviceMission->add($mission);       
+        }  
 
-            $mission = new Mission();
-            $mission->setIdMission($idMission)
-                    ->setTitreMission($titreMission)
-                    ->setDescriptionMission($descriptionMission)
-                    ->setTypeFormation($typeFormation)
-                    ->setImageMission($imageMission)
-                    ->setDateDebut($dateDebut)
-                    ->setDuree($duree)
-                    ->setDateAjout($dateAjout);
-            $mission->setIdPays($idPays)
-                    ->setIdEtablissement($idEtablissement)
-                    ->setIdTypeActivite($idTypeActivite);
-
-            $newUpdate = new ServiceMission();
-            $newUpdate->update($mission);//,$idmission
-        }
         /**************************************** AJOUTER UN ETABLISSEMENT ************************/
         elseif ($_GET['action'] == 'addEtablissement') 
         {    
@@ -87,8 +60,6 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             //$idTypeActivite = $_POST['idTypeActivite'];
             $idPays = $_POST['idPays'];
     
-            $etablissement = new Etablissement();
-    
             $etablissement->setDenomination($denomination)
                             ->setAdresseEtablissement($adresseEtablissement)
                             ->setVilleEtablissement($villeEtablissement)
@@ -100,8 +71,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                             //->setIdTypeActivite($idTypeActivite)
                             ->setIdPays($idPays);
     
-            $newAdd = new ServiceEtablissement();
-            $newAdd->add($etablissement);
+            $serviceEtablissement->add($etablissement);
         }
         /**************************************** MODIFIER UN ETABLISSEMENT ************************/
         elseif ($_GET['action'] == 'updateEtablissement') 
@@ -118,7 +88,6 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             //$idTypeActivite = $_POST['idTypeActivite'];
             $idPays = $_POST['idPays'];
 
-            $etablissement = new Etablissement();
             $etablissement->setIdEtablissement($idEtablissement)
                           ->setDenomination($denomination)
                           ->setAdresseEtablissement($adresseEtablissement)
@@ -131,17 +100,15 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                           //->setIdTypeActivite($idTypeActivite)
                           ->setIdPays($idPays);
 
-            $newUpdate = new ServiceEtablissement();
-            $newUpdate->update($etablissement);//,$idEtablissement
+            $serviceEtablissement->update($etablissement);//,$idEtablissement
         }
     }
     /**************************************** SUPPRIMER UNE MISSION ************************/
     elseif ($_GET['action'] == 'delete') 
     {
         if (!empty($_GET['idMission'])) 
-        {      
-            $delete = new ServiceMission();        
-            $delete->delete($_GET['idMission']);  
+        {           
+            $serviceMission->delete($_GET['idMission']);  
         }
     }
 }
@@ -149,14 +116,11 @@ if(!empty($_GET['action']) && isset($_GET['action']))
 $newTypeActivite = new ServiceTypeActivite();
 $newPays = new ServicePays();
 
-$newEtablissement = new ServiceEtablissement();
-$etablissementPro = $newEtablissement->searchEtablissementByIdUtilisateur(1);
+$etablissementPro = $serviceEtablissement->searchEtablissementByIdUtilisateur(1);
 
-$newUtilisateur = new ServiceUtilisateur();
-$utilisateur = $newUtilisateur->searchById(1);
+$utilisateur = $ServiceUtilisateur->searchById(1);
 
-$newMission = new ServiceMission();
-$missions = $newMission->searchMissionByPro(1);
+$missions = $serviceMission->searchMissionByPro(1);
 
 echo listeMissionsPro($missions,$newTypeActivite,$newPays,$etablissementPro,$utilisateur);
 

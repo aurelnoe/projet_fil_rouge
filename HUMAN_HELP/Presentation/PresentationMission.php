@@ -527,7 +527,7 @@ function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeAct
             </div>
 
             <hr class="mb-4 mt-4">
-            <!-- description -->
+
             <h2 class="mb-4 mt-4">Description :</h2>
 
             <div class="my-4"><?php echo $mission->getDescriptionMission(); ?></div>
@@ -590,15 +590,21 @@ function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeAct
                     </a>
                 </div>
                 <div class="col-12 offset-md-2 col-md-5 my-2">
-                    <a href="/HUMAN_HELP/Templates/Contact/form_contact.php" class="btn btnGreen w-100">contactez nous</a>
+                    <a href="/HUMAN_HELP/Templates/Contact/form_contact.php" class="btn btnGreen w-100">
+                        contactez nous
+                    </a>
                 </div>
             </div>
             <div class="row mb-4">
                 <div class="col-12 col-md-3 my-2">
-                    <a href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=update&idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary w-100">Modifier</a>
+                    <a href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=update&idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary w-100">
+                        Modifier
+                    </a>
                 </div>
                 <form class="col-12 offset-md-6 col-md-3 my-2" action="?action=delete" method="POST">
-                    <button type="submit" class="btn btn-danger w-100">Supprimer</button>
+                    <button type="submit" class="btn btn-danger w-100">
+                        Supprimer
+                    </button>
                 </form>
             </div>
         </div>
@@ -625,7 +631,9 @@ function formulairesMission(string $title,$mission=null,string $titleBtn,string 
 
             <h2 class="text-center my-2 pb-2"><?php echo $title; ?></h2>
 
-            <form class="needs-validation p-3" action="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php?action=<?php echo $action; ?>" method="POST" novalidate>
+            <form class="needs-validation p-3" action=<?php echo ($action=='update') ? "/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php?action=$action" 
+                                                                                    : "/HUMAN_HELP/Controller/MissionsController/missionProController.php?action=$action" ?> 
+                                                                                    method="POST" novalidate>
                 <input type="hidden" name="idMission" value="<?php echo isset($idMission) ? $idMission : '' ?>">
 
                 <hr class="mb-4 mt-2">

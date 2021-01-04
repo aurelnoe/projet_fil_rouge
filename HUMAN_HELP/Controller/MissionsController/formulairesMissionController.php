@@ -29,7 +29,8 @@ if (isset($_GET['action']))
         echo formulairesMission($title,$mission,$titleBtn,$action,$idMission,$allPays,$allTypeActivite,$idEtablissement);
         die;
     } 
-    else if ($_GET['action'] == 'add') {
+    else if ($_GET['action'] == 'add') 
+    {
         $title = "Ajout d'une mission";
         $titleBtn = 'ajouter la mission';
         $action = 'add';

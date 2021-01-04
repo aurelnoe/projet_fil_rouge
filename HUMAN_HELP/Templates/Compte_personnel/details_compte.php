@@ -12,8 +12,6 @@
     <?php
     include("../Bases/navbarDev.php");
 
-    include("../Bases/header.php");
-
     include("../Bases/navbar.php");
     ?>
     <div class="container">
