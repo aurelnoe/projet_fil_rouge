@@ -46,7 +46,7 @@
 					</div>
 				</div>
 				<!--Comment ça marche-->
-				<a class="col-sm-12 col-lg-2 navLink" href="/HUMAN_HELP/Templates/Autres/comment_ca_marchephp.">
+				<a class="col-sm-12 col-lg-2 navLink" href="/HUMAN_HELP/Controller/CommentCaMarcheController.php">
 					Voir plus
 				</a>
 				<!--FAQ-->

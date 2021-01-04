@@ -1,15 +1,28 @@
 <?php
-function afficher()
+function head()
 {
-    ?>   
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-        <?php include("../../head.php"); ?>
-        </head>   
-    <?php
+?>
+    <?php include("../../head.php"); ?>
+    <script src="../Assets/jquery-3.5.1.min.js"></script>
+    <script src="Assets/script.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
+    <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
+<?php
 }
 
+function afficher()
+{
+?>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <?php echo head(); ?>
+    </head>
+<?php
+}
 
 function faq()
 {
@@ -41,7 +54,7 @@ function faq()
                                         <span class="badge">1</span>
                                     </div>
                                     <div class="col accordion-header ">
-                                        <section class="accordion-button w-100 h-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: rgba(255,255,255,0); border:none; color:black;">
+                                        <section class="accordion-button w-100 h-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: rgba(255,255,255,0); border:none;">
                                             <p>Comment s'inscrire à mission ?</p>
                                         </section>
                                     </div>
@@ -63,7 +76,7 @@ function faq()
                                         <span class="badge">2</span>
                                     </div>
                                     <div class="col accordion-header ">
-                                        <section class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="background-color: rgba(255,255,255,0); border:none; color:black;">
+                                        <section class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="background-color: rgba(255,255,255,0); border:none;">
                                             <p>Comment fonctionne une mission à distance ?</p>
                                         </section>
                                     </div>
@@ -85,7 +98,7 @@ function faq()
                                         <span class="badge">3</span>
                                     </div>
                                     <div class="col accordion-header ">
-                                        <section class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" style="background-color: rgba(255,255,255,0); border:none;color:black;">
+                                        <section class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" style="background-color: rgba(255,255,255,0); border:none;">
                                             <p>Comment ça se passe avec la covid19 ?</p>
                                         </section>
                                     </div>
@@ -107,7 +120,7 @@ function faq()
                                         <span class="badge">4</span>
                                     </div>
                                     <div class="col accordion-header ">
-                                        <section class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" style="background-color: rgba(255,255,255,0); border:none;color:black;">
+                                        <section class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" style="background-color: rgba(255,255,255,0); border:none;">
                                             <p>Comment financer mon voyage ?</p>
                                         </section>
                                     </div>
@@ -129,7 +142,7 @@ function faq()
                                         <span class="badge">5</span>
                                     </div>
                                     <div class="col accordion-header ">
-                                        <section class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" style="background-color: rgba(255,255,255,0); border:none;color:black;">
+                                        <section class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" style="background-color: rgba(255,255,255,0); border:none;">
                                             <p>Combien de temps prévoir pour une mission ?</p>
                                         </section>
                                     </div>

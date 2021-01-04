@@ -55,7 +55,6 @@ class TypeActiviteDAO extends BddConnect
     }
 
     
-
     public function searchNameById($idTypeActivite)
     {
         try 

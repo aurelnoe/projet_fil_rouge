@@ -1,21 +1,27 @@
+<?php
 
-<!DOCTYPE html>
-<html lang="en">    
-<head>
-    <?php include("../../head.php"); ?>
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleMoh.css">
-    <title>Comment ca marche</title>
-</head>
-<body>
+function afficher()
+{
+    ?>   
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+        <?php include("../head.php"); ?>
+        </head>   
     <?php
-    include("../Bases/navbarDev.php");
+}
 
-    include("../Bases/navbar.php");
-    ?>
-	<div class="container">
+function commentCaMarche():void
+{
+    echo afficher();
+    ?> 
+    <body>
+        <?php
+        include("../Templates/Bases/navbarDev.php");
+
+        include("../Templates/Bases/navbar.php");
+        ?>
+        <div class="container">
 		<h1 class="text-center">Comment ça marche ?</h1>
 		<div class="p-2">
 			<h2 class="text-center m-2">Avant le départ</h2> 
@@ -63,11 +69,11 @@
 		if (!empty($_GET)) 
 		{
 		?>
-			<a href="../../Controller/MissionsController/detailsMissionController.php?idMission=<?php echo $_GET['idMission'];?>" 
+			<a href="../Controller/MissionsController/detailsMissionController.php?idMission=<?php echo $_GET['idMission'];?>" 
 			   class="btn btnGreen w-100 my-1">
 			   Retour aux détails de la mission
 			</a>
-			<a href="../../Controller/MissionsController/formParticipationMissionController.php?idMission=<?php echo $_GET['idMission'];?>"
+			<a href="../Controller/MissionsController/formParticipationMissionController.php?idMission=<?php echo $_GET['idMission'];?>"
 			   class="btn btn-primary w-100 my-3">
 			   PARTICIPER A CETTE MISSION
 			</a>
@@ -76,7 +82,10 @@
 		?>
 	</div>
 		<?php      
-    include("../Bases/footer.php") 
+    include("../Templates/Bases/footer.php") 
     ?>
 </body>
 </html>
+<?php
+}
+?>

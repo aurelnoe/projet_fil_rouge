@@ -16,7 +16,7 @@
           <a class="nav-link" href="/HUMAN_HELP/Controller/ContactController/contactController.php">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/HUMAN_HELP/Templates/Autres/Comment_ca_marche.php">Comment ca marche?</a>
+          <a class="nav-link" href="/HUMAN_HELP/Controller/CommentCaMarcheController.php">Comment ca marche?</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/HUMAN_HELP/Controller/FaqController/faqController.php">FAQ</a>

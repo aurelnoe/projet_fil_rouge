@@ -585,7 +585,9 @@ function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeAct
 
             <div class="row mb-4">
                 <div class="col-12 col-md-5 my-2">
-                    <a href="/HUMAN_HELP/Templates/Autres/Comment_ca_marche.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btnGreen w-100">Comment y participer ?</a>
+                    <a href="/HUMAN_HELP/Controller/CommentCaMarcheController.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btnGreen w-100">
+                        Comment y participer ?
+                    </a>
                 </div>
                 <div class="col-12 offset-md-2 col-md-5 my-2">
                     <a href="/HUMAN_HELP/Templates/Contact/form_contact.php" class="btn btnGreen w-100">contactez nous</a>
@@ -806,7 +808,7 @@ function formParticipationMission($mission)
 
             <h1 class="my-3 text-center">Titre de la mission : <?php echo $mission->getTitreMission(); ?></h1>
 
-            <form class="needs-validation p-3" action="../../Templates/Autres/comment_ca_marche?action=participe&idMission=<?php echo $mission->getIdMission();?>" method="POST" novalidate>
+            <form class="needs-validation p-3" action="C:\xampp\htdocs\HUMAN_HELP\Controller\CommentCaMarcheController.php?action=participe&idMission=<?php echo $mission->getIdMission();?>" method="POST" novalidate>
                 <h2 class="text-center my-2 pb-2">Inscrivez vous</h2>
 
                 <hr class="mb-4 mt-2 hrGreen">
@@ -848,8 +850,13 @@ function formParticipationMission($mission)
                 
                 <hr class="my-4 hrGreen">
                 
-                <button type="submit" class="btn btnGreen btn-lg btn-block mb-5">Envoyer</button>
-                <a href="/HUMAN_HELP/Templates/Autres/Comment_ca_marche.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary w-100">Retour aux informations</a>        </form>
+                <button type="submit" class="btn btnGreen btn-lg btn-block mb-5">
+                    Envoyer
+                </button>
+                <a href="C:\xampp\htdocs\HUMAN_HELP\Controller\CommentCaMarcheController.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary w-100">
+                    Retour aux informations
+                </a>        
+            </form>
 
         </div>
         <?php      
