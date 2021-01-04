@@ -198,12 +198,7 @@ function detailArticle($article,$avis)
                     <hr class="hrGreen">
                 </div>
             </div>
-            <?php echo FormulaireAvis($article->getIdArticle()); 
-
-                echo listeAvis($avis);
-            
-            
-            ?>
+           
 
             <hr class="my-4">
 
@@ -213,7 +208,13 @@ function detailArticle($article,$avis)
             <div class="offset-4">
                 <a href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=update&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-primary col-12 col-md-3 my-2 w-50">Modifier</a>
                 <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-danger col-12 col-md-3 my-2 w-50">Supprimer</a>
-            </div>
+            </div> 
+            <?php echo FormulaireAvis($article->getIdArticle()); 
+
+                echo listeAvis($avis);
+            
+            
+            ?>
         </div>
 
         </div>
@@ -231,14 +232,14 @@ function FormulaireAvis(int $idArticle)
 ?>
     <div class="container col-12 col-md-10 pt-2 my-2 border rounded">
 
-        <h2 class="text-center my-2 pb-2">Espace commentaire</h2>
+    <h2 class="text-center my-2 pb-2">Commenter l'article</h2>
 
         <form class="col-5 offset-3" action="/HUMAN_HELP//Controller/AvisController/listeAvisController.php?action=add" method="POST">
         <input type="hidden" name="idArticle" value="<?php echo $idArticle; ?>">
         <input type="hidden" name="auteur" value="TestAuteur2">
         <input type="hidden" name="dateCommentaire" value="<?php echo date("F j, Y, g:i a");?>">
         <input type="hidden" name="idUtilisateur" value="1">
-            <textarea class="col mb-3 offset-2" name="temoignage" id="temoignage" placeholder="Votre commentaire"></textarea>
+        <textarea class="col mb-3 offset-2" name="temoignage" id="temoignage" placeholder="Ecrivez votre commentaire..."></textarea>
             <button class="btn btnGreen btn-lg btn-block mb-3 offset-2" type="submit">Poster un commentaire</button>
         </form>
 
@@ -249,14 +250,19 @@ function listeAvis($avis)
 {
 
 ?> 
-<h1>Commentaires</h1>
+<h1>Commentaires : </h1>
     <div>
         <?php foreach ($avis as $commentaire){?>
 
-            <p> <?php echo $commentaire->getAuteur(); ?> : <?php echo $commentaire->getTemoignage(); ?> . <?php echo $commentaire->getDateCommentaire()->format('d-m-Y'); ?> </p>
-            <div>
-                <a href="/HUMAN_HELP/Controller/AvisController/listeAvisController.php?action=delete&idAvis=<?php echo $commentaire->getIdAvis(); ?>" class="btn btn-danger w-50">Supprimer</a>
+            <div style="background: #eee ; border-radius:10px;">
+                <p><span style="font-weight: bold;"> De <?php echo $commentaire->getAuteur(); ?> :</span> <?php echo $commentaire->getTemoignage(); ?> . </br> <span style="font-size:12px;"> Le <?php echo $commentaire->getDateCommentaire()->format('d-m-Y'); ?></span> </p>
             </div>
+            <div>
+            <a href="/HUMAN_HELP/Controller/AvisController/listeAvisController.php?action=delete&idAvis=<?php echo $commentaire->getIdAvis(); ?>" class="btn btn-danger w-25">Supprimer</a>
+            </div>
+
+            <hr class="my-4">
+
         <?php }?>
 
     </div>
