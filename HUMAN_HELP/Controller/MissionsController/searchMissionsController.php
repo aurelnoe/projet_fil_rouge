@@ -1,9 +1,10 @@
 <?php
+session_start();
+
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/serviceTypeActivite.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
 include_once("../../Presentation/PresentationMission.php");
-// include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
 
 if (!empty($_GET)) 
 {
@@ -43,7 +44,7 @@ if (!empty($_GET))
 
         echo searchMission($missions,$title);
     }
-    // else if (isset($_GET['idPayss'])){
+    // else if (isset($_GET['idPays'])){
         
     //     $missions = $newSearch->searchMissionByPays($_GET['idPays']);
 

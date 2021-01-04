@@ -63,9 +63,6 @@
               <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/listeMissionController.php">
                 Liste des missions
               </a>
-              <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=add">
-                ajout mission
-              </a>
               <a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php">
                 Liste mission pro
               </a>

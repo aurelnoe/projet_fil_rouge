@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceTypeActivite.php");

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once("../../Services/ServiceMission.php");
 include_once("../../Services/serviceTypeActivite.php");
 require_once("../../Services/ServicePays.php");
@@ -7,7 +9,6 @@ include_once("../../Presentation/PresentationMission.php");
 $newMission = new ServiceMission();
 $newtypeActivite = new ServiceTypeActivite();
 $newPays = new ServicePays();
-//$typeActivite = $newtypeActivite->searchById($_GET['id_type_activite']);
 
 $medecines = $newMission->searchMissionByTypeActivite(1);
 $donations = $newMission->searchMissionByTypeActivite(2);

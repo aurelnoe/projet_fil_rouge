@@ -632,7 +632,7 @@ function formulairesMission(string $title,$mission=null,string $titleBtn,string 
             <h2 class="text-center my-2 pb-2"><?php echo $title; ?></h2>
 
             <form class="needs-validation p-3" action=<?php echo ($action=='update') ? "/HUMAN_HELP/Controller/MissionsController/detailsMissionController.php?action=$action" 
-                                                                                    : "/HUMAN_HELP/Controller/MissionsController/missionProController.php?action=$action" ?> 
+                                                                                    : "/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php?action=$action" ?> 
                                                                                     method="POST" novalidate>
                 <input type="hidden" name="idMission" value="<?php echo isset($idMission) ? $idMission : '' ?>">
 

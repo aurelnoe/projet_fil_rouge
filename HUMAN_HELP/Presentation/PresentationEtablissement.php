@@ -88,7 +88,12 @@ function formulairesEtablissement(string $title,$etablissement=null,int $idEtabl
                 <hr class="mb-4 mt-4">
                 
                 <button class="btn btnGreen btn-lg btn-block mb-5" type="submit"><?php echo $titleBtn;?></button>
-            </form>   
+            </form>
+            <div class=" text-center m-auto">
+                <a href="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php" class="btn btn-primary w-50">
+                    Retour à votre espace Pro
+                </a>   
+            </div>
         </div>
 
         <?php      

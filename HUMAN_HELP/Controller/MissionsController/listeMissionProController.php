@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once("../../Services/ServiceMission.php");
 include_once("../../Services/ServicePays.php");
 include_once("../../Services/ServiceEtablissement.php");
@@ -10,7 +12,7 @@ $_POST = array_map('htmlentities', $_POST);
 
 $serviceMission = new ServiceMission();   
 $serviceEtablissement = new ServiceEtablissement();
-$ServiceUtilisateur = new ServiceUtilisateur();
+$serviceUtilisateur = new ServiceUtilisateur();
 $mission = new Mission();
 $etablissement = new Etablissement();
 
@@ -116,11 +118,13 @@ if(!empty($_GET['action']) && isset($_GET['action']))
 $newTypeActivite = new ServiceTypeActivite();
 $newPays = new ServicePays();
 
-$etablissementPro = $serviceEtablissement->searchEtablissementByIdUtilisateur(1);
+$etablissementPro = $serviceEtablissement->searchEtablissementByIdUtilisateur($_SESSION['idUtil']);
 
-$utilisateur = $ServiceUtilisateur->searchById(1);
+$utilisateur = $serviceUtilisateur->searchById($_SESSION['idUtil']);
+    
+$etablissement = $serviceEtablissement->searchEtablissementByIdUtilisateur($_SESSION['idUtil']);
 
-$missions = $serviceMission->searchMissionByPro(1);
+$missions = $serviceMission->searchMissionByPro($etablissement->getIdEtablissement());
 
 echo listeMissionsPro($missions,$newTypeActivite,$newPays,$etablissementPro,$utilisateur);
 

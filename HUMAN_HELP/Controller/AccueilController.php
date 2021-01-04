@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include_once("Services/ServiceBlog.php");
 include_once("Services/ServiceMission.php");
 include_once("Services/ServicePays.php");
