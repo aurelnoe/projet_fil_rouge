@@ -27,7 +27,7 @@ if (isset($_GET['action']))
         $title = "Ajouter un article";
         $titleBtn = "Ajouter l'article";
         $action = 'add';
-        echo formulaireArticle($title,$affiche,$titleBtn,$action);
+        echo formulaireArticle($title,$article,$titleBtn,$action);
         
     }
 }
