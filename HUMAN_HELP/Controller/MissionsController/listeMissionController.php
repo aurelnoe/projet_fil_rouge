@@ -16,6 +16,8 @@ $enseignements = $newMission->searchMissionByTypeActivite(3);
 $constructions = $newMission->searchMissionByTypeActivite(4);
 $traductions = $newMission->searchMissionByTypeActivite(5);
 
-echo listeMissions($medecines,$donations,$enseignements,$constructions,$traductions,$newtypeActivite,$newPays);
+$professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
+
+echo listeMissions($medecines,$donations,$enseignements,$constructions,$traductions,$newtypeActivite,$newPays,$professionnel);
 
 ?>

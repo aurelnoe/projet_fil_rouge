@@ -115,18 +115,24 @@ if(!empty($_GET['action']) && isset($_GET['action']))
     }
 }
 
-$newTypeActivite = new ServiceTypeActivite();
-$newPays = new ServicePays();
+$professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
 
-$etablissementPro = $serviceEtablissement->searchEtablissementByIdUtilisateur($_SESSION['idUtil']);
-
-$utilisateur = $serviceUtilisateur->searchById($_SESSION['idUtil']);
+if ($professionnel) 
+{
+    $newTypeActivite = new ServiceTypeActivite();
+    $newPays = new ServicePays();
     
-$etablissement = $serviceEtablissement->searchEtablissementByIdUtilisateur($_SESSION['idUtil']);
-
-$missions = $serviceMission->searchMissionByPro($etablissement->getIdEtablissement());
-
-echo listeMissionsPro($missions,$newTypeActivite,$newPays,$etablissementPro,$utilisateur);
-
-
+    $utilisateur = $serviceUtilisateur->searchById($_SESSION['idUtil']);
+    
+    $etablissement = $serviceEtablissement->searchEtablissementByIdUtilisateur($_SESSION['idUtil']);
+    
+    $missions = $serviceMission->searchMissionByPro($etablissement->getIdEtablissement());
+    
+    echo listeMissionsPro($missions,$newTypeActivite,$newPays,$etablissement,$utilisateur);
+    die;           
+}
+else {
+    header("Location: ../../index.php");
+    die;
+}
 

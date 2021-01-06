@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
 include_once("../../Presentation/PresentationMission.php");
 

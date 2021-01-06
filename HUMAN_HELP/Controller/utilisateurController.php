@@ -1,5 +1,7 @@
 <?php
-require("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceUtilisateur.php");
+session_start();
+
+include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceUtilisateur.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationUtilisateur.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationAccueil.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationEtablissement.php");
@@ -7,7 +9,9 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationEtablissement.
 /************************** AJOUT UTILISATEUR ***************************/
 if(!empty($_GET['action']) && isset($_GET['action']))
 {
-    $service =new ServiceUtilisateur();
+    $_POST = array_map('htmlentities', $_POST);
+
+    $service = new ServiceUtilisateur();
 
     if ($_GET['action'] == 'add')
     {
@@ -41,11 +45,11 @@ if(!empty($_GET['action']) && isset($_GET['action']))
 
             $service->add($utilisateur);
 
-            if ($idRole==1) {
+            if ($idRole==1) {     //Particulier
                 header("location: ../index.php");
                 die;
             }
-            else {
+            elseif($idRole==2) {  //Professionnel
                 
                 header("location: ../Controller/EtablissementsController/formulaireEtablissementController.php?action=add&mail=$mailUtil");
                 die;
@@ -105,17 +109,33 @@ if(!empty($_GET['action']) && isset($_GET['action']))
         }
     }
     elseif ($_GET['action'] == 'connexion') 
-    {
-        $mailUtil = $_POST['mailUtil'];
-        $password = $_POST['password'];
-        try {
-            $objectUser = $service->searchUserbyMail($mailUtil);
+    {      
+        try 
+        {
+            $objectUser = $service->searchUserbyMail($_POST['mailUtil']);
+            $password = $_POST['password'];
             if (!empty($objectUser) && password_verify($password,$objectUser->getPasswordUtil()))
             {
-                $_SESSION['mailUtil']=$mailUtil;
-                $_SESSION['idRole']=$objectUser->getIdRole();
-                $admin = isset($_SESSION['idRole']) && $_SESSION['idRole'] == '2';  
-                header("location: ../index.php");
+                $_SESSION['mailUtil'] = $_POST['mailUtil'];
+                $_SESSION['idUtil'] = $objectUser->getIdUtilisateur();
+                
+                $idRole = $objectUser->getIdRole();
+                echo $idRole;
+                if ($idRole == 1) {
+                    $role = 'particulier';
+                }
+                elseif ($idRole == 2 ) {
+                    $role = 'professionnel';
+                }
+                elseif ($idRole == 3 ) {
+                    $role = 'admin';
+                }
+                $_SESSION['role'] = $role;
+
+                // $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
+                // $admin = isset($_SESSION['mailUtil']) && isset($_SESSION['idRole']) && $_SESSION['role'] == 'admin';  
+
+                header("Location: ../index.php");
                 die;
             }
             else {

@@ -17,13 +17,15 @@ if(!empty($_GET))
     if (isset($_GET['idMission']) && empty($_GET['action'])) 
     {
         $mission = $serviceMission->searchById($_GET['idMission']);
+
+        $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
     
         if ($mission->getTypeFormation() == 0) {
             $typeFormation = 'à distance';
         }else{
             $typeFormation = 'sur le terrain';
         }
-        echo detailsMission($mission,$typeFormation,$newPays,$newTypeActivite,$newEtablissement);
+        echo detailsMission($mission,$typeFormation,$newPays,$newTypeActivite,$newEtablissement,$professionnel);
     }
 
     elseif(!empty($_GET['action']) && isset($_GET['action']))
@@ -68,7 +70,9 @@ if(!empty($_GET))
                 }else{
                     $typeFormation = 'sur le terrain';
                 }
-                echo detailsMission($detailsMission,$typeFormation,$newPays,$newTypeActivite,$newEtablissement);
+                $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
+
+                echo detailsMission($detailsMission,$typeFormation,$newPays,$newTypeActivite,$newEtablissement,$professionnel);
             }
         }
     }

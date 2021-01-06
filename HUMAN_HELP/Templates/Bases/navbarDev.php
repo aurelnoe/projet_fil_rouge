@@ -69,9 +69,27 @@
             </div>
           </div>   
         </li>
-
+        <?php
+          if (!empty($_SESSION)) {
+            ?>
+              <li class="nav-item mx-2">
+                <h2 class="msgConnect">Vous êtes connecté </h2>
+                <h2 class="msgConnect"><?php echo $_SESSION['mailUtil'] ?></h2>
+              </li> 
+              <li class="nav-item mx-2">
+                <h2 class="msgConnect"><?php echo $_SESSION['role'] ?></h2>
+              </li>       
+            <?php
+          }else {
+            ?>
+              <li class="nav-item">
+                <h2 class="msgConnect">Vous n'êtes pas connecté </h2>
+              </li>            
+            <?php
+          }
+        ?>
         <li class="nav-item">
-          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Deconnexion</a>
+          <a class="nav-link" href="/HUMAN_HELP/Controller/AccueilController.php?action=deconnection" tabindex="-1" aria-disabled="true">Deconnexion</a>
         </li>   
       </ul>
     </div>

@@ -3,7 +3,7 @@
 function Accueil(array $articles=null,array $missionsADistance=null,array $allMissions=null,$newtypeActivite=null,$newPays=null)
 {
 ?>
-	<div class="container accueil" id="Accueil">
+	<div class="container">
 
 		<h1 class="text-center">Bienvenue sur Human Helps</h1>
 
@@ -54,7 +54,9 @@ function Accueil(array $articles=null,array $missionsADistance=null,array $allMi
 										<p class="card-text">Date de début : <?php echo $mission->getDateDebut()->format('d-m-Y'); ?></p>
 									</div>
 									<div class="card-footer">
-										<a href="Controller/MissionsController/detailsMissionController.php?idMission=<?php echo $mission->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+										<a href="Controller/MissionsController/detailsMissionController.php?idMission=<?php echo $mission->getIdMission(); ?>" class="btn btn-primary">
+											Voir la mission
+										</a>
 									</div>
 								</div>
 							</div>
@@ -72,14 +74,14 @@ function Accueil(array $articles=null,array $missionsADistance=null,array $allMi
 								</a>
 							</div>
 						<?php
-						}else 
-						{	
-						?>
-							<div class="my-5 py-5 text-center">Pas de mission à distance pour le moment</div>
-						<?php
-						}
-						?>
-					</div>
+					}else {	
+					?>
+						<div class="my-5 py-5 text-center">
+							Pas de mission à distance pour le moment
+						</div>
+					<?php
+					}
+					?>
 				</div>
 			</div>
 		</div>
@@ -162,8 +164,6 @@ function Accueil(array $articles=null,array $missionsADistance=null,array $allMi
 						foreach ($articles as $key => $article) {
 						?>
 							<div class="carousel-item  <?php echo ($key == 0) ? 'active' : ''; ?> mb-5">
-
-
 								<div class="card cardListeMission col-10 col-md-6 p-0">
 									<img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
 									<div class="card-body">
@@ -171,12 +171,13 @@ function Accueil(array $articles=null,array $missionsADistance=null,array $allMi
 										<p class="card-text">Description : <?php echo $article->getDescriptionArticle() ?></p>
 										<p class="card-text">Pays : Ghana (Afrique)</p>
 										<p class="card-text">Date : <?php echo $article->getDateArticle()->format('d-m-Y'); ?></p>
-										<div class="card-footer">
-											<a href="/HUMAN_HELP/Controller/BlogController/detailsBlogController.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-primary">Voir plus</a>
-										</div>
+									</div>
+									<div class="card-footer">
+										<a href="/HUMAN_HELP/Controller/BlogController/detailsBlogController.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-primary">
+											Voir plus
+										</a>
 									</div>
 								</div>
-
 							</div>
 						<?php
 						}
@@ -195,81 +196,83 @@ function Accueil(array $articles=null,array $missionsADistance=null,array $allMi
 					}else 
 					{	
 					?>
-						<div class="my-5 py-5 text-center">Pas d'article pour le moment</div>
+						<div class="my-5 py-5 text-center">
+							Pas d'article pour le moment
+						</div>
 					<?php
 					}
 					?>
 				</div>
 			</div>
 		</div>
-	</div>
-
-	<hr class="my-4">
-
-	<div class="col-12 border rounded p-0">
-		<div id="carouselMissionAccueil" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
-			<div>
-				<ol class="carousel-indicators">
-					<?php foreach ($allMissions as $key => $mission) {
-						?>
-						<li data-target="#carouselMissionAccueil" data-slide-to="<?php echo $key; ?>"
-						<?php echo ($key==0) ? 'class="active"' : '' ?>></li>
-						<?php
-					} ?>
-				</ol>
-			</div>
-			<div class="text-center mx-auto my-1">
-				<a class="button btn pb-1 w-50" href="Controller/MissionsController/searchMissionsController.php?idTypeActivite=1">
-					<h3>Une mission humanitaire avec Human Helps:</h3>
-				</a>
-			</div>
-
-			<div class="carousel-inner w-100">
-				<?php
-				if (!empty($allMissions)) {
-					foreach ($allMissions as $key => $mission) 
-					{
-					?> 
-						<div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
-							<div class="card cardListeMission col-10 col-md-6 p-0">
-								<img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
-								<div class="card-body">
-									<h5 class="card-title">Titre : <?php echo utf8_encode($mission->getTitreMission()); ?></h5>
-									<p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($mission->getIdTypeActivite())); ?></p>
-									<p class="card-text">Pays : <?php echo $newPays->searchNameById($mission->getIdPays()); ?> (<?php echo $newPays->searchContinentById($mission->getIdPays()); ?>)</p>
-									<p class="card-text">Date de début : <?php echo $mission->getDateDebut()->format('d-m-Y'); ?></p>
-								</div>
-								<div class="card-footer">
-									<a href="Controller/MissionsController/detailsMissionController.php?idMission=<?php echo $mission->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+		
+		<hr class="my-4">
+	
+		<div class="col-12 border rounded p-0">
+			<div id="carouselMissionAccueil" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
+				<div>
+					<ol class="carousel-indicators">
+						<?php foreach ($allMissions as $key => $mission) {
+							?>
+							<li data-target="#carouselMissionAccueil" data-slide-to="<?php echo $key; ?>"
+							<?php echo ($key==0) ? 'class="active"' : '' ?>></li>
+							<?php
+						} ?>
+					</ol>
+				</div>
+				<div class="text-center mx-auto my-1">
+					<a class="button btn pb-1 w-50" href="Controller/MissionsController/searchMissionsController.php?idTypeActivite=1">
+						<h3>Une mission humanitaire avec Human Helps:</h3>
+					</a>
+				</div>
+	
+				<div class="carousel-inner w-100">
+					<?php
+					if (!empty($allMissions)) {
+						foreach ($allMissions as $key => $mission) 
+						{
+						?> 
+							<div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
+								<div class="card cardListeMission col-10 col-md-6 p-0">
+									<img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">
+									<div class="card-body">
+										<h5 class="card-title">Titre : <?php echo utf8_encode($mission->getTitreMission()); ?></h5>
+										<p class="card-text">Type d'activité : <?php echo utf8_encode($newtypeActivite->searchNameById($mission->getIdTypeActivite())); ?></p>
+										<p class="card-text">Pays : <?php echo $newPays->searchNameById($mission->getIdPays()); ?> (<?php echo $newPays->searchContinentById($mission->getIdPays()); ?>)</p>
+										<p class="card-text">Date de début : <?php echo $mission->getDateDebut()->format('d-m-Y'); ?></p>
+									</div>
+									<div class="card-footer">
+										<a href="Controller/MissionsController/detailsMissionController.php?idMission=<?php echo $mission->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+									</div>
 								</div>
 							</div>
+						<?php  
+						} 
+						?>
+						<div class="row my-4">
+							<a class="carousel-control-prev" href="#carouselMissionAccueil" role="button" data-slide="next">
+								<span class="carousel-control-prev-icon"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carouselMissionAccueil" role="button" data-slide="prev">
+								<span class="carousel-control-next-icon"></span>
+								<span class="sr-only">Next</span>
+							</a>
 						</div>
-					<?php  
-					} 
+					<?php
+					}else 
+					{	
 					?>
-					<div class="row my-4">
-						<a class="carousel-control-prev" href="#carouselMissionAccueil" role="button" data-slide="next">
-							<span class="carousel-control-prev-icon"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#carouselMissionAccueil" role="button" data-slide="prev">
-							<span class="carousel-control-next-icon"></span>
-							<span class="sr-only">Next</span>
-						</a>
+						<div class="my-5 py-5 text-center">Pas de mission humanitaire pour le moment</div>
+					<?php
+					}
+					?>
 					</div>
-				<?php
-				}else 
-				{	
-				?>
-					<div class="my-5 py-5 text-center">Pas de mission humanitaire pour le moment</div>
-				<?php
-				}
-				?>
 				</div>
 			</div>
 		</div>
 	</div>
-	</div>
+	
 <?php
 }
 ?>

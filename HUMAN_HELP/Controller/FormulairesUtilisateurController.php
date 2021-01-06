@@ -3,8 +3,6 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceUtilisateur.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationAccueil.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Presentation/PresentationUtilisateur.php");
 
-
-
 /************************** AJOUT UTILISATEUR ***************************/
 if(!empty($_GET['action']) && isset($_GET['action']))
 {

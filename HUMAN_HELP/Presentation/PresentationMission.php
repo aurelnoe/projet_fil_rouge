@@ -112,7 +112,7 @@ function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null,$etablis
   <?php
 }
 
-function listeMissions($medecines=null,$donations=null,$enseignements=null,$constructions=null,$traductions=null,$newtypeActivite=null,$newPays=null)
+function listeMissions($medecines=null,$donations=null,$enseignements=null,$constructions=null,$traductions=null,$newtypeActivite=null,$newPays=null,$professionnel)
 {
     echo afficher();
     ?> 
@@ -123,12 +123,18 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
         include("../../Templates/Bases/navbar.php");
         ?>
         <div class="container p-0">
-        
-            <div class="col-12 col-md-4 m-auto">
-                <a href="/HUMAN_HELP//Controller/MissionsController/listeMissionProController.php?idUtilisateur=" class="btn btnGreen w-100 my-2">
-                    Consulter mes missions
-                </a>
-            </div>
+
+            <?php
+            if($professionnel)
+            {   ?>
+                <div class="col-12 col-md-4 m-auto">
+                    <a href="/HUMAN_HELP//Controller/MissionsController/listeMissionProController.php?idUtilisateur=" class="btn btnGreen w-100 my-2">
+                        Consulter mes missions
+                    </a>
+                </div>
+            <?php
+            }
+            ?>
             
             <div class="col-12 col-md-4 m-auto">
                 <div class="btn-group btnTypeFormation w-100 my-2">
@@ -492,7 +498,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
 <?php
 }
 
-function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeActivite=null,$newEtablissement=null)
+function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeActivite=null,$newEtablissement=null,$professionnel)
 {
     echo afficher();
     ?> 
@@ -504,7 +510,7 @@ function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeAct
         ?>
         <div class="container justify-content p-4">
 
-            <h2 class="text-center my-2 pb-3 pt-3">Détails de la mission</h2>
+            <h2 class="text-center my-3 py-2">Détails de la mission</h2>
 
             <hr class="mb-4 mt-2">
             <!-- section image details -->
@@ -595,18 +601,31 @@ function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeAct
                     </a>
                 </div>
             </div>
-            <div class="row mb-4">
-                <div class="col-12 col-md-3 my-2">
-                    <a href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=update&idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary w-100">
-                        Modifier
-                    </a>
+            <?php
+            if ($professionnel) 
+            {
+            ?>
+                <div class="row mb-4">
+                    <div class="col-12 col-md-4 my-2">
+                        <a href="/HUMAN_HELP/Controller/MissionsController/formulairesMissionController.php?action=update&idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary w-100">
+                            Modifier
+                        </a>
+                    </div>
+                    <form class="col-12 offset-md-4 col-md-4 my-2" action="?action=delete" method="POST">
+                        <button type="submit" class="btn btn-danger w-100">
+                            Supprimer
+                        </button>
+                    </form>
                 </div>
-                <form class="col-12 offset-md-6 col-md-3 my-2" action="?action=delete" method="POST">
-                    <button type="submit" class="btn btn-danger w-100">
-                        Supprimer
-                    </button>
-                </form>
+            <?php  
+            }
+            ?>
+            <div class="col-12 my-2 px-0">
+                <a href="/HUMAN_HELP/Controller/MissionsController/listeMissionController.php" class="btn btnGreen w-100">
+                    Retour à la liste des missions
+                </a>
             </div>
+            
         </div>
         <?php      
         include("../../Templates/Bases/footer.php") 

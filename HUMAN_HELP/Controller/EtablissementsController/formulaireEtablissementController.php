@@ -34,14 +34,21 @@ if (!empty($_GET) && isset($_GET['action']))
         $idUtilisateur = $utilisateur->getIdUtilisateur();
         $allPays = $newPays->searchAll();
         
-        $_SESSION['role'] = 'professionnel';
+        $_SESSION['role'] = 'Professionnel';
         $_SESSION['mailUtil'] = $_GET['mail'];
         $_SESSION['idUtil'] = $idUtilisateur;
 
         $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
         
-        echo formulairesEtablissement($title,null,null,$idUtilisateur,$allPays,$titleBtn,$action);
-        die;
+        if ($professionnel) 
+        {
+            echo formulairesEtablissement($title,null,null,$idUtilisateur,$allPays,$titleBtn,$action);
+            die;           
+        }
+        else {
+            header("Location: ../index.php");
+            die;
+        }
         
     }
 }
