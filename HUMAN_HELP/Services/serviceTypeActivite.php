@@ -1,5 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/DAO/TypeActiviteDAO.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
 
 class ServiceTypeActivite 
 {
@@ -13,7 +14,13 @@ class ServiceTypeActivite
     /************ Chercher tous les types d'activités*********/
     public function searchAll()
     {
-        return $this->TypeActiviteDAO->searchAll();
+        try 
+        {
+            return $this->TypeActiviteDAO->searchAll();          
+        } 
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        } 
     }
 
     /************ Chercher par ID*********/
@@ -23,8 +30,8 @@ class ServiceTypeActivite
         {          
             return $this->TypeActiviteDAO->searchById($idTypeActivite);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         } 
     }
 
@@ -35,8 +42,8 @@ class ServiceTypeActivite
         {          
             return $this->TypeActiviteDAO->searchNameById($idTypeActivite);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         } 
     }
 

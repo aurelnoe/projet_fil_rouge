@@ -6,6 +6,7 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceTypeActivite.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceEtablissement.php");
 include_once("../../Presentation/PresentationMission.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/ServiceException.php");
 
 if(!empty($_GET))
 {
@@ -16,16 +17,21 @@ if(!empty($_GET))
 
     if (isset($_GET['idMission']) && empty($_GET['action'])) 
     {
-        $mission = $serviceMission->searchById($_GET['idMission']);
-
-        $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
+        try {
+            $mission = $serviceMission->searchById($_GET['idMission']);
     
-        if ($mission->getTypeFormation() == 0) {
-            $typeFormation = 'à distance';
-        }else{
-            $typeFormation = 'sur le terrain';
+            $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
+        
+            if ($mission->getTypeFormation() == 0) {
+                $typeFormation = 'à distance';
+            }else{
+                $typeFormation = 'sur le terrain';
+            }
+            echo detailsMission($mission,$typeFormation,$newPays,$newTypeActivite,$newEtablissement,$professionnel);       
         }
-        echo detailsMission($mission,$typeFormation,$newPays,$newTypeActivite,$newEtablissement,$professionnel);
+        catch (ServiceException $se) {
+            header('Location: ../../index.php');
+        }
     }
 
     elseif(!empty($_GET['action']) && isset($_GET['action']))
@@ -60,19 +66,19 @@ if(!empty($_GET))
                 $mission->setIdPays($idPays)
                         ->setIdEtablissement($idEtablissement)
                         ->setIdTypeActivite($idTypeActivite);
-
-                $serviceMission->update($mission);
-
-                $detailsMission = $serviceMission->searchById($idMission);
+                try {
+                    $serviceMission->update($mission);
     
-                if ($detailsMission->getTypeFormation() == 0) {
-                    $typeFormation = 'à distance';
-                }else{
-                    $typeFormation = 'sur le terrain';
+                    $detailsMission = $serviceMission->searchById($idMission);
+        
+                    $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
+    
+                    echo detailsMission($detailsMission,$newPays,$newTypeActivite,$newEtablissement,$professionnel);                 
+                    die;
                 }
-                $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
-
-                echo detailsMission($detailsMission,$typeFormation,$newPays,$newTypeActivite,$newEtablissement,$professionnel);
+                catch (ServiceException $se) {
+                    header('Location: ../../index.php');
+                } 
             }
         }
     }

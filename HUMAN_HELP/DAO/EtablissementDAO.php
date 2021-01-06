@@ -1,6 +1,7 @@
 <?php
-require("C:/xampp/htdocs/HUMAN_HELP/Class/Etablissement.php");
+require_once("C:/xampp/htdocs/HUMAN_HELP/Class/Etablissement.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+require_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
 
 class EtablissementDAO 
 {
@@ -39,7 +40,7 @@ class EtablissementDAO
                    
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         } 
         finally{
             $db = null;
@@ -63,7 +64,6 @@ class EtablissementDAO
             $getTelEtablissement = $etablissement->getTelEtablissement();
             $getDateAjoutEtablissement = $etablissement->getDateAjoutEtablissement()->format('Y-m-d');
             $getIdUtilisateur = $etablissement->getIdUtilisateur();
-            //$getIdTypeActivite = $etablissement->getIdTypeActivite();
             $getIdPays = $etablissement->getIdPays();
             
             $query = "UPDATE etablissement 
@@ -94,7 +94,7 @@ class EtablissementDAO
             $stmt->execute();
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
             die;
         } 
         finally{
@@ -121,7 +121,7 @@ class EtablissementDAO
             $stmt = null;
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
             die;
         } 
         finally{
@@ -147,7 +147,7 @@ class EtablissementDAO
             return $etablissement[0];
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
             die;
         } 
         finally{
@@ -171,7 +171,7 @@ class EtablissementDAO
             return $etablissements;
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
             die;
         } 
         finally{
@@ -197,7 +197,7 @@ class EtablissementDAO
             return $etablissement[0];
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -222,7 +222,7 @@ class EtablissementDAO
             return $etablissement[0];
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;

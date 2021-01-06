@@ -28,7 +28,7 @@ function connexion($message=null,$errorCode=null)
 {
     if ($errorCode == 1081) {
         
-        echo "<div class='alert alert-danger text-center'>Code : $errorCode, Message : $message</div>";
+        echo "<div class='alert alert-danger text-center'>$message</div>";
     }
     echo afficher();
     ?> 

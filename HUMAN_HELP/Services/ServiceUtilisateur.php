@@ -1,5 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/DAO/UtilisateurDAO.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
 
 class ServiceUtilisateur 
 {
@@ -12,14 +13,14 @@ class ServiceUtilisateur
 
     public function add($utilisateur)
     {
-        // try {
+        try {
             $hash = password_hash($utilisateur->getPasswordUtil(), PASSWORD_DEFAULT);
             $utilisateur->setPasswordUtil($hash);
             return $this->utilisateurDAO->add($utilisateur);
-        // } 
-        // catch (PDOException $e) {
-        //     throw new PDOException($e->getMessage(),$e->getCode());
-        // }      
+        } 
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }       
     }
 
     public function update($utilisateur)
@@ -27,9 +28,9 @@ class ServiceUtilisateur
         try {
             return $this->utilisateurDAO->update($utilisateur);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        }     
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }    
     }
 
     public function delete($idUtilisateur)
@@ -37,9 +38,9 @@ class ServiceUtilisateur
         try {
             $this->utilisateurDAO->delete($idUtilisateur);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        }        
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }       
     }
 
     public function searchAll()
@@ -47,9 +48,9 @@ class ServiceUtilisateur
         try {
             return $this->utilisateurDAO->searchAll();
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        }    
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }   
     }
 
     /************ PAGE DETAIL Utilisateur *********/
@@ -59,9 +60,9 @@ class ServiceUtilisateur
         {          
             return $this->utilisateurDAO->searchById($idUtilisateur);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        } 
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }
     }
 
     /************ CONNECTION *********/
@@ -71,9 +72,9 @@ class ServiceUtilisateur
         {          
             return $this->utilisateurDAO->searchUserbyMail($email);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        } 
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }
     }
 
     /**

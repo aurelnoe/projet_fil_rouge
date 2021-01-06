@@ -1,5 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/DAO/MissionDAO.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
 
 class ServiceMission 
 {
@@ -15,8 +16,8 @@ class ServiceMission
         try {
             return $this->missionDAO->add($mission);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }      
     }
 
@@ -25,8 +26,8 @@ class ServiceMission
         try {
             return $this->missionDAO->update($mission);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }     
     }
 
@@ -35,8 +36,8 @@ class ServiceMission
         try {
             $this->missionDAO->delete($idMission);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }        
     }
 
@@ -45,8 +46,8 @@ class ServiceMission
         try {
             return $this->missionDAO->searchAll();
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }    
     }
 
@@ -57,8 +58,8 @@ class ServiceMission
         {          
             return $this->missionDAO->searchById($idMission);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         } 
     }
 
@@ -68,8 +69,8 @@ class ServiceMission
         try {
             return $this->missionDAO->searchMissionByPro($idEtablissement);      
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }  
     }
     /************ PAGE MISSION PAR TYPE ACTIVITE ***********/
@@ -78,8 +79,8 @@ class ServiceMission
         try {
             return $this->missionDAO->searchMissionByTypeActivite($idTypeActivite);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         } 
     }
 
@@ -88,8 +89,8 @@ class ServiceMission
         try {
             return $this->missionDAO->searchMissionByPays($idPays);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         } 
     }
 
@@ -98,8 +99,8 @@ class ServiceMission
         try {
             return $this->missionDAO->searchMissionByTypeFormation($typeFormation);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         } 
     }
 

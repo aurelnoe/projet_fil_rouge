@@ -1,5 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/DAO/EtablissementDAO.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
 
 class ServiceEtablissement 
 {
@@ -15,8 +16,8 @@ class ServiceEtablissement
         try {
             return $this->etablissementDAO->add($etablissement);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }      
     }
 
@@ -25,8 +26,8 @@ class ServiceEtablissement
         try {
             return $this->etablissementDAO->update($etablissement);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }     
     }
 
@@ -35,8 +36,8 @@ class ServiceEtablissement
         try {
             $this->etablissementDAO->delete($idEtablissement);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }       
     }
 
@@ -45,8 +46,8 @@ class ServiceEtablissement
         try {
             return $this->etablissementDAO->searchAll();
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }  
     }
 
@@ -56,8 +57,8 @@ class ServiceEtablissement
         try {
             return $this->etablissementDAO->searchById($idEtablissement);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }        
     }
 
@@ -66,8 +67,8 @@ class ServiceEtablissement
         try {
             return $this->etablissementDAO->searchNameById($idEtablissement);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }        
     }
 
@@ -76,8 +77,8 @@ class ServiceEtablissement
         try {
             return $this->etablissementDAO->searchEtablissementByIdUtilisateur($idUtilisateur);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
         }        
     }
 }

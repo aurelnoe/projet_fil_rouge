@@ -1,6 +1,7 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Class/TypeActivite.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+require_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
 
 
 class TypeActiviteDAO extends BddConnect 
@@ -22,9 +23,12 @@ class TypeActiviteDAO extends BddConnect
             
             return $typesActivites;
         } 
-        catch (PDOException $e) {
-            print "Erreur !: " . $e->getMessage() . "<br/>";
-            die();
+        catch (PDOException $e){
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 
@@ -40,13 +44,12 @@ class TypeActiviteDAO extends BddConnect
             $stmt->bindParam(":idTypeActivite", $idTypeActivite);
             $stmt->execute();       
 
-            $typeActivite = $stmt->fetchAll(PDO::FETCH_CLASS,'TypeActivite');////MYSQLI FETCH ARRAY
-            //varDump($mission);
+            $typeActivite = $stmt->fetchAll(PDO::FETCH_CLASS,'TypeActivite');
 
             return $typeActivite[0];
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -67,13 +70,12 @@ class TypeActiviteDAO extends BddConnect
             $stmt->bindParam(":idTypeActivite", $idTypeActivite);
             $stmt->execute();       
 
-            $typeActivite = $stmt->fetchAll(PDO::FETCH_CLASS,'TypeActivite');////MYSQLI FETCH ARRAY
-            //varDump($mission);
+            $typeActivite = $stmt->fetchAll(PDO::FETCH_CLASS,'TypeActivite');
 
             return $typeActivite[0];
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;

@@ -1,5 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/DAO/PaysDAO.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
 
 class ServicePays 
 {
@@ -23,9 +24,9 @@ class ServicePays
         {          
             return $this->paysDAO->searchById($idPays);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        } 
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }  
     }
 
     /************ Chercher Nom par ID*********/
@@ -35,9 +36,9 @@ class ServicePays
         {          
             return $this->paysDAO->searchNameById($idPays);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        } 
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }  
     }
     /************ Chercher ID par NOM*********/
     public function searchIdByName($namePays)
@@ -46,9 +47,9 @@ class ServicePays
         {          
             return $this->paysDAO->searchNameById($namePays);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        } 
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }  
     }
     /************ Chercher continent par ID*********/
     public function searchContinentById($idPays)
@@ -57,9 +58,9 @@ class ServicePays
         {          
             return $this->paysDAO->searchContinentById($idPays);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        } 
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }  
     }
 
     /**

@@ -1,26 +1,18 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Mission.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+require_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
 
 class MissionDAO extends BddConnect
 {
-    public function isAdmin($sessionProfil)
-    {
-        $admin = false;
-        if ( $sessionProfil=='admin') {
-            return $admin = true;
-        }
-    }
 
     /******************* AJOUTE MISSION *****************************/
-
     public function add(Mission $mission)
     {   
         try {
             $newConnect = new BddConnect();
             $db = $newConnect->connexion(); 
 
-            //$getIdMission = $mission->getIdMission();
             $getTitreMission = $mission->getTitreMission();
             $getDescriptionMission = $mission->getDescriptionMission();
             $getTypeFormation = $mission->getTypeFormation();
@@ -50,7 +42,7 @@ class MissionDAO extends BddConnect
             $stmt->execute();      
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -109,7 +101,7 @@ class MissionDAO extends BddConnect
             $stmt->execute();
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -132,7 +124,7 @@ class MissionDAO extends BddConnect
             $stmt->execute();
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -156,7 +148,7 @@ class MissionDAO extends BddConnect
             return $missions;
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -183,7 +175,7 @@ class MissionDAO extends BddConnect
             return $mission[0];
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -208,7 +200,7 @@ class MissionDAO extends BddConnect
             return $missions;
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -232,7 +224,7 @@ class MissionDAO extends BddConnect
             return $missions;
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -258,7 +250,7 @@ class MissionDAO extends BddConnect
             return $missions;
         }       
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -282,7 +274,7 @@ class MissionDAO extends BddConnect
             return $missions;
         }       
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;

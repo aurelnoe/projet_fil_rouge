@@ -498,7 +498,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
 <?php
 }
 
-function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeActivite=null,$newEtablissement=null,$professionnel)
+function detailsMission($mission,$newPays=null,$newTypeActivite=null,$newEtablissement=null,$professionnel)
 {
     echo afficher();
     ?> 
@@ -523,7 +523,7 @@ function detailsMission($mission,string $typeFormation,$newPays=null,$newTypeAct
                     <ul class="liDetailsMission">
                         <li><strong>Titre de la mission :</strong> <?php echo $mission->getTitreMission(); ?></li>
                         <li><strong>Type d'activité :</strong> <?php echo utf8_encode($newTypeActivite->searchNameById($mission->getIdTypeActivite())); ?></li>
-                        <li><strong>Mission :</strong> <?php echo $typeFormation; ?></li>
+                        <li><strong>Mission :</strong> <?php echo ($mission->getTypeFormation() == 0) ? 'à distance' : 'sur le terrain'; ?></li>
                         <li><strong>Pays :</strong> <?php echo $newPays->searchNameById($mission->getIdPays()); ?> (<?php echo $newPays->searchContinentById($mission->getIdPays()); ?>)</li>
                         <li><strong>Organisateur :</strong> <?php echo utf8_encode($newEtablissement->searchNameById($mission->getIdEtablissement())); ?></li>
                         <li><strong>Durée de la mission :</strong> <?php echo $mission->getDuree(); ?> jours</li>

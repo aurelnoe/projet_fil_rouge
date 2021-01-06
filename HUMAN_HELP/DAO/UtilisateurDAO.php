@@ -1,6 +1,7 @@
 <?php
-require("C:/xampp/htdocs/HUMAN_HELP/Class/Utilisateur.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Utilisateur.php");
 include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+require_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
 
 class UtilisateurDAO extends BddConnect
 {
@@ -12,44 +13,40 @@ class UtilisateurDAO extends BddConnect
             $newConnect = new BddConnect();
             $db = $newConnect->connexion();
             
-             $getNomUtil = $utilisateur->getNomUtil();
-             $getPrenomUtil = $utilisateur->getPrenomUtil();           
-             $getAdresseUtil = $utilisateur->getAdresseUtil();
-             $getCodePostalUtil = $utilisateur->getCodePostalUtil();
-             $getVilleUtil = $utilisateur->getVilleUtil();
-             $getMailUtil = $utilisateur->getMailUtil();
-             $getTelUtil = $utilisateur->getTelUtil();
-             $getPasswordUtil = $utilisateur->getPasswordUtil();
-             $getDateInscriptionUtil = $utilisateur->getDateInscriptionUtil()->format('Y-m-d');
-             $getIdRole = $utilisateur->getIdRole();
-             $getIdPays = $utilisateur->getIdPays();
-             
-             $query ="INSERT INTO utilisateur VALUES (NULL,:nomUtil,:prenomUtil,:adresseUtil,:codePostalUtil,
-                                                    :villeUtil,:mailUtil,:telUtil,:passwordUtil,
-                                                    :dateInscriptionUtil,:idRole,:idPays)";
+            $getNomUtil = $utilisateur->getNomUtil();
+            $getPrenomUtil = $utilisateur->getPrenomUtil();           
+            $getAdresseUtil = $utilisateur->getAdresseUtil();
+            $getCodePostalUtil = $utilisateur->getCodePostalUtil();
+            $getVilleUtil = $utilisateur->getVilleUtil();
+            $getMailUtil = $utilisateur->getMailUtil();
+            $getTelUtil = $utilisateur->getTelUtil();
+            $getPasswordUtil = $utilisateur->getPasswordUtil();
+            $getDateInscriptionUtil = $utilisateur->getDateInscriptionUtil()->format('Y-m-d');
+            $getIdRole = $utilisateur->getIdRole();
+            $getIdPays = $utilisateur->getIdPays();
+            
+            $query ="INSERT INTO utilisateur VALUES (NULL,:nomUtil,:prenomUtil,:adresseUtil,:codePostalUtil,
+                                                :villeUtil,:mailUtil,:telUtil,:passwordUtil,
+                                                :dateInscriptionUtil,:idRole,:idPays)";
 
-             $stmt = $db->prepare($query);
+            $stmt = $db->prepare($query);
 
-             $stmt->bindParam(':nomUtil', $getNomUtil);
-             $stmt->bindParam(':prenomUtil', $getPrenomUtil);
-             $stmt->bindParam(':adresseUtil', $getAdresseUtil);
-             $stmt->bindParam(':codePostalUtil', $getCodePostalUtil);
-             $stmt->bindParam(':villeUtil', $getVilleUtil);
-             $stmt->bindParam(':mailUtil', $getMailUtil);
-             $stmt->bindParam(':telUtil', $getTelUtil);
-             $stmt->bindParam(':passwordUtil', $getPasswordUtil);
-             $stmt->bindParam(':dateInscriptionUtil', $getDateInscriptionUtil);
-             $stmt->bindParam(':idRole', $getIdRole);
-             $stmt->bindParam(':idPays', $getIdPays);
-             
-             $stmt->execute();
-
-             $db = null;
-             $stmt = null;
+            $stmt->bindParam(':nomUtil', $getNomUtil);
+            $stmt->bindParam(':prenomUtil', $getPrenomUtil);
+            $stmt->bindParam(':adresseUtil', $getAdresseUtil);
+            $stmt->bindParam(':codePostalUtil', $getCodePostalUtil);
+            $stmt->bindParam(':villeUtil', $getVilleUtil);
+            $stmt->bindParam(':mailUtil', $getMailUtil);
+            $stmt->bindParam(':telUtil', $getTelUtil);
+            $stmt->bindParam(':passwordUtil', $getPasswordUtil);
+            $stmt->bindParam(':dateInscriptionUtil', $getDateInscriptionUtil);
+            $stmt->bindParam(':idRole', $getIdRole);
+            $stmt->bindParam(':idPays', $getIdPays);
+            
+            $stmt->execute();
         }
         catch (PDOException $e){
-            var_dump($utilisateur);
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -58,66 +55,64 @@ class UtilisateurDAO extends BddConnect
     }
 
     //********************FONCTION MODIDIER UN UTILISATEUR************************ */
-
     public function update(Utilisateur $utilisateur){
+        try
+        {
+            $newConnect = new BddConnect();
+            $db = $newConnect->connexion();
 
-            try
-            {
-                $newConnect = new BddConnect();
-                $db = $newConnect->connexion();
+            $getIdUtilisateur = $utilisateur->getIdUtilisateur();
+            $getNomUtil = $utilisateur->getNomUtil();
+            $getPrenomUtil = $utilisateur->getPrenomUtil();           
+            $getAdresseUtil = $utilisateur->getAdresseUtil();
+            $getCodePostalUtil = $utilisateur->getCodePostalUtil();
+            $getVilleUtil = $utilisateur->getVilleUtil();
+            $getMailUtil = $utilisateur->getMailUtil();
+            $getTelUtil = $utilisateur->getTelUtil();
+            $getPasswordUtil = $utilisateur->getPasswordUtil();
+            $getDateInscriptionUtil = $utilisateur->getDateInscriptionUtil()->format('Y-m-d');
+            $getIdRole = $utilisateur->getIdRole();
+            $getIdPays = $utilisateur->getIdPays();
 
-                $getIdUtilisateur = $utilisateur->getIdUtilisateur();
-                $getNomUtil = $utilisateur->getNomUtil();
-                $getPrenomUtil = $utilisateur->getPrenomUtil();           
-                $getAdresseUtil = $utilisateur->getAdresseUtil();
-                $getCodePostalUtil = $utilisateur->getCodePostalUtil();
-                $getVilleUtil = $utilisateur->getVilleUtil();
-                $getMailUtil = $utilisateur->getMailUtil();
-                $getTelUtil = $utilisateur->getTelUtil();
-                $getPasswordUtil = $utilisateur->getPasswordUtil();
-                $getDateInscriptionUtil = $utilisateur->getDateInscriptionUtil()->format('Y-m-d');
-                $getIdRole = $utilisateur->getIdRole();
-                $getIdPays = $utilisateur->getIdPays();
+            $query ="UPDATE utilisateur  
+            SET nomUtil = :nomUtil,
+                prenomUtil = :prenomUtil,
+                adresseUtil = :adresseUtil,
+                codePostalUtil = :codePostalUtil,
+                villeUtil = :villeUtil,
+                mailUtil = :mailUtil,
+                telUtil = :telUtil,
+                passwordUtil = :passwordUtil,
+                dateInscriptionUtil = :dateInscriptionUtil,
+                idRole = :idRole,
+                idPays = :idPays
+            WHERE idUtilisateur = :idUtilisateur";
 
-                $query ="UPDATE utilisateur  
-                SET nomUtil = :nomUtil,
-                    prenomUtil = :prenomUtil,
-                    adresseUtil = :adresseUtil,
-                    codePostalUtil = :codePostalUtil,
-                    villeUtil = :villeUtil,
-                    mailUtil = :mailUtil,
-                    telUtil = :telUtil,
-                    passwordUtil = :passwordUtil,
-                    dateInscriptionUtil = :dateInscriptionUtil,
-                    idRole = :idRole,
-                    idPays = :idPays
-                WHERE idUtilisateur = :idUtilisateur";
+            $stmt = $db->prepare($query);
 
-                $stmt = $db->prepare($query);
-
-                $stmt->bindParam(':nomUtil', $getNomUtil);
-                $stmt->bindParam(':prenomUtil', $getPrenomUtil);
-                $stmt->bindParam(':adresseUtil', $getAdresseUtil);
-                $stmt->bindParam(':codePostalUtil', $getCodePostalUtil);
-                $stmt->bindParam(':villeUtiil', $getVilleUtil);
-                $stmt->bindParam(':mailUtil', $getMailUtil);
-                $stmt->bindParam(':telUtil', $getTelUtil);
-                $stmt->bindParam(':passwordUtil', $getPasswordUtil);
-                $stmt->bindParam(':dateInscriptionUtil', $getDateInscriptionUtil);
-                $stmt->bindParam(':idRole', $getIdRole);
-                $stmt->bindParam(':idPays', $getIdPays);
-                $stmt->bindParam(':idUtilisateur', $getIdUtilisateur);
-
-                $db = null;
-                $stmt = null;
-            }
-            catch (PDOException $e){
-                echo 'echec de la connexion : '.$e->getMessage();
-            }
+            $stmt->bindParam(':nomUtil', $getNomUtil);
+            $stmt->bindParam(':prenomUtil', $getPrenomUtil);
+            $stmt->bindParam(':adresseUtil', $getAdresseUtil);
+            $stmt->bindParam(':codePostalUtil', $getCodePostalUtil);
+            $stmt->bindParam(':villeUtiil', $getVilleUtil);
+            $stmt->bindParam(':mailUtil', $getMailUtil);
+            $stmt->bindParam(':telUtil', $getTelUtil);
+            $stmt->bindParam(':passwordUtil', $getPasswordUtil);
+            $stmt->bindParam(':dateInscriptionUtil', $getDateInscriptionUtil);
+            $stmt->bindParam(':idRole', $getIdRole);
+            $stmt->bindParam(':idPays', $getIdPays);
+            $stmt->bindParam(':idUtilisateur', $getIdUtilisateur);
+        }
+        catch (PDOException $e){
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }
     }
 
     //*********************FONCTION SUPPRIMER UTILISATEUR**************** */
-
     public function delete($idUtilisateur)
     {
         try
@@ -129,13 +124,13 @@ class UtilisateurDAO extends BddConnect
             $stmt = $db->prepare($query);
             $stmt->bindParam(":idUtilisateur", $idUtilisateur);
             $stmt->execute();
-
-            $db = null;
-            $stmt = null;
         }
         catch (PDOException $e){
-            print "Erreur !: " . $e->getMessage(). "<br/>";
-            die();
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 
@@ -153,15 +148,15 @@ class UtilisateurDAO extends BddConnect
             $stmt = $db->prepare($query);
             $stmt->execute();
             $utilisateurs = $stmt->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
-    
-            $db = null;
-            $stmt = null;
             
             return $utilisateurs;
         }
-        catch (PDOException $e) {
-            print "Erreur !: " . $e->getMessage() . "<br/>";
-            die();
+        catch (PDOException $e){
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 
@@ -181,9 +176,12 @@ class UtilisateurDAO extends BddConnect
 
             return $utilisateur[0];
         }
-        catch (PDOException $e) {
-            print "erreur !: " . $e->getMessage() . "<br/>";
-            die();
+        catch (PDOException $e){
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 
@@ -201,12 +199,16 @@ class UtilisateurDAO extends BddConnect
             $stmt->execute();
             $utilisateur = $stmt->fetchAll(PDO::FETCH_CLASS,'Utilisateur');
             if (!($utilisateur)) {
-                throw new PDOException("Veuillez saisir un identifiant ou un mot de passe correct",1081);
+                throw new DAOException("Veuillez saisir un identifiant ou un mot de passe correct",1081);
             }
             return $utilisateur[0];
         }
-        catch (mysqli_sql_exception $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
+        catch (PDOException $e){
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
 }

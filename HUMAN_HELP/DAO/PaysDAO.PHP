@@ -1,6 +1,7 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Pays.php");
 require_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+require_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
 
 class PaysDAO extends BddConnect
 {
@@ -28,7 +29,7 @@ class PaysDAO extends BddConnect
              $stmt->execute();
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -62,7 +63,7 @@ class PaysDAO extends BddConnect
              $stmt->bindParam(':continent', $getContinent);
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -85,7 +86,7 @@ class PaysDAO extends BddConnect
             $stmt->execute();
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -111,7 +112,7 @@ class PaysDAO extends BddConnect
             return $pays;
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -138,7 +139,7 @@ class PaysDAO extends BddConnect
             return $pays[0];
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -163,7 +164,7 @@ class PaysDAO extends BddConnect
             return $pays[0];
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -188,7 +189,7 @@ class PaysDAO extends BddConnect
             return $pays;
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -213,7 +214,7 @@ class PaysDAO extends BddConnect
             return $pays[0];
         }
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;

@@ -1,7 +1,7 @@
 <?php
-
-require("C:/xampp/htdocs/HUMAN_HELP/Class/Role.php");
-require("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+require_once("C:/xampp/htdocs/HUMAN_HELP/Class/Role.php");
+require_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
+require_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
 
 class RoleDAO extends BddConnect 
 {
@@ -21,7 +21,7 @@ class RoleDAO extends BddConnect
             return $roles;
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
@@ -47,7 +47,7 @@ class RoleDAO extends BddConnect
             return $role[0];
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
