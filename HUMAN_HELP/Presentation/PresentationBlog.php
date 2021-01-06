@@ -25,7 +25,7 @@ function afficher()
 <?php
 }
 
-function formulaireArticle(string $title, $article, string $titleBtn, string $action, int $idArticle = null)
+function formulaireArticle(string $title, $article=null, string $titleBtn, string $action, int $idArticle = null)
 {
     echo afficher();
 ?>
@@ -135,9 +135,11 @@ function listeArticle($articles)
 
                     <div class="card-footer text-center w-100">
                         <h4 class="card-title"><?php echo $article->getTitreArticle() ?></h4>
-                        <div class="m-auto">
+                        <div class="m-auto my-1">
                             <a href="/HUMAN_HELP/Controller/BlogController/detailsBlogController.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btnGreen w-50">Lire l'article</a>
-                            <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-danger w-50">Supprimer</a>
+                        </div>
+                        <div class="m-auto">
+                        <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-danger w-50">Supprimer</a>
                         </div>
                     </div>
                 </div>
@@ -211,7 +213,7 @@ function detailArticle($article,$avis)
             </div> 
             <?php echo FormulaireAvis($article->getIdArticle()); 
 
-                echo listeAvis($avis);
+                echo listeAvis($avis,$article->getIdArticle());
             
             
             ?>
@@ -234,7 +236,7 @@ function FormulaireAvis(int $idArticle)
 
     <h2 class="text-center my-2 pb-2">Commenter l'article</h2>
 
-        <form class="col-5 offset-3" action="/HUMAN_HELP//Controller/AvisController/listeAvisController.php?action=add" method="POST">
+        <form class="col-5 offset-3" action="/HUMAN_HELP//Controller/AvisController/listeAvisController.php?action=add&idArticle=<?php echo $idArticle; ?>" method="POST">
         <input type="hidden" name="idArticle" value="<?php echo $idArticle; ?>">
         <input type="hidden" name="auteur" value="TestAuteur2">
         <input type="hidden" name="dateCommentaire" value="<?php echo date("F j, Y, g:i a");?>">
@@ -246,11 +248,13 @@ function FormulaireAvis(int $idArticle)
     </div>
 <?php
 }
-function listeAvis($avis)
+function listeAvis($avis,$idArticle)
 {
 
 ?> 
-<h1>Commentaires : </h1>
+<?php if(!empty($avis)){?>
+<h1 style="font-size: 24px;">Commentaires : </h1>
+<?php } ?>
     <div>
         <?php foreach ($avis as $commentaire){?>
 
@@ -258,7 +262,7 @@ function listeAvis($avis)
                 <p><span style="font-weight: bold;"> De <?php echo $commentaire->getAuteur(); ?> :</span> <?php echo $commentaire->getTemoignage(); ?> . </br> <span style="font-size:12px;"> Le <?php echo $commentaire->getDateCommentaire()->format('d-m-Y'); ?></span> </p>
             </div>
             <div>
-            <a href="/HUMAN_HELP/Controller/AvisController/listeAvisController.php?action=delete&idAvis=<?php echo $commentaire->getIdAvis(); ?>" class="btn btn-danger w-25">Supprimer</a>
+            <a href="/HUMAN_HELP/Controller/AvisController/listeAvisController.php?action=delete&idAvis=<?php echo $commentaire->getIdAvis(); ?>&idArticle=<?php echo $idArticle; ?>" class="btn btn-danger w-25">Supprimer</a>
             </div>
 
             <hr class="my-4">

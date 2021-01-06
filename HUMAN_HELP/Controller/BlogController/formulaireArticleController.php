@@ -24,10 +24,11 @@ if (isset($_GET['action']))
         
     } 
     else if ($_GET['action'] == 'add') {
+        
         $title = "Ajouter un article";
         $titleBtn = "Ajouter l'article";
         $action = 'add';
-        echo formulaireArticle($title,$article,$titleBtn,$action);
+        echo formulaireArticle($title,null,$titleBtn,$action);
         
     }
 }

@@ -1,5 +1,6 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceAvis.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
 include_once("../../Presentation/PresentationBlog.php");
 
 
@@ -63,14 +64,28 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
         if (!empty($_GET['idAvis'])) {
             $delete = new ServiceAvis();
             $delete->delete($_GET['idAvis']);
+
+            $service = new ServiceBlog(); 
+            $article = $service->searchById($_GET['idArticle']);
+            $avisService = new ServiceAvis(); 
+            $avis = $avisService->searchByIdArticle($_GET['idArticle']);
+    
+    echo detailArticle($article,$avis);
         }
     }
 }
 
 /******************************************** AFFICHER TOUS LES AVIS ***********************************************/
     
-$service = new ServiceAvis();
-$avis = $service->searchALL();
+// $service = new ServiceAvis();
+// $avis = $service->searchALL();
 
 
-echo listeAvis($avis);
+// echo listeAvis($avis);
+    $service = new ServiceBlog(); 
+    $article = $service->searchById($_GET['idArticle']);
+    
+    $avisService = new ServiceAvis(); 
+    $avis = $avisService->searchByIdArticle($_GET['idArticle']);
+    
+    echo detailArticle($article,$avis);
