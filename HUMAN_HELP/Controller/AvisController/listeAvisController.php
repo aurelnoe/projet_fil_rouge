@@ -36,8 +36,9 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
 
        
         /************************** MODIFIE AVIS ***************************/
-        elseif ($_GET['action'] == 'update' && isset($_POST['idArticle'])) 
+        elseif ($_GET['action'] == 'update' && isset($_POST['idAvis'])) 
         { 
+            
             $idAvis = htmlentities($_POST['idAvis']);
             $auteur = utf8_decode(htmlentities($_POST['auteur']));
             $temoignage = htmlentities($_POST['temoignage']);
@@ -55,7 +56,13 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
                     ->setIdArticle($idArticle);
 
             $newUpdate = new ServiceAvis();
-            $newUpdate->update($avis); //
+            $newUpdate->update($avis); 
+
+            $service = new ServiceBlog(); 
+            $article = $service->searchById($_GET['idArticle']);
+           
+    
+            echo detailArticle($article,$avis);
 
         }
     }
@@ -70,7 +77,7 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
             $avisService = new ServiceAvis(); 
             $avis = $avisService->searchByIdArticle($_GET['idArticle']);
     
-    echo detailArticle($article,$avis);
+            echo detailArticle($article,$avis);
         }
     }
 }

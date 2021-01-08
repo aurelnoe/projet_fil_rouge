@@ -1,6 +1,7 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceAvis.php");
-// include_once("../../Presentation/PresentationAvis.php");
+include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
+include_once("../../Presentation/PresentationBlog.php");
 
 if (isset($_GET['action'])) 
 {
@@ -12,21 +13,27 @@ if (isset($_GET['action']))
         // }
         $newAvis = new ServiceAvis();
         $avis = $newAvis->searchById($_GET['idAvis']);
-        
-        $title = 'Modifier commentaire';
-        $titleBtn = 'Modifier le commentaire';
-        $action = 'update';
-        $idAvis = $_GET['idAvis'];
 
+        $newArticle = new ServiceBlog();
+        $article = $newArticle->searchById($_GET['idArticle']);
         
+        var_dump($avis);
+        // $title = 'Modifier commentaire';
+        // $titleBtn = 'Modifier le commentaire';
+        // $action = 'update';
+        $idArticle = $_GET['idArticle'];
+        $idAvis = $_GET['idAvis'];
+        $temoignage=$avis->getTemoignage();
+
+        echo FormulaireAvis($idArticle,$temoignage);
         die;
     } 
-    else if ($_GET['action'] == 'add') {
-        $title = "Ajout d'un commentaire";
-        $titleBtn = 'ajouter le commentaire';
-        $action = 'add';
+    // else if ($_GET['action'] == 'add') {
+    //     $title = "Ajout d'un commentaire";
+    //     $titleBtn = 'ajouter le commentaire';
+    //     $action = 'add';
        
-
-        die;
-    }
+    //     echo FormulaireAvis();
+    //     die;
+    // }
 }

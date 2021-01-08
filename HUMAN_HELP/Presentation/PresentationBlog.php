@@ -1,5 +1,5 @@
 <?php
-
+include_once("C:/xampp/htdocs/HUMAN_HELP/Controller/AvisController/formulaireAvisController.php");
 function head()
 {
 ?>
@@ -162,7 +162,7 @@ function listeArticle($articles)
 <?php
 }
 
-function detailArticle($article,$avis)
+function detailArticle($article,$avis,$temoignage=null)
 {
     echo afficher();
 ?>
@@ -211,7 +211,8 @@ function detailArticle($article,$avis)
                 <a href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=update&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-primary col-12 col-md-3 my-2 w-50">Modifier</a>
                 <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-danger col-12 col-md-3 my-2 w-50">Supprimer</a>
             </div> 
-            <?php echo FormulaireAvis($article->getIdArticle()); 
+            <?php 
+                echo FormulaireAvis($article->getIdArticle()); 
 
                 echo listeAvis($avis,$article->getIdArticle());
             
@@ -229,19 +230,19 @@ function detailArticle($article,$avis)
 <?php
 }
 
-function FormulaireAvis(int $idArticle)
+function FormulaireAvis(int $idArticle,$temoignage=null)
 {
 ?>
     <div class="container col-12 col-md-10 pt-2 my-2 border rounded">
 
     <h2 class="text-center my-2 pb-2">Commenter l'article</h2>
 
-        <form class="col-5 offset-3" action="/HUMAN_HELP//Controller/AvisController/listeAvisController.php?action=add&idArticle=<?php echo $idArticle; ?>" method="POST">
+        <form class="col-5 offset-3" action="/HUMAN_HELP//Controller/AvisController/listeAvisController.php?action=<?php  if ((!empty($temoignage))) { echo "update";}else{echo "add";} ?>&idArticle=<?php echo $idArticle; ?>" method="POST">
         <input type="hidden" name="idArticle" value="<?php echo $idArticle; ?>">
         <input type="hidden" name="auteur" value="TestAuteur2">
         <input type="hidden" name="dateCommentaire" value="<?php echo date("F j, Y, g:i a");?>">
         <input type="hidden" name="idUtilisateur" value="1">
-        <textarea class="col mb-3 offset-2" name="temoignage" id="temoignage" placeholder="Ecrivez votre commentaire..."></textarea>
+        <textarea class="col mb-3 offset-2" name="temoignage" id="temoignage" placeholder="Ecrivez votre commentaire..."> <?php  if ((!empty($temoignage))) { echo $temoignage;} ?></textarea>
             <button class="btn btnGreen btn-lg btn-block mb-3 offset-2" type="submit">Poster un commentaire</button>
         </form>
 
@@ -263,6 +264,7 @@ function listeAvis($avis,$idArticle)
             </div>
             <div>
             <a href="/HUMAN_HELP/Controller/AvisController/listeAvisController.php?action=delete&idAvis=<?php echo $commentaire->getIdAvis(); ?>&idArticle=<?php echo $idArticle; ?>" class="btn btn-danger w-25">Supprimer</a>
+            <a href="/HUMAN_HELP/Controller/AvisController/formulaireAvisController.php?action=update&idAvis=<?php echo $commentaire->getIdAvis(); ?>&idArticle=<?php echo $idArticle; ?>" class="btn btn-success w-25">Modifier</a>
             </div>
 
             <hr class="my-4">
