@@ -1,8 +1,8 @@
 <?php
 session_start();
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceEtablissement.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceUtilisateur.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
+include_once("../../Services/ServiceEtablissement.php");
+include_once("../../Services/ServiceUtilisateur.php");
+include_once("../../Services/ServicePays.php");
 include_once("../../Presentation/PresentationEtablissement.php");
 
 if (!empty($_GET) && isset($_GET['action'])) 

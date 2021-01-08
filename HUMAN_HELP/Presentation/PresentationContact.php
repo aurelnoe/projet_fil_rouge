@@ -1,32 +1,9 @@
-<?php
+<?php 
+require("../../Presentation/PresentationCommun.php");
 
-function head()
-{
-?>
-    <?php include("../../head.php"); ?>
-    <script src="../Assets/jquery-3.5.1.min.js"></script>
-    <script src="Assets/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
-<?php
-}
-
-function afficher()
-{
-?>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <?php echo head(); ?>
-    </head>
-<?php
-}
 function formulaireContact()
 {
-    echo afficher();
+    echo head();
 ?>
  <body>
         <?php

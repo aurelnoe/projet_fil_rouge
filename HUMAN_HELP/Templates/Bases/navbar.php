@@ -22,33 +22,12 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Controller/HeaderController/headerContr
 				</a>
 			</div>
 			<!---------------------- Barre de navigation ---------------------->
-			<nav class="navbar col text-center menuTab">
-				<a class="col-sm-12 col-lg-1 navLink" href="#">Projets</a>
-				<div class="dropdown col-sm-12 col-md-12 col-lg-2 col-xl-2">
-					<a class="col-sm-12 dropdown-toggle navLink" href="/HUMAN_HELP/Templates/missions/liste_missions.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Pays d'action
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item  " href="#">Maroc</a>
-						<a class="dropdown-item " href="#">Somalie</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item " href="#">Le plus choisi</a>
-					</div>
-				</div>
-				<!-- Types d'activités-->
-				<div class="dropdown col-sm-12 col-md-12 col-lg-2 col-xl-2">
-					<a class="col-sm-12 dropdown-toggle navLink" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Types d'activités
-					</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="#">Enseignements</a>
-						<a class="dropdown-item" href="#">Médecine</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">La plus choisie</a>
-					</div>
-				</div>
+			<nav class="navbar col text-center menuTab mx-5">
+				<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/MissionsController/listeMissionController.php">
+					Projets
+				</a>
 				<!--Comment ça marche-->
-				<a class="col-sm-12 col-lg-2 navLink" href="/HUMAN_HELP/Controller/CommentCaMarcheController.php">
+				<a class="col-sm-12 col-lg-2 navLink" href="/HUMAN_HELP/Controller/CommentCaMarcheController/CommentCaMarcheController.php">
 					Voir plus
 				</a>
 				<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/FaqController/faqController.php" tabindex="-1" aria-disabled="true">
@@ -60,13 +39,13 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Controller/HeaderController/headerContr
 				<?php
 				if (!isset($_SESSION)) {
 				?>
-					<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/FormulairesUtilisateurController.php?action=formAjout" tabindex="-1" aria-disabled="true">
+					<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/UtilisateurController/FormulairesUtilisateurController.php?action=formAjout" tabindex="-1" aria-disabled="true">
 						Inscription
 					</a>
 				<?php
 				} else {
 				?>
-					<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/FormulairesUtilisateurController.php?action=connexion" tabindex="-1" aria-disabled="true">
+					<a class="col-sm-12 col-lg-1 navLink" href="/HUMAN_HELP/Controller/UtilisateurController/FormulairesUtilisateurController.php?action=connexion" tabindex="-1" aria-disabled="true">
 						Connexion
 					</a>
 				<?php
@@ -78,7 +57,6 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Controller/HeaderController/headerContr
 		<div class="header_slogan">
 			<h1 class="slogan">Aider comme vous ne l'avez encore jamais fait</h1>
 
-
 			<div class="row justify-content-md-center search_box">
 			<div class="col-md-3 col-lg-3 btn-group">
 					<button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -86,7 +64,11 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Controller/HeaderController/headerContr
 					</button>
 					<ul class="dropdown-menu">
 						<?php foreach ($allPays as $pays) { ?>
-							<li><a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/searchMissionsController.php?idPays=<?php echo $pays->getIdPays();?>"><?php echo $pays->getNomPays(); ?></a></li>
+							<li>
+								<a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/searchMissionsController.php?idPays=<?php echo $pays->getIdPays();?>">
+									<?php echo $pays->getNomPays(); ?>
+								</a>
+							</li>
 						<?php } ?>
 					</ul>
 				</div>
@@ -96,12 +78,15 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Controller/HeaderController/headerContr
 					</button>
 					<ul class="dropdown-menu">
 						<?php foreach ($allTypeActivite as $typeActivite) { ?>
-							<li><a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/searchMissionsController.php?idTypeActivite=<?php echo $typeActivite->getIdTypeActivite(); ?>"><?php echo $typeActivite->getTypeActivite(); ?></a></li>
+							<li>
+								<a class="dropdown-item" href="/HUMAN_HELP/Controller/MissionsController/searchMissionsController.php?idTypeActivite=<?php echo $typeActivite->getIdTypeActivite(); ?>">
+									<?php echo $typeActivite->getTypeActivite(); ?>
+								</a>
+							</li>
 						<?php } ?>
 					</ul>
 				</div>
 			</div>
-
 		</div>
 	</div>
 </div>

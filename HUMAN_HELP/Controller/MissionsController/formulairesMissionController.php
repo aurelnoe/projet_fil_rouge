@@ -1,7 +1,6 @@
 <?php
 session_start(); 
-
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
+include_once("../../Services/ServiceMission.php");
 include_once("../../Services/serviceTypeActivite.php");
 require_once("../../Services/ServicePays.php");
 include_once("../../Presentation/PresentationMission.php");
@@ -10,7 +9,6 @@ if (isset($_GET['action']))
 { 
     $newTypeActivite = new ServiceTypeActivite();
     $newPays = new ServicePays();
-    
     $allPays = $newPays->searchAll();
     $allTypeActivite = $newTypeActivite->searchAll();
 

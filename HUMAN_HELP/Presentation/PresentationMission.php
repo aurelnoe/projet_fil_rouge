@@ -1,19 +1,9 @@
 <?php 
-
-function afficher()
-{
-    ?>   
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-        <?php include("../../head.php"); ?>
-        </head>   
-    <?php
-}
+require("../../Presentation/PresentationCommun.php");
 
 function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null,$etablissementPro=null,$utilisateur) 
 {
-    echo afficher();
+    echo head();
     ?> 
     <body>
         <?php
@@ -67,7 +57,7 @@ function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null,$etablis
                 ?>
                     <div class="col-12 col-md-6 col-lg-5 m-auto my-3">
                         <div class="card cardListeMissionPro mx-auto">
-                            <img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" width="100" height="320" class="card-img-top">
+                            <img src="/HUMAN_HELP\images\informatiqueAfrique.jpg" width="100" height="320" class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title">Titre : <?php echo ucfirst(utf8_encode($mission->getTitreMission())); ?></h5>
                                 <p class="card-text">Type d'activité : <?php echo utf8_encode($newTypeActivite->searchNameById($mission->getIdTypeActivite())); ?></p>
@@ -114,7 +104,7 @@ function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null,$etablis
 
 function listeMissions($medecines=null,$donations=null,$enseignements=null,$constructions=null,$traductions=null,$newtypeActivite=null,$newPays=null,$professionnel)
 {
-    echo afficher();
+    echo head();
     ?> 
     <body>
         <?php
@@ -500,7 +490,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
 
 function detailsMission($mission,$newPays=null,$newTypeActivite=null,$newEtablissement=null,$professionnel)
 {
-    echo afficher();
+    echo head();
     ?> 
     <body>
         <?php
@@ -637,7 +627,7 @@ function detailsMission($mission,$newPays=null,$newTypeActivite=null,$newEtablis
 
 function formulairesMission(string $title,$mission=null,string $titleBtn,string $action,int $idMission=null,$allPays,$allTypeActivite,int $idEtablissement=null,$newPays=null,$newTypeActivite=null)
 {
-    echo afficher();
+    echo head();
     ?>
     <body>
         <?php
@@ -761,7 +751,7 @@ function formulairesMission(string $title,$mission=null,string $titleBtn,string 
 
 function searchMission($missions,$title=null)
 {
-    echo afficher();
+    echo head();
     ?>
     <body>
         <?php
@@ -829,7 +819,7 @@ function searchMission($missions,$title=null)
 
 function formParticipationMission($mission)
 {
-    echo afficher();
+    echo head();
     ?>
     <body>
         <?php
@@ -839,7 +829,7 @@ function formParticipationMission($mission)
 
             <h1 class="my-3 text-center">Titre de la mission : <?php echo $mission->getTitreMission(); ?></h1>
 
-            <form class="needs-validation p-3" action="C:\xampp\htdocs\HUMAN_HELP\Controller\CommentCaMarcheController.php?action=participe&idMission=<?php echo $mission->getIdMission();?>" method="POST" novalidate>
+            <form class="needs-validation p-3" action="../CommentCaMarcheController.php?action=participe&idMission=<?php echo $mission->getIdMission();?>" method="POST" novalidate>
                 <h2 class="text-center my-2 pb-2">Inscrivez vous</h2>
 
                 <hr class="mb-4 mt-2 hrGreen">
@@ -884,7 +874,7 @@ function formParticipationMission($mission)
                 <button type="submit" class="btn btnGreen btn-lg btn-block mb-5">
                     Envoyer
                 </button>
-                <a href="C:\xampp\htdocs\HUMAN_HELP\Controller\CommentCaMarcheController.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary w-100">
+                <a href="../CommentCaMarcheController.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btn-primary w-100">
                     Retour aux informations
                 </a>        
             </form>

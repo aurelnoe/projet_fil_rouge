@@ -1,25 +1,15 @@
-<?php
-
-function afficher()
-{
-    ?>   
-    <!DOCTYPE html>
-    <html lang="en">
-        <head>
-        <?php include("../head.php"); ?>
-        </head>   
-    <?php
-}
+<?php 
+require("../../Presentation/PresentationCommun.php");
 
 function commentCaMarche():void
 {
-    echo afficher();
+    echo head();
     ?> 
     <body>
         <?php
-        include("../Templates/Bases/navbarDev.php");
+        include("../../Templates/Bases/navbarDev.php");
 
-        include("../Templates/Bases/navbar.php");
+        include("../../Templates/Bases/navbar.php");
         ?>
         <div class="container">
 		<h1 class="text-center">Comment ça marche ?</h1>
@@ -82,7 +72,7 @@ function commentCaMarche():void
 		?>
 	</div>
 		<?php      
-    include("../Templates/Bases/footer.php") 
+    include("../../Templates/Bases/footer.php") 
     ?>
 </body>
 </html>

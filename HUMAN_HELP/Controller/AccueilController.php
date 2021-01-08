@@ -1,10 +1,10 @@
 <?php 
 session_start();
 
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceTypeActivite.php");
+include_once("../HUMAN_HELP/Services/ServiceBlog.php");
+include_once("../HUMAN_HELP/Services/ServiceMission.php");
+include_once("../HUMAN_HELP/Services/ServicePays.php");
+include_once("../HUMAN_HELP/Services/ServiceTypeActivite.php");
 
 if (isset($_GET['action']) && $_GET['action'] == 'deconnection') {
     session_destroy();

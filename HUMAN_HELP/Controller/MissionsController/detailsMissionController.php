@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceTypeActivite.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceEtablissement.php");
+include_once("../../Services/ServiceMission.php");
+include_once("../../Services/ServicePays.php");
+include_once("../../Services/ServiceTypeActivite.php");
+include_once("../../Services/ServiceEtablissement.php");
 include_once("../../Presentation/PresentationMission.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/ServiceException.php");
+include_once("../../Exceptions/ServiceException.php");
 
 if(!empty($_GET))
 {

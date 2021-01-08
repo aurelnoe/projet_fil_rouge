@@ -1,5 +1,5 @@
 .card{
-    border: 2px outset #58b368;;
+    border: 2px outset #58b368;
 }
 
 .btn {
@@ -8,6 +8,10 @@
 
 .card hr{
     background-color: #58b368;
+}
+
+.borderGreen {
+    border: 2px outset #58b368;
 }
 
 .carousel .button {

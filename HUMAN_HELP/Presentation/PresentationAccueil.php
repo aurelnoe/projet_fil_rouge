@@ -272,7 +272,6 @@ function Accueil(array $articles=null,array $missionsADistance=null,array $allMi
 			</div>
 		</div>
 	</div>
-	
 <?php
 }
 ?>

@@ -1,7 +1,6 @@
 <?php
 include_once("Controller/AccueilController.php");
 include_once("Presentation/PresentationAccueil.php");
-
 ?>
 <!DOCTYPE html>
 <html lang="en">    

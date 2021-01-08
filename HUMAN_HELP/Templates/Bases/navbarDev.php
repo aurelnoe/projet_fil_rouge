@@ -7,16 +7,16 @@
           <a class="nav-link" href="/HUMAN_HELP/">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/HUMAN_HELP/Controller/FormulairesUtilisateurController.php?action=connexion">Connexion</a>
+          <a class="nav-link" href="/HUMAN_HELP/Controller/UtilisateurController/FormulairesUtilisateurController.php?action=connexion">Connexion</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link" href="/HUMAN_HELP/Controller/FormulairesUtilisateurController.php?action=formAjout">Inscription</a>
+          <a class="nav-link" href="/HUMAN_HELP/Controller/UtilisateurController/FormulairesUtilisateurController.php?action=formAjout">Inscription</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/HUMAN_HELP/Controller/ContactController/contactController.php">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/HUMAN_HELP/Controller/CommentCaMarcheController.php">Comment ca marche?</a>
+          <a class="nav-link" href="/HUMAN_HELP/Controller/CommentCaMarcheController/CommentCaMarcheController.php">Comment ca marche?</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/HUMAN_HELP/Controller/FaqController/faqController.php">FAQ</a>
