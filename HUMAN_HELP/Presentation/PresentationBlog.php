@@ -1,33 +1,10 @@
 <?php
 include_once("C:/xampp/htdocs/HUMAN_HELP/Controller/AvisController/formulaireAvisController.php");
-function head()
-{
-?>
-    <?php include("../../head.php"); ?>
-    <script src="../Assets/jquery-3.5.1.min.js"></script>
-    <script src="Assets/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
-<?php
-}
-
-function afficher()
-{
-?>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <?php echo head(); ?>
-    </head>
-<?php
-}
+require("../../Presentation/PresentationCommun.php");
 
 function formulaireArticle(string $title, $article=null, string $titleBtn, string $action, int $idArticle = null)
 {
-    echo afficher();
+    echo head();
 ?>
 
     <body>
@@ -98,7 +75,7 @@ function formulaireArticle(string $title, $article=null, string $titleBtn, strin
 
 function listeArticle($articles)
 {
-    echo afficher();
+    echo head();
 ?>
 
     <body>
@@ -164,7 +141,7 @@ function listeArticle($articles)
 
 function detailArticle($article,$avis,$temoignage=null)
 {
-    echo afficher();
+    echo head();
 ?>
 
     <body>
@@ -212,7 +189,7 @@ function detailArticle($article,$avis,$temoignage=null)
                 <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-danger col-12 col-md-3 my-2 w-50">Supprimer</a>
             </div> 
             <?php 
-                echo FormulaireAvis($article->getIdArticle()); 
+                echo FormulaireAvis($article->getIdArticle(),$temoignage); 
 
                 echo listeAvis($avis,$article->getIdArticle());
             
