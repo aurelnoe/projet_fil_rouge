@@ -1,10 +1,11 @@
 <?php 
+include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 session_start();
-
-include_once("../HUMAN_HELP/Services/ServiceBlog.php");
-include_once("../HUMAN_HELP/Services/ServiceMission.php");
-include_once("../HUMAN_HELP/Services/ServicePays.php");
-include_once("../HUMAN_HELP/Services/ServiceTypeActivite.php");
+//var_dump(getcwd());
+include_once(PATH_BASE . "/Services/serviceBlog.php");
+include_once(PATH_BASE . "/Services/ServiceMission.php");
+include_once(PATH_BASE . "/Services/ServicePays.php");
+include_once(PATH_BASE . "/Services/serviceTypeActivite.php");
 
 if (isset($_GET['action']) && $_GET['action'] == 'deconnection') {
     session_destroy();

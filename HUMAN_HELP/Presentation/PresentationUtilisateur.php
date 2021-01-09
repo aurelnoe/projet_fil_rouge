@@ -14,9 +14,9 @@ function connexion($message=null,$errorCode=null)
         include("../../Templates/Bases/navbar.php");
     ?>
     <body>
-        <div class="container col-12 col-md-6 col-lg-4 pt-2 my-5 borderGreen rounded">
+        <div class="container col-12 col-md-6 col-lg-4 pt-2 my-5 borderGreen rounded">  
 
-            <form class="form-signin m-auto text-center p-3 formConnexion" action="UtilisateurController.php?action=connexion" method="POST">
+            <form class="form-signin m-auto text-center p-3 formConnexion" action="/HUMAN_HELP/Controller/UtilisateurController/utilisateurController.php?action=connexion" method="POST">
 
                 <div class="logo1 m-auto"></div>
 
@@ -32,7 +32,7 @@ function connexion($message=null,$errorCode=null)
                     <input type="password" name="password" class="form-control m-auto w-75" placeholder="mot de passe" required>
                 </div>
 
-                <button class="btn btnGreen btn-block mb-4 w-75" type="submit" value="Envoyer">Connexion</button>
+                <button class="btn btnGreen btn-block mb-4 w-75" type="submit">Connexion</button>
 
             </form>
         </div>
@@ -55,7 +55,7 @@ function formulairesUtilisateur(string $title,$utilisateur=null,string $titleBtn
         ?>
         <div class="col-12 col-md-5 container my-4 borderGreen rounded">    
             
-            ​<form class="form p-4" action="UtilisateurController.php?action=<?php echo $action; ?>" method="POST" novalidate>
+            ​<form class="form p-4" action="utilisateurController.php?action=<?php echo $action; ?>" method="POST" novalidate>
                 ​<h2 class="text-center pb-2"><?php echo $title; ?></h2>
                         ​
                 <hr class="mb-4">
@@ -135,7 +135,7 @@ function formulairesUtilisateur(string $title,$utilisateur=null,string $titleBtn
                             <?php echo (($_GET['action']) == 'update') ? $newPays->searchNameById($mission->getIdPays()) : 'Choisissez...' ?>
                         </option>
                         <?php foreach ($allPays as $pays) : ?>
-                            <option value="<?php echo $pays->getIdPays(); ?>" class="list-group-item">
+                            <option value=<?php echo $pays->getIdPays(); ?> class="list-group-item">
                                 <?php echo $pays->getNomPays(); ?>
                             </option>
                         <?php endforeach ?>

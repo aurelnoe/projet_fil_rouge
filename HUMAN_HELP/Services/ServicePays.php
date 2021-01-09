@@ -1,6 +1,7 @@
 <?php
-include_once("C:/xampp/htdocs/HUMAN_HELP/DAO/PaysDAO.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
+include_once(PATH_BASE . "/DAO/PaysDAO.php");
+include_once(PATH_BASE . "/Exceptions/DAOException.php");
 
 class ServicePays 
 {

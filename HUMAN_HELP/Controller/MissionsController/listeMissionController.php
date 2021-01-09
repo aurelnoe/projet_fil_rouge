@@ -1,10 +1,10 @@
 <?php
+include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 session_start();
-
-include_once("../../Services/ServiceMission.php");
-include_once("../../Services/serviceTypeActivite.php");
-require_once("../../Services/ServicePays.php");
-include_once("../../Presentation/PresentationMission.php");
+include_once(PATH_BASE . "/Services/ServiceMission.php");
+include_once(PATH_BASE . "/Services/serviceTypeActivite.php");
+require_once(PATH_BASE . "/Services/ServicePays.php");
+include_once(PATH_BASE . "/Presentation/PresentationMission.php");
 
 $newMission = new ServiceMission();
 $newtypeActivite = new ServiceTypeActivite();

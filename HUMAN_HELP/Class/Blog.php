@@ -9,17 +9,14 @@ class Blog
     private $dateAjoutArticle;
     private $imageArticle;
    
-  
     public function __toString(){
-        $this->idArticle;
-        $this->titreArticle;
-        $this->descriptionArticle;
-        $this->dateArticle;
-        $this->dateAjoutArticle;
+        $this->idArticle .
+        $this->titreArticle .
+        $this->descriptionArticle .
+        $this->dateArticle .
+        $this->dateAjoutArticle .
         $this->imageArticle;
     }
-
-    
 
     /**
      * Get the value of idArticle

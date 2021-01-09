@@ -8,7 +8,7 @@ class Role
     public function __toString()
     {
         return
-        $this->idRole;
+        $this->idRole .
         $this->nomRole;
     }
     /**

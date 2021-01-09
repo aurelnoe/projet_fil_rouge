@@ -1,7 +1,8 @@
 <?php
-include_once("C:/xampp/htdocs/HUMAN_HELP/Class/Mission.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Class/BddConnect.php");
-require_once("C:/xampp/htdocs/HUMAN_HELP/Exceptions/DAOException.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
+include_once(PATH_BASE . "/Class/Mission.php");
+include_once(PATH_BASE . "/Class/BddConnect.php");
+require_once(PATH_BASE . "/Exceptions/DAOException.php");
 
 class MissionDAO extends BddConnect
 {

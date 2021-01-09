@@ -1,8 +1,9 @@
-<?php
-include_once("../../Services/ServiceUtilisateur.php");
-include_once("../../Services/ServicePays.php");
-include_once("../../Presentation/PresentationAccueil.php");
-include_once("../../Presentation/PresentationUtilisateur.php");
+<?php 
+include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
+include_once(PATH_BASE . "/Services/ServiceUtilisateur.php");
+include_once(PATH_BASE . "/Services/ServicePays.php");
+include_once(PATH_BASE . "/Presentation/PresentationAccueil.php");
+include_once(PATH_BASE . "/Presentation/PresentationUtilisateur.php");
 
 /************************** AJOUT UTILISATEUR ***************************/
 if(!empty($_GET['action']) && isset($_GET['action']))

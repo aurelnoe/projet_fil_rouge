@@ -118,7 +118,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
             if($professionnel)
             {   ?>
                 <div class="col-12 col-md-4 m-auto">
-                    <a href="/HUMAN_HELP//Controller/MissionsController/listeMissionProController.php?idUtilisateur=" class="btn btnGreen w-100 my-2">
+                    <a href="/HUMAN_HELP/Controller/MissionsController/listeMissionProController.php?idUtilisateur=" class="btn btnGreen w-100 my-2">
                         Consulter mes missions
                     </a>
                 </div>
@@ -167,7 +167,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                     Vous intégrerez alors des équipes bénévoles (médicales, paramédicales ou chantiers humanitaires) pour une mission humanitaire de 15 jours ou un stage de plusieurs mois.            </div>
                 </p>
 
-            <hr class="mt-3 mb-4">
+            <hr class="my-4">
 
             <!-- CAROUSEL --------------------------------------------------------------------------->
             <div class="col-12 border rounded p-0">
@@ -229,7 +229,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                 </div>
             </div>
 
-            <hr class="mt-4 mb-4">
+            <hr class="my-4">
 
             <div class="col-12 border rounded p-0">
                 <div id="carouselDonations" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
@@ -264,7 +264,9 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                             <p class="card-text">Date de début : <?php echo $donation->getDateDebut()->format('d-m-Y'); ?></p>                                        
                                         </div>
                                         <div class="card-footer">
-                                            <a href="detailsMissionController.php?idMission=<?php echo $donation->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+                                            <a href="detailsMissionController.php?idMission=<?php echo $donation->getIdMission(); ?>" class="btn btn-primary">
+                                                Voir la mission
+                                            </a>
                                         </div>
                                     </div>                  
                                 </div>
@@ -326,7 +328,9 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                             <p class="card-text">Date de début : <?php echo $enseignement->getDateDebut()->format('d-m-Y'); ?></p>                                        
                                         </div>
                                         <div class="card-footer">
-                                            <a href="detailsMissionController.php?idMission=<?php echo $donation->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+                                            <a href="detailsMissionController.php?idMission=<?php echo $donation->getIdMission(); ?>" class="btn btn-primary">
+                                                Voir la mission
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -354,7 +358,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                 </div>
             </div>
 
-            <hr class="mt-4 mb-4">
+            <hr class="my-4">
 
             <div class="col-12 border rounded p-0">
                 <div id="carouselConstructions" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
@@ -388,7 +392,9 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                             <p class="card-text">Date de début : <?php echo $construction->getDateDebut()->format('d-m-Y'); ?></p>
                                         </div>                   
                                         <div class="card-footer">
-                                            <a href="detailsMissionController.php?idMission=<?php echo $construction->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+                                            <a href="detailsMissionController.php?idMission=<?php echo $construction->getIdMission(); ?>" class="btn btn-primary">
+                                                Voir la mission
+                                            </a>
                                         </div>                 
                                     </div>
                                 </div>
@@ -415,7 +421,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                     </div>
                 </div>
             </div>
-            <hr class="mt-4 mb-4">
+            <hr class="my-4">
 
             <div class="col-12 border rounded p-0">
                 <div id="carouselTraductions" class="carousel carouselListeMission slide" data-ride="carousel" data-interval="10000">
@@ -449,7 +455,9 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                                             <p class="card-text">Date de début : <?php echo $traduction->getDateDebut()->format('d-m-Y'); ?></p>
                                         </div>                   
                                         <div class="card-footer">
-                                            <a href="detailsMissionController.php?idMission=<?php echo $traduction->getIdMission(); ?>" class="btn btn-primary">Voir la mission</a>
+                                            <a href="detailsMissionController.php?idMission=<?php echo $traduction->getIdMission(); ?>" class="btn btn-primary">
+                                                Voir la mission
+                                            </a>
                                         </div>                 
                                     </div>
                                 </div>
@@ -476,8 +484,7 @@ function listeMissions($medecines=null,$donations=null,$enseignements=null,$cons
                     </div>
                 </div>
             </div>
-
-            <hr class="mt-4 mb-4">
+            <hr class="my-4">
         </div>
         <?php      
         include("../../Templates/Bases/footer.php") 
@@ -581,12 +588,12 @@ function detailsMission($mission,$newPays=null,$newTypeActivite=null,$newEtablis
 
             <div class="row mb-4">
                 <div class="col-12 col-md-5 my-2">
-                    <a href="/HUMAN_HELP/Controller/CommentCaMarcheController.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btnGreen w-100">
+                    <a href="/HUMAN_HELP/Controller/CommentCaMarcheController/CommentCaMarcheController.php?idMission=<?php echo $mission->getIdMission();?>" class="btn btnGreen w-100">
                         Comment y participer ?
                     </a>
                 </div>
                 <div class="col-12 offset-md-2 col-md-5 my-2">
-                    <a href="/HUMAN_HELP/Templates/Contact/form_contact.php" class="btn btnGreen w-100">
+                    <a href="/HUMAN_HELP/Controller/ContactController/contactController.php" class="btn btnGreen w-100">
                         contactez nous
                     </a>
                 </div>

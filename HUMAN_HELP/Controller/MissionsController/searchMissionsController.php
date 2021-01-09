@@ -1,10 +1,10 @@
 <?php
+include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 session_start();
-
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceMission.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/serviceTypeActivite.php");
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServicePays.php");
-include_once("../../Presentation/PresentationMission.php");
+include_once(PATH_BASE . "/Services/ServiceMission.php");
+include_once(PATH_BASE . "/Services/serviceTypeActivite.php");
+include_once(PATH_BASE . "/Services/ServicePays.php");
+include_once(PATH_BASE . "/Presentation/PresentationMission.php");
 
 if (!empty($_GET)) 
 {

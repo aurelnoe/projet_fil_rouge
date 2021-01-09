@@ -1,7 +1,7 @@
 <?php 
 
-class BddConnect {
-
+class BddConnect 
+{
     public function connexion(){
         //$db = new mysqli('localhost','root','','human_helps');
         $db = new PDO("mysql:host=localhost;dbname=human_helps",'root','');

@@ -29,7 +29,6 @@ class Etablissement {
         $this->idPays;      
     }
 
-
     /**
      * Get the value of idEtablissement
      */ 

@@ -1,12 +1,12 @@
 <?php
+include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 session_start();
-
-include_once("../../Services/ServiceMission.php");
-include_once("../../Services/ServicePays.php");
-include_once("../../Services/ServiceEtablissement.php");
-include_once("../../Services/ServiceUtilisateur.php");
-include_once("../../Services/serviceTypeActivite.php");
-include_once("../../Presentation/PresentationMission.php");
+include_once(PATH_BASE . "/Services/ServiceMission.php");
+include_once(PATH_BASE . "/Services/ServicePays.php");
+include_once(PATH_BASE . "/Services/ServiceEtablissement.php");
+include_once(PATH_BASE . "/Services/ServiceUtilisateur.php");
+include_once(PATH_BASE . "/Services/serviceTypeActivite.php");
+include_once(PATH_BASE . "/Presentation/PresentationMission.php");
 
 $_POST = array_map('htmlentities', $_POST);
 

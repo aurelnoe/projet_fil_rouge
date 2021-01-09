@@ -25,9 +25,9 @@ function Accueil(array $articles=null,array $missionsADistance=null,array $allMi
                         <?php foreach ($missionsADistance as $key => $mission) {
                             ?>
                             <li data-target="#carouselDistanceAccueil" data-slide-to="<?php echo $key; ?>"
-                            <?php echo ($key==0) ? 'class="active"' : '' ?>></li>
-                            <?php
-                        } ?>
+                            	<?php echo ($key==0) ? 'class="active"' : '' ?>>
+							</li>
+                        <?php } ?>
                     </ol>
 				</div>
 
@@ -43,7 +43,6 @@ function Accueil(array $articles=null,array $missionsADistance=null,array $allMi
 						foreach ($missionsADistance as $key => $mission) 
 						{
 							?> 
-
 							<div class="carousel-item <?php echo ($key==0) ? 'active' : ''; ?> mb-5">
                                 <div class="card cardListeMission col-10 col-md-6 p-0">
 									<img src="\HUMAN_HELP\images\informatiqueAfrique.jpg" class="card-img-top" alt="">

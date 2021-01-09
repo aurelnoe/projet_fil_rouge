@@ -1,6 +1,6 @@
 <?php
-include_once("C:/xampp/htdocs/HUMAN_HELP/DAO/AvisDAO.php");
-
+include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
+include_once(PATH_BASE . "/DAO/AvisDAO.php");
 
 class ServiceAvis 
 {

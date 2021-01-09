@@ -45,7 +45,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setIdUtilisateur($idUtilisateur):self
+    public function setIdUtilisateur(int $idUtilisateur):self
     {
         $this->idUtilisateur = $idUtilisateur;
 
@@ -65,7 +65,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setnomUtil($nomUtil):self
+    public function setnomUtil(string $nomUtil):self
     {
         $this->nomUtil = $nomUtil;
 
@@ -85,7 +85,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setPrenomUtil($prenomUtil):self
+    public function setPrenomUtil(string $prenomUtil):self
     {
         $this->prenomUtil = $prenomUtil;
 
@@ -105,7 +105,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setAdresseUtil($adresseUtil):self
+    public function setAdresseUtil(string $adresseUtil):self
     {
         $this->adresseUtil = $adresseUtil;
 
@@ -125,7 +125,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setCodePostalUtil($codePostalUtil):self
+    public function setCodePostalUtil(int $codePostalUtil):self
     {
         $this->codePostalUtil = $codePostalUtil;
 
@@ -145,7 +145,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setVilleUtil($villeUtil):self
+    public function setVilleUtil(string $villeUtil):self
     {
         $this->villeUtil = $villeUtil;
 
@@ -165,7 +165,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setMailUtil($mailUtil):self
+    public function setMailUtil(string $mailUtil):self
     {
         $this->mailUtil = $mailUtil;
 
@@ -185,7 +185,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setTelUtil($telUtil):self
+    public function setTelUtil(int $telUtil):self
     {
         $this->telUtil = $telUtil;
 
@@ -205,7 +205,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setPasswordUtil($passwordUtil):self
+    public function setPasswordUtil(string $passwordUtil):self
     {
         $this->passwordUtil = $passwordUtil;
 
@@ -245,7 +245,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setIdRole($idRole):self
+    public function setIdRole(int $idRole):self
     {
         $this->idRole = $idRole;
 
@@ -265,7 +265,7 @@ class Utilisateur
      *
      * @return  self
      */ 
-    public function setIdPays($idPays):self
+    public function setIdPays(int $idPays):self
     {
         $this->idPays = $idPays;
 

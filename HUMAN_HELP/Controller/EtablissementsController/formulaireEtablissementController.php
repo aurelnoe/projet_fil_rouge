@@ -1,9 +1,10 @@
 <?php
+include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 session_start();
-include_once("../../Services/ServiceEtablissement.php");
-include_once("../../Services/ServiceUtilisateur.php");
-include_once("../../Services/ServicePays.php");
-include_once("../../Presentation/PresentationEtablissement.php");
+include_once(PATH_BASE . "/Services/ServiceEtablissement.php");
+include_once(PATH_BASE . "/Services/ServiceUtilisateur.php");
+include_once(PATH_BASE . "/Services/ServicePays.php");
+include_once(PATH_BASE . "/Presentation/PresentationEtablissement.php");
 
 if (!empty($_GET) && isset($_GET['action'])) 
 {
@@ -24,33 +25,33 @@ if (!empty($_GET) && isset($_GET['action']))
         echo formulairesEtablissement($title,$etablissement,$idEtablissement,null,$allPays,$titleBtn,$action);
         die;
     } 
-    else if ($_GET['action'] == 'add') 
-    {
+    // else if ($_GET['action'] == 'add')  //DEPLACE DANS UTILISATEURCONTROLLER
+    // {
         
-        $title = "Ajout d'un établissement";
-        $titleBtn = "ajouter l'établissement";
-        $action = 'addEtablissement';
-        $utilisateur = $newUser->searchUserbyMail($_GET['mail']);
-        $idUtilisateur = $utilisateur->getIdUtilisateur();
-        $allPays = $newPays->searchAll();
+    //     $title = "Ajout d'un établissement";
+    //     $titleBtn = "ajouter l'établissement";
+    //     $action = 'addEtablissement';
+    //     $utilisateur = $newUser->searchUserbyMail($_GET['mail']);
+    //     $idUtilisateur = $utilisateur->getIdUtilisateur();
+    //     $allPays = $newPays->searchAll();
         
-        $_SESSION['role'] = 'Professionnel';
-        $_SESSION['mailUtil'] = $_GET['mail'];
-        $_SESSION['idUtil'] = $idUtilisateur;
+    //     $_SESSION['role'] = 'Professionnel';
+    //     $_SESSION['mailUtil'] = $_GET['mail'];
+    //     $_SESSION['idUtil'] = $idUtilisateur;
 
-        $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
+    //     $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
         
-        if ($professionnel) 
-        {
-            echo formulairesEtablissement($title,null,null,$idUtilisateur,$allPays,$titleBtn,$action);
-            die;           
-        }
-        else {
-            header("Location: ../index.php");
-            die;
-        }
+    //     if ($professionnel) 
+    //     {
+    //         echo formulairesEtablissement($title,null,null,$idUtilisateur,$allPays,$titleBtn,$action);
+    //         die;           
+    //     }
+    //     else {
+    //         header("Location: ../index.php");
+    //         die;
+    //     }
         
-    }
+    // }
 }
 
 ?>

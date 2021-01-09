@@ -1,14 +1,13 @@
 <?php
-include_once("C:/xampp/htdocs/HUMAN_HELP/Services/ServiceBlog.php");
-include_once("../../Presentation/PresentationBlog.php");
-
+include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
+include_once(PATH_BASE . "Services/ServiceBlog.php");
+include_once(PATH_BASE . "Presentation/PresentationBlog.php");
 
 /************************** AJOUT ARTICLE ***************************/
 if (!empty($_GET['action']) && isset($_GET['action'])) {
 
     if (!empty($_POST) && isset($_POST)) 
     {
-
         if ($_GET['action'] == 'add') 
         {
             // echo'<pre>';
@@ -31,8 +30,7 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
             $newAdd = new ServiceBlog();
             $newAdd->add($article);
         }
-
-       
+ 
         /************************** MODIFIE ARTICLE ***************************/
         elseif ($_GET['action'] == 'update' && isset($_POST['idArticle'])) 
         { 
@@ -54,7 +52,6 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
 
             $newUpdate = new ServiceBlog();
             $newUpdate->update($article); //
-
         }
     }
     /**************************************** SUPPRIME ARTICLE ************************/
@@ -69,6 +66,5 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
 /******************************************** Afficher tous les articles ***********************************************/
 $service = new ServiceBlog();
 $articles = $service->searchAll();
-
 
 echo listeArticle($articles);
