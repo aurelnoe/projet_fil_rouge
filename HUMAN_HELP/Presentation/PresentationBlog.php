@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 include_once("../../Controller/AvisController/formulaireAvisController.php");
 function head()
 {
@@ -24,10 +25,14 @@ function afficher()
     </head>
 <?php
 }
+=======
+include_once("C:/xampp/htdocs/HUMAN_HELP/Controller/AvisController/formulaireAvisController.php");
+require("../../Presentation/PresentationCommun.php");
+>>>>>>> 1ac22bdbb40c704701692fddcd7ada18868d829d
 
 function formulaireArticle(string $title, $article=null, string $titleBtn, string $action, int $idArticle = null)
 {
-    echo afficher();
+    echo head();
 ?>
 
     <body>
@@ -98,7 +103,7 @@ function formulaireArticle(string $title, $article=null, string $titleBtn, strin
 
 function listeArticle($articles)
 {
-    echo afficher();
+    echo head();
 ?>
 
     <body>
@@ -164,7 +169,7 @@ function listeArticle($articles)
 
 function detailArticle($article,$avis,$temoignage=null)
 {
-    echo afficher();
+    echo head();
 ?>
 
     <body>
@@ -212,7 +217,7 @@ function detailArticle($article,$avis,$temoignage=null)
                 <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-danger col-12 col-md-3 my-2 w-50">Supprimer</a>
             </div> 
             <?php 
-                echo FormulaireAvis($article->getIdArticle()); 
+                echo FormulaireAvis($article->getIdArticle(),$temoignage); 
 
                 echo listeAvis($avis,$article->getIdArticle());
             

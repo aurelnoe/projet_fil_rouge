@@ -26,7 +26,8 @@ if (isset($_GET['action']))
         $idAvis = $_GET['idAvis'];
         $temoignage=$avis->getTemoignage();
 
-        echo FormulaireAvis($idArticle,$temoignage);
+        echo detailArticle($article,$avis,$temoignage);
+      
         die;
     } 
     // else if ($_GET['action'] == 'add') {
