@@ -4,7 +4,15 @@ session_start();
 include_once(PATH_BASE . "/Services/ServiceMission.php");
 include_once(PATH_BASE . "/Presentation/PresentationMission.php");
 
-$newInscription = new ServiceMission();
-$mission = $newInscription->searchById($_GET['idMission']);
-
-echo formParticipationMission($mission);
+try {
+    $newInscription = new ServiceMission();
+    $mission = $newInscription->searchById($_GET['idMission']);
+    
+    echo formParticipationMission($mission);
+} 
+catch (ServiceException $se) {
+    $newInscription = new ServiceMission();
+    $mission = $newInscription->searchById($_GET['idMission']);
+    
+    echo formParticipationMission($mission,$se->getCode());
+}

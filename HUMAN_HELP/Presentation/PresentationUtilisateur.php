@@ -3,15 +3,15 @@ require("../../Presentation/PresentationCommun.php");
 
 function connexion($message=null,$errorCode=null) 
 {
-    if ($errorCode == 1081) {
-        
-        echo "<div class='alert alert-danger text-center'>$message</div>";
-    }
     echo head();
     ?> 
     <?php
         include("../../Templates/Bases/navbarDev.php");
         include("../../Templates/Bases/navbar.php");
+        if ($errorCode == 1081) {
+            
+            echo "<div class='alert alert-danger text-center my-5'>$message</div>";
+        }
     ?>
     <body>
         <div class="container col-12 col-md-6 col-lg-4 pt-2 my-5 borderGreen rounded">  

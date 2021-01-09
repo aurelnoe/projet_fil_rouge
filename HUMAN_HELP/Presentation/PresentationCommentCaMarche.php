@@ -59,11 +59,11 @@ function commentCaMarche():void
 		if (!empty($_GET)) 
 		{
 		?>
-			<a href="../Controller/MissionsController/detailsMissionController.php?idMission=<?php echo $_GET['idMission'];?>" 
+			<a href="../MissionsController/detailsMissionController.php?idMission=<?php echo $_GET['idMission'];?>" 
 			   class="btn btnGreen w-100 my-1">
 			   Retour aux détails de la mission
 			</a>
-			<a href="../Controller/MissionsController/formParticipationMissionController.php?idMission=<?php echo $_GET['idMission'];?>"
+			<a href="../MissionsController/formParticipationMissionController.php?idMission=<?php echo $_GET['idMission'];?>"
 			   class="btn btn-primary w-100 my-3">
 			   PARTICIPER A CETTE MISSION
 			</a>

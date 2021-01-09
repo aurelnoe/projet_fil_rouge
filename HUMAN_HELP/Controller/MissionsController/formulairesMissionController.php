@@ -15,20 +15,27 @@ if (isset($_GET['action']))
 
     if ($_GET['action'] == 'update' && isset($_GET['idMission'])) 
     {  
-        // if (isset($_SESSION['profil']) && $_SESSION['profil']=='utilisateur') {
-        //     header('Location: ../../index.php');
-        // }
-        $newMission = new ServiceMission();
-        $mission = $newMission->searchById($_GET['idMission']);
-        
-        $title = 'Modification de la mission';
-        $titleBtn = 'Modifier la mission';
-        $action = 'update';
-        $idMission = $_GET['idMission'];
-        $idEtablissement = $mission->getIdEtablissement();
-
-        echo formulairesMission($title,$mission,$titleBtn,$action,$idMission,$allPays,$allTypeActivite,$idEtablissement,$newPays,$newTypeActivite);
-        die;
+        try {
+            // if (isset($_SESSION['profil']) && $_SESSION['profil']=='utilisateur') {
+            //     header('Location: ../../index.php');
+            // }
+            $newMission = new ServiceMission();
+            $mission = $newMission->searchById($_GET['idMission']);
+            
+            $title = 'Modification de la mission';
+            $titleBtn = 'Modifier la mission';
+            $action = 'update';
+            $idMission = $_GET['idMission'];
+            $idEtablissement = $mission->getIdEtablissement();
+            $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
+            if ($professionnel) {
+                echo formulairesMission($title,$mission,$titleBtn,$action,$idMission,$allPays,$allTypeActivite,$idEtablissement,$newPays,$newTypeActivite);
+                die;         
+            }
+        } 
+        catch (ServiceException $se) {
+            //throw $th;
+        }
     } 
     else if ($_GET['action'] == 'add' && isset($_GET['idEtablissement'])) 
     {

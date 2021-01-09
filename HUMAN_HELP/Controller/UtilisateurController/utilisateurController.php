@@ -2,6 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 session_start();
 include_once(PATH_BASE . "/Services/ServiceUtilisateur.php");
+include_once(PATH_BASE . "/Exceptions/ServiceException.php");
 include_once(PATH_BASE . "/Services/ServicePays.php");
 include_once(PATH_BASE . "/Presentation/PresentationUtilisateur.php");
 include_once(PATH_BASE . "/Presentation/PresentationAccueil.php");
@@ -43,51 +44,56 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                          ->setDateInscriptionUtil($dateInscriptionUtil)
                          ->setIdRole($idRole)
                          ->setIdPays($idPays);
-
-            $service->add($utilisateur);
-
-            if ($idRole==1) {     //Particulier
-                header("location: ../../index.php");
-                die;
-            }
-            elseif($idRole==2) {  //Professionnel
-                
-                // header("location: Controller/EtablissementsController/formulaireEtablissementController.php?action=add&mail=$mailUtil");
-                // die;
-                $title = "Ajout d'un établissement";
-                $titleBtn = "Ajouter l'établissement";
-                $action = 'addEtablissement';
-                $newPays = new ServicePays();
-                $allPays = $newPays->searchAll();
-                $user = $service->searchUserbyMail($mailUtil);
-                $idUtil = $user->getIdUtilisateur();
-                
-                $_SESSION['idRole'] = $idRole;
-                $_SESSION['mailUtil'] = $mailUtil;
-                $_SESSION['idUtil'] = $idUtil;
-
-                if ($idRole == 1) {
-                    $role = 'particulier';
-                }
-                elseif ($idRole == 2 ) {
-                    $role = 'professionnel';
-                }
-                elseif ($idRole == 3 ) {
-                    $role = 'admin';
-                }
-                $_SESSION['role'] = $role;
-
-                $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
-                
-                if ($professionnel) 
-                {
-                    echo formulairesEtablissement($title,null,null,$idUtil,$allPays,$titleBtn,$action);
-                    die;           
-                }
-                else {
-                    header("Location: ../../index.php");
+            try {
+                $service->add($utilisateur);
+    
+                if ($idRole==1) {     //Particulier
+                    header("location: ../../index.php");
                     die;
                 }
+                elseif($idRole==2) {  //Professionnel
+                    
+                    // header("location: Controller/EtablissementsController/formulaireEtablissementController.php?action=add&mail=$mailUtil");
+                    // die;
+                    $title = "Ajout d'un établissement";
+                    $titleBtn = "Ajouter l'établissement";
+                    $action = 'addEtablissement';
+                    $newPays = new ServicePays();
+                    $allPays = $newPays->searchAll();
+                    $user = $service->searchUserbyMail($mailUtil);
+                    $idUtil = $user->getIdUtilisateur();
+                    
+                    $_SESSION['idRole'] = $idRole;
+                    $_SESSION['mailUtil'] = $mailUtil;
+                    $_SESSION['idUtil'] = $idUtil;
+    
+                    if ($idRole == 1) {
+                        $role = 'particulier';
+                    }
+                    elseif ($idRole == 2 ) {
+                        $role = 'professionnel';
+                    }
+                    elseif ($idRole == 3 ) {
+                        $role = 'admin';
+                    }
+                    $_SESSION['role'] = $role;
+    
+                    $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
+                    
+                    if ($professionnel) 
+                    {
+                        echo formulairesEtablissement($title,null,null,$idUtil,$allPays,$titleBtn,$action);
+                        die;           
+                    }
+                    else {
+                        header("Location: ../../index.php");
+                        die;
+                    }
+                }
+            } 
+            catch (ServiceException $se) {
+                header("Location: ../../index.php");
+                die;
             }
         }
     }
@@ -123,23 +129,33 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                          ->setDateInscriptionUtil($dateInscriptionUtil)
                          ->setIdRoleUtil($idRoleUtil)
                          ->setIdPaysUtil($idPaysUtil);
-
-            $service->update($utilisateur);
-
-            //echo detailsCompte();
-            header("location: ../../index.php");
-            die;
+            try {
+                $service->update($utilisateur);
+    
+                //echo detailsCompte();
+                header("location: ../../index.php");
+                die;  
+            } 
+            catch (ServiceException $se) {
+                header("Location: ../../index.php");
+                die;
+            }
         }
     }
     /**************************************** SUPPRIME UTILISATEUR ************************/
     elseif ($_GET['action'] == 'delete') 
     {
         if (!empty($_GET['idUtilisateur'])) 
-        {      
-            $service->delete($_GET['idUtilisateur']);
-
-            header("location: ../../index.php");
-            die;
+        {   
+            try {
+                $service->delete($_GET['idUtilisateur']);
+                header("location: ../../index.php");
+                die;
+            } 
+            catch (ServiceException $se) {
+                header("Location: ../../index.php");
+                die;
+            }       
         }
     }
     elseif ($_GET['action'] == 'connexion') 
@@ -152,18 +168,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
             {
                 $_SESSION['mailUtil'] = $_POST['mailUtil'];
                 $_SESSION['idUtil'] = $objectUser->getIdUtilisateur();
-                
-                $idRole = $objectUser->getIdRole();
-                if ($idRole == 1) {
-                    $role = 'particulier';
-                }
-                elseif ($idRole == 2 ) {
-                    $role = 'professionnel';
-                }
-                elseif ($idRole == 3 ) {
-                    $role = 'admin';
-                }
-                $_SESSION['role'] = $role;
+                $_SESSION['role'] = nameRole($objectUser->getIdRole());
 
                 // $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
                 // $admin = isset($_SESSION['mailUtil']) && isset($_SESSION['idRole']) && $_SESSION['role'] == 'admin';  
@@ -171,12 +176,8 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                 header("Location: ../../index.php");
                 die;
             }
-            else {
-                echo connexion();
-            die;
-            }
         } 
-        catch (PDOException $se) {
+        catch (ServiceException $se) {
             echo connexion($se->getMessage(),$se->getCode());
             die;
         }
