@@ -1,34 +1,6 @@
 <?php
-<<<<<<< HEAD
-include_once("../../Controller/AvisController/formulaireAvisController.php");
-function head()
-{
-?>
-    <?php include("../../head.php"); ?>
-    <script src="../Assets/jquery-3.5.1.min.js"></script>
-    <script src="Assets/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/style.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleAurel.css">
-    <link rel="stylesheet" type="text/css" href="../../Assets/styleSamir.css">
-<?php
-}
-
-function afficher()
-{
-?>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <?php echo head(); ?>
-    </head>
-<?php
-}
-=======
 include_once("C:/xampp/htdocs/HUMAN_HELP/Controller/AvisController/formulaireAvisController.php");
 require("../../Presentation/PresentationCommun.php");
->>>>>>> 1ac22bdbb40c704701692fddcd7ada18868d829d
 
 function formulaireArticle(string $title, $article=null, string $titleBtn, string $action, int $idArticle = null)
 {
