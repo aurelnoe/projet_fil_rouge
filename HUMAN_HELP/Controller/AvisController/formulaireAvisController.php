@@ -6,7 +6,6 @@ include_once(PATH_BASE . "Presentation/PresentationBlog.php");
 
 if (isset($_GET['action'])) 
 {
-
     if ($_GET['action'] == 'update' && isset($_GET['idAvis'])) 
     {  
         // if (isset($_SESSION['profil']) && $_SESSION['profil']=='utilisateur') {

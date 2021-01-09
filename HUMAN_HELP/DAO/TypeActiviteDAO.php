@@ -4,7 +4,6 @@ include_once(PATH_BASE . "/Class/TypeActivite.php");
 include_once(PATH_BASE . "/Class/BddConnect.php");
 require_once(PATH_BASE . "/Exceptions/DAOException.php");
 
-
 class TypeActiviteDAO extends BddConnect 
 {
     public function searchAll()
@@ -58,7 +57,6 @@ class TypeActiviteDAO extends BddConnect
         }
     }
 
-    
     public function searchNameById($idTypeActivite)
     {
         try 

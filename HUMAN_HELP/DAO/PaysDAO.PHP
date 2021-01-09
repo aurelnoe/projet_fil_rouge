@@ -7,7 +7,6 @@ require_once(PATH_BASE . "/Exceptions/DAOException.php");
 class PaysDAO extends BddConnect
 {
     //*************FONCTION AJOUTER UN PAYS*********************/
-
     public function add(object $pays)
     {   
         try

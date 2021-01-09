@@ -13,7 +13,6 @@ if (!empty($_GET))
     $newPays = new ServicePays();
 
     //TRI PAR TYPE ACTIVITE  
-    
     if (isset($_GET['idTypeActivite'])) {
         $missions = $newSearch->searchMissionByTypeActivite($_GET['idTypeActivite']);
 
@@ -55,6 +54,4 @@ if (!empty($_GET))
 
     // }
 }
-
-
 ?>

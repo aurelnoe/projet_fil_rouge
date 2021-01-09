@@ -4,13 +4,11 @@ include_once(PATH_BASE . "/Services/ServiceAvis.php");
 include_once(PATH_BASE . "/Services/ServiceBlog.php");
 include_once(PATH_BASE . "/Presentation/PresentationBlog.php");
 
-
 /************************** AJOUT Avis ***************************/
 if (!empty($_GET['action']) && isset($_GET['action'])) {
 
     if (!empty($_POST) && isset($_POST)) 
     {
-
         if ($_GET['action'] == 'add') 
         {
             // echo'<pre>';
@@ -32,10 +30,7 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
 
             $newAdd = new ServiceAvis();
             $newAdd->add($avis);
-
         }
-
-       
         /************************** MODIFIE AVIS ***************************/
         elseif ($_GET['action'] == 'update' && isset($_POST['idAvis'])) 
         { 
@@ -64,7 +59,6 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
            
     
             echo detailArticle($article,$avis);
-
         }
     }
     /**************************************** SUPPRIME AVIS ************************/
@@ -87,8 +81,6 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
     
 // $service = new ServiceAvis();
 // $avis = $service->searchALL();
-
-
 // echo listeAvis($avis);
     $service = new ServiceBlog(); 
     $article = $service->searchById($_GET['idArticle']);

@@ -10,11 +10,11 @@ class Avis
     private $idArticle;
   
     public function __toString(){
-        $this->idAvis;
-        $this->auteur;
-        $this->temoignage;
-        $this->dateCommentaire;
-        $this->idUtilisateur;
+        $this->idAvis .
+        $this->auteur .
+        $this->temoignage .
+        $this->dateCommentaire .
+        $this->idUtilisateur .
         $this->idArticle;
     }
 

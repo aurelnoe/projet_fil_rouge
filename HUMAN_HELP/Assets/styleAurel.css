@@ -1,3 +1,7 @@
+.container{
+    margin-top: 50px;
+}
+
 .card{
     border: 2px outset #58b368;
 }
@@ -14,6 +18,13 @@
     border: 2px outset #58b368;
 }
 
+.hrGreen{
+    border-top: 4px outset #58b368!important;
+    height: 0px!important;
+    opacity: 0.65;
+}
+
+/***********CAROUSEL**************/
 .carousel .button {
     margin-top: 1rem;
     transition-duration: 0.4s;
@@ -36,19 +47,13 @@
     color: #58b368;
     margin: auto;
 }
-
 .carousel-control-prev-icon:after {
     content: '<';
     font-size: 60px;
     color: #58b368;
     margin-right: 20px;
 }
-
-.hrGreen{
-    border-top: 4px outset #58b368!important;
-    height: 0px!important;
-    opacity: 0.65;
-}
+/***********FIN CAROUSEL*********/
 
 .hrTitreListeMission{
     height: 0px!important;
@@ -59,10 +64,6 @@
 
 .temoignageAccueil{
     box-sizing: border-box;
-}
-
-.container{
-    margin-top: 50px;
 }
 
 .cardListeMissionPro{

@@ -6,7 +6,6 @@ require_once(PATH_BASE . "/Exceptions/DAOException.php");
 
 class MissionDAO extends BddConnect
 {
-
     /******************* AJOUTE MISSION *****************************/
     public function add(Mission $mission)
     {   

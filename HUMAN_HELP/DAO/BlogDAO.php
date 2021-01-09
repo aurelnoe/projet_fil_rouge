@@ -3,7 +3,6 @@ include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 include_once(PATH_BASE . "/Class/Blog.php");
 include_once(PATH_BASE . "/Class/BddConnect.php");
 
-
 class BlogDAO extends BddConnect 
 {
     //probablement mettre une fonction IsAdmin

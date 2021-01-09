@@ -6,7 +6,6 @@ require_once(PATH_BASE . "/Exceptions/DAOException.php");
 
 class UtilisateurDAO extends BddConnect
 {
-    //*************FONCTION AJOUTER UN UTILISATEUR*********************/
     public function add(Utilisateur $utilisateur)
     {
         try 
@@ -135,15 +134,13 @@ class UtilisateurDAO extends BddConnect
         }
     }
 
-
     //*********************FONCTION CHERCHER TOUT LES UTILISATEURS**************** */
-
     public function searchAll():array
     {
         try
         {
             $newConnect = new BddConnect();
-                $db = $newConnect->connexion();
+            $db = $newConnect->connexion();
 
             $query = 'SELECT * FROM utilisateur';
             $stmt = $db->prepare($query);

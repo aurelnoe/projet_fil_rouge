@@ -6,7 +6,6 @@ require_once(PATH_BASE . "/Exceptions/DAOException.php");
 
 class RoleDAO extends BddConnect 
 {
-    /**************** CHERCHE LES ROLES ***************/
     public function searchAll()
     {
         try 
@@ -30,7 +29,6 @@ class RoleDAO extends BddConnect
         }
     }
 
-    /**************** CHERCHE UN ROLE ***********************/
     public function searchById($idRole)
     {
         try 

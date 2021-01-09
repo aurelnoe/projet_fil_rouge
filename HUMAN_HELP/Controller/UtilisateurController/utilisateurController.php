@@ -64,7 +64,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                 
                 $_SESSION['idRole'] = $idRole;
                 $_SESSION['mailUtil'] = $mailUtil;
-                $_SESSION['idUtil'] = $idUser;
+                $_SESSION['idUtil'] = $idUtil;
 
                 if ($idRole == 1) {
                     $role = 'particulier';
@@ -78,11 +78,10 @@ if(!empty($_GET['action']) && isset($_GET['action']))
                 $_SESSION['role'] = $role;
 
                 $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
-                // var_dump($_SESSION);die;
                 
                 if ($professionnel) 
                 {
-                    echo formulairesEtablissement($title,null,null,$idUser,$allPays,$titleBtn,$action);
+                    echo formulairesEtablissement($title,null,null,$idUtil,$allPays,$titleBtn,$action);
                     die;           
                 }
                 else {
