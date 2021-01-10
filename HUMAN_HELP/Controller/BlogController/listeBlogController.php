@@ -72,8 +72,12 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
         if (!empty($_GET['idArticle'])) {
             $delete = new ServiceBlog();
             try{
-
-                $delete->delete($_GET['idArticle']);
+                $admin = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'admin';
+                if($admin){
+                    $delete->delete($_GET['idArticle']);
+                }else{
+                    header('Location: ../../index.php');
+                }
             }
             catch (ServiceException $se) {
                 header('Location: ../../index.php');

@@ -20,8 +20,12 @@ if (isset($_GET['action']))
             $titleBtn = "Modifier l'article";
             $action = 'update';
             $idArticle = $_GET['idArticle'];
-
+            $admin = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'admin';
+            if($admin){
             echo formulaireArticle($title,$article,$titleBtn,$action,$idArticle); 
+            }else{
+                header('Location: ../../index.php');
+            }
         }
         catch (ServiceException $se) {
             header('Location: ../../index.php');
@@ -35,7 +39,13 @@ if (isset($_GET['action']))
              $title = "Ajouter un article";
             $titleBtn = "Ajouter l'article";
             $action = 'add';
-            echo formulaireArticle($title,null,$titleBtn,$action);  
+            $admin = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'admin';
+            if($admin){
+                echo formulaireArticle($title,null,$titleBtn,$action);  
+            }else{
+                header('Location: ../../index.php');
+            }
+            
         }
         catch (ServiceException $se) {
             header('Location: ../../index.php');
