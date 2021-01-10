@@ -2,12 +2,14 @@
 include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 include_once(PATH_BASE . "/Services/ServiceUtilisateur.php");
 include_once(PATH_BASE . "/Services/ServicePays.php");
+include_once(PATH_BASE . "/Exceptions/ServiceException.php");
 include_once(PATH_BASE . "/Presentation/PresentationAccueil.php");
 include_once(PATH_BASE . "/Presentation/PresentationUtilisateur.php");
 
 $_GET = array_map('htmlentities',$_GET); 
 $_COOKIE = array_map('htmlentities',$_COOKIE);
 $_REQUEST = array_map('htmlentities',$_REQUEST);
+$_POST = array_map('htmlentities',$_POST);
 
 /************************** AJOUT UTILISATEUR ***************************/
 if(!empty($_GET['action']) && isset($_GET['action']))
@@ -28,7 +30,7 @@ if(!empty($_GET['action']) && isset($_GET['action']))
         }
     }
     elseif ($_GET['action'] == 'formModif')
-    {
+    {   
         try {
             $allPays = $newPays->searchAll();
             $service = new ServiceUtilisateur();
@@ -48,12 +50,22 @@ if(!empty($_GET['action']) && isset($_GET['action']))
     }
     elseif ($_GET['action'] == 'connexion') 
     {
-        echo connexion();
-        die;
+        try {
+            echo connexion();
+            die;
+        }
+        catch (ServiceException $se) {
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+        }
     }
     elseif ($_GET['action'] == 'modifMdp') {
-        echo modifMotDePasse();
-        die;
+        try {
+            echo modifMotDePasse();
+            die;
+        }
+        catch (ServiceException $se) {
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+        }
     }
 }
 

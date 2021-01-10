@@ -7,7 +7,10 @@ include_once(PATH_BASE . "/Services/ServiceTypeActivite.php");
 include_once(PATH_BASE . "/Services/ServiceEtablissement.php");
 include_once(PATH_BASE . "/Presentation/PresentationMission.php");
 include_once(PATH_BASE . "/Exceptions/ServiceException.php");
-
+$_GET = array_map('htmlentities',$_GET); 
+$_COOKIE = array_map('htmlentities',$_COOKIE);
+$_REQUEST = array_map('htmlentities',$_REQUEST);
+$_POST = array_map('htmlentities',$_POST);
 if(!empty($_GET))
 {
     $serviceMission = new ServiceMission(); 
@@ -30,7 +33,7 @@ if(!empty($_GET))
             echo detailsMission($mission,$typeFormation,$newPays,$newTypeActivite,$newEtablissement,$professionnel);       
         }
         catch (ServiceException $se) {
-            header('Location: ../../index.php');
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
         }
     }
 
@@ -77,8 +80,8 @@ if(!empty($_GET))
                     die;
                 }
                 catch (ServiceException $se) {
-                    header('Location: ../../index.php');
-                } 
+                    header('Location: ' . $_SERVER['HTTP_REFERER']);
+                }        
             }
         }
     }

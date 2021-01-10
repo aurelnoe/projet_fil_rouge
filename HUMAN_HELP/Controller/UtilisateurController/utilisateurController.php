@@ -2,17 +2,19 @@
 include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 session_start();
 include_once(PATH_BASE . "/Services/ServiceUtilisateur.php");
-include_once(PATH_BASE . "/Exceptions/ServiceException.php");
 include_once(PATH_BASE . "/Services/ServicePays.php");
+include_once(PATH_BASE . "/Exceptions/ServiceException.php");
 include_once(PATH_BASE . "/Presentation/PresentationUtilisateur.php");
 include_once(PATH_BASE . "/Presentation/PresentationAccueil.php");
 include_once(PATH_BASE . "/Presentation/PresentationEtablissement.php");
+$_GET = array_map('htmlentities',$_GET); 
+$_COOKIE = array_map('htmlentities',$_COOKIE);
+$_REQUEST = array_map('htmlentities',$_REQUEST);
+$_POST = array_map('htmlentities',$_POST);
 
 /************************** AJOUT UTILISATEUR ***************************/
 if(!empty($_GET['action']) && isset($_GET['action']))
 {
-    $_POST = array_map('htmlentities', $_POST);
-
     $service = new ServiceUtilisateur();
 
     if ($_GET['action'] == 'add')

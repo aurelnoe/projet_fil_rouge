@@ -13,17 +13,22 @@ if (!empty($_GET) && isset($_GET['action']))
 
     if ($_GET['action'] == 'update' && isset($_GET['idEtablissement'])) 
     {  
-        $newEtablissement = new ServiceEtablissement();
-        $etablissement = $newEtablissement->searchById($_GET['idEtablissement']);
-        
-        $title = "Modification d'un établissement";
-        $titleBtn = "Modifier l'établissement";
-        $action = 'updateEtablissement';
-        $idEtablissement = $_GET['idEtablissement'];
-        $allPays = $newPays->searchAll();
-
-        echo formulairesEtablissement($title,$etablissement,$idEtablissement,null,$allPays,$titleBtn,$action);
-        die;
+        try {
+            $newEtablissement = new ServiceEtablissement();
+            $etablissement = $newEtablissement->searchById($_GET['idEtablissement']);
+            
+            $title = "Modification d'un établissement";
+            $titleBtn = "Modifier l'établissement";
+            $action = 'updateEtablissement';
+            $idEtablissement = $_GET['idEtablissement'];
+            $allPays = $newPays->searchAll();
+    
+            echo formulairesEtablissement($title,$etablissement,$idEtablissement,null,$allPays,$titleBtn,$action);
+            die; 
+        } 
+        catch (ServiceException $se) {
+            header('Location: ' . $_SERVER['HTTP_REFERER']);
+        }
     } 
     // else if ($_GET['action'] == 'add')  //DEPLACE DANS UTILISATEURCONTROLLER
     // {

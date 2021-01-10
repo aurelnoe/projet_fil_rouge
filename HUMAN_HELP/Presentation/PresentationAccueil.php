@@ -6,7 +6,7 @@ function Accueil(array $articles=null,array $missionsADistance=null,array $allMi
 	<div class="container">
 
 		<h1 class="text-center">Bienvenue sur Human Helps</h1>
-
+		 
 		<div class="my-4 p-2">
 			<h2>Qui somme nous ?</h2>
 			<p>
