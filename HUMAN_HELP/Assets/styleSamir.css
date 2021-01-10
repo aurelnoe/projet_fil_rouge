@@ -1,13 +1,5 @@
 /***************DEBUT DE LA NAV BAR*********************/
 
-.menuTab a {  
-    text-decoration: none!important;
-    font-family   : 'Allan';
-    font-size: 1em;
-    text-shadow: 1px 1px 2px #228b22;
-    letter-spacing: 2px;
-}
-
 .contant{
     position: relative;
     z-index : 100;           /*Rendre plus lisible les textes au dessus de la banière*/
@@ -45,7 +37,7 @@
 }
 .header_slogan{
     text-align: center;
-    margin-top: 10%;
+    margin-top: 8%;
 }
 .slogan{
     color         : #fff;
@@ -53,6 +45,7 @@
     text-transform: uppercase;
     font-family   : 'Allan'; /* possibilité de la changer avec 'Anton', il y a deja le link google font*/
     letter-spacing: 2px;
+    text-shadow: 1px 1px 2px #228b22;
 }
 .search_box{
     margin-top: 5%;

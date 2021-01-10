@@ -159,6 +159,13 @@ background-color:#58b368;   /*couleur des indacateurs*/
 /**************HEADER****************/
 
 /**************NAVBAR****************/
+.menuTab a {  
+  text-decoration: none!important;
+  font-family   : 'Allan';
+  font-size: 1.3em;
+  text-shadow: 1px 1px 2px #228b22;
+  letter-spacing: 2px;
+}
 
 /***Fin HEADER***/
 
