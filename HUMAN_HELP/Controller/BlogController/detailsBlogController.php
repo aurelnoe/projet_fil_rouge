@@ -15,7 +15,8 @@ if (!empty($_GET)) {
         try {
             $article = $service->searchById($_GET['idArticle']);
             $avis = $avisService->searchByIdArticle($_GET['idArticle']);
-            echo detailArticle($article, $avis);
+            $admin = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'admin';
+            echo detailArticle($article, $avis,null,$admin);
             
         } catch (ServiceException $se) {
             header('Location: ../../index.php');

@@ -73,7 +73,7 @@ function formulaireArticle(string $title, $article=null, string $titleBtn, strin
 <?php
 }
 
-function listeArticle($articles)
+function listeArticle($articles,$admin)
 {
     echo head();
 ?>
@@ -115,9 +115,11 @@ function listeArticle($articles)
                         <div class="m-auto my-1">
                             <a href="/HUMAN_HELP/Controller/BlogController/detailsBlogController.php?idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btnGreen w-50">Lire l'article</a>
                         </div>
+                        <?php if($admin){ ?>
                         <div class="m-auto">
                         <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-danger w-50">Supprimer</a>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
 
@@ -127,9 +129,11 @@ function listeArticle($articles)
             }
             ?>
         </div>
+        <?php if($admin){ ?>
         <div class="col-10 col-md-6 m-auto">
             <a class="btn btnGreen w-100 mb-4" href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=add">Ajouter un nouvel article</a>
         </div>
+        <?php } ?>
         <?php
         include("../../Templates/Bases/footer.php")
         ?>
@@ -139,7 +143,7 @@ function listeArticle($articles)
 <?php
 }
 
-function detailArticle($article,$avis,$temoignage=null)
+function detailArticle($article,$avis,$temoignage=null,$admin)
 {
     echo head();
 ?>
@@ -184,10 +188,12 @@ function detailArticle($article,$avis,$temoignage=null)
             <div class="text-center my-3">
                 <a href="listeBlogController.php" class="btn btnGreen w-50">Retour à la liste des articles</a>
             </div>
+            <?php if($admin){ ?>
             <div class="offset-4">
                 <a href="/HUMAN_HELP/Controller/BlogController/formulaireArticleController.php?action=update&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-primary col-12 col-md-3 my-2 w-50">Modifier</a>
                 <a href="/HUMAN_HELP/Controller/BlogController/listeBlogController.php?action=delete&idArticle=<?php echo $article->getIdArticle(); ?>" class="btn btn-danger col-12 col-md-3 my-2 w-50">Supprimer</a>
             </div> 
+            <?php } ?>
             <?php 
                 echo FormulaireAvis($article->getIdArticle(),$temoignage); 
 

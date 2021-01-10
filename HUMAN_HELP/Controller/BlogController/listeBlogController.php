@@ -87,7 +87,8 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
 $service = new ServiceBlog();
 try{
     $articles = $service->searchAll();
-    echo listeArticle($articles);
+    $admin = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'admin';
+    echo listeArticle($articles,$admin);
 }
 catch (ServiceException $se) {
     header('Location: ../../index.php');
