@@ -58,7 +58,7 @@ include_once("C:/xampp/htdocs/HUMAN_HELP/Controller/HeaderController/headerContr
 			<h1 class="slogan">Aider comme vous ne l'avez encore jamais fait</h1>
 
 			<div class="row justify-content-md-center search_box">
-			<div class="col-md-3 col-lg-3 btn-group">
+			<div class="col-md-3 col-lg-3 my-2 btn-group">
 					<button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 						Pays
 					</button>

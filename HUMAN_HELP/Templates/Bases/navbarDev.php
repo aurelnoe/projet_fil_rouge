@@ -1,4 +1,4 @@
-<div class="container-fluid p-0 col-12 fixed-top">
+<div class="container-fluid col-12 fixed-top navbardev">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 
     <div class="collapse navbar-collapse" id="navbarsExample03">
