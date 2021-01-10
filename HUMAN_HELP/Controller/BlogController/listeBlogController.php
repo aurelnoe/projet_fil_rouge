@@ -1,5 +1,6 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
+session_start();
 include_once(PATH_BASE . "Services/ServiceBlog.php");
 include_once(PATH_BASE . "Presentation/PresentationBlog.php");
 
@@ -28,7 +29,13 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
                 ->setImageArticle($imageArticle);
 
             $newAdd = new ServiceBlog();
-            $newAdd->add($article);
+            try{
+                 $newAdd->add($article);
+            }
+            catch (ServiceException $se) {
+                header('Location: ../../index.php');
+            }
+           
         }
  
         /************************** MODIFIE ARTICLE ***************************/
@@ -51,20 +58,38 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
                     ->setImageArticle($imageArticle);
 
             $newUpdate = new ServiceBlog();
-            $newUpdate->update($article); //
+            try{
+                $newUpdate->update($article); 
+            }
+            catch (ServiceException $se) {
+                header('Location: ../../index.php');
+            }
+            
         }
     }
     /**************************************** SUPPRIME ARTICLE ************************/
     elseif ($_GET['action'] == 'delete') {
         if (!empty($_GET['idArticle'])) {
             $delete = new ServiceBlog();
-            $delete->delete($_GET['idArticle']);
+            try{
+
+                $delete->delete($_GET['idArticle']);
+            }
+            catch (ServiceException $se) {
+                header('Location: ../../index.php');
+            }
+            
         }
     }
 }
 
 /******************************************** Afficher tous les articles ***********************************************/
 $service = new ServiceBlog();
-$articles = $service->searchAll();
+try{
+    $articles = $service->searchAll();
+    echo listeArticle($articles);
+}
+catch (ServiceException $se) {
+    header('Location: ../../index.php');
+}
 
-echo listeArticle($articles);

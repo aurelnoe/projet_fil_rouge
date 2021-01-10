@@ -16,9 +16,9 @@ class ServiceAvis
         try {
             return $this->avisDAO->add($avis);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        }      
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }                 
     }
 
     public function update($avis)
@@ -26,9 +26,9 @@ class ServiceAvis
         try {
             return $this->avisDAO->update($avis);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        }     
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }            
     }
 
     public function delete($idAvis)
@@ -36,9 +36,9 @@ class ServiceAvis
         try {
             $this->avisDAO->delete($idAvis);
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        }        
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }           
     }
 
     public function searchAll()
@@ -46,9 +46,9 @@ class ServiceAvis
         try {
             return $this->avisDAO->searchAll();
         } 
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        }    
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }         
     }
     public function searchById($idAvis)
     {
@@ -56,9 +56,9 @@ class ServiceAvis
         {          
             return $this->avisDAO->searchById($idAvis);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        } 
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }       
     }
     public function searchByIdArticle($idBlog)
     {
@@ -66,9 +66,9 @@ class ServiceAvis
         {          
             return $this->avisDAO->searchByIdArticle($idBlog);
         }
-        catch (PDOException $e) {
-            throw new PDOException($e->getMessage(),$e->getCode());
-        } 
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }     
     }
 
     /**

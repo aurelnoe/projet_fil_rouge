@@ -2,6 +2,7 @@
 include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 include_once(PATH_BASE . "/Class/Blog.php");
 include_once(PATH_BASE . "/Class/BddConnect.php");
+require_once(PATH_BASE . "/Exceptions/DAOException.php");
 
 class BlogDAO extends BddConnect 
 {
@@ -9,7 +10,7 @@ class BlogDAO extends BddConnect
 
      /******************* FONCTION AJOUTER UN ARTICLE *****************************/
 
-     public function add(object $article)
+     public function add(Blog $article)
     {   
         try {
 
@@ -35,19 +36,21 @@ class BlogDAO extends BddConnect
             $stmt->bindParam(':imageArticle', $getImageArticle);
 
             $stmt->execute();
-
-            $db = null;
-            $stmt = null;           
+           
         } 
         catch (PDOException $e){
-            echo 'Echec de la connexion : '.$e->getMessage();
-        }         
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }    
+        finally{
+            $db = null;
+            $stmt = null;   
+        }          
     }
 
 
     /******************* FONCTION MODIFIER UN ARTICLE *****************************/
 
-    public function update(object $article)
+    public function update(Blog $article)
     {   
         try {
 
@@ -85,12 +88,12 @@ class BlogDAO extends BddConnect
                     
         } 
         catch (PDOException $e){
-            echo 'Echec de la connexion : '.$e->getMessage();
-        }
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
         finally{
             $db = null;
             $stmt = null;   
-        }         
+        }
     }
 
      /******************* FONCTION SUPPRIMER UN ARTICLE*****************************/
@@ -107,13 +110,14 @@ class BlogDAO extends BddConnect
              $stmt->bindParam(":idArticle", $idArticle);
              $stmt->execute();
  
-             $db = null;
-             $stmt = null;
          } 
-         catch (PDOException $e) {
-             print "Erreur !: " . $e->getMessage() . "<br/>";
-             die();
-         }        
+         catch (PDOException $e){
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }    
      }
 
      /**************** FONCTION CHERCHER TOUS LES ARTICLES ***********************/
@@ -135,10 +139,13 @@ class BlogDAO extends BddConnect
              
              return $articles;
          } 
-         catch (PDOException $e) {
-             print "Erreur !: " . $e->getMessage() . "<br/>";
-             die();
-         }
+         catch (PDOException $e){
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }
      }
  
      /**************** FONCTION CHERCHER UN ARTICLE PAR ID ***********************/
@@ -159,9 +166,12 @@ class BlogDAO extends BddConnect
 
             return $article[0];
         } 
-        catch (PDOException $e) {
-            print "Erreur !: " . $e->getMessage() . "<br/>";
-            die();
+        catch (PDOException $e){
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
         }
     }
  

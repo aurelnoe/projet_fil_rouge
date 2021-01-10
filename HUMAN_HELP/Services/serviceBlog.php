@@ -1,6 +1,8 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 include_once(PATH_BASE . "/DAO/BlogDAO.php");
+include_once(PATH_BASE . "/Exceptions/DAOException.php");
+
 
 class ServiceBlog 
 {
@@ -14,17 +16,34 @@ class ServiceBlog
     /************ PAGE liste/article BLOG *********/
     public function add($article)
     {
-        return $this->BlogDAO->add($article);
+        try{
+            return $this->BlogDAO->add($article);
+        }
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }  
     }
 
     public function update($article)
     {
-        return $this->BlogDAO->update($article);
+        try{
+            return $this->BlogDAO->update($article);
+        }
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }  
+        
     }
 
     public function delete($idArticle)
     {
-        $this->BlogDAO->delete($idArticle);
+        try{
+            $this->BlogDAO->delete($idArticle);
+        }
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }
+
     }
 
     public function searchAll()
@@ -35,7 +54,13 @@ class ServiceBlog
     /************ PAGE DETAIL BLOG *********/
     public function searchById($idArticle)
     {
-        return $this->BlogDAO->searchById($idArticle);
+        try{
+            return $this->BlogDAO->searchById($idArticle);
+        }
+        catch (DAOException $de) {
+            throw new ServiceException($de->getMessage(),$de->getCode());
+        }
+        
     }
 
     /**

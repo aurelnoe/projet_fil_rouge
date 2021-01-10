@@ -9,7 +9,7 @@ class AvisDAO extends BddConnect
 
      /******************* FONCTION AJOUTER UN AVIS/COMMENTAIRE *****************************/
 
-     public function add(object $avis)
+     public function add(Avis $avis)
     {   
         try {
 
@@ -35,19 +35,21 @@ class AvisDAO extends BddConnect
             $stmt->bindParam(':idBlog', $getIdArticle);
 
             $stmt->execute();
-
-            $db = null;
-            $stmt = null;           
+         
         } 
         catch (PDOException $e){
-            echo 'Echec de la connexion : '.$e->getMessage();
-        }         
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }            
     }
 
 
     /******************* FONCTION MODIFIER UN ARTICLE *****************************/
 
-    public function update(object $avis)
+    public function update(Avis $avis)
     {   
         try {
 
@@ -110,10 +112,13 @@ class AvisDAO extends BddConnect
              $db = null;
              $stmt = null;
          } 
-         catch (PDOException $e) {
-             print "Erreur !: " . $e->getMessage() . "<br/>";
-             die();
-         }        
+         catch (PDOException $e){
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }          
      }
 
      /**************** FONCTION CHERCHER TOUS LES AVIS ***********************/
@@ -135,10 +140,13 @@ class AvisDAO extends BddConnect
              
              return $avis;
          } 
-         catch (PDOException $e) {
-             print "Erreur !: " . $e->getMessage() . "<br/>";
-             die();
-         }
+         catch (PDOException $e){
+            throw new DAOException($e->getMessage(),$e->getCode());
+        }  
+        finally{
+            $db = null;
+            $stmt = null;   
+        }       
      }
 
 /**************** FONCTION CHERCHER AVIS PAR ID ***********************/ 
@@ -160,12 +168,12 @@ class AvisDAO extends BddConnect
             return $avis[0];
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
             $stmt = null;   
-        }
+        }       
     }
 /**************** FONCTION CHERCHER AVIS PAR ARTICLE ***********************/ 
 public function searchByIdArticle($idBlog)
@@ -186,12 +194,12 @@ public function searchByIdArticle($idBlog)
             return $avis;
         } 
         catch (PDOException $e){
-            throw new PDOException($e->getMessage(),$e->getCode());
+            throw new DAOException($e->getMessage(),$e->getCode());
         }  
         finally{
             $db = null;
             $stmt = null;   
-        }
+        }       
     }
 }
  

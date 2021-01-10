@@ -29,7 +29,13 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
                 ->setIdArticle($idArticle);
 
             $newAdd = new ServiceAvis();
-            $newAdd->add($avis);
+            try{
+                $newAdd->add($avis);
+            }
+            catch (ServiceException $se) {
+                header('Location: ../../index.php');
+            }
+            
         }
         /************************** MODIFIE AVIS ***************************/
         elseif ($_GET['action'] == 'update' && isset($_POST['idAvis'])) 
@@ -52,13 +58,16 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
                     ->setIdArticle($idArticle);
 
             $newUpdate = new ServiceAvis();
-            $newUpdate->update($avis); 
-
-            $service = new ServiceBlog(); 
-            $article = $service->searchById($_GET['idArticle']);
-           
-    
-            echo detailArticle($article,$avis);
+            $service = new ServiceBlog();  
+            try{
+                $newUpdate->update($avis); 
+                $article = $service->searchById($_GET['idArticle']);
+                echo detailArticle($article,$avis);
+            }
+            catch (ServiceException $se) {
+                header('Location: ../../index.php');
+            }
+              
         }
     }
     /**************************************** SUPPRIME AVIS ************************/
@@ -68,11 +77,17 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
             $delete->delete($_GET['idAvis']);
 
             $service = new ServiceBlog(); 
-            $article = $service->searchById($_GET['idArticle']);
             $avisService = new ServiceAvis(); 
-            $avis = $avisService->searchByIdArticle($_GET['idArticle']);
+            try{
+                $article = $service->searchById($_GET['idArticle']);
+                $avis = $avisService->searchByIdArticle($_GET['idArticle']);
     
-            echo detailArticle($article,$avis);
+                echo detailArticle($article,$avis);
+            }
+            catch (ServiceException $se) {
+                header('Location: ../../index.php');
+            }
+           
         }
     }
 }
@@ -83,9 +98,17 @@ if (!empty($_GET['action']) && isset($_GET['action'])) {
 // $avis = $service->searchALL();
 // echo listeAvis($avis);
     $service = new ServiceBlog(); 
-    $article = $service->searchById($_GET['idArticle']);
+    $avisService = new ServiceAvis();
+    try{
+        $article = $service->searchById($_GET['idArticle']);
+        $avis = $avisService->searchByIdArticle($_GET['idArticle']);
+        echo detailArticle($article,$avis);
+    }
+    catch (ServiceException $se) {
+        header('Location: ../../index.php');
+    }
     
-    $avisService = new ServiceAvis(); 
-    $avis = $avisService->searchByIdArticle($_GET['idArticle']);
+     
     
-    echo detailArticle($article,$avis);
+    
+    
