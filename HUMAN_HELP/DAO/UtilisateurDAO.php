@@ -8,7 +8,7 @@ class UtilisateurDAO extends BddConnect
 {
     public function add(Utilisateur $utilisateur)
     {
-        try 
+        try
         {
             $newConnect = new BddConnect();
             $db = $newConnect->connexion();

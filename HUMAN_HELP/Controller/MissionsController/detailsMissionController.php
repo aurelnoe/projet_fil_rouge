@@ -14,9 +14,9 @@ $_POST = array_map('htmlentities',$_POST);
 if(!empty($_GET))
 {
     $serviceMission = new ServiceMission(); 
-    $newPays = new ServicePays();
-    $newTypeActivite = new ServiceTypeActivite();
-    $newEtablissement = new ServiceEtablissement();
+    $servicePays = new ServicePays();
+    $serviceTypeActivite = new ServiceTypeActivite();
+    $serviceEtablissement = new ServiceEtablissement();
 
     if (isset($_GET['idMission']) && empty($_GET['action'])) 
     {
@@ -30,7 +30,7 @@ if(!empty($_GET))
             }else{
                 $typeFormation = 'sur le terrain';
             }
-            echo detailsMission($mission,$typeFormation,$newPays,$newTypeActivite,$newEtablissement,$professionnel);       
+            echo detailsMission($mission,$typeFormation,$servicePays,$serviceTypeActivite,$serviceEtablissement,$professionnel);       
         }
         catch (ServiceException $se) {
             header('Location: ' . $_SERVER['HTTP_REFERER']);
@@ -76,11 +76,25 @@ if(!empty($_GET))
         
                     $professionnel = isset($_SESSION['mailUtil']) && isset($_SESSION['idUtil']) && $_SESSION['role'] == 'professionnel';
     
-                    echo detailsMission($detailsMission,$newPays,$newTypeActivite,$newEtablissement,$professionnel);                 
+                    echo detailsMission($detailsMission,$servicePays,$serviceTypeActivite,$serviceEtablissement,$professionnel);                 
                     die;
                 }
                 catch (ServiceException $se) {
-                    header('Location: ' . $_SERVER['HTTP_REFERER']);
+                    if ($professionnel) 
+                    {
+                        $utilisateur = $serviceUtilisateur->searchById($_SESSION['idUtil']);
+                        
+                        $etablissement = $serviceEtablissement->searchEtablissementByIdUtilisateur($_SESSION['idUtil']);
+                        
+                        $missions = $serviceMission->searchMissionByPro($etablissement->getIdEtablissement());
+                        
+                        echo listeMissionsPro($missions,$serviceTypeActivite,$servicePays,$etablissement,$utilisateur,$se->getCode());
+                        die;           
+                    }
+                    else {
+                        header("Location: ../../index.php");
+                        die;
+                    }
                 }        
             }
         }

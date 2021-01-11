@@ -144,7 +144,9 @@ class MissionDAO extends BddConnect
             $stmt = $db->prepare($query);
             $stmt->execute();
             $missions = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');
-            
+            if (empty($missions)) {
+                throw new DAOException("Aucune mission n'a été trouvé dans la base de données", 9998);
+            }
             return $missions;
         } 
         catch (PDOException $e){
@@ -171,7 +173,9 @@ class MissionDAO extends BddConnect
 
             $mission = $stmt->fetchAll(PDO::FETCH_CLASS,'Mission');////MYSQLI FETCH ARRAY
             //varDump($mission);
-
+            if (empty($mission[0])) {
+                throw new DAOException("La mission n'a pas été trouvé dans la base de données",9999);
+            }
             return $mission[0];
         } 
         catch (PDOException $e){

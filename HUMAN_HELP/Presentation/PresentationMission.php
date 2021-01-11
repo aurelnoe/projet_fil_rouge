@@ -1,7 +1,7 @@
 <?php 
 require("../../Presentation/PresentationCommun.php");
 
-function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null,$etablissementPro=null,$utilisateur) 
+function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null,$etablissementPro=null,$utilisateur,$errorCode=null) 
 {
     echo head();
     ?> 
@@ -10,6 +10,19 @@ function listeMissionsPro($missions,$newTypeActivite=null,$newPays=null,$etablis
         include("../../Templates/Bases/navbarDev.php");
 
         include("../../Templates/Bases/navbar.php");
+        if ($errorCode) {
+            if($errorCode == 1062){
+                $message = "L'employé existe déja dans la base de données!";
+                echo "<div class='alert alert-danger text-center'>Code : $errorCode,\n Message : $message</div>";
+            }
+            else if($errorCode == 1027){
+                $message = "L'employé n'a pas pu être modifié!";
+                echo "<div class='alert alert-danger text-center'>Code : $errorCode,\n Message : $message</div>";
+            }
+            else if($errorCode == 9998){
+                echo "<div class='alert alert-danger text-center'>Code : $errorCode,\n Message : $message</div>";
+            }  
+        }
         ?>
         <div class="container">
             <hr class="hrGreen mx-3 my-4">
@@ -504,6 +517,9 @@ function detailsMission($mission,$newPays=null,$newTypeActivite=null,$newEtablis
         include("../../Templates/Bases/navbarDev.php");
 
         include("../../Templates/Bases/navbar.php");
+        if($errorCode && $errorCode == 9999){
+            echo "<div class='alert alert-danger text-center'>Code : $errorCode,\n Message : $message</div>";
+        }
         ?>
         <div class="container justify-content p-4">
 

@@ -63,7 +63,7 @@ if(!empty($_GET['action']) && isset($_GET['action']) && $professionnel)
                     
                     $missions = $serviceMission->searchMissionByPro($etablissement->getIdEtablissement());
                     
-                    echo listeMissionsPro($missions,$serviceTypeActivite,$servicePays,$etablissement,$utilisateur,$se->getCode);
+                    echo listeMissionsPro($missions,$serviceTypeActivite,$servicePays,$etablissement,$utilisateur,$se->getCode());
                     die;           
                 }
                 else {
@@ -72,7 +72,6 @@ if(!empty($_GET['action']) && isset($_GET['action']) && $professionnel)
                 }
             }
         }  
-
         /**************************************** AJOUTER UN ETABLISSEMENT ************************/
         elseif ($_GET['action'] == 'addEtablissement') 
         {    
@@ -116,7 +115,6 @@ if(!empty($_GET['action']) && isset($_GET['action']) && $professionnel)
             $telEtablissement = $_POST['telEtablissement'];
             $dateAjoutEtablissement = date("Y-m-d"); 
             $idUtilisateur = $_POST['idUtilisateur'];
-            //$idTypeActivite = $_POST['idTypeActivite'];
             $idPays = $_POST['idPays'];
 
             $etablissement->setIdEtablissement($idEtablissement)
@@ -128,10 +126,18 @@ if(!empty($_GET['action']) && isset($_GET['action']) && $professionnel)
                           ->setTelEtablissement($telEtablissement)
                           ->setDateAjoutEtablissement($dateAjoutEtablissement)
                           ->setIdUtilisateur($idUtilisateur)
-                          //->setIdTypeActivite($idTypeActivite)
                           ->setIdPays($idPays);
             try {
-                $serviceEtablissement->update($etablissement);//,$idEtablissement                
+                $serviceEtablissement->update($etablissement);   
+                
+                $utilisateur = $serviceUtilisateur->searchById($_SESSION['idUtil']);
+                
+                $etablissement = $serviceEtablissement->searchEtablissementByIdUtilisateur($_SESSION['idUtil']);
+                
+                $missions = $serviceMission->searchMissionByPro($etablissement->getIdEtablissement());
+                
+                echo listeMissionsPro($missions,$serviceTypeActivite,$servicePays,$etablissement,$utilisateur);
+                die;            
             }
             catch (ServiceException $se) {
                 if ($professionnel) 

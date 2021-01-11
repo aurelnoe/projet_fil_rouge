@@ -3,7 +3,6 @@ include_once($_SERVER['DOCUMENT_ROOT']."/HUMAN_HELP/config.php");
 include_once(PATH_BASE . "/DAO/BlogDAO.php");
 include_once(PATH_BASE . "/Exceptions/DAOException.php");
 
-
 class ServiceBlog 
 {
     private $BlogDAO;
@@ -43,7 +42,6 @@ class ServiceBlog
         catch (DAOException $de) {
             throw new ServiceException($de->getMessage(),$de->getCode());
         }
-
     }
 
     public function searchAll()
@@ -60,7 +58,6 @@ class ServiceBlog
         catch (DAOException $de) {
             throw new ServiceException($de->getMessage(),$de->getCode());
         }
-        
     }
 
     /**
