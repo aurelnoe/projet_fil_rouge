@@ -143,7 +143,7 @@ function listeArticle($articles,$admin)
 <?php
 }
 
-function detailArticle($article,$avis,$temoignage=null,$admin)
+function detailArticle($article,$avis,$temoignage=null,$admin=null)
 {
     echo head();
 ?>
@@ -196,7 +196,7 @@ function detailArticle($article,$avis,$temoignage=null,$admin)
             <?php } ?>
             <?php 
                 echo FormulaireAvis($article->getIdArticle(),$temoignage); 
-
+                
                 echo listeAvis($avis,$article->getIdArticle());
             
             
@@ -240,14 +240,16 @@ function listeAvis($avis,$idArticle)
 <h1 style="font-size: 24px;">Commentaires : </h1>
 <?php } ?>
     <div>
+    <?php ?>
         <?php foreach ($avis as $commentaire){?>
-
+        
+            <?php $newTemoignage="";?>
             <div style="background: #eee ; border-radius:10px;">
-                <p><span style="font-weight: bold;"> De <?php echo $commentaire->getAuteur(); ?> :</span> <?php echo $commentaire->getTemoignage(); ?> . </br> <span style="font-size:12px;"> Le <?php echo $commentaire->getDateCommentaire()->format('d-m-Y'); ?></span> </p>
+                <p><span style="font-weight: bold;"> De <?php echo $commentaire->getAuteur(); ?> :</span><span id="modifTemoignage"> <?php echo $commentaire->getTemoignage(); ?></span> . </br> <span style="font-size:12px;"> Le <?php echo $commentaire->getDateCommentaire()->format('d-m-Y'); ?></span> </p>
             </div>
             <div>
             <a href="/HUMAN_HELP/Controller/AvisController/listeAvisController.php?action=delete&idAvis=<?php echo $commentaire->getIdAvis(); ?>&idArticle=<?php echo $idArticle; ?>" class="btn btn-danger w-25">Supprimer</a>
-            <a href="/HUMAN_HELP/Controller/AvisController/formulaireAvisController.php?action=update&idAvis=<?php echo $commentaire->getIdAvis(); ?>&idArticle=<?php echo $idArticle; ?>" class="btn btn-success w-25">Modifier</a>
+            <a href="/HUMAN_HELP/Controller/AvisController/listeAvisController.php?action=add&idAvis=<?php echo $commentaire->getIdAvis(); ?>&idArticle=<?php echo $idArticle; ?>&temoignage=<?php echo $newTemoigange; ; ?>" class="btn btn-success w-25">Modifier</a>
             </div>
 
             <hr class="my-4">
@@ -255,7 +257,46 @@ function listeAvis($avis,$idArticle)
         <?php }?>
 
     </div>
+    <script>
+    
+    var temoignage = document.getElementById("modifTemoignage");
+    console.log(temoignage);
+    
+    temoignage.addEventListener('click', function (e){
 
+        this.setAttribute('data-clicked','yes');
+        this.setAttribute('data-text',this.innerHTML);
+
+        var input = document.createElement("input");
+            input.type = "text";
+            input.value = this.innerHTML;         // garder la valeur de la cellule dans l'input
+        
+    
+
+            input.onblur = function() {               // onblur éxécute le code quand la personne sort d'un input il y a aussi change et focusOut
+            var temoignage = input.parentElement;
+            var originalText = input.parentElement.getAttribute("data-text");
+            var currentText = this.value;
+
+            if(originalText != currentText) {
+                temoignage.removeAttribute('data-clicked');
+                temoignage.removeAttribute('data-text');
+                temoignage.innerHTML = currentText;
+            }
+        }
+
+
+        this.innerHTML = "";                      // clear la td quand on clique
+
+        var myClickedElement = e.target;
+        myClickedElement.appendChild(input);
+        this.firstElementChild.select();          // select la valeur par défaut du input l'élément sélectonné
+    })
+
+
+
+</script>
 <?php
 }
 ?>
+
